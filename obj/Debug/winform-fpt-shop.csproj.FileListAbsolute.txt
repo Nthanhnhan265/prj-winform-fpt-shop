@@ -1,0 +1,11 @@
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\winform-fpt-shop.exe.config
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\winform-fpt-shop.exe
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\winform-fpt-shop.pdb
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.AssemblyReference.cache
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.SuggestedBindingRedirects.cache
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmMain.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.Properties.Resources.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.GenerateResource.cache
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.CoreCompileInputs.cache
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.exe
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.pdb
