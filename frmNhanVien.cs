@@ -10,14 +10,25 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop
 {
-    public partial class frmMain : Form
+    public partial class frmNhanVien : Form
     {
-        public frmMain()
+        public frmNhanVien()
         {
             InitializeComponent();
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMain_Resize(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
