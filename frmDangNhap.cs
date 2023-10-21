@@ -16,5 +16,21 @@ namespace winform_fpt_shop
         {
             InitializeComponent();
         }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+
+            string quyenHan = txtUser.Text; 
+            if(quyenHan=="0") //quan ly
+            {
+
+            } else //nhan vien 
+            {
+                frmNhanVien frmNhanVien = new frmNhanVien();
+                frmNhanVien.Show(); 
+                this.Hide();
+
+            }
+        }
     }
 }
