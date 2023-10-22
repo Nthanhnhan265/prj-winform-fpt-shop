@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblHoTen = new System.Windows.Forms.Label();
             this.lblNgaySinh = new System.Windows.Forms.Label();
@@ -41,16 +42,22 @@
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.radNam = new System.Windows.Forms.RadioButton();
-            this.radNu = new System.Windows.Forms.RadioButton();
+            this.pnlGioiTinh = new System.Windows.Forms.Panel();
             this.radKhac = new System.Windows.Forms.RadioButton();
+            this.radNu = new System.Windows.Forms.RadioButton();
+            this.radNam = new System.Windows.Forms.RadioButton();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.cboMaCH = new System.Windows.Forms.ComboBox();
             this.cboQuanLy = new System.Windows.Forms.ComboBox();
-            this.panel1.SuspendLayout();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnNhapLai = new System.Windows.Forms.Button();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pnlGioiTinh.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -62,7 +69,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(854, 69);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "NHẬP THÔNG TIN NHÂN VIÊN MUỐN THÊM";
+            this.lblTitle.Text = "NHẬP THÔNG TIN NHÂN VIÊN";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblHoTen
@@ -152,6 +159,7 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(324, 33);
             this.txtHoTen.TabIndex = 11;
+            this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             // 
             // txtDiaChi
             // 
@@ -170,37 +178,15 @@
             this.dtpNgaySinh.Size = new System.Drawing.Size(155, 33);
             this.dtpNgaySinh.TabIndex = 13;
             // 
-            // panel1
+            // pnlGioiTinh
             // 
-            this.panel1.Controls.Add(this.radKhac);
-            this.panel1.Controls.Add(this.radNu);
-            this.panel1.Controls.Add(this.radNam);
-            this.panel1.Location = new System.Drawing.Point(152, 220);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(324, 35);
-            this.panel1.TabIndex = 14;
-            // 
-            // radNam
-            // 
-            this.radNam.AutoSize = true;
-            this.radNam.Location = new System.Drawing.Point(3, 3);
-            this.radNam.Name = "radNam";
-            this.radNam.Size = new System.Drawing.Size(75, 29);
-            this.radNam.TabIndex = 15;
-            this.radNam.TabStop = true;
-            this.radNam.Text = "Nam";
-            this.radNam.UseVisualStyleBackColor = true;
-            // 
-            // radNu
-            // 
-            this.radNu.AutoSize = true;
-            this.radNu.Location = new System.Drawing.Point(128, 3);
-            this.radNu.Name = "radNu";
-            this.radNu.Size = new System.Drawing.Size(61, 29);
-            this.radNu.TabIndex = 16;
-            this.radNu.TabStop = true;
-            this.radNu.Text = "Nữ";
-            this.radNu.UseVisualStyleBackColor = true;
+            this.pnlGioiTinh.Controls.Add(this.radKhac);
+            this.pnlGioiTinh.Controls.Add(this.radNu);
+            this.pnlGioiTinh.Controls.Add(this.radNam);
+            this.pnlGioiTinh.Location = new System.Drawing.Point(152, 220);
+            this.pnlGioiTinh.Name = "pnlGioiTinh";
+            this.pnlGioiTinh.Size = new System.Drawing.Size(324, 35);
+            this.pnlGioiTinh.TabIndex = 14;
             // 
             // radKhac
             // 
@@ -213,12 +199,35 @@
             this.radKhac.Text = "Khác";
             this.radKhac.UseVisualStyleBackColor = true;
             // 
+            // radNu
+            // 
+            this.radNu.AutoSize = true;
+            this.radNu.Location = new System.Drawing.Point(128, 3);
+            this.radNu.Name = "radNu";
+            this.radNu.Size = new System.Drawing.Size(61, 29);
+            this.radNu.TabIndex = 16;
+            this.radNu.TabStop = true;
+            this.radNu.Text = "Nữ";
+            this.radNu.UseVisualStyleBackColor = true;
+            // 
+            // radNam
+            // 
+            this.radNam.AutoSize = true;
+            this.radNam.Location = new System.Drawing.Point(3, 3);
+            this.radNam.Name = "radNam";
+            this.radNam.Size = new System.Drawing.Size(75, 29);
+            this.radNam.TabIndex = 15;
+            this.radNam.TabStop = true;
+            this.radNam.Text = "Nam";
+            this.radNam.UseVisualStyleBackColor = true;
+            // 
             // txtCCCD
             // 
             this.txtCCCD.Location = new System.Drawing.Point(152, 280);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(324, 33);
             this.txtCCCD.TabIndex = 15;
+            this.txtCCCD.TextChanged += new System.EventHandler(this.txtCCCD_TextChanged);
             // 
             // txtSDT
             // 
@@ -226,6 +235,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(324, 33);
             this.txtSDT.TabIndex = 16;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtEmail
             // 
@@ -236,6 +246,7 @@
             // 
             // cboMaCH
             // 
+            this.cboMaCH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaCH.FormattingEnabled = true;
             this.cboMaCH.Location = new System.Drawing.Point(152, 434);
             this.cboMaCH.Name = "cboMaCH";
@@ -244,23 +255,75 @@
             // 
             // cboQuanLy
             // 
+            this.cboQuanLy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboQuanLy.FormattingEnabled = true;
             this.cboQuanLy.Location = new System.Drawing.Point(152, 482);
             this.cboQuanLy.Name = "cboQuanLy";
             this.cboQuanLy.Size = new System.Drawing.Size(321, 33);
             this.cboQuanLy.TabIndex = 19;
             // 
+            // btnThem
+            // 
+            this.btnThem.AutoSize = true;
+            this.btnThem.Location = new System.Drawing.Point(625, 79);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(152, 51);
+            this.btnThem.TabIndex = 20;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnNhapLai
+            // 
+            this.btnNhapLai.AutoSize = true;
+            this.btnNhapLai.Location = new System.Drawing.Point(625, 157);
+            this.btnNhapLai.Name = "btnNhapLai";
+            this.btnNhapLai.Size = new System.Drawing.Size(152, 51);
+            this.btnNhapLai.TabIndex = 20;
+            this.btnNhapLai.Text = "Nhập lại";
+            this.btnNhapLai.UseVisualStyleBackColor = true;
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.AutoSize = true;
+            this.btnCapNhat.Location = new System.Drawing.Point(625, 230);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(152, 51);
+            this.btnCapNhat.TabIndex = 20;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.AutoSize = true;
+            this.btnThoat.Location = new System.Drawing.Point(625, 318);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(152, 51);
+            this.btnThoat.TabIndex = 20;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmThem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 579);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnCapNhat);
+            this.Controls.Add(this.btnNhapLai);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.cboQuanLy);
             this.Controls.Add(this.cboMaCH);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtCCCD);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlGioiTinh);
             this.Controls.Add(this.dtpNgaySinh);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtHoTen);
@@ -276,11 +339,15 @@
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmThem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm nhân viên";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.frmThem_Load);
+            this.pnlGioiTinh.ResumeLayout(false);
+            this.pnlGioiTinh.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,7 +368,7 @@
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlGioiTinh;
         private System.Windows.Forms.RadioButton radNam;
         private System.Windows.Forms.RadioButton radNu;
         private System.Windows.Forms.RadioButton radKhac;
@@ -310,5 +377,10 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.ComboBox cboMaCH;
         private System.Windows.Forms.ComboBox cboQuanLy;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnNhapLai;
+        private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

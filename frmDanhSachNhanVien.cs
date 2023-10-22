@@ -37,5 +37,11 @@ namespace winform_fpt_shop
             frmThem them = new frmThem();
             them.Show();
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            frmThem sua = new frmThem();
+            sua.Show();
+        }
     }
 }

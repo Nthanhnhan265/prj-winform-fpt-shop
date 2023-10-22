@@ -23,3 +23,4 @@ D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.CoreCompileInputs
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.exe
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.pdb
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDanhSachNhanVien.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThem.resources
