@@ -1,6 +1,6 @@
 ﻿namespace winform_fpt_shop
 {
-    partial class frmMain
+    partial class frmQuanLy
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLy));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTK_ThongTIn = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +60,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(711, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(711, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,25 +71,25 @@
             this.mnuTK_DoiMK,
             this.mnuTK_Thoat});
             this.mnuTaiKhoan.Name = "mnuTaiKhoan";
-            this.mnuTaiKhoan.Size = new System.Drawing.Size(87, 26);
+            this.mnuTaiKhoan.Size = new System.Drawing.Size(87, 24);
             this.mnuTaiKhoan.Text = "Tài Khoản";
             // 
             // mnuTK_ThongTIn
             // 
             this.mnuTK_ThongTIn.Name = "mnuTK_ThongTIn";
-            this.mnuTK_ThongTIn.Size = new System.Drawing.Size(218, 26);
+            this.mnuTK_ThongTIn.Size = new System.Drawing.Size(224, 26);
             this.mnuTK_ThongTIn.Text = "Thông Tin Cá Nhân";
             // 
             // mnuTK_DoiMK
             // 
             this.mnuTK_DoiMK.Name = "mnuTK_DoiMK";
-            this.mnuTK_DoiMK.Size = new System.Drawing.Size(218, 26);
+            this.mnuTK_DoiMK.Size = new System.Drawing.Size(224, 26);
             this.mnuTK_DoiMK.Text = "Đổi mật khẩu";
             // 
             // mnuTK_Thoat
             // 
             this.mnuTK_Thoat.Name = "mnuTK_Thoat";
-            this.mnuTK_Thoat.Size = new System.Drawing.Size(218, 26);
+            this.mnuTK_Thoat.Size = new System.Drawing.Size(224, 26);
             this.mnuTK_Thoat.Text = "Thoát";
             // 
             // mnuCuaHang
@@ -98,7 +98,7 @@
             this.mnuCuaHang_TT,
             this.mnuCuaHang_DoanhThu});
             this.mnuCuaHang.Name = "mnuCuaHang";
-            this.mnuCuaHang.Size = new System.Drawing.Size(86, 26);
+            this.mnuCuaHang.Size = new System.Drawing.Size(86, 24);
             this.mnuCuaHang.Text = "Cửa hàng";
             // 
             // mnuCuaHang_TT
@@ -106,6 +106,7 @@
             this.mnuCuaHang_TT.Name = "mnuCuaHang_TT";
             this.mnuCuaHang_TT.Size = new System.Drawing.Size(226, 26);
             this.mnuCuaHang_TT.Text = "Thông tin cửa hàng";
+            this.mnuCuaHang_TT.Click += new System.EventHandler(this.mnuCuaHang_TT_Click);
             // 
             // mnuCuaHang_DoanhThu
             // 
@@ -118,7 +119,7 @@
             // xemHóaĐơnToolStripMenuItem
             // 
             this.xemHóaĐơnToolStripMenuItem.Name = "xemHóaĐơnToolStripMenuItem";
-            this.xemHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.xemHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.xemHóaĐơnToolStripMenuItem.Text = "Xem hóa đơn";
             // 
             // mnuNhanVien
@@ -126,7 +127,7 @@
             this.mnuNhanVien.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuNhanVien_DS});
             this.mnuNhanVien.Name = "mnuNhanVien";
-            this.mnuNhanVien.Size = new System.Drawing.Size(91, 26);
+            this.mnuNhanVien.Size = new System.Drawing.Size(91, 24);
             this.mnuNhanVien.Text = "Nhân Viên";
             // 
             // mnuNhanVien_DS
@@ -134,13 +135,14 @@
             this.mnuNhanVien_DS.Name = "mnuNhanVien_DS";
             this.mnuNhanVien_DS.Size = new System.Drawing.Size(227, 26);
             this.mnuNhanVien_DS.Text = "Danh sách nhân viên";
+            this.mnuNhanVien_DS.Click += new System.EventHandler(this.mnuNhanVien_DS_Click);
             // 
             // mnuSanPham
             // 
             this.mnuSanPham.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSanPham_DS});
             this.mnuSanPham.Name = "mnuSanPham";
-            this.mnuSanPham.Size = new System.Drawing.Size(88, 26);
+            this.mnuSanPham.Size = new System.Drawing.Size(88, 24);
             this.mnuSanPham.Text = "Sản Phẩm";
             // 
             // mnuSanPham_DS
@@ -148,20 +150,21 @@
             this.mnuSanPham_DS.Name = "mnuSanPham_DS";
             this.mnuSanPham_DS.Size = new System.Drawing.Size(228, 26);
             this.mnuSanPham_DS.Text = "Danh sách sản phẩm";
+            this.mnuSanPham_DS.Click += new System.EventHandler(this.mnuSanPham_DS_Click);
             // 
             // mnuThongKe
             // 
             this.mnuThongKe.Name = "mnuThongKe";
-            this.mnuThongKe.Size = new System.Drawing.Size(90, 26);
+            this.mnuThongKe.Size = new System.Drawing.Size(90, 24);
             this.mnuThongKe.Text = "Thống Kê ";
             // 
             // mnuBaoCao
             // 
             this.mnuBaoCao.Name = "mnuBaoCao";
-            this.mnuBaoCao.Size = new System.Drawing.Size(79, 26);
+            this.mnuBaoCao.Size = new System.Drawing.Size(79, 24);
             this.mnuBaoCao.Text = "Báo Cáo";
             // 
-            // frmMain
+            // frmQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,9 +176,11 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmMain";
+            this.MinimizeBox = false;
+            this.Name = "frmQuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Màn Hình Chính";
+            this.Text = "Màn Hình Quản Lý";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

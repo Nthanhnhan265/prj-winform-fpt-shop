@@ -16,7 +16,7 @@ namespace winform_fpt_shop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDanhSachNhanVien());
+            Application.Run(new frmQuanLy());
         }
     }
 }

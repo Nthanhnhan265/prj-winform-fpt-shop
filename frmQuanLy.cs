@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop
 {
-    public partial class frmMain : Form
+    public partial class frmQuanLy : Form
     {
-        public frmMain()
+        public frmQuanLy()
         {
             InitializeComponent();
         }
@@ -28,6 +28,21 @@ namespace winform_fpt_shop
             
         }
 
-        
+        private void mnuNhanVien_DS_Click(object sender, EventArgs e)
+        {
+            frmDanhSachNhanVien danhSachNhanVien = new frmDanhSachNhanVien();
+            danhSachNhanVien.Show();
+        }
+
+        private void mnuSanPham_DS_Click(object sender, EventArgs e)
+        {
+            frmDanhSachSanPham danhSachSanPham = new frmDanhSachSanPham();
+            danhSachSanPham.Show();    
+        }
+
+        private void mnuCuaHang_TT_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
