@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmSanPham_TraCuu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmSanPham_TraCuu";
+            this.Name = "frmSanPham_TraCuu";
+            this.Text = "Tra Cứu Sản Phẩm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -19,3 +19,4 @@ C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmSa
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmKhachhang_TraCuu.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmThongKe_HD.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmThongKe_SP.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmSanPham_TraCuu.resources
