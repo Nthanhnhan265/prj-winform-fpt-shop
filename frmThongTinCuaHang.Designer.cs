@@ -82,7 +82,7 @@
             // 
             // cotDiaChi
             // 
-            this.cotDiaChi.Text = "Cột địa chỉ";
+            this.cotDiaChi.Text = "Địa chỉ";
             this.cotDiaChi.Width = 100;
             // 
             // cotSDT
