@@ -42,7 +42,13 @@ namespace winform_fpt_shop
 
         private void mnuCuaHang_TT_Click(object sender, EventArgs e)
         {
+            frmThongTinCuaHang thongTinCuaHang = new frmThongTinCuaHang();
+            thongTinCuaHang.Show();
+        }
 
+        private void mnuTK_Thoat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

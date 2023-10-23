@@ -52,8 +52,6 @@
             this.cboMaCH = new System.Windows.Forms.ComboBox();
             this.cboQuanLy = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnNhapLai = new System.Windows.Forms.Button();
-            this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlGioiTinh.SuspendLayout();
@@ -69,7 +67,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(854, 69);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "NHẬP THÔNG TIN NHÂN VIÊN";
+            this.lblTitle.Text = "NHẬP THÔNG TIN NHÂN VIÊN MUỐN THÊM";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblHoTen
@@ -273,31 +271,10 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // btnNhapLai
-            // 
-            this.btnNhapLai.AutoSize = true;
-            this.btnNhapLai.Location = new System.Drawing.Point(625, 157);
-            this.btnNhapLai.Name = "btnNhapLai";
-            this.btnNhapLai.Size = new System.Drawing.Size(152, 51);
-            this.btnNhapLai.TabIndex = 20;
-            this.btnNhapLai.Text = "Nhập lại";
-            this.btnNhapLai.UseVisualStyleBackColor = true;
-            // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.AutoSize = true;
-            this.btnCapNhat.Location = new System.Drawing.Point(625, 230);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(152, 51);
-            this.btnCapNhat.TabIndex = 20;
-            this.btnCapNhat.Text = "Cập nhật";
-            this.btnCapNhat.UseVisualStyleBackColor = true;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
-            // 
             // btnThoat
             // 
             this.btnThoat.AutoSize = true;
-            this.btnThoat.Location = new System.Drawing.Point(625, 318);
+            this.btnThoat.Location = new System.Drawing.Point(625, 157);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(152, 51);
             this.btnThoat.TabIndex = 20;
@@ -315,8 +292,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 579);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnCapNhat);
-            this.Controls.Add(this.btnNhapLai);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.cboQuanLy);
             this.Controls.Add(this.cboMaCH);
@@ -378,8 +353,6 @@
         private System.Windows.Forms.ComboBox cboMaCH;
         private System.Windows.Forms.ComboBox cboQuanLy;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnNhapLai;
-        private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }

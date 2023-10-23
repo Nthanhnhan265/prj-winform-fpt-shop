@@ -91,6 +91,7 @@
             this.mnuTK_Thoat.Name = "mnuTK_Thoat";
             this.mnuTK_Thoat.Size = new System.Drawing.Size(224, 26);
             this.mnuTK_Thoat.Text = "Thoát";
+            this.mnuTK_Thoat.Click += new System.EventHandler(this.mnuTK_Thoat_Click);
             // 
             // mnuCuaHang
             // 
@@ -119,7 +120,7 @@
             // xemHóaĐơnToolStripMenuItem
             // 
             this.xemHóaĐơnToolStripMenuItem.Name = "xemHóaĐơnToolStripMenuItem";
-            this.xemHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.xemHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.xemHóaĐơnToolStripMenuItem.Text = "Xem hóa đơn";
             // 
             // mnuNhanVien

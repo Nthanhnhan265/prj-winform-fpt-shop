@@ -36,6 +36,9 @@
             this.cotSDT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cotQuanLy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cotKhaiTruong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -97,11 +100,42 @@
             this.cotKhaiTruong.Text = "Khai trương";
             this.cotKhaiTruong.Width = 100;
             // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(89, 404);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(116, 44);
+            this.btnThem.TabIndex = 2;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(338, 404);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(116, 44);
+            this.btnXoa.TabIndex = 2;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(625, 404);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(116, 44);
+            this.btnSua.TabIndex = 2;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            // 
             // frmThongTinCuaHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 478);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.listCuaHang);
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,5 +155,8 @@
         private System.Windows.Forms.ColumnHeader cotSDT;
         private System.Windows.Forms.ColumnHeader cotQuanLy;
         private System.Windows.Forms.ColumnHeader cotKhaiTruong;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
     }
 }

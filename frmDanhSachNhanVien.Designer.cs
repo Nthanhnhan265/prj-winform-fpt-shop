@@ -44,8 +44,6 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.btnSapXep = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listNhanVien
@@ -149,7 +147,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(367, 608);
+            this.btnXoa.Location = new System.Drawing.Point(659, 608);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(230, 56);
             this.btnXoa.TabIndex = 2;
@@ -159,7 +157,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(646, 608);
+            this.btnSua.Location = new System.Drawing.Point(1219, 608);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(230, 56);
             this.btnSua.TabIndex = 2;
@@ -167,31 +165,11 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(925, 608);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(230, 56);
-            this.btnTimKiem.TabIndex = 2;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            // 
-            // btnSapXep
-            // 
-            this.btnSapXep.Location = new System.Drawing.Point(1219, 608);
-            this.btnSapXep.Name = "btnSapXep";
-            this.btnSapXep.Size = new System.Drawing.Size(230, 56);
-            this.btnSapXep.TabIndex = 2;
-            this.btnSapXep.Text = "Sắp xếp";
-            this.btnSapXep.UseVisualStyleBackColor = true;
-            // 
             // frmDanhSachNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1650, 671);
-            this.Controls.Add(this.btnSapXep);
-            this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
@@ -223,7 +201,5 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.Button btnSapXep;
     }
 }

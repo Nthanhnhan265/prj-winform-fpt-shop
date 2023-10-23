@@ -15,7 +15,6 @@ D:\LTUD\prj-winform-fpt-shop\bin\Debug\winform-fpt-shop.exe
 D:\LTUD\prj-winform-fpt-shop\bin\Debug\winform-fpt-shop.pdb
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.AssemblyReference.cache
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDangNhap.resources
-D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmNhanVien.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.Properties.Resources.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.GenerateResource.cache
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.CoreCompileInputs.cache
@@ -25,3 +24,5 @@ D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDanhSachNhanVien.reso
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThem.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDanhSachSanPham.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmQuanLy.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThongTinCuaHang.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThemSanPham.resources

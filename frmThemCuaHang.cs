@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop
 {
-    public partial class frmDanhSachSanPham : Form
+    public partial class frmThemCuaHang : Form
     {
-        public frmDanhSachSanPham()
+        public frmThemCuaHang()
         {
             InitializeComponent();
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

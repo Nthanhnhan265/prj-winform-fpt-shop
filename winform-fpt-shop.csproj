@@ -70,11 +70,17 @@
     <Compile Include="frmQuanLy.Designer.cs">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhanVien.cs">
+    <Compile Include="frmThemCuaHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhanVien.Designer.cs">
-      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    <Compile Include="frmThemCuaHang.Designer.cs">
+      <DependentUpon>frmThemCuaHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemSanPham.Designer.cs">
+      <DependentUpon>frmThemSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThongTinCuaHang.cs">
       <SubType>Form</SubType>
@@ -84,11 +90,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="frmThongTinNhanVien.cs">
+    <Compile Include="frmThemNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongTinNhanVien.Designer.cs">
-      <DependentUpon>frmThongTinNhanVien.cs</DependentUpon>
+    <Compile Include="frmThemNhanVien.Designer.cs">
+      <DependentUpon>frmThemNhanVien.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmDanhSachNhanVien.resx">
       <DependentUpon>frmDanhSachNhanVien.cs</DependentUpon>
@@ -102,8 +108,11 @@
     <EmbeddedResource Include="frmQuanLy.resx">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhanVien.resx">
-      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="frmThemCuaHang.resx">
+      <DependentUpon>frmThemCuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemSanPham.resx">
+      <DependentUpon>frmThemSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinCuaHang.resx">
       <DependentUpon>frmThongTinCuaHang.cs</DependentUpon>
@@ -117,8 +126,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmThongTinNhanVien.resx">
-      <DependentUpon>frmThongTinNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="frmThemNhanVien.resx">
+      <DependentUpon>frmThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

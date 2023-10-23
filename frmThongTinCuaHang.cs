@@ -16,5 +16,11 @@ namespace winform_fpt_shop
         {
             InitializeComponent();
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            frmThemCuaHang frmThemCuaHang = new frmThemCuaHang();
+            frmThemCuaHang.Show();
+        }
     }
 }
