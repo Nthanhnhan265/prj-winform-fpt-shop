@@ -52,6 +52,12 @@
     <Compile Include="manhinhchung-forms\frmQuenMatKhau.Designer.cs">
       <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="manhinhchung-forms\frmXemTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manhinhchung-forms\frmXemTonKho.Designer.cs">
+      <DependentUpon>frmXemTonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="quanly-forms\frmDanhSachNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </Compile>
     <EmbeddedResource Include="manhinhchung-forms\frmQuenMatKhau.resx">
       <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manhinhchung-forms\frmXemTonKho.resx">
+      <DependentUpon>frmXemTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="quanly-forms\frmDanhSachNhanVien.resx">
       <DependentUpon>frmDanhSachNhanVien.cs</DependentUpon>
