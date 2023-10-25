@@ -10,24 +10,21 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop
 {
-    public partial class frmQuanLy : Form
+    public partial class frmThemSanPham : Form
     {
-        public frmQuanLy()
+        public frmThemSanPham()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
-        private void frmMain_Resize(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
-
-            
+            Close();
         }
-
-        
     }
 }

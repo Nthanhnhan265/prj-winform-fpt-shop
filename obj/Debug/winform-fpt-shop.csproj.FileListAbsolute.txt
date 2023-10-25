@@ -10,6 +10,24 @@ C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.cspro
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.CoreCompileInputs.cache
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.exe
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.pdb
+<<<<<<< HEAD
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\winform-fpt-shop.exe.config
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\winform-fpt-shop.exe
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\winform-fpt-shop.pdb
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.AssemblyReference.cache
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDangNhap.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.Properties.Resources.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.GenerateResource.cache
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.CoreCompileInputs.cache
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.exe
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.pdb
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDanhSachNhanVien.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThem.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDanhSachSanPham.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmQuanLy.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThongTinCuaHang.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThemSanPham.resources
+=======
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmHoaDon_DanhSach.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmHoaDon_Tao.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmKhachHang_DS.resources
@@ -25,3 +43,10 @@ C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmSa
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmSanPham_DanhSach.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmSanPham_TonKho.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmQuanLy.resources
+>>>>>>> main
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDanhSachNhanVien.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDanhSachSanPham.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThemCuaHang.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThemSanPham.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThongTinCuaHang.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThem.resources
