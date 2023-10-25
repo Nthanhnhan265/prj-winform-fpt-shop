@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop
 {
-    public partial class frmMain : Form
+    public partial class frmQuanLy : Form
     {
-        public frmMain()
+        public frmQuanLy()
         {
             InitializeComponent();
         }

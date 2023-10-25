@@ -4,7 +4,6 @@ C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\winform-fpt-shop.pdb
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.AssemblyReference.cache
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.SuggestedBindingRedirects.cache
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDangNhap.resources
-C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmMain.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmNhanVien.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.Properties.Resources.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.GenerateResource.cache
@@ -25,3 +24,4 @@ C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanv
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmSanPham_Them.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmSanPham_DanhSach.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmSanPham_TonKho.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmQuanLy.resources

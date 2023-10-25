@@ -23,7 +23,9 @@ namespace winform_fpt_shop
             string quyenHan = txtUser.Text; 
             if(quyenHan=="0") //quan ly
             {
-
+                frmQuanLy frmNhanVien = new frmQuanLy();
+                frmNhanVien.Show();
+                this.Hide();
             } else //nhan vien 
             {
                 frmNhanVien frmNhanVien = new frmNhanVien();
