@@ -77,19 +77,19 @@
             // mnuTK_ThongTIn
             // 
             this.mnuTK_ThongTIn.Name = "mnuTK_ThongTIn";
-            this.mnuTK_ThongTIn.Size = new System.Drawing.Size(224, 26);
+            this.mnuTK_ThongTIn.Size = new System.Drawing.Size(265, 34);
             this.mnuTK_ThongTIn.Text = "Thông Tin Cá Nhân";
             // 
             // mnuTK_DoiMK
             // 
             this.mnuTK_DoiMK.Name = "mnuTK_DoiMK";
-            this.mnuTK_DoiMK.Size = new System.Drawing.Size(224, 26);
+            this.mnuTK_DoiMK.Size = new System.Drawing.Size(265, 34);
             this.mnuTK_DoiMK.Text = "Đổi mật khẩu";
             // 
             // mnuTK_Thoat
             // 
             this.mnuTK_Thoat.Name = "mnuTK_Thoat";
-            this.mnuTK_Thoat.Size = new System.Drawing.Size(224, 26);
+            this.mnuTK_Thoat.Size = new System.Drawing.Size(265, 34);
             this.mnuTK_Thoat.Text = "Thoát";
             this.mnuTK_Thoat.Click += new System.EventHandler(this.mnuTK_Thoat_Click);
             // 
@@ -170,14 +170,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(711, 360);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimizeBox = false;
             this.Name = "frmQuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Màn Hình Quản Lý";
