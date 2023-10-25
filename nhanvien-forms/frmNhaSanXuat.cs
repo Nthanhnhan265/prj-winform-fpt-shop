@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop.nhanvien_forms
 {
-    public partial class frmHoaDon_TraCuu : Form
+    public partial class frmNhaSanXuat : Form
     {
-        public frmHoaDon_TraCuu()
+        public frmNhaSanXuat()
         {
             InitializeComponent();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

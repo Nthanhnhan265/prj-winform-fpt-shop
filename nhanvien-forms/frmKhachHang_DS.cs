@@ -17,6 +17,9 @@ namespace winform_fpt_shop
             InitializeComponent();
         }
 
-        
+        private void lvwKhachHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

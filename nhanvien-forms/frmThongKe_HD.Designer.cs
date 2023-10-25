@@ -30,12 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // frmThongKeHD
+            // frmThongKe_HD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmThongKeHD";
+            this.Name = "frmThongKe_HD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống Kê Hóa Đơn";
             this.ResumeLayout(false);
 

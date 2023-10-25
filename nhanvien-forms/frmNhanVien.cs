@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using winform_fpt_shop.manhinhchung_forms;
 using winform_fpt_shop.nhanvien_forms;
 
 namespace winform_fpt_shop
@@ -61,12 +62,11 @@ namespace winform_fpt_shop
 
         private void frmNhanVien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult rs = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.No)
-            {
-
-                e.Cancel = true;
-            }
+            //DialogResult rs = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (rs == DialogResult.No)
+            //{
+            //    e.Cancel = true;
+            //}
         }
 
         private void mnuHoaDon_HDDaTao_Click(object sender, EventArgs e)
@@ -76,12 +76,7 @@ namespace winform_fpt_shop
             frmTao.Show();
         }
 
-        private void traCứuThôngTinHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //mo form hoa don 
-            frmHoaDon_TraCuu frmTao = new frmHoaDon_TraCuu();
-            frmTao.Show();
-        }
+        
 
         private void mnuKhachHang_DanhSach_Click(object sender, EventArgs e)
         {
@@ -99,38 +94,89 @@ namespace winform_fpt_shop
 
         private void mnuSanPham_DS_Click(object sender, EventArgs e)
         {
-            //mo form san pham 
-            frmSanPham_DS frmTao = new frmSanPham_DS();
+            //mo form 
+            frmSanPham_DanhSach frmTao = new frmSanPham_DanhSach();
             frmTao.Show();
         }
 
-        private void mnuSanPham_TonKho_Click(object sender, EventArgs e)
-        {
-            //mo form san pham 
-            frmSanPham_TonKho frmTao = new frmSanPham_TonKho();
-            frmTao.Show();
-        }
-
-        private void traCứuThôngTinSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //mo form san pham 
-            frmSanPham_TraCuu frmTao = new frmSanPham_TraCuu();
-            frmTao.Show();
-        }
+        
+         
 
 
         private void mnuThongKe_DaBan_Click(object sender, EventArgs e)
         {
-            //mo form san pham 
-            frmThongKe_SP frmTao = new frmThongKe_SP();
+            //mo form
+            frmThongKe_HD frmTao = new frmThongKe_HD();
             frmTao.Show();  
          
         }
 
         private void mnuThongKe_HDDaTao_Click(object sender, EventArgs e)
         {
-            //mo form san pham 
+            //mo form 
             frmThongKe_HD frmTao = new frmThongKe_HD();
+            frmTao.Show();
+        }
+
+        private void mnuTK_DoiMK_Click(object sender, EventArgs e)
+        {
+            //mo form 
+            frmDoiMatKhau frmTao = new frmDoiMatKhau();
+            frmTao.ShowDialog();
+        }
+
+        private void mnuTK_DangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                new frmDangNhap().Show(); 
+                this.Close();
+            }
+            
+        }
+
+        private void mnuTK_ThongTIn_Click(object sender, EventArgs e)
+        {
+            //mo form
+            frmThongTinCaNhan frmTao = new frmThongTinCaNhan();
+            frmTao.ShowDialog();
+        }
+
+        private void mnuSanPham_Them_Click(object sender, EventArgs e)
+        {
+            //mo form
+            frmSanPham_Them frmTao = new frmSanPham_Them();
+            frmTao.Show();
+        }
+
+      
+
+        private void mnuSanPham_DanhMuc_Them_Click(object sender, EventArgs e)
+        {
+            //mo form 
+            frmSanPham_DanhMucSP frmTao = new frmSanPham_DanhMucSP();
+            frmTao.Show();
+        }
+
+
+        private void mnuNhaSanXuat_Click(object sender, EventArgs e)
+        {
+            //mo form 
+            frmNhaSanXuat frmTao = new frmNhaSanXuat();
+            frmTao.Show();
+        }
+        private void mnuSanPham_TraCuu_Click(object sender, EventArgs e)
+        {
+            //mo form 
+            frmSanPham_TraCuu frmTao = new frmSanPham_TraCuu();
+            frmTao.Show();
+        }
+
+        private void mnuSanPham_TonKho_Click(object sender, EventArgs e)
+        {
+            //mo form 
+            frmSanPham_TonKho frmTao = new frmSanPham_TonKho();
             frmTao.Show();
         }
     }

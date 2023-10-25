@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop.nhanvien_forms
 {
-    public partial class frmThongKe_SP : Form
+    public partial class frmHoaDon_ChiTiet : Form
     {
-        public frmThongKe_SP()
+        public frmHoaDon_ChiTiet()
         {
             InitializeComponent();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmHoaDon_ChiTiet_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

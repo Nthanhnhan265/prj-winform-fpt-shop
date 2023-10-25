@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop.nhanvien_forms
 {
-    public partial class frmKhachhang_TraCuu : Form
+    public partial class frmSanPham_DanhSach : Form
     {
-        public frmKhachhang_TraCuu()
+        public frmSanPham_DanhSach()
         {
             InitializeComponent();
         }
 
-        private void frmKhachhang_TraCuu_Load(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

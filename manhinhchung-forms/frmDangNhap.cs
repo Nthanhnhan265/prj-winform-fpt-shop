@@ -32,5 +32,10 @@ namespace winform_fpt_shop
 
             }
         }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

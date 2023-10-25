@@ -7,21 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using winform_fpt_shop.nhanvien_forms;
 
 namespace winform_fpt_shop
 {
-    public partial class frmHoaDon_DanhSach : Form
+    public partial class frmSanPham_Them : Form
     {
-        public frmHoaDon_DanhSach()
+        public frmSanPham_Them()
         {
             InitializeComponent();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            frmHoaDon_ChiTiet  frm = new frmHoaDon_ChiTiet();
-            frm.ShowDialog(); 
+
         }
     }
 }

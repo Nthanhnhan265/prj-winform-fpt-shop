@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace winform_fpt_shop
+namespace winform_fpt_shop.nhanvien_forms
 {
-    public partial class frmSanPham_DS : Form
+    public partial class frmSanPham_DanhMucSP : Form
     {
-        public frmSanPham_DS()
+        public frmSanPham_DanhMucSP()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

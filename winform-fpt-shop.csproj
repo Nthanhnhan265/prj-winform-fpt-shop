@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="manhinhchung-forms\frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manhinhchung-forms\frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="manhinhchung-forms\frmThongTinCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manhinhchung-forms\frmThongTinCaNhan.Designer.cs">
+      <DependentUpon>frmThongTinCaNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmSanPham_DanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmSanPham_DanhMuc.Designer.cs">
+      <DependentUpon>frmSanPham_DanhMuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="nhanvien-forms\frmHoaDon-DanhSach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="nhanvien-forms\frmHoaDon-DanhSach.Designer.cs">
       <DependentUpon>frmHoaDon-DanhSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmHoaDon_ChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmHoaDon_ChiTiet.Designer.cs">
+      <DependentUpon>frmHoaDon_ChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="nhanvien-forms\frmKhachHang_DS.cs">
       <SubType>Form</SubType>
@@ -58,29 +82,35 @@
     <Compile Include="nhanvien-forms\frmKhachHang_DS.Designer.cs">
       <DependentUpon>frmKhachHang_DS.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDangNhap.cs">
+    <Compile Include="manhinhchung-forms\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDangNhap.Designer.cs">
+    <Compile Include="manhinhchung-forms\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="nhanvien-forms\frmSanPham_DS.cs">
+    <Compile Include="nhanvien-forms\frmNhaSanXuat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nhanvien-forms\frmSanPham_DS.Designer.cs">
-      <DependentUpon>frmSanPham_DS.cs</DependentUpon>
+    <Compile Include="nhanvien-forms\frmNhaSanXuat.Designer.cs">
+      <DependentUpon>frmNhaSanXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmSanPham_DanhSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmSanPham_DanhSach.Designer.cs">
+      <DependentUpon>frmSanPham_DanhSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmSanPham_Them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmSanPham_Them.Designer.cs">
+      <DependentUpon>frmSanPham_Them.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmQuanLy.Designer.cs">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="nhanvien-forms\frmHoaDon_TraCuu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nhanvien-forms\frmHoaDon_TraCuu.Designer.cs">
-      <DependentUpon>frmHoaDon_TraCuu.cs</DependentUpon>
     </Compile>
     <Compile Include="nhanvien-forms\frmNhanVien.cs">
       <SubType>Form</SubType>
@@ -112,12 +142,6 @@
     <Compile Include="nhanvien-forms\frmThongKe_HD.Designer.cs">
       <DependentUpon>frmThongKe_HD.cs</DependentUpon>
     </Compile>
-    <Compile Include="nhanvien-forms\frmThongKe_SP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nhanvien-forms\frmThongKe_SP.Designer.cs">
-      <DependentUpon>frmThongKe_SP.cs</DependentUpon>
-    </Compile>
     <Compile Include="nhanvien-forms\frmKhachhang_TraCuu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,26 +150,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="manhinhchung-forms\frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manhinhchung-forms\frmThongTinCaNhan.resx">
+      <DependentUpon>frmThongTinCaNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\frmSanPham_DanhMuc.resx">
+      <DependentUpon>frmSanPham_DanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmHoaDon-DanhSach.resx">
       <DependentUpon>frmHoaDon-DanhSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDangNhap.resx">
+    <EmbeddedResource Include="manhinhchung-forms\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\frmHoaDon_ChiTiet.resx">
+      <DependentUpon>frmHoaDon_ChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmKhachHang_DS.resx">
       <DependentUpon>frmKhachHang_DS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nhanvien-forms\frmSanPham_DS.resx">
-      <DependentUpon>frmSanPham_DS.cs</DependentUpon>
+    <EmbeddedResource Include="nhanvien-forms\frmNhaSanXuat.resx">
+      <DependentUpon>frmNhaSanXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\frmSanPham_DanhSach.resx">
+      <DependentUpon>frmSanPham_DanhSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\frmSanPham_Them.resx">
+      <DependentUpon>frmSanPham_Them.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLy.resx">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmHoaDon-Tao.resx">
       <DependentUpon>frmHoaDon-Tao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="nhanvien-forms\frmHoaDon_TraCuu.resx">
-      <DependentUpon>frmHoaDon_TraCuu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
@@ -156,11 +195,11 @@
     <EmbeddedResource Include="nhanvien-forms\frmThongKe_HD.resx">
       <DependentUpon>frmThongKe_HD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nhanvien-forms\frmThongKe_SP.resx">
-      <DependentUpon>frmThongKe_SP.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmKhachhang_TraCuu.resx">
       <DependentUpon>frmKhachhang_TraCuu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\frmSanPham_TonKho.resx">
+      <DependentUpon>frmSanPham_TonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

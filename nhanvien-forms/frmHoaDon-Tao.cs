@@ -16,5 +16,25 @@ namespace winform_fpt_shop
         {
             InitializeComponent();
         }
+
+        private void frmHoaDon_Tao_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboPhuongThucTT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
