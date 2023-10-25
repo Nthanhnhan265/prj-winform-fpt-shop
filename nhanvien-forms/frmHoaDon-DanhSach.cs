@@ -7,27 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using winform_fpt_shop.nhanvien_forms;
 
 namespace winform_fpt_shop
 {
-    public partial class frmQuanLy : Form
+    public partial class frmHoaDon_DanhSach : Form
     {
-        public frmQuanLy()
+        public frmHoaDon_DanhSach()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            frmHoaDon_ChiTiet  frm = new frmHoaDon_ChiTiet();
+            frm.ShowDialog(); 
         }
-
-        private void frmMain_Resize(object sender, EventArgs e)
-        {
-
-            
-        }
-
-        
     }
 }

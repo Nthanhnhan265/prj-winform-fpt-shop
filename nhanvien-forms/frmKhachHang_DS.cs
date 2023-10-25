@@ -10,24 +10,16 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop
 {
-    public partial class frmQuanLy : Form
+    public partial class frmKhachHang_DS : Form
     {
-        public frmQuanLy()
+        public frmKhachHang_DS()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lvwKhachHang_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void frmMain_Resize(object sender, EventArgs e)
-        {
-
-            
-        }
-
-        
     }
 }

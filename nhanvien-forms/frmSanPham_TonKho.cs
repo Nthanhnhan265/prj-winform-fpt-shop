@@ -10,24 +10,16 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop
 {
-    public partial class frmQuanLy : Form
+    public partial class frmSanPham_TonKho : Form
     {
-        public frmQuanLy()
+        public frmSanPham_TonKho()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void frmMain_Resize(object sender, EventArgs e)
-        {
-
-            
-        }
-
-        
     }
 }

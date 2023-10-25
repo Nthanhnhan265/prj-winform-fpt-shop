@@ -8,26 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace winform_fpt_shop
+namespace winform_fpt_shop.nhanvien_forms
 {
-    public partial class frmQuanLy : Form
+    public partial class frmHoaDon_ChiTiet : Form
     {
-        public frmQuanLy()
+        public frmHoaDon_ChiTiet()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void frmMain_Resize(object sender, EventArgs e)
+        private void frmHoaDon_ChiTiet_Load(object sender, EventArgs e)
         {
 
-            
         }
-
-        
     }
 }

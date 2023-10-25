@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace winform_fpt_shop
+namespace winform_fpt_shop.nhanvien_forms
 {
-    public partial class frmDangNhap : Form
+    public partial class frmKhachhang_TraCuu : Form
     {
-        public frmDangNhap()
+        public frmKhachhang_TraCuu()
         {
             InitializeComponent();
+        }
+
+        private void frmKhachhang_TraCuu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

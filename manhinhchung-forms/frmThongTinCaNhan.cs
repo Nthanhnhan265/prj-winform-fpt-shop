@@ -8,26 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace winform_fpt_shop
+namespace winform_fpt_shop.manhinhchung_forms
 {
-    public partial class frmQuanLy : Form
+    public partial class frmThongTinCaNhan : Form
     {
-        public frmQuanLy()
+        public frmThongTinCaNhan()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void frmThongTinCaNhan_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void frmMain_Resize(object sender, EventArgs e)
-        {
-
-            
-        }
-
-        
+     
     }
 }

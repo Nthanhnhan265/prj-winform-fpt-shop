@@ -8,26 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace winform_fpt_shop
+namespace winform_fpt_shop.nhanvien_forms
 {
-    public partial class frmQuanLy : Form
+    public partial class frmThongKe_HD : Form
     {
-        public frmQuanLy()
+        public frmThongKe_HD()
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmMain_Resize(object sender, EventArgs e)
-        {
-
-            
-        }
-
-        
     }
 }
