@@ -10,26 +10,16 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop.manhinhchung_forms
 {
-    public partial class frmDoiMatKhau : Form
+    public partial class frmQuenMatKhau : Form
     {
-        public frmDoiMatKhau()
+        public frmQuenMatKhau()
         {
             InitializeComponent();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult rs=MessageBox.Show("Bạn có muốn thoát?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if(rs==DialogResult.Yes)
-            {
-                this.Close(); 
-            }
-        
-        }
-
-        private void btnXacNhan_Click(object sender, EventArgs e)
-        {
-
+            Close();
         }
     }
 }

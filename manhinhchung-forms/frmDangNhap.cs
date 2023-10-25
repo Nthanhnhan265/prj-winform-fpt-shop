@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using winform_fpt_shop.manhinhchung_forms;
 
 namespace winform_fpt_shop
 {
@@ -38,6 +39,16 @@ namespace winform_fpt_shop
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnQuenMK_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                new frmDangNhap().Show();
+                this.Close();
+            }
         }
     }
 }

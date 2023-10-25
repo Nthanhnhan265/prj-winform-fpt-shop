@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using winform_fpt_shop.manhinhchung_forms;
 
 namespace winform_fpt_shop
 {
@@ -48,6 +49,25 @@ namespace winform_fpt_shop
 
         private void mnuTK_Thoat_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void mnuTK_DoiMK_Click(object sender, EventArgs e)
+        {
+            frmDoiMatKhau doiMatKhau = new frmDoiMatKhau();
+            doiMatKhau.Show();
+        }
+
+        private void mnuTK_ThongTIn_Click(object sender, EventArgs e)
+        {
+            frmThongTinCaNhan thongTinCaNhan = new frmThongTinCaNhan();
+            thongTinCaNhan.Show();
+        }
+
+        private void mnuTK_DangXuat_Click(object sender, EventArgs e)
+        {
+            frmDangNhap dangNhap = new frmDangNhap();
+            dangNhap.Show();
             Close();
         }
     }
