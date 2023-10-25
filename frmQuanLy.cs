@@ -28,6 +28,27 @@ namespace winform_fpt_shop
             
         }
 
-        
+        private void mnuNhanVien_DS_Click(object sender, EventArgs e)
+        {
+            frmDanhSachNhanVien danhSachNhanVien = new frmDanhSachNhanVien();
+            danhSachNhanVien.Show();
+        }
+
+        private void mnuSanPham_DS_Click(object sender, EventArgs e)
+        {
+            frmDanhSachSanPham danhSachSanPham = new frmDanhSachSanPham();
+            danhSachSanPham.Show();    
+        }
+
+        private void mnuCuaHang_TT_Click(object sender, EventArgs e)
+        {
+            frmThongTinCuaHang thongTinCuaHang = new frmThongTinCuaHang();
+            thongTinCuaHang.Show();
+        }
+
+        private void mnuTK_Thoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
