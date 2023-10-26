@@ -136,18 +136,6 @@
     <Compile Include="quanly-forms\frmQuanLy.Designer.cs">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
     </Compile>
-    <Compile Include="quanly-forms\frmThemCuaHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="quanly-forms\frmThemCuaHang.Designer.cs">
-      <DependentUpon>frmThemCuaHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="quanly-forms\frmThemSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="quanly-forms\frmThemSanPham.Designer.cs">
-      <DependentUpon>frmThemSanPham.cs</DependentUpon>
-    </Compile>
     <Compile Include="quanly-forms\frmThongTinCuaHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,12 +230,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="quanly-forms\frmQuanLy.resx">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="quanly-forms\frmThemCuaHang.resx">
-      <DependentUpon>frmThemCuaHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="quanly-forms\frmThemSanPham.resx">
-      <DependentUpon>frmThemSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="quanly-forms\frmThongTinCuaHang.resx">
       <DependentUpon>frmThongTinCuaHang.cs</DependentUpon>

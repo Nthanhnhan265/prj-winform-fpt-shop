@@ -19,8 +19,17 @@ namespace winform_fpt_shop
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            frmThemCuaHang frmThemCuaHang = new frmThemCuaHang();
-            frmThemCuaHang.Show();
+
+        }
+
+        private void lswCuaHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmThongTinCuaHang_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
