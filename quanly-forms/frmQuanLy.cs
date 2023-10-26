@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using winform_fpt_shop.manhinhchung_forms;
+using winform_fpt_shop.nhanvien_forms;
 
 namespace winform_fpt_shop
 {
@@ -37,7 +38,7 @@ namespace winform_fpt_shop
 
         private void mnuSanPham_DS_Click(object sender, EventArgs e)
         {
-            frmDanhSachSanPham danhSachSanPham = new frmDanhSachSanPham();
+            frmSanPham_DanhSach danhSachSanPham = new frmSanPham_DanhSach();
             danhSachSanPham.Show();    
         }
 
@@ -69,6 +70,12 @@ namespace winform_fpt_shop
             frmDangNhap dangNhap = new frmDangNhap();
             dangNhap.Show();
             Close();
+        }
+
+        private void xemHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHoaDon_DanhSach frm = new frmHoaDon_DanhSach();
+            frm.Show();
         }
     }
 }

@@ -22,12 +22,12 @@ namespace winform_fpt_shop
         {
 
             string quyenHan = txtUser.Text; 
-            if(quyenHan=="0") //quan ly
+            if(rdQuanLy.Checked==true) //quan ly
             {
                 frmQuanLy frmNhanVien = new frmQuanLy();
                 frmNhanVien.Show();
                 this.Hide();
-            } else //nhan vien 
+            } else if(rdNhanVien.Checked==true)//nhan vien 
             {
                 frmNhanVien frmNhanVien = new frmNhanVien();
                 frmNhanVien.Show(); 
@@ -49,6 +49,11 @@ namespace winform_fpt_shop
                 new frmDangNhap().Show();
                 this.Close();
             }
+        }
+
+        private void rdQuanLy_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

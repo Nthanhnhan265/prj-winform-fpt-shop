@@ -82,10 +82,10 @@
     <Compile Include="nhanvien-forms\frmSanPham_DanhMuc.Designer.cs">
       <DependentUpon>frmSanPham_DanhMuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="nhanvien-forms\frmHoaDon-DanhSach.cs">
+    <Compile Include="manhinhchung-forms\frmHoaDon-DanhSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nhanvien-forms\frmHoaDon-DanhSach.Designer.cs">
+    <Compile Include="manhinhchung-forms\frmHoaDon-DanhSach.Designer.cs">
       <DependentUpon>frmHoaDon-DanhSach.cs</DependentUpon>
     </Compile>
     <Compile Include="nhanvien-forms\frmHoaDon_ChiTiet.cs">
@@ -207,7 +207,7 @@
     <EmbeddedResource Include="nhanvien-forms\frmSanPham_DanhMuc.resx">
       <DependentUpon>frmSanPham_DanhMuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nhanvien-forms\frmHoaDon-DanhSach.resx">
+    <EmbeddedResource Include="manhinhchung-forms\frmHoaDon-DanhSach.resx">
       <DependentUpon>frmHoaDon-DanhSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="manhinhchung-forms\frmDangNhap.resx">
