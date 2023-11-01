@@ -168,7 +168,7 @@
             this.pnlNhapCH.Controls.Add(this.btnXoa);
             this.pnlNhapCH.Location = new System.Drawing.Point(7, 71);
             this.pnlNhapCH.Name = "pnlNhapCH";
-            this.pnlNhapCH.Size = new System.Drawing.Size(420, 295);
+            this.pnlNhapCH.Size = new System.Drawing.Size(420, 405);
             this.pnlNhapCH.TabIndex = 4;
             // 
             // dateTimePicker1

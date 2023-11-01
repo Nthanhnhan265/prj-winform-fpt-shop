@@ -45,12 +45,12 @@
             this.lblDanhMuc = new System.Windows.Forms.Label();
             this.lblNhaSanXuat = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblGiaBan = new System.Windows.Forms.Label();
-            this.txtTen = new System.Windows.Forms.TextBox();
-            this.txtThongTInSP = new System.Windows.Forms.TextBox();
-            this.txtGiaBan = new System.Windows.Forms.TextBox();
-            this.txtNhaSX = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtNhaSX = new System.Windows.Forms.TextBox();
+            this.txtGiaBan = new System.Windows.Forms.TextBox();
+            this.lblGiaBan = new System.Windows.Forms.Label();
+            this.txtThongTInSP = new System.Windows.Forms.TextBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
             this.pnlNhapSP.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1117, 52);
+            this.lblTitle.Size = new System.Drawing.Size(1109, 52);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "DANH SÁCH SẢN PHẨM";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -206,44 +206,6 @@
             this.panel1.Size = new System.Drawing.Size(361, 323);
             this.panel1.TabIndex = 8;
             // 
-            // lblGiaBan
-            // 
-            this.lblGiaBan.AutoSize = true;
-            this.lblGiaBan.Location = new System.Drawing.Point(23, 295);
-            this.lblGiaBan.Name = "lblGiaBan";
-            this.lblGiaBan.Size = new System.Drawing.Size(63, 18);
-            this.lblGiaBan.TabIndex = 9;
-            this.lblGiaBan.Text = "Giá bán:";
-            // 
-            // txtTen
-            // 
-            this.txtTen.Location = new System.Drawing.Point(128, 70);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(208, 24);
-            this.txtTen.TabIndex = 10;
-            // 
-            // txtThongTInSP
-            // 
-            this.txtThongTInSP.Location = new System.Drawing.Point(128, 115);
-            this.txtThongTInSP.Multiline = true;
-            this.txtThongTInSP.Name = "txtThongTInSP";
-            this.txtThongTInSP.Size = new System.Drawing.Size(208, 74);
-            this.txtThongTInSP.TabIndex = 11;
-            // 
-            // txtGiaBan
-            // 
-            this.txtGiaBan.Location = new System.Drawing.Point(124, 292);
-            this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Size = new System.Drawing.Size(212, 24);
-            this.txtGiaBan.TabIndex = 12;
-            // 
-            // txtNhaSX
-            // 
-            this.txtNhaSX.Location = new System.Drawing.Point(124, 250);
-            this.txtNhaSX.Name = "txtNhaSX";
-            this.txtNhaSX.Size = new System.Drawing.Size(212, 24);
-            this.txtNhaSX.TabIndex = 13;
-            // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -253,11 +215,49 @@
             this.comboBox1.Size = new System.Drawing.Size(208, 26);
             this.comboBox1.TabIndex = 14;
             // 
+            // txtNhaSX
+            // 
+            this.txtNhaSX.Location = new System.Drawing.Point(124, 250);
+            this.txtNhaSX.Name = "txtNhaSX";
+            this.txtNhaSX.Size = new System.Drawing.Size(212, 24);
+            this.txtNhaSX.TabIndex = 13;
+            // 
+            // txtGiaBan
+            // 
+            this.txtGiaBan.Location = new System.Drawing.Point(124, 292);
+            this.txtGiaBan.Name = "txtGiaBan";
+            this.txtGiaBan.Size = new System.Drawing.Size(212, 24);
+            this.txtGiaBan.TabIndex = 12;
+            // 
+            // lblGiaBan
+            // 
+            this.lblGiaBan.AutoSize = true;
+            this.lblGiaBan.Location = new System.Drawing.Point(23, 295);
+            this.lblGiaBan.Name = "lblGiaBan";
+            this.lblGiaBan.Size = new System.Drawing.Size(63, 18);
+            this.lblGiaBan.TabIndex = 9;
+            this.lblGiaBan.Text = "Giá bán:";
+            // 
+            // txtThongTInSP
+            // 
+            this.txtThongTInSP.Location = new System.Drawing.Point(128, 115);
+            this.txtThongTInSP.Multiline = true;
+            this.txtThongTInSP.Name = "txtThongTInSP";
+            this.txtThongTInSP.Size = new System.Drawing.Size(208, 74);
+            this.txtThongTInSP.TabIndex = 11;
+            // 
+            // txtTen
+            // 
+            this.txtTen.Location = new System.Drawing.Point(128, 70);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(208, 24);
+            this.txtTen.TabIndex = 10;
+            // 
             // frmDanhSachSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 401);
+            this.ClientSize = new System.Drawing.Size(1109, 401);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlNhapSP);
             this.Controls.Add(this.lblTitle);

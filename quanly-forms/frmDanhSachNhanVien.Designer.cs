@@ -44,6 +44,10 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.pnlDanhSachNhanVien = new System.Windows.Forms.Panel();
+            this.pnlCRUD = new System.Windows.Forms.Panel();
+            this.pnlDanhSachNhanVien.SuspendLayout();
+            this.pnlCRUD.SuspendLayout();
             this.SuspendLayout();
             // 
             // listNhanVien
@@ -62,9 +66,9 @@
             this.cotQuyenHan});
             this.listNhanVien.GridLines = true;
             this.listNhanVien.HideSelection = false;
-            this.listNhanVien.Location = new System.Drawing.Point(95, 68);
+            this.listNhanVien.Location = new System.Drawing.Point(18, 12);
             this.listNhanVien.Name = "listNhanVien";
-            this.listNhanVien.Size = new System.Drawing.Size(1354, 534);
+            this.listNhanVien.Size = new System.Drawing.Size(1184, 534);
             this.listNhanVien.TabIndex = 0;
             this.listNhanVien.UseCompatibleStateImageBehavior = false;
             this.listNhanVien.View = System.Windows.Forms.View.Details;
@@ -82,12 +86,12 @@
             // cotNgaySinh
             // 
             this.cotNgaySinh.Text = "Ngày sinh";
-            this.cotNgaySinh.Width = 150;
+            this.cotNgaySinh.Width = 100;
             // 
             // cotDiaChi
             // 
             this.cotDiaChi.Text = "Địa chỉ";
-            this.cotDiaChi.Width = 200;
+            this.cotDiaChi.Width = 150;
             // 
             // cotGioiTinh
             // 
@@ -117,7 +121,7 @@
             // cotQuanLy
             // 
             this.cotQuanLy.Text = "Quản lý";
-            this.cotQuanLy.Width = 150;
+            this.cotQuanLy.Width = 80;
             // 
             // cotQuyenHan
             // 
@@ -130,14 +134,14 @@
             this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1650, 65);
+            this.lblTitle.Size = new System.Drawing.Size(1233, 65);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Danh sách nhân viên";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(95, 608);
+            this.btnThem.Location = new System.Drawing.Point(18, 0);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(230, 56);
             this.btnThem.TabIndex = 2;
@@ -147,7 +151,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(659, 608);
+            this.btnXoa.Location = new System.Drawing.Point(507, 0);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(230, 56);
             this.btnXoa.TabIndex = 2;
@@ -157,7 +161,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(1219, 608);
+            this.btnSua.Location = new System.Drawing.Point(972, 0);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(230, 56);
             this.btnSua.TabIndex = 2;
@@ -165,20 +169,37 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
+            // pnlDanhSachNhanVien
+            // 
+            this.pnlDanhSachNhanVien.Controls.Add(this.listNhanVien);
+            this.pnlDanhSachNhanVien.Location = new System.Drawing.Point(7, 53);
+            this.pnlDanhSachNhanVien.Name = "pnlDanhSachNhanVien";
+            this.pnlDanhSachNhanVien.Size = new System.Drawing.Size(1214, 560);
+            this.pnlDanhSachNhanVien.TabIndex = 3;
+            // 
+            // pnlCRUD
+            // 
+            this.pnlCRUD.Controls.Add(this.btnSua);
+            this.pnlCRUD.Controls.Add(this.btnThem);
+            this.pnlCRUD.Controls.Add(this.btnXoa);
+            this.pnlCRUD.Location = new System.Drawing.Point(7, 619);
+            this.pnlCRUD.Name = "pnlCRUD";
+            this.pnlCRUD.Size = new System.Drawing.Size(1214, 59);
+            this.pnlCRUD.TabIndex = 1;
+            // 
             // frmDanhSachNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1650, 671);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnThem);
+            this.ClientSize = new System.Drawing.Size(1233, 688);
+            this.Controls.Add(this.pnlCRUD);
+            this.Controls.Add(this.pnlDanhSachNhanVien);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.listNhanVien);
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmDanhSachNhanVien";
             this.Text = "Danh sách nhân viên";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.pnlDanhSachNhanVien.ResumeLayout(false);
+            this.pnlCRUD.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -201,5 +222,7 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Panel pnlDanhSachNhanVien;
+        private System.Windows.Forms.Panel pnlCRUD;
     }
 }
