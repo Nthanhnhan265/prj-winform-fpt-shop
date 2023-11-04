@@ -58,12 +58,6 @@
     <Compile Include="manhinhchung-forms\frmXemTonKho.Designer.cs">
       <DependentUpon>frmXemTonKho.cs</DependentUpon>
     </Compile>
-    <Compile Include="quanly-forms\frmDanhSachNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="quanly-forms\frmDanhSachNhanVien.Designer.cs">
-      <DependentUpon>frmDanhSachNhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="manhinhchung-forms\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,12 +100,6 @@
     <Compile Include="manhinhchung-forms\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="quanly-forms\frmDanhSachSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="quanly-forms\frmDanhSachSanPham.Designer.cs">
-      <DependentUpon>frmDanhSachSanPham.cs</DependentUpon>
-    </Compile>
     <Compile Include="nhanvien-forms\frmNhaSanXuat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,18 +117,6 @@
     </Compile>
     <Compile Include="nhanvien-forms\frmSanPham_Them.Designer.cs">
       <DependentUpon>frmSanPham_Them.cs</DependentUpon>
-    </Compile>
-    <Compile Include="quanly-forms\frmQuanLy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="quanly-forms\frmQuanLy.Designer.cs">
-      <DependentUpon>frmQuanLy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="quanly-forms\frmThongTinCuaHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="quanly-forms\frmThongTinCuaHang.Designer.cs">
-      <DependentUpon>frmThongTinCuaHang.cs</DependentUpon>
     </Compile>
     <Compile Include="nhanvien-forms\frmNhanVien.cs">
       <SubType>Form</SubType>
@@ -180,23 +156,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="quanly-forms\frmThemNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="quanly-forms\frmThemNhanVien.Designer.cs">
-      <DependentUpon>frmThemNhanVien.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="manhinhchung-forms\frmQuenMatKhau.resx">
       <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="manhinhchung-forms\frmXemTonKho.resx">
       <DependentUpon>frmXemTonKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="quanly-forms\frmDanhSachNhanVien.resx">
-      <DependentUpon>frmDanhSachNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="quanly-forms\frmDanhSachSanPham.resx">
-      <DependentUpon>frmDanhSachSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="manhinhchung-forms\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
@@ -228,12 +192,6 @@
     <EmbeddedResource Include="nhanvien-forms\frmSanPham_Them.resx">
       <DependentUpon>frmSanPham_Them.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="quanly-forms\frmQuanLy.resx">
-      <DependentUpon>frmQuanLy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="quanly-forms\frmThongTinCuaHang.resx">
-      <DependentUpon>frmThongTinCuaHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmHoaDon-Tao.resx">
       <DependentUpon>frmHoaDon-Tao.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,9 +219,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="quanly-forms\frmThemNhanVien.resx">
-      <DependentUpon>frmThemNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
