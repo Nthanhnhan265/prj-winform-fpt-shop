@@ -184,6 +184,24 @@ namespace winform_fpt_shop
         {
 
         }
+
+        private void mnuHoaDon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //mo form  
+            frmQuanLy_DSNhanVien frmTao = new frmQuanLy_DSNhanVien();
+            frmTao.Show();
+        }
+
+        public void HideQuanLy()
+        {
+            mnuQuanLy.Enabled = false;  
+        }
+        
     }
 
 }

@@ -24,13 +24,15 @@ namespace winform_fpt_shop
             string quyenHan = txtUser.Text; 
             if(rdQuanLy.Checked==true) //quan ly
             {
-                frmQuanLy frmNhanVien = new frmQuanLy();
+                frmNhanVien frmNhanVien = new frmNhanVien();
                 frmNhanVien.Show();
                 this.Hide();
             } else if(rdNhanVien.Checked==true)//nhan vien 
             {
+
                 frmNhanVien frmNhanVien = new frmNhanVien();
-                frmNhanVien.Show(); 
+                frmNhanVien.Show();
+                frmNhanVien.HideQuanLy(); 
                 this.Hide();
 
             }

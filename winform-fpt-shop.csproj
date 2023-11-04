@@ -70,6 +70,12 @@
     <Compile Include="manhinhchung-forms\frmThongTinCaNhan.Designer.cs">
       <DependentUpon>frmThongTinCaNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="nhanvien-forms\frmQuanLy_DSNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmQuanLy_DSNhanVien.Designer.cs">
+      <DependentUpon>frmQuanLy_DSNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="nhanvien-forms\frmSanPham_DanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,12 @@
     <Compile Include="nhanvien-forms\frmKhachhang_TraCuu.Designer.cs">
       <DependentUpon>frmKhachhang_TraCuu.cs</DependentUpon>
     </Compile>
+    <Compile Include="nhanvien-forms\frmQuanLy_TraCuuNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmQuanLy_TraCuuNhanVien.Designer.cs">
+      <DependentUpon>frmQuanLy_TraCuuNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="manhinhchung-forms\frmQuenMatKhau.resx">
@@ -167,6 +179,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="manhinhchung-forms\frmThongTinCaNhan.resx">
       <DependentUpon>frmThongTinCaNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\frmQuanLy_DSNhanVien.resx">
+      <DependentUpon>frmQuanLy_DSNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\frmQuanLy_TraCuuNhanVien.resx">
+      <DependentUpon>frmQuanLy_TraCuuNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmSanPham_DanhMuc.resx">
       <DependentUpon>frmSanPham_DanhMuc.cs</DependentUpon>
@@ -218,6 +236,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -232,6 +251,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
