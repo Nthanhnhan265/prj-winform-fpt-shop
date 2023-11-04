@@ -179,6 +179,11 @@ namespace winform_fpt_shop
             frmSanPham_TonKho frmTao = new frmSanPham_TonKho();
             frmTao.Show();
         }
+
+        private void mnuQuanLy_DSNhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
