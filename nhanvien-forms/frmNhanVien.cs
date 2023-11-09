@@ -19,7 +19,7 @@ namespace winform_fpt_shop
             InitializeComponent();
         }
 
- 
+        
 
         private void frmMain_Resize(object sender, EventArgs e)
         {

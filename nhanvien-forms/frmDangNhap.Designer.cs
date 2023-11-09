@@ -84,7 +84,7 @@
             // btnDangNhap
             // 
             this.btnDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDangNhap.Location = new System.Drawing.Point(268, 170);
+            this.btnDangNhap.Location = new System.Drawing.Point(286, 170);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(95, 27);
@@ -172,7 +172,9 @@
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDangNhap_FormClosing);
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
+            this.Layout += new System.Windows.Forms.LayoutEventHandler(this.frmDangNhap_Layout);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
