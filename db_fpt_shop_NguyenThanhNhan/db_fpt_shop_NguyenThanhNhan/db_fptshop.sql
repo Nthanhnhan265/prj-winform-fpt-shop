@@ -1,6 +1,4 @@
-﻿use master
-drop database QuanLyCuaHang
--- Tạo Database QuanLy
+﻿-- Tạo Database QuanLy
 create database QuanLyCuaHang
 go
 use QuanLyCuaHang
