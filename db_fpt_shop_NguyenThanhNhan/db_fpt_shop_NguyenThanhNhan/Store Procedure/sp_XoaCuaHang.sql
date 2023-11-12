@@ -1,0 +1,6 @@
+CREATE PROCEDURE sp_XoaCuaHang
+@MaCH char(10)
+AS
+BEGIN 
+	DELETE FROM CuaHang WHERE MaCH =@MaCH 
+END 

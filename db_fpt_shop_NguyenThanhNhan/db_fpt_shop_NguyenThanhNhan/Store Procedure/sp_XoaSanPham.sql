@@ -1,0 +1,7 @@
+CREATE PROCEDURE sp_XoaSanPham
+    @MaSP CHAR(10)
+AS
+BEGIN
+    DELETE FROM SanPham
+    WHERE MaSP = @MaSP;
+END

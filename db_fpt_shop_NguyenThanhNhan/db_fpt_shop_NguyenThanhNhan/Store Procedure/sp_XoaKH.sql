@@ -1,0 +1,7 @@
+CREATE PROCEDURE sp_XoaKhachHang
+    @MaKH CHAR(10)
+AS
+BEGIN
+    DELETE FROM KhachHang
+    WHERE MaKH = @MaKH;
+END

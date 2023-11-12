@@ -1,0 +1,7 @@
+CREATE PROCEDURE sp_XoaHoaDon
+    @MaHD CHAR(10)
+AS
+BEGIN
+    DELETE FROM HoaDon
+    WHERE MaHD = @MaHD;
+END

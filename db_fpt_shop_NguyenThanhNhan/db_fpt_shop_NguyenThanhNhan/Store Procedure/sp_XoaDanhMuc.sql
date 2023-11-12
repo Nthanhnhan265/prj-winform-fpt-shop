@@ -1,0 +1,7 @@
+CREATE PROCEDURE sp_XoaDanhMuc
+    @MaDM CHAR(10)
+AS
+BEGIN
+    DELETE FROM DanhMuc
+    WHERE MaDM = @MaDM;
+END

@@ -19,10 +19,7 @@ namespace winform_fpt_shop
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void frmMain_Resize(object sender, EventArgs e)
         {
@@ -37,7 +34,8 @@ namespace winform_fpt_shop
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-
+            frmDangNhap frm = new frmDangNhap();
+            frm.ShowDialog(); 
         }
         /// <summary>
         /// Dong ung dung khi click vao thoat 

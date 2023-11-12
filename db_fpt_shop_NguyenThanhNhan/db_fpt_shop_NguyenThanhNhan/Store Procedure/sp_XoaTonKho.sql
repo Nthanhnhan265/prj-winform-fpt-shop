@@ -1,0 +1,8 @@
+CREATE PROCEDURE sp_XoaTonKho
+    @MaCH CHAR(10),
+    @MaSP CHAR(10)
+AS
+BEGIN
+    DELETE FROM TonKho
+    WHERE MaCH = @MaCH AND MaSP = @MaSP;
+END
