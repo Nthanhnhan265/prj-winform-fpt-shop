@@ -13,8 +13,8 @@ CCCD char(10) not null,
 SDT char(10) not null,
 Email nvarchar(50) not null,
 MaCH char(10),
-QuanLy char(10),
-MatKhau char(10) not null,
+QuanLy char(10) null,
+MatKhau char(30) not null,
 QuyenHan nvarchar(50) CHECK (QuyenHan IN(N'quản lý',N'nhân viên')),
 primary key(MaNV))
 
@@ -56,7 +56,7 @@ MaCH char(10) not null,
 TenCH nvarchar(50),
 DiaChi nvarchar(255) not null,
 SoDienThoai char(10) not null,
-QuanLy char(10) not null,
+QuanLy char(10),
 NgayKhaiTruong datetime,
 primary key(MaCH))
 
@@ -157,17 +157,17 @@ references CuaHang(MaCH)
 
 -- Thêm ràng buộc NOT NULL cho trường GioiTinh trong bảng NhanVien
 ALTER TABLE NhanVien
-ALTER COLUMN GioiTinh NVARCHAR(50) NOT NULL;
+ALTER COLUMN GioiTinh NVARCHAR(5) NOT NULL;
 
 -- Thêm ràng buộc CHECK cho trường GioiTinh trong bảng NhanVien
 ALTER TABLE NhanVien
 ADD CONSTRAINT CK_GioiTinh
-CHECK (GioiTinh IN ('Nam', 'Nữ'));
+CHECK (GioiTinh IN (N'Nam', N'Nữ'));
 
 --ràng buộc CHECK cho phương thức thanh toán 
 ALTER TABLE HoaDon
 ADD CONSTRAINT CK_PPThanhToan
-CHECK (PTThanhToan IN ('Tiền mặt','Chuyển khoản'))
+CHECK (PTThanhToan IN (N'Tiền mặt',N'Chuyển khoản'))
 
 -- Thêm ràng buộc CHECK cho trường SDT trong bảng NhanVien
 ALTER TABLE NhanVien
