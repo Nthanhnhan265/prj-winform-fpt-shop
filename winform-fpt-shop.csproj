@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\DanhMuc.cs" />
+    <Compile Include="DBCuaHang.cs" />
     <Compile Include="nhanvien-forms\frmQuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>

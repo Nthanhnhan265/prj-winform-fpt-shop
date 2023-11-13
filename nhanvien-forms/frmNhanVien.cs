@@ -19,7 +19,7 @@ namespace winform_fpt_shop
             InitializeComponent();
         }
 
-        
+
 
         private void frmMain_Resize(object sender, EventArgs e)
         {
@@ -34,8 +34,12 @@ namespace winform_fpt_shop
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-            frmDangNhap frm = new frmDangNhap();
-            frm.ShowDialog(); 
+            //frmDangNhap frm = new frmDangNhap();
+            //frm.ShowDialog();
+
+            //Thay đổi đường dẫn DB tại đây 
+            DBCuaHang dBCuaHang = new DBCuaHang("Data Source=local;Initial Catalog=QuanLyCuaHang;Integrated Security=True"); 
+
         }
         /// <summary>
         /// Dong ung dung khi click vao thoat 
@@ -74,7 +78,7 @@ namespace winform_fpt_shop
             frmTao.Show();
         }
 
-        
+
 
         private void mnuKhachHang_DanhSach_Click(object sender, EventArgs e)
         {
@@ -97,16 +101,16 @@ namespace winform_fpt_shop
             frmTao.Show();
         }
 
-        
-         
+
+
 
 
         private void mnuThongKe_DaBan_Click(object sender, EventArgs e)
         {
             //mo form
             frmThongKe_HD frmTao = new frmThongKe_HD();
-            frmTao.Show();  
-         
+            frmTao.Show();
+
         }
 
         private void mnuThongKe_HDDaTao_Click(object sender, EventArgs e)
@@ -128,10 +132,10 @@ namespace winform_fpt_shop
             DialogResult rs = MessageBox.Show("Bạn có muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                new frmDangNhap().Show(); 
+                new frmDangNhap().Show();
                 this.Close();
             }
-            
+
         }
 
         private void mnuTK_ThongTIn_Click(object sender, EventArgs e)
@@ -148,7 +152,7 @@ namespace winform_fpt_shop
             frmTao.Show();
         }
 
-      
+
 
         private void mnuSanPham_DanhMuc_Them_Click(object sender, EventArgs e)
         {
@@ -197,9 +201,9 @@ namespace winform_fpt_shop
 
         public void HideQuanLy()
         {
-            mnuQuanLy.Enabled = false;  
+            mnuQuanLy.Enabled = false;
         }
-        
+
     }
 
 }
