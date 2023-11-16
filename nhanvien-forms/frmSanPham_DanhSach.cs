@@ -16,10 +16,15 @@ namespace winform_fpt_shop.nhanvien_forms
         {
             InitializeComponent();
         }
-
+       
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmSanPham_DanhSach_Load(object sender, EventArgs e)
+        {
+            dgvSanPham.DataSource = DBCuaHang.GetDataTable("sp_HienThiSanPham");
         }
     }
 }

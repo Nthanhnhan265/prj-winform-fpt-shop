@@ -27,11 +27,11 @@ GO
 
 -- Xoa chi tiet hoa don
 CREATE PROCEDURE sp_XoaChiTietHD
-    @MaChiTiet CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM ChiTietHD
-    WHERE MaChiTiet = @MaChiTiet;
+    WHERE MaChiTiet = @MaCanXoa;
 END
 
 GO
@@ -79,10 +79,10 @@ GO
 
 -- Xoa cua hang
 CREATE PROCEDURE sp_XoaCuaHang
-@MaCH char(10)
+@MaCanXoa char(10)
 AS
 BEGIN 
-	DELETE FROM CuaHang WHERE MaCH =@MaCH 
+	DELETE FROM CuaHang WHERE MaCH =@MaCanXoa 
 END 
 
 GO
@@ -119,7 +119,7 @@ GO
 CREATE PROCEDURE sp_ThemDanhMuc
     @MaDM CHAR(10),
     @TenDM NVARCHAR(50),
-    @ThuocTinhDanhMuc TEXT
+    @ThuocTinhDanhMuc  nvarchar(MAX)
 AS
 BEGIN
     INSERT INTO DanhMuc (MaDM, TenDM, ThuocTinhDanhMuc)
@@ -130,11 +130,11 @@ GO
 
 -- Xoa danh muc
 CREATE PROCEDURE sp_XoaDanhMuc
-    @MaDM CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM DanhMuc
-    WHERE MaDM = @MaDM;
+    WHERE MaDM = @MaCanXoa;
 END
 
 GO
@@ -143,7 +143,7 @@ GO
 CREATE PROCEDURE sp_SuaDanhMuc
     @MaDM CHAR(10),
     @TenDM NVARCHAR(50),
-    @ThuocTinhDanhMuc TEXT
+    @ThuocTinhDanhMuc nvarchar(MAX)
 AS
 BEGIN
     UPDATE DanhMuc
@@ -183,11 +183,11 @@ GO
 
 -- Xoa hoa don
 CREATE PROCEDURE sp_XoaHoaDon
-    @MaHD CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM HoaDon
-    WHERE MaHD = @MaHD;
+    WHERE MaHD = @MaCanXoa;
 END
 
 GO
@@ -239,11 +239,11 @@ GO
 
 -- Xoa khach hang
 CREATE PROCEDURE sp_XoaKhachHang
-    @MaKH CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM KhachHang
-    WHERE MaKH = @MaKH;
+    WHERE MaKH = @MaCanXoa;
 END
 
 GO
@@ -290,11 +290,11 @@ GO
 
 -- Xoa nha san xuat
 CREATE PROCEDURE sp_XoaNhaSX
-    @MaNSX CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM NhaSX
-    WHERE MaNSX = @MaNSX;
+    WHERE MaNSX = @MaCanXoa;
 END
 
 GO
@@ -326,7 +326,7 @@ GO
 CREATE PROCEDURE sp_ThemSanPham
     @MaSP CHAR(10),
     @TenSP NVARCHAR(50),
-    @ThongTinSP TEXT,
+    @ThongTinSP nvarchar(MAX),
     @MaDM CHAR(10),
     @MaNSX CHAR(10),
     @GiaBan INT,
@@ -341,11 +341,11 @@ GO
 
 -- Xoa san pham
 CREATE PROCEDURE sp_XoaSanPham
-    @MaSP CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM SanPham
-    WHERE MaSP = @MaSP;
+    WHERE MaSP = @MaCanXoa;
 END
 
 GO
@@ -354,7 +354,7 @@ GO
 CREATE PROCEDURE sp_SuaSanPham
     @MaSP CHAR(10),
     @TenSP NVARCHAR(50),
-    @ThongTinSP TEXT,
+    @ThongTinSP nvarchar(MAX),
     @MaDM CHAR(10),
     @MaNSX CHAR(10),
     @GiaBan INT,
@@ -393,12 +393,12 @@ GO
 
 -- Xoa ton kho
 CREATE PROCEDURE sp_XoaTonKho
-    @MaCH CHAR(10),
-    @MaSP CHAR(10)
+    @MaCHCanXoa CHAR(10),
+    @MaSPCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM TonKho
-    WHERE MaCH = @MaCH AND MaSP = @MaSP;
+    WHERE MaCH = @MaCHCanXoa AND MaSP = @MaSPCanXoa;
 END
 
 GO

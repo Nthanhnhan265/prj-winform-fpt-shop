@@ -38,7 +38,7 @@ namespace winform_fpt_shop
             //frm.ShowDialog();
 
             //Thay đổi đường dẫn DB tại đây 
-            DBCuaHang dBCuaHang = new DBCuaHang("Data Source=local;Initial Catalog=QuanLyCuaHang;Integrated Security=True"); 
+            DBCuaHang.sqlString="Data Source=local;Initial Catalog=QuanLyCuaHang;Integrated Security=True;"; 
 
         }
         /// <summary>

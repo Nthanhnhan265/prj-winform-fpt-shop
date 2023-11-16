@@ -1,4 +1,7 @@
-﻿-- Tạo Database QuanLy
+﻿use master
+Drop database if exists QuanLyCuaHang
+
+-- Tạo Database QuanLy
 create database QuanLyCuaHang
 go
 use QuanLyCuaHang
@@ -28,7 +31,7 @@ primary key(MaNSX))
 create table SanPham(
 MaSP char(10) not null,
 TenSP nvarchar(50) not null,
-ThongTinSP Text,
+ThongTinSP nvarchar(MAX),
 MaDM char(10),
 MaNSX char(10),
 GiaBan int,
@@ -47,7 +50,7 @@ primary key(MaChiTiet))
 create table DanhMuc(
 MaDM char(10) not null,
 TenDM nvarchar(50),
-ThuocTinhDanhMuc Text,
+ThuocTinhDanhMuc  nvarchar(MAX),
 primary key(MaDM))
 
 -- Tạo Cửa Hàng
