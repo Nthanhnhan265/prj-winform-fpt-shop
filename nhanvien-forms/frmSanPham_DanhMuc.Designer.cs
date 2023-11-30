@@ -41,6 +41,7 @@
             this.txtTenDM = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDanhMuc = new System.Windows.Forms.DataGridView();
+            this.btnTaoMoi = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhMuc)).BeginInit();
@@ -51,6 +52,7 @@
             this.panel1.Controls.Add(this.txtThuocTinh);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.btnXoa);
+            this.panel1.Controls.Add(this.btnTaoMoi);
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.btnThem);
             this.panel1.Controls.Add(this.label2);
@@ -135,7 +137,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(414, 62);
+            this.label1.Location = new System.Drawing.Point(481, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 20);
             this.label1.TabIndex = 3;
@@ -151,7 +153,7 @@
             // 
             // txtTenDM
             // 
-            this.txtTenDM.Location = new System.Drawing.Point(567, 59);
+            this.txtTenDM.Location = new System.Drawing.Point(597, 59);
             this.txtTenDM.Name = "txtTenDM";
             this.txtTenDM.Size = new System.Drawing.Size(165, 26);
             this.txtTenDM.TabIndex = 4;
@@ -184,6 +186,16 @@
             this.dgvDanhMuc.TabIndex = 0;
             this.dgvDanhMuc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhMuc_CellContentClick);
             this.dgvDanhMuc.SelectionChanged += new System.EventHandler(this.dgvDanhMuc_SelectionChanged);
+            // 
+            // btnTaoMoi
+            // 
+            this.btnTaoMoi.Location = new System.Drawing.Point(380, 59);
+            this.btnTaoMoi.Name = "btnTaoMoi";
+            this.btnTaoMoi.Size = new System.Drawing.Size(74, 30);
+            this.btnTaoMoi.TabIndex = 9;
+            this.btnTaoMoi.Text = "Tạo mới ";
+            this.btnTaoMoi.UseVisualStyleBackColor = true;
+            this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
             // 
             // frmSanPham_DanhMucSP
             // 
@@ -220,5 +232,6 @@
         private System.Windows.Forms.TextBox txtMaDanhMuc;
         private System.Windows.Forms.DataGridView dgvDanhMuc;
         private System.Windows.Forms.TextBox txtThuocTinh;
+        private System.Windows.Forms.Button btnTaoMoi;
     }
 }

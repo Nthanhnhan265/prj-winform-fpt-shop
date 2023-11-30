@@ -22,26 +22,26 @@ namespace winform_fpt_shop
         public static DataTable GetDataTable(string spName)
         {
             DataTable dt = new DataTable();
-            using (SqlConnection sqlConnection = new SqlConnection(sqlString))
+            try
             {
-                using (SqlCommand sqlCommand = new SqlCommand(spName, sqlConnection))
+                using (SqlConnection sqlConnection = new SqlConnection(sqlString))
                 {
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-
-                    try
+                    using (SqlCommand sqlCommand = new SqlCommand(spName, sqlConnection))
                     {
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
+
                         sqlConnection.Open();
                         using (SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand))
                         {
                             adapter.Fill(dt);
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return dt;
         }
@@ -54,11 +54,11 @@ namespace winform_fpt_shop
         public static int AddRowData(string spName, Object obj)
         {
             int dong = 0;
-            using (SqlConnection sqlConnection = new SqlConnection(sqlString))
+            try
             {
-                using (SqlCommand sqlCommand = new SqlCommand(spName, sqlConnection))
+                using (SqlConnection sqlConnection = new SqlConnection(sqlString))
                 {
-                    try
+                    using (SqlCommand sqlCommand = new SqlCommand(spName, sqlConnection))
                     {
                         sqlCommand.CommandType = CommandType.StoredProcedure;
                         // Xác định kiểu của đối tượng
@@ -72,7 +72,6 @@ namespace winform_fpt_shop
                             string propertyValue = property.GetValue(obj)?.ToString();
                             bool isNvarchar = propertyValue != null && propertyValue.StartsWith("N|");
                             string parameterName = "@" + property.Name;
-
                             SqlParameter parameter = new SqlParameter(parameterName, isNvarchar ? SqlDbType.NVarChar : SqlDbType.VarChar);
                             // Thay "N|" khỏi chuỗi
                             parameter.Value = isNvarchar ? propertyValue.Replace("N|", "") : propertyValue;
@@ -80,16 +79,16 @@ namespace winform_fpt_shop
                         }
                         sqlConnection.Open();
                         dong = sqlCommand.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
 
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                //MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             return dong;
-        }
+            }
         /// <summary>
         /// Phương thức xóa các bảng trong DB 
         /// </summary>
@@ -108,7 +107,8 @@ namespace winform_fpt_shop
                         if (maCanXoa.Length == 1)
                         {
                             SqlCommand.Parameters.AddWithValue("@MaCanXoa", maCanXoa[0]);
-                        }else if(maCanXoa.Length==2)
+                        }
+                        else if (maCanXoa.Length == 2)
                         {
                             SqlCommand.Parameters.AddWithValue("@MaCHCanXoa", maCanXoa[0]);
                             SqlCommand.Parameters.AddWithValue("@MaSPCanXoa", maCanXoa[1]);
@@ -182,7 +182,7 @@ namespace winform_fpt_shop
         /// <returns>Trả về chuỗi được gắn kí tự để định dạng nvarchar, ví dụ "N|abc"</returns>
         public static string GetNvarcharText(string text)
         {
-            return "N|" + text; 
+            return "N|" + text;
         }
 
     }

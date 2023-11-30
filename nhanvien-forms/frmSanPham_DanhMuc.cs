@@ -20,8 +20,6 @@ namespace winform_fpt_shop.nhanvien_forms
         }
         //Khai báo 
         DataGridViewRow hangDuocChon=null;
-        Random random = new Random();
-        string txtMaRandom;
 
         private string RandomMa()
         {
@@ -51,8 +49,8 @@ namespace winform_fpt_shop.nhanvien_forms
                 if(txtMaDanhMuc.Text!="" && txtTenDM.Text!="" || txtThuocTinh.Text!="")
                 {
                    
-                    txtMaDanhMuc.Text = txtMaRandom;     
-                    DanhMuc danhMuc = new DanhMuc(txtMaRandom, txtTenDM.Text,txtThuocTinh.Text);
+                    
+                    DanhMuc danhMuc = new DanhMuc(txtMaDanhMuc.Text, txtTenDM.Text,txtThuocTinh.Text);
                     int dong = DBCuaHang.AddRowData("sp_ThemDanhMuc", danhMuc); 
                     if (dong!=0)
                     {
@@ -177,7 +175,6 @@ namespace winform_fpt_shop.nhanvien_forms
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
@@ -190,5 +187,9 @@ namespace winform_fpt_shop.nhanvien_forms
            
         }
 
+        private void btnTaoMoi_Click(object sender, EventArgs e)
+        {
+            txtMaDanhMuc.Text = RandomMa(); 
+        }
     }
 }

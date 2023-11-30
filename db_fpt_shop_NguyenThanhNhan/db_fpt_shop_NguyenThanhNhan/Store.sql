@@ -1,4 +1,4 @@
-use QuanLyCuaHang
+﻿use QuanLyCuaHang
 GO
 -- STORE CHI TIET HOA DON
 -- Hien thi chi tiet hoa don
@@ -377,11 +377,34 @@ BEGIN
 END
 
 GO
+--Hien thi ton kho có các thông tin của khóa ngoại 
+Create procedure sp_CuaHangJoinSanPham 
+AS 
+SELECT 
+ 
+   SanPhamTonKho.MaCH, CuaHang.TenCH, CuaHang.DiaChi,SanPhamTonKho.MaSP,SanPhamTonKho.TenSP,SanPhamTonKho.SoLuong
+FROM 
+    CuaHang 
+JOIN (
+    SELECT 
+        TonKho.MaCH,
+        SanPham.MaSP,
+		SanPham.TenSP,
+		TonKho.SoLuong
+    FROM 
+        TonKho 
+    JOIN 
+        SanPham ON TonKho.MaSP = SanPham.MaSP
+) AS SanPhamTonKho ON CuaHang.MaCH = SanPhamTonKho.MaCH;
 
+ 
+Go 
 -- Them ton kho
 CREATE PROCEDURE sp_ThemTonKho
     @MaCH CHAR(10),
     @MaSP CHAR(10),
+	@MaSP_Cu char(10), 
+	@MaCH_Cu char(10),
     @SoLuong INT
 AS
 BEGIN
@@ -407,10 +430,15 @@ GO
 CREATE PROCEDURE sp_SuaTonKho
     @MaCH CHAR(10),
     @MaSP CHAR(10),
-    @SoLuong INT
+    @SoLuong INT, 
+	@MaCH_Cu CHAR(10),
+	@MaSP_Cu Char(10)
 AS
 BEGIN
     UPDATE TonKho
-    SET SoLuong = @SoLuong
-    WHERE MaCH = @MaCH AND MaSP = @MaSP;
+    SET 
+		MaCH=@MaCH,
+		MaSP=@MaSP, 
+		SoLuong = @SoLuong
+    WHERE MaCH = @MaCH_Cu AND MaSP = @MaSP_Cu
 END

@@ -133,7 +133,16 @@ insert into TonKho(MaCH, MaSP,SoLuong)
 values('1','014',12)
 
 insert into TonKho(MaCH, MaSP,SoLuong)
+values('1','015',12)
+
+insert into TonKho(MaCH, MaSP,SoLuong)
+values('1','016',12)
+
+insert into TonKho(MaCH, MaSP,SoLuong)
 values('5','015',10)
+
+insert into TonKho(MaCH, MaSP,SoLuong)
+values('5','016',10)
 
 insert into TonKho(MaCH, MaSP,SoLuong)
 values('4','016',5)
