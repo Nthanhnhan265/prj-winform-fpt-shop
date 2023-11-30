@@ -70,11 +70,19 @@ namespace winform_fpt_shop
                         {
                             //Kiểm tra xem giá trị đã đánh dấu N| được hiểu là Nvarchar 
                             string propertyValue = property.GetValue(obj)?.ToString();
-                            bool isNvarchar = propertyValue != null && propertyValue.StartsWith("N|");
+                            SqlDbType sqlDb = GetTypeOf(propertyValue); 
                             string parameterName = "@" + property.Name;
-                            SqlParameter parameter = new SqlParameter(parameterName, isNvarchar ? SqlDbType.NVarChar : SqlDbType.VarChar);
-                            // Thay "N|" khỏi chuỗi
-                            parameter.Value = isNvarchar ? propertyValue.Replace("N|", "") : propertyValue;
+                            SqlParameter parameter = new SqlParameter(parameterName,sqlDb);
+                            // Cắt hai ký tự đầu khỏi chuỗi khi nó không phải Char và gán cho parameter.value
+                            if(sqlDb!=SqlDbType.Char)
+                            {
+                                parameter.Value = propertyValue.Substring(2); 
+                            }
+                            else
+                            {
+                                parameter.Value = propertyValue; 
+                            }
+
                             sqlCommand.Parameters.Add(parameter);
                         }
                         sqlConnection.Open();
@@ -153,12 +161,19 @@ namespace winform_fpt_shop
                         {
                             //Kiểm tra xem giá trị đã đánh dấu N| được hiểu là Nvarchar 
                             string propertyValue = property.GetValue(obj)?.ToString();
-                            bool isNvarchar = propertyValue != null && propertyValue.StartsWith("N|");
+                            SqlDbType sqlDb = GetTypeOf(propertyValue); 
                             string parameterName = "@" + property.Name;
 
-                            SqlParameter parameter = new SqlParameter(parameterName, isNvarchar ? SqlDbType.NVarChar : SqlDbType.VarChar);
-                            // Thay "N|" khỏi chuỗi
-                            parameter.Value = isNvarchar ? propertyValue.Replace("N|", "") : propertyValue;
+                            SqlParameter parameter = new SqlParameter(parameterName, sqlDb);
+                            // Cắt hai ký tự đầu khỏi chuỗi khi nó không phải Char và gán cho parameter.value
+                            if (sqlDb != SqlDbType.Char)
+                            {
+                                parameter.Value = propertyValue.Substring(2);
+                            }
+                            else
+                            {
+                                parameter.Value = propertyValue;
+                            }
                             sqlCommand.Parameters.Add(parameter);
                         }
                         sql.Open();
@@ -183,6 +198,23 @@ namespace winform_fpt_shop
         public static string GetNvarcharText(string text)
         {
             return "N|" + text;
+        }
+        public static string ChangeToDate(string text )
+        {
+            return "D|" + text;
+        }
+
+        static SqlDbType GetTypeOf(string value )
+        {
+            //kiểm tra nếu chuỗi là 
+            if(value != null && value.StartsWith("N|")) {
+                return SqlDbType.NVarChar; 
+            }
+            else if (value != null && value.StartsWith("D|"))
+            {
+                return SqlDbType.Date;
+            }
+            return SqlDbType.Char; 
         }
 
     }
