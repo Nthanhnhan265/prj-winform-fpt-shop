@@ -44,10 +44,11 @@ namespace winform_fpt_shop
             cbbTenCH.ValueMember = "MaCH";
             cbbTenSP.DisplayMember = "TenSP";
             cbbTenSP.ValueMember = "MaSP";
-            //
+            //Hiển thị lên combobox 
             txtMaCh.Text = dgvDanhSachTonKho.Rows[0].Cells[0].Value.ToString();
             txtDiaChi.Text = dgvDanhSachTonKho.Rows[cbbTenCH.SelectedIndex].Cells[2].Value.ToString();
             txtMaSP.Text = cbbTenSP.SelectedValue.ToString();
+            txtSoLuong.Text = dgvDanhSachTonKho.Rows[0].Cells[5].Value.ToString();
 
         }
 

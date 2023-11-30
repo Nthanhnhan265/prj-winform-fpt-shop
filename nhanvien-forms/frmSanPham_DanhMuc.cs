@@ -47,9 +47,7 @@ namespace winform_fpt_shop.nhanvien_forms
             try
             {
                 if(txtMaDanhMuc.Text!="" && txtTenDM.Text!="" || txtThuocTinh.Text!="")
-                {
-                   
-                    
+                {                    
                     DanhMuc danhMuc = new DanhMuc(txtMaDanhMuc.Text, txtTenDM.Text, DBCuaHang.GetNvarcharText(txtThuocTinh.Text));
                     int dong = DBCuaHang.AddRowData("sp_ThemDanhMuc", danhMuc); 
                     if (dong!=0)

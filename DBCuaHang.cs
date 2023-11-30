@@ -68,7 +68,6 @@ namespace winform_fpt_shop
                         // Thêm các thuộc tính vào câu truy vấn
                         foreach (PropertyInfo property in properties)
                         {
-                            //Kiểm tra xem giá trị đã đánh dấu N| được hiểu là Nvarchar 
                             string propertyValue = property.GetValue(obj)?.ToString();
                             SqlDbType sqlDb = GetTypeOf(propertyValue); 
                             string parameterName = "@" + property.Name;
@@ -199,11 +198,20 @@ namespace winform_fpt_shop
         {
             return "N|" + text;
         }
+        /// <summary>
+        /// Phương thức trả về chuỗi kiểu Date
+        /// </summary>
+        /// <param name="text">Chuỗi ngày tháng </param>
+        /// <returns>chuỗi định dạng cho Date</returns>
         public static string ChangeToDate(string text )
         {
             return "D|" + text;
         }
-
+        /// <summary>
+        /// Lấy kiểu của giá trị truyền vào 
+        /// </summary>
+        /// <param name="value">Chuỗi giá trị </param>
+        /// <returns>Kiểu của chuỗi trong DB</returns>
         static SqlDbType GetTypeOf(string value )
         {
             //kiểm tra nếu chuỗi là 
