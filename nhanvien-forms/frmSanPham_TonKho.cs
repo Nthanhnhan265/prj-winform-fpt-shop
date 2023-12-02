@@ -82,7 +82,7 @@ namespace winform_fpt_shop
             try
             {
                 //Kiểm tra đã chọn hàng nào hay chưa 
-                if (txtMaCh.Text != "" && txtMaSP.Text != "" && hangDuocChon != -1)
+                if (txtMaCh.Text != "" && txtMaSP.Text != "")
                 {
                     //Hỏi xem có chắc chắn muốn xóa 
                     DialogResult rs = MessageBox.Show("bạn có muốn xóa? ", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -90,12 +90,12 @@ namespace winform_fpt_shop
                     {
                         if (DBCuaHang.DelRowData("sp_XoaTonKho", txtMaCh.Text, txtMaSP.Text))
                         {
-                            MessageBox.Show("Xóa thành công");
+                            MessageBox.Show("Xóa thành công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             taiLaiDuLieu();
                         }
                         else
                         {
-                            MessageBox.Show("Xóa Không thành công");
+                            MessageBox.Show("Xóa Không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
 
@@ -103,7 +103,7 @@ namespace winform_fpt_shop
                 }
                 else
                 {
-                    MessageBox.Show("Hãy chọn 1 hàng cần xóa!");
+                    MessageBox.Show("Hãy chọn 1 hàng cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
 
@@ -235,5 +235,17 @@ namespace winform_fpt_shop
             txtMaSP.Text = cbbTenSP.SelectedValue.ToString();
         }
 
+        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        {
+            string str = txtSoLuong.Text;
+            if(int.TryParse(str,out _))
+            {
+                errorProvider1.Clear();
+            }
+            else
+            {
+                errorProvider1.SetError(txtSoLuong, "Vui lòng nhập số!");
+            }
+        }
     }
 }

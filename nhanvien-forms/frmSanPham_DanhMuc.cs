@@ -23,12 +23,12 @@ namespace winform_fpt_shop.nhanvien_forms
 
         private string RandomMa()
         {
-            const string template = "DMFPTXXXXXX";
+            const string template = "DMFPTXXX";
             Random random = new Random();
 
             // Thay thế XXXXXX bằng ký tự ngẫu nhiên
             string result = template
-                .Replace("XXXXXX", random.Next(100000, 999999).ToString());
+                .Replace("XXX", random.Next(100, 999).ToString());
             return result;
         }
         private void frmSanPham_DanhMucSP_Load(object sender, EventArgs e)

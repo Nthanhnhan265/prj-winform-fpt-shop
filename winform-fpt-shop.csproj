@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\DanhMuc.cs" />
+    <Compile Include="classes\SanPham.cs" />
     <Compile Include="classes\TonKho.cs" />
     <Compile Include="DBCuaHang.cs" />
     <Compile Include="nhanvien-forms\frmQuenMatKhau.cs">
