@@ -28,11 +28,24 @@ namespace winform_fpt_shop.nhanvien_forms
             {
                 if (cboTimKiem.Text == cbo[0])
                 {
+                    dgvTraCuu.DataSource = DBCuaHang.FindBy("sp_TimKiemSanPhamTheoMa",txtTimKiem.Text); 
 
                 }else if (cboTimKiem.Text == cbo[1])
                 {  
+                    dgvTraCuu.DataSource = DBCuaHang.FindBy(
+                        "sp_TimKiemSanPhamTheoTen",
+                        DBCuaHang.GetNvarcharText(txtTimKiem.Text)
+                        ); 
 
+                } else if (cboTimKiem.Text == cbo[2])
+                {
+
+                    dgvTraCuu.DataSource = DBCuaHang.FindBy(
+                        "sp_TimKiemSanPhamTheoThongTin",
+                        DBCuaHang.GetNvarcharText(txtTimKiem.Text)
+                        );
                 }
+
             }else
             {
                 errorProvider1.SetError(txtTimKiem,"Vui lòng nhập trường này"); 
@@ -43,6 +56,11 @@ namespace winform_fpt_shop.nhanvien_forms
         {
             cboTimKiem.DataSource = cbo;
             dgvTraCuu.DataSource = DBCuaHang.GetDataTable("sp_HienThiSanPham"); 
+        }
+
+        private void dgvTraCuu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

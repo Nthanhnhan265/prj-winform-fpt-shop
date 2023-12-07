@@ -1,5 +1,67 @@
 ﻿use QuanLyCuaHang
+Go 
+Create proc sp_DangNhap 
+@MaNV char(10), @Password char(10), @QuyenHan nvarchar(50) 
+as 
+	select * from NhanVien 
+	where MaNV=@MaNV And MatKhau=@Password And QuyenHan=@QuyenHan
+
+Go 
+--Tìm kiếm nhân viên 
+Create proc sp_TimKiemNhanVienTheoMaNV 
+@ChuoiCanTim char(10) 
+AS 
+	SELECT * FROM NhanVien Where MaNV=@ChuoiCanTim
+Go 
+Create proc sp_TimKiemNhanVienTheoTenNV
+@ChuoiCanTim nvarchar(50) 
+AS 
+	SELECT * FROM NhanVien Where HoTen like '%'+@ChuoiCanTim+'%'
+Go 
+Create proc sp_TimKiemNhanVienTheoCCCD
+@ChuoiCanTim char(10) 
+AS 
+	SELECT * FROM NhanVien Where CCCD = @ChuoiCanTim
+Go 
+Create proc sp_TimKiemNvhanVienTheoSDT
+@ChuoiCanTim char(10) 
+AS 
+	SELECT * FROM NhanVien Where SDT = @ChuoiCanTim
+Go 
+
+Create proc sp_TimKiemNhanVienTheoEmail
+@ChuoiCanTim char(10) 
+AS 
+	SELECT * FROM NhanVien Where Email like'%'+ @ChuoiCanTim+'%'
+
+Go 
+Create proc sp_TimKiemNhanVienTheoDiaChi
+@ChuoiCanTim nvarchar(10) 
+AS 
+	SELECT * FROM NhanVien Where DiaChi like'%'+ @ChuoiCanTim+'%'
+
+
 GO
+--Tim kiếm sản phẩm
+Create procedure sp_TimKiemSanPhamTheoMa
+	@ChuoiCanTim char(10)
+AS 
+	SELECT * FROM SanPham Where MaSP=@ChuoiCanTim 
+Go 
+create procedure sp_TimKiemSanPhamTheoTen 
+	@ChuoiCanTim nvarchar(50)
+AS 
+	SELECT * FROM SanPham WHERE TenSP LIKE '%'+@ChuoiCanTim+'%'
+
+Go 
+	
+Go 
+Create procedure sp_TimKiemSanPhamTheoThongTin
+	@ChuoiCanTim nvarchar(max) 
+AS 
+	SELECT * FROM SanPham WHERE ThongTinSP LIKE '%'+@ChuoiCanTim+'%'
+	
+GO 
 -- STORE CHI TIET HOA DON
 -- Hien thi chi tiet hoa don
 CREATE PROCEDURE sp_HienThiChiTietHD
@@ -52,13 +114,27 @@ END
 GO
 
 -- STORE CUA HANG
+Create procedure sp_TimCuaHangQuaMaCH
+@chuoiCanTim char(10)
+as 
+	select * from CuaHang where MaCH=@chuoiCanTim
+Go 
 -- Hien thi cua hang
-CREATE PROCEDURE sp_HienThiCuaHang 
+CREATE PROCEDURE sp_HienThiCuaHang
 AS 
 BEGIN 
 	select * from CuaHang 
 END
+GO 
+-- Hien thi cua hang và quan ly
+CREATE PROCEDURE sp_HienThiCuaHangJoinQuanLy
+AS 
+BEGIN 
+	select * from CuaHang 
+	left join NhanVien 
+	on CuaHang.QuanLy=NhanVien.MaNV 
 
+END
 GO
 
 -- Them cua hang
@@ -319,7 +395,6 @@ AS
 BEGIN 
 	select * from SanPham
 END
-
 GO
 
 -- Them san pham
@@ -442,3 +517,59 @@ BEGIN
 		SoLuong = @SoLuong
     WHERE MaCH = @MaCH_Cu AND MaSP = @MaSP_Cu
 END
+
+GO
+CREATE PROCEDURE sp_ThemNhanVien
+    @MaNV CHAR(10),
+    @HoTen NVARCHAR(50),
+    @NgaySinh DATE,
+    @DiaChi NVARCHAR(255),
+    @GioiTinh NVARCHAR(5),
+    @CCCD CHAR(10),
+    @SDT CHAR(10),
+    @Email NVARCHAR(50),
+    @MaCH CHAR(10),
+    @QuanLy CHAR(10),
+    @MatKhau CHAR(10),
+    @QuyenHan NVARCHAR(50)
+	AS
+BEGIN
+    INSERT INTO NhanVien (MaNV, HoTen, NgaySinh, DiaChi, GioiTinh, CCCD, SDT, Email, MaCH, QuanLy, MatKhau, QuyenHan)
+    VALUES (@MaNV, @HoTen, @NgaySinh, @DiaChi, @GioiTinh, @CCCD, @SDT, @Email, @MaCH, @QuanLy, @MatKhau, @QuyenHan);
+END
+GO 
+CREATE PROCEDURE sp_XoaNhanVIen 
+	@MaCanXoa char(10)
+	AS
+BEGIN
+    DELETE FROM NhanVien WHERE MaNV = @MaCanXoa;
+END
+GO 
+
+CREATE PROCEDURE sp_CapNhatNhanVien 
+     @MaNV CHAR(10),
+     @HoTen NVARCHAR(50),
+     @NgaySinh DATE,
+     @DiaChi NVARCHAR(255),
+     @GioiTinh NVARCHAR(5),
+     @CCCD CHAR(10),
+     @SDT CHAR(10),
+     @Email NVARCHAR(50),
+     @MaCH CHAR(10),
+     @QuanLy CHAR(10),
+     @MatKhau CHAR(10),
+     @QuyenHan NVARCHAR(50)
+AS
+BEGIN
+    UPDATE NhanVien
+    SET HoTen = @HoTen, NgaySinh = @NgaySinh, DiaChi = @DiaChi, GioiTinh = @GioiTinh, CCCD = @CCCD, 
+        SDT = @SDT, Email = @Email, MaCH = @MaCH, QuanLy = @QuanLy, MatKhau = @MatKhau, QuyenHan = @QuyenHan
+    WHERE MaNV = @MaNV;
+END
+GO 
+CREATE PROCEDURE sp_HienThiNhanVien 
+AS 
+BEGIN
+    SELECT * FROM NhanVien;
+END
+Go 

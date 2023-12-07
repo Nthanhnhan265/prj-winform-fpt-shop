@@ -162,7 +162,11 @@ namespace winform_fpt_shop.nhanvien_forms
             }
         }
 
-
+        /// <summary>
+        /// Kiểm tra tên nhập vào
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void txtTenSanPham_TextChanged(object sender, EventArgs e)
         {
@@ -176,7 +180,6 @@ namespace winform_fpt_shop.nhanvien_forms
                 errorProvider1.Clear();
             }
         }
-
         private void txtGiaBan_TextChanged(object sender, EventArgs e)
         {
             string str = txtGiaBan.Text;

@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.cboTimKiem = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dgvTraCuu = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTraCuu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,15 +56,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1131, 164);
             this.panel1.TabIndex = 31;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dgvTraCuu);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 164);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1131, 416);
-            this.panel2.TabIndex = 32;
             // 
             // label12
             // 
@@ -100,7 +91,7 @@
             // btnTimKiem
             // 
             this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTimKiem.Location = new System.Drawing.Point(743, 76);
+            this.btnTimKiem.Location = new System.Drawing.Point(743, 73);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(167, 41);
             this.btnTimKiem.TabIndex = 33;
@@ -118,9 +109,14 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Tìm kiếm theo\r\n";
             // 
-            // errorProvider1
+            // panel2
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.panel2.Controls.Add(this.dgvTraCuu);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 164);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1131, 416);
+            this.panel2.TabIndex = 32;
             // 
             // dgvTraCuu
             // 
@@ -134,9 +130,15 @@
             this.dgvTraCuu.RowTemplate.Height = 28;
             this.dgvTraCuu.Size = new System.Drawing.Size(1131, 416);
             this.dgvTraCuu.TabIndex = 0;
+            this.dgvTraCuu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraCuu_CellContentClick);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmSanPham_TraCuu
             // 
+            this.AcceptButton = this.btnTimKiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 580);
@@ -149,8 +151,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTraCuu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

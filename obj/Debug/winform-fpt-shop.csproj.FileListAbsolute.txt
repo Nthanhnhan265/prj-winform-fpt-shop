@@ -90,3 +90,5 @@ D:\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.GenerateResource.cache
 D:\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.CoreCompileInputs.cache
 D:\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.exe
 D:\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.pdb
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmTaiKhoanThongTinCH.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmheThongChinhSuaCH.resources
