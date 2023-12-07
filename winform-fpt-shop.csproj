@@ -46,7 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\ChiTietHoaDon.cs" />
     <Compile Include="classes\DanhMuc.cs" />
+    <Compile Include="classes\HoaDon.cs" />
+    <Compile Include="classes\KhachHang.cs" />
     <Compile Include="classes\TonKho.cs" />
     <Compile Include="DBCuaHang.cs" />
     <Compile Include="nhanvien-forms\frmQuenMatKhau.cs">

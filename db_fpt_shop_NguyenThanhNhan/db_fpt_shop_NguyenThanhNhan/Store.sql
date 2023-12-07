@@ -1,5 +1,5 @@
-﻿use QuanLyCuaHang
-GO
+﻿use QuanLyCuaHang 
+Go 
 -- STORE CHI TIET HOA DON
 -- Hien thi chi tiet hoa don
 CREATE PROCEDURE sp_HienThiChiTietHD
@@ -265,6 +265,28 @@ END
 
 GO
 
+-- Tra cuu khach hang theo ma
+CREATE PROCEDURE sp_TraCuuKhachHangTheoMa
+@MaKH char(10)
+AS
+BEGIN
+	SELECT * FROM KhachHang
+	WHERE MaKH = @MaKH;
+END
+
+GO
+
+-- Tra cuu khach hang theo ten
+CREATE PROCEDURE sp_TraCuuKhachHangTheoTen
+@HoTenKH NVARCHAR(50)
+AS
+BEGIN
+	SELECT * FROM KhachHang
+	WHERE HoTenKH LIKE @HoTenKH;
+END
+
+GO
+
 -- STORE NHA SAN XUAT
 -- Hien thi nha san xuat
 CREATE PROCEDURE sp_HienThiNhaSX
@@ -441,4 +463,71 @@ BEGIN
 		MaSP=@MaSP, 
 		SoLuong = @SoLuong
     WHERE MaCH = @MaCH_Cu AND MaSP = @MaSP_Cu
+END
+
+GO
+
+
+CREATE PROCEDURE sp_ThemNhanVien
+    @MaNV CHAR(10),
+    @HoTen NVARCHAR(50),
+    @NgaySinh DATE,
+    @DiaChi NVARCHAR(255),
+    @GioiTinh NVARCHAR(5),
+    @CCCD CHAR(10),
+    @SDT CHAR(10),
+    @Email NVARCHAR(50),
+    @MaCH CHAR(10),
+    @QuanLy CHAR(10),
+    @MatKhau CHAR(10),
+    @QuyenHan NVARCHAR(50)
+	AS
+BEGIN
+    INSERT INTO NhanVien (MaNV, HoTen, NgaySinh, DiaChi, GioiTinh, CCCD, SDT, Email, MaCH, QuanLy, MatKhau, QuyenHan)
+    VALUES (@MaNV, @HoTen, @NgaySinh, @DiaChi, @GioiTinh, @CCCD, @SDT, @Email, @MaCH, @QuanLy, @MatKhau, @QuyenHan);
+END
+GO 
+CREATE PROCEDURE sp_XoaNhanVIen 
+	@MaNV char(10)
+	AS
+BEGIN
+    DELETE FROM NhanVien WHERE MaNV = @MaNV;
+END
+GO 
+
+CREATE PROCEDURE sp_CapNhatNhanVien 
+     @MaNV CHAR(10),
+     @HoTen NVARCHAR(50),
+     @NgaySinh DATE,
+     @DiaChi NVARCHAR(255),
+     @GioiTinh NVARCHAR(5),
+     @CCCD CHAR(10),
+     @SDT CHAR(10),
+     @Email NVARCHAR(50),
+     @MaCH CHAR(10),
+     @QuanLy CHAR(10),
+     @MatKhau CHAR(10),
+     @QuyenHan NVARCHAR(50)
+AS
+BEGIN
+    UPDATE NhanVien
+    SET HoTen = @HoTen, NgaySinh = @NgaySinh, DiaChi = @DiaChi, GioiTinh = @GioiTinh, CCCD = @CCCD, 
+        SDT = @SDT, Email = @Email, MaCH = @MaCH, QuanLy = @QuanLy, MatKhau = @MatKhau, QuyenHan = @QuyenHan
+    WHERE MaNV = @MaNV;
+END
+GO 
+CREATE PROCEDURE sp_HienThiNhanVien 
+AS 
+BEGIN
+    SELECT * FROM NhanVien;
+END
+
+GO
+
+CREATE PROCEDURE sp_TraCuuNhanVienTheoMa
+@MaNV char(10)
+AS
+BEGIN
+	SELECT * FROM NhanVien
+	WHERE MaNV = @MaNV
 END

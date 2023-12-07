@@ -184,6 +184,5 @@ namespace winform_fpt_shop
         {
             return "N|" + text;
         }
-
     }
 }
