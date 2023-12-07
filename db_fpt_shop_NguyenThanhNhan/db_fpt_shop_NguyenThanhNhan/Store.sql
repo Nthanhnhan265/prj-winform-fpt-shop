@@ -1,5 +1,67 @@
-use QuanLyCuaHang
+﻿use QuanLyCuaHang
+Go 
+Create proc sp_DangNhap 
+@MaNV char(10), @Password char(10), @QuyenHan nvarchar(50) 
+as 
+	select * from NhanVien 
+	where MaNV=@MaNV And MatKhau=@Password And QuyenHan=@QuyenHan
+
+Go 
+--Tìm kiếm nhân viên 
+Create proc sp_TimKiemNhanVienTheoMaNV 
+@ChuoiCanTim char(10) 
+AS 
+	SELECT * FROM NhanVien Where MaNV=@ChuoiCanTim
+Go 
+Create proc sp_TimKiemNhanVienTheoTenNV
+@ChuoiCanTim nvarchar(50) 
+AS 
+	SELECT * FROM NhanVien Where HoTen like '%'+@ChuoiCanTim+'%'
+Go 
+Create proc sp_TimKiemNhanVienTheoCCCD
+@ChuoiCanTim char(10) 
+AS 
+	SELECT * FROM NhanVien Where CCCD = @ChuoiCanTim
+Go 
+Create proc sp_TimKiemNvhanVienTheoSDT
+@ChuoiCanTim char(10) 
+AS 
+	SELECT * FROM NhanVien Where SDT = @ChuoiCanTim
+Go 
+
+Create proc sp_TimKiemNhanVienTheoEmail
+@ChuoiCanTim char(10) 
+AS 
+	SELECT * FROM NhanVien Where Email like'%'+ @ChuoiCanTim+'%'
+
+Go 
+Create proc sp_TimKiemNhanVienTheoDiaChi
+@ChuoiCanTim nvarchar(10) 
+AS 
+	SELECT * FROM NhanVien Where DiaChi like'%'+ @ChuoiCanTim+'%'
+
+
 GO
+--Tim kiếm sản phẩm
+Create procedure sp_TimKiemSanPhamTheoMa
+	@ChuoiCanTim char(10)
+AS 
+	SELECT * FROM SanPham Where MaSP=@ChuoiCanTim 
+Go 
+create procedure sp_TimKiemSanPhamTheoTen 
+	@ChuoiCanTim nvarchar(50)
+AS 
+	SELECT * FROM SanPham WHERE TenSP LIKE '%'+@ChuoiCanTim+'%'
+
+Go 
+	
+Go 
+Create procedure sp_TimKiemSanPhamTheoThongTin
+	@ChuoiCanTim nvarchar(max) 
+AS 
+	SELECT * FROM SanPham WHERE ThongTinSP LIKE '%'+@ChuoiCanTim+'%'
+	
+GO 
 -- STORE CHI TIET HOA DON
 -- Hien thi chi tiet hoa don
 CREATE PROCEDURE sp_HienThiChiTietHD
@@ -27,11 +89,11 @@ GO
 
 -- Xoa chi tiet hoa don
 CREATE PROCEDURE sp_XoaChiTietHD
-    @MaChiTiet CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM ChiTietHD
-    WHERE MaChiTiet = @MaChiTiet;
+    WHERE MaChiTiet = @MaCanXoa;
 END
 
 GO
@@ -52,13 +114,27 @@ END
 GO
 
 -- STORE CUA HANG
+Create procedure sp_TimCuaHangQuaMaCH
+@chuoiCanTim char(10)
+as 
+	select * from CuaHang where MaCH=@chuoiCanTim
+Go 
 -- Hien thi cua hang
-CREATE PROCEDURE sp_HienThiCuaHang 
+CREATE PROCEDURE sp_HienThiCuaHang
 AS 
 BEGIN 
 	select * from CuaHang 
 END
+GO 
+-- Hien thi cua hang và quan ly
+CREATE PROCEDURE sp_HienThiCuaHangJoinQuanLy
+AS 
+BEGIN 
+	select * from CuaHang 
+	left join NhanVien 
+	on CuaHang.QuanLy=NhanVien.MaNV 
 
+END
 GO
 
 -- Them cua hang
@@ -79,10 +155,10 @@ GO
 
 -- Xoa cua hang
 CREATE PROCEDURE sp_XoaCuaHang
-@MaCH char(10)
+@MaCanXoa char(10)
 AS
 BEGIN 
-	DELETE FROM CuaHang WHERE MaCH =@MaCH 
+	DELETE FROM CuaHang WHERE MaCH =@MaCanXoa 
 END 
 
 GO
@@ -119,7 +195,7 @@ GO
 CREATE PROCEDURE sp_ThemDanhMuc
     @MaDM CHAR(10),
     @TenDM NVARCHAR(50),
-    @ThuocTinhDanhMuc TEXT
+    @ThuocTinhDanhMuc  nvarchar(MAX)
 AS
 BEGIN
     INSERT INTO DanhMuc (MaDM, TenDM, ThuocTinhDanhMuc)
@@ -130,11 +206,11 @@ GO
 
 -- Xoa danh muc
 CREATE PROCEDURE sp_XoaDanhMuc
-    @MaDM CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM DanhMuc
-    WHERE MaDM = @MaDM;
+    WHERE MaDM = @MaCanXoa;
 END
 
 GO
@@ -143,7 +219,7 @@ GO
 CREATE PROCEDURE sp_SuaDanhMuc
     @MaDM CHAR(10),
     @TenDM NVARCHAR(50),
-    @ThuocTinhDanhMuc TEXT
+    @ThuocTinhDanhMuc nvarchar(MAX)
 AS
 BEGIN
     UPDATE DanhMuc
@@ -183,11 +259,11 @@ GO
 
 -- Xoa hoa don
 CREATE PROCEDURE sp_XoaHoaDon
-    @MaHD CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM HoaDon
-    WHERE MaHD = @MaHD;
+    WHERE MaHD = @MaCanXoa;
 END
 
 GO
@@ -239,11 +315,11 @@ GO
 
 -- Xoa khach hang
 CREATE PROCEDURE sp_XoaKhachHang
-    @MaKH CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM KhachHang
-    WHERE MaKH = @MaKH;
+    WHERE MaKH = @MaCanXoa;
 END
 
 GO
@@ -290,11 +366,11 @@ GO
 
 -- Xoa nha san xuat
 CREATE PROCEDURE sp_XoaNhaSX
-    @MaNSX CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM NhaSX
-    WHERE MaNSX = @MaNSX;
+    WHERE MaNSX = @MaCanXoa;
 END
 
 GO
@@ -319,14 +395,13 @@ AS
 BEGIN 
 	select * from SanPham
 END
-
 GO
 
 -- Them san pham
 CREATE PROCEDURE sp_ThemSanPham
     @MaSP CHAR(10),
     @TenSP NVARCHAR(50),
-    @ThongTinSP TEXT,
+    @ThongTinSP nvarchar(MAX),
     @MaDM CHAR(10),
     @MaNSX CHAR(10),
     @GiaBan INT,
@@ -341,11 +416,11 @@ GO
 
 -- Xoa san pham
 CREATE PROCEDURE sp_XoaSanPham
-    @MaSP CHAR(10)
+    @MaCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM SanPham
-    WHERE MaSP = @MaSP;
+    WHERE MaSP = @MaCanXoa;
 END
 
 GO
@@ -354,7 +429,7 @@ GO
 CREATE PROCEDURE sp_SuaSanPham
     @MaSP CHAR(10),
     @TenSP NVARCHAR(50),
-    @ThongTinSP TEXT,
+    @ThongTinSP nvarchar(MAX),
     @MaDM CHAR(10),
     @MaNSX CHAR(10),
     @GiaBan INT,
@@ -377,11 +452,34 @@ BEGIN
 END
 
 GO
+--Hien thi ton kho có các thông tin của khóa ngoại 
+Create procedure sp_CuaHangJoinSanPham 
+AS 
+SELECT 
+ 
+   SanPhamTonKho.MaCH, CuaHang.TenCH, CuaHang.DiaChi,SanPhamTonKho.MaSP,SanPhamTonKho.TenSP,SanPhamTonKho.SoLuong
+FROM 
+    CuaHang 
+JOIN (
+    SELECT 
+        TonKho.MaCH,
+        SanPham.MaSP,
+		SanPham.TenSP,
+		TonKho.SoLuong
+    FROM 
+        TonKho 
+    JOIN 
+        SanPham ON TonKho.MaSP = SanPham.MaSP
+) AS SanPhamTonKho ON CuaHang.MaCH = SanPhamTonKho.MaCH;
 
+ 
+Go 
 -- Them ton kho
 CREATE PROCEDURE sp_ThemTonKho
     @MaCH CHAR(10),
     @MaSP CHAR(10),
+	@MaSP_Cu char(10), 
+	@MaCH_Cu char(10),
     @SoLuong INT
 AS
 BEGIN
@@ -393,12 +491,12 @@ GO
 
 -- Xoa ton kho
 CREATE PROCEDURE sp_XoaTonKho
-    @MaCH CHAR(10),
-    @MaSP CHAR(10)
+    @MaCHCanXoa CHAR(10),
+    @MaSPCanXoa CHAR(10)
 AS
 BEGIN
     DELETE FROM TonKho
-    WHERE MaCH = @MaCH AND MaSP = @MaSP;
+    WHERE MaCH = @MaCHCanXoa AND MaSP = @MaSPCanXoa;
 END
 
 GO
@@ -407,10 +505,71 @@ GO
 CREATE PROCEDURE sp_SuaTonKho
     @MaCH CHAR(10),
     @MaSP CHAR(10),
-    @SoLuong INT
+    @SoLuong INT, 
+	@MaCH_Cu CHAR(10),
+	@MaSP_Cu Char(10)
 AS
 BEGIN
     UPDATE TonKho
-    SET SoLuong = @SoLuong
-    WHERE MaCH = @MaCH AND MaSP = @MaSP;
+    SET 
+		MaCH=@MaCH,
+		MaSP=@MaSP, 
+		SoLuong = @SoLuong
+    WHERE MaCH = @MaCH_Cu AND MaSP = @MaSP_Cu
 END
+
+GO
+CREATE PROCEDURE sp_ThemNhanVien
+    @MaNV CHAR(10),
+    @HoTen NVARCHAR(50),
+    @NgaySinh DATE,
+    @DiaChi NVARCHAR(255),
+    @GioiTinh NVARCHAR(5),
+    @CCCD CHAR(10),
+    @SDT CHAR(10),
+    @Email NVARCHAR(50),
+    @MaCH CHAR(10),
+    @QuanLy CHAR(10),
+    @MatKhau CHAR(10),
+    @QuyenHan NVARCHAR(50)
+	AS
+BEGIN
+    INSERT INTO NhanVien (MaNV, HoTen, NgaySinh, DiaChi, GioiTinh, CCCD, SDT, Email, MaCH, QuanLy, MatKhau, QuyenHan)
+    VALUES (@MaNV, @HoTen, @NgaySinh, @DiaChi, @GioiTinh, @CCCD, @SDT, @Email, @MaCH, @QuanLy, @MatKhau, @QuyenHan);
+END
+GO 
+CREATE PROCEDURE sp_XoaNhanVIen 
+	@MaCanXoa char(10)
+	AS
+BEGIN
+    DELETE FROM NhanVien WHERE MaNV = @MaCanXoa;
+END
+GO 
+
+CREATE PROCEDURE sp_CapNhatNhanVien 
+     @MaNV CHAR(10),
+     @HoTen NVARCHAR(50),
+     @NgaySinh DATE,
+     @DiaChi NVARCHAR(255),
+     @GioiTinh NVARCHAR(5),
+     @CCCD CHAR(10),
+     @SDT CHAR(10),
+     @Email NVARCHAR(50),
+     @MaCH CHAR(10),
+     @QuanLy CHAR(10),
+     @MatKhau CHAR(10),
+     @QuyenHan NVARCHAR(50)
+AS
+BEGIN
+    UPDATE NhanVien
+    SET HoTen = @HoTen, NgaySinh = @NgaySinh, DiaChi = @DiaChi, GioiTinh = @GioiTinh, CCCD = @CCCD, 
+        SDT = @SDT, Email = @Email, MaCH = @MaCH, QuanLy = @QuanLy, MatKhau = @MatKhau, QuyenHan = @QuyenHan
+    WHERE MaNV = @MaNV;
+END
+GO 
+CREATE PROCEDURE sp_HienThiNhanVien 
+AS 
+BEGIN
+    SELECT * FROM NhanVien;
+END
+Go 

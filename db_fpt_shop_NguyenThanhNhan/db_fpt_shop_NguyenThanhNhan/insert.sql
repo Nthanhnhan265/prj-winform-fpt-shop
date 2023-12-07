@@ -38,6 +38,9 @@ values('017' ,'Samsung Galaxy A14',N'Điện Thoại', 'DM01','02', 3690000, 'sa
 insert into SanPham(MaSP,  TenSP, ThongTinSP, MaDM, MaNSX, GiaBan, Image)
 values('018' ,'Xiaomi Redmi 10',N'Điện Thoại', 'DM01','03', 2990000, 'xiaomi-redmi-10.jpg');
 
+
+insert into SanPham(MaSP,  TenSP, ThongTinSP, MaDM, MaNSX, GiaBan, Image)
+values('019' ,'Xiaomi Redmi 9','Điện Thoại', 'DM01','03', 2990000, 'xiaomi-redmi-10.jpg');
 Go 
 -- Chèn dữ liệu vào bảng KhachHang
 insert into KhachHang(MaKH, HoTenKH, CCCD,SDT, DiaChi, Email)
@@ -130,7 +133,16 @@ insert into TonKho(MaCH, MaSP,SoLuong)
 values('1','014',12)
 
 insert into TonKho(MaCH, MaSP,SoLuong)
+values('1','015',12)
+
+insert into TonKho(MaCH, MaSP,SoLuong)
+values('1','016',12)
+
+insert into TonKho(MaCH, MaSP,SoLuong)
 values('5','015',10)
+
+insert into TonKho(MaCH, MaSP,SoLuong)
+values('5','016',10)
 
 insert into TonKho(MaCH, MaSP,SoLuong)
 values('4','016',5)
