@@ -1,4 +1,6 @@
-﻿namespace winform_fpt_shop
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace winform_fpt_shop
 {
     partial class frmNhanVien
     {
@@ -30,6 +32,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVien));
             this.mnuTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTaiKhoanTTCuaHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTK_ThongTIn = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTK_DoiMK = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTK_DangXuat = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,7 +41,6 @@
             this.mnuQuanLy_DSNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuanLy_NhanVien_DanhSach = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuanLy_NhanVien_TraCuu = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuQuanLy_NhanVien_DieuChuyen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuanLy_CuaHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNang_HoaDon = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,6 +67,7 @@
             // mnuTaiKhoan
             // 
             this.mnuTaiKhoan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTaiKhoanTTCuaHang,
             this.mnuTK_ThongTIn,
             this.mnuTK_DoiMK,
             this.mnuTK_DangXuat,
@@ -73,31 +76,38 @@
             this.mnuTaiKhoan.Size = new System.Drawing.Size(103, 29);
             this.mnuTaiKhoan.Text = "Tài Khoản";
             // 
+            // mnuTaiKhoanTTCuaHang
+            // 
+            this.mnuTaiKhoanTTCuaHang.Name = "mnuTaiKhoanTTCuaHang";
+            this.mnuTaiKhoanTTCuaHang.Size = new System.Drawing.Size(268, 34);
+            this.mnuTaiKhoanTTCuaHang.Text = "Thông tin cửa hàng";
+            this.mnuTaiKhoanTTCuaHang.Click += new System.EventHandler(this.mnuTaiKhoanTTCuaHang_Click);
+            // 
             // mnuTK_ThongTIn
             // 
             this.mnuTK_ThongTIn.Name = "mnuTK_ThongTIn";
-            this.mnuTK_ThongTIn.Size = new System.Drawing.Size(265, 34);
-            this.mnuTK_ThongTIn.Text = "Thông Tin Cá Nhân";
+            this.mnuTK_ThongTIn.Size = new System.Drawing.Size(268, 34);
+            this.mnuTK_ThongTIn.Text = "Thông tin cá nhân";
             this.mnuTK_ThongTIn.Click += new System.EventHandler(this.mnuTK_ThongTIn_Click);
             // 
             // mnuTK_DoiMK
             // 
             this.mnuTK_DoiMK.Name = "mnuTK_DoiMK";
-            this.mnuTK_DoiMK.Size = new System.Drawing.Size(265, 34);
+            this.mnuTK_DoiMK.Size = new System.Drawing.Size(268, 34);
             this.mnuTK_DoiMK.Text = "Đổi mật khẩu";
             this.mnuTK_DoiMK.Click += new System.EventHandler(this.mnuTK_DoiMK_Click);
             // 
             // mnuTK_DangXuat
             // 
             this.mnuTK_DangXuat.Name = "mnuTK_DangXuat";
-            this.mnuTK_DangXuat.Size = new System.Drawing.Size(265, 34);
+            this.mnuTK_DangXuat.Size = new System.Drawing.Size(268, 34);
             this.mnuTK_DangXuat.Text = "Đăng xuất";
             this.mnuTK_DangXuat.Click += new System.EventHandler(this.mnuTK_DangXuat_Click);
             // 
             // mnuTK_Thoat
             // 
             this.mnuTK_Thoat.Name = "mnuTK_Thoat";
-            this.mnuTK_Thoat.Size = new System.Drawing.Size(265, 34);
+            this.mnuTK_Thoat.Size = new System.Drawing.Size(268, 34);
             this.mnuTK_Thoat.Text = "Thoát";
             this.mnuTK_Thoat.Click += new System.EventHandler(this.mnuTK_Thoat_Click);
             // 
@@ -114,8 +124,7 @@
             // 
             this.mnuQuanLy_DSNhanVien.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuQuanLy_NhanVien_DanhSach,
-            this.mnuQuanLy_NhanVien_TraCuu,
-            this.mnuQuanLy_NhanVien_DieuChuyen});
+            this.mnuQuanLy_NhanVien_TraCuu});
             this.mnuQuanLy_DSNhanVien.Name = "mnuQuanLy_DSNhanVien";
             this.mnuQuanLy_DSNhanVien.Size = new System.Drawing.Size(268, 34);
             this.mnuQuanLy_DSNhanVien.Text = "Nhân viên";
@@ -124,27 +133,23 @@
             // mnuQuanLy_NhanVien_DanhSach
             // 
             this.mnuQuanLy_NhanVien_DanhSach.Name = "mnuQuanLy_NhanVien_DanhSach";
-            this.mnuQuanLy_NhanVien_DanhSach.Size = new System.Drawing.Size(292, 34);
+            this.mnuQuanLy_NhanVien_DanhSach.Size = new System.Drawing.Size(277, 34);
             this.mnuQuanLy_NhanVien_DanhSach.Text = "Danh sách nhân viên";
             this.mnuQuanLy_NhanVien_DanhSach.Click += new System.EventHandler(this.danhSáchNhânViênToolStripMenuItem_Click);
             // 
             // mnuQuanLy_NhanVien_TraCuu
             // 
             this.mnuQuanLy_NhanVien_TraCuu.Name = "mnuQuanLy_NhanVien_TraCuu";
-            this.mnuQuanLy_NhanVien_TraCuu.Size = new System.Drawing.Size(292, 34);
+            this.mnuQuanLy_NhanVien_TraCuu.Size = new System.Drawing.Size(277, 34);
             this.mnuQuanLy_NhanVien_TraCuu.Text = "Tra cứu nhân viên";
-            // 
-            // mnuQuanLy_NhanVien_DieuChuyen
-            // 
-            this.mnuQuanLy_NhanVien_DieuChuyen.Name = "mnuQuanLy_NhanVien_DieuChuyen";
-            this.mnuQuanLy_NhanVien_DieuChuyen.Size = new System.Drawing.Size(292, 34);
-            this.mnuQuanLy_NhanVien_DieuChuyen.Text = "Điều chuyển nhân viên";
+            this.mnuQuanLy_NhanVien_TraCuu.Click += new System.EventHandler(this.mnuQuanLy_NhanVien_TraCuu_Click);
             // 
             // mnuQuanLy_CuaHang
             // 
             this.mnuQuanLy_CuaHang.Name = "mnuQuanLy_CuaHang";
             this.mnuQuanLy_CuaHang.Size = new System.Drawing.Size(268, 34);
             this.mnuQuanLy_CuaHang.Text = "Thông tin cửa hàng";
+            this.mnuQuanLy_CuaHang.Click += new System.EventHandler(this.mnuQuanLy_CuaHang_Click);
             // 
             // mnuChucNang
             // 
@@ -301,13 +306,14 @@
             this.mnuNhanVien.Size = new System.Drawing.Size(1042, 33);
             this.mnuNhanVien.TabIndex = 2;
             this.mnuNhanVien.Text = "menuStrip1";
+            this.mnuNhanVien.Click += new System.EventHandler(this.mnuNhanVien_Click);
             // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1042, 450);
+            this.ClientSize = new System.Drawing.Size(1042, 562);
             this.Controls.Add(this.mnuNhanVien);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -326,6 +332,7 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            
         }
 
         #endregion
@@ -339,7 +346,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLy_DSNhanVien;
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLy_NhanVien_DanhSach;
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLy_NhanVien_TraCuu;
-        private System.Windows.Forms.ToolStripMenuItem mnuQuanLy_NhanVien_DieuChuyen;
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLy_CuaHang;
         private System.Windows.Forms.ToolStripMenuItem mnuChucNang;
         private System.Windows.Forms.ToolStripMenuItem mnuChucNang_HoaDon;
@@ -360,6 +366,12 @@
         private System.Windows.Forms.ToolStripMenuItem mnuThongKe_HDDaTao;
         private System.Windows.Forms.ToolStripMenuItem mnuBaoCao;
         private System.Windows.Forms.MenuStrip mnuNhanVien;
+        private System.Windows.Forms.ToolStripMenuItem mnuTaiKhoanTTCuaHang;
+
+        public object getMenu()
+        {
+            return this.mnuNhanVien; 
+        }
     }
 }
 

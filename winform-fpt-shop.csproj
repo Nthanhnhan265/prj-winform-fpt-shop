@@ -47,16 +47,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\ChiTietHoaDon.cs" />
+    <Compile Include="classes\CuaHang.cs" />
     <Compile Include="classes\DanhMuc.cs" />
     <Compile Include="classes\HoaDon.cs" />
     <Compile Include="classes\KhachHang.cs" />
+    <Compile Include="classes\NhanVien.cs" />
+    <Compile Include="classes\NhaSX.cs" />
+    <Compile Include="classes\SanPham.cs" />
     <Compile Include="classes\TonKho.cs" />
     <Compile Include="DBCuaHang.cs" />
+    <Compile Include="nhanvien-forms\frmheThongChinhSuaCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmheThongChinhSuaCH.Designer.cs">
+      <DependentUpon>frmheThongChinhSuaCH.cs</DependentUpon>
+    </Compile>
     <Compile Include="nhanvien-forms\frmQuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="nhanvien-forms\frmQuenMatKhau.Designer.cs">
       <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmTaiKhoanThongTinCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmTaiKhoanThongTinCH.Designer.cs">
+      <DependentUpon>frmTaiKhoanThongTinCH.cs</DependentUpon>
     </Compile>
     <Compile Include="nhanvien-forms\frmXemTonKho.cs">
       <SubType>Form</SubType>
@@ -174,8 +190,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="nhanvien-forms\frmheThongChinhSuaCH.resx">
+      <DependentUpon>frmheThongChinhSuaCH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmQuenMatKhau.resx">
       <DependentUpon>frmQuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\frmTaiKhoanThongTinCH.resx">
+      <DependentUpon>frmTaiKhoanThongTinCH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmXemTonKho.resx">
       <DependentUpon>frmXemTonKho.cs</DependentUpon>
@@ -259,6 +281,27 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-fpt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-fpt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-fpt1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-fpt-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-avatar-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reset-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reset-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

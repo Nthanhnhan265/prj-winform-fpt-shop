@@ -66,10 +66,10 @@ primary key(MaCH))
 -- Tạo Hóa Đơn
 create table HoaDon(
 	MaHD CHAR(10) NOT NULL,
-    MaKH CHAR(10) NOT NULL,
-    MaNV CHAR(10) NOT NULL,
+    MaKH CHAR(10),
+    MaNV CHAR(10),
     NgayTao DATETIME NOT NULL,
-    MaCH CHAR(10) NOT NULL,
+    MaCH CHAR(10),
     PTThanhToan NVARCHAR(50) NOT NULL,
     SoTienTT INT NOT NULL,
 primary key(MaHD))
@@ -87,8 +87,8 @@ CREATE TABLE KhachHang (
 
 -- Tạo Tồn Kho
 create table TonKho(
-MaCH char(10) not null,
-MaSP char(10) not null,
+MaCH char(10),
+MaSP char(10),
 SoLuong int,
 primary key(MaCH,MaSP))
 go
@@ -97,67 +97,67 @@ alter table CuaHang
 add constraint NV_CH_QuanLy
 foreign key(QuanLy)
 references NhanVien(MaNV)
-
+on delete set null 
 -- Tạo liên kết NhânViên - CửaHàng
 alter table NhanVien
 add constraint CH_NV_MaCH
 foreign key(MaCH)
 references CuaHang(MaCH)
-
+on delete set null 
 -- Tạo liên kết HóaĐơn - CửaHàng
 alter table HoaDon
 add constraint CH_HD_MaCH
 foreign key(MaCH)
 references CuaHang(MaCH)
-
+on delete set null 
 -- Tạo liên kết HóaĐơn - NhânViên
 alter table HoaDon
 add constraint NV_HD_MaNV
 foreign key(MaNV)
 references NhanVien(MaNV)
-
+on delete set null 
 -- Tạo liên kết sampham - nhasx
 alter table SanPham
 add constraint MSX_SP_MaNSX
 foreign key(MaNSX)
 references NhaSX(MaNSX)
-
+on delete set null 
 -- Tạo liên kết chitiethoadon - sanpham
 alter table ChiTietHD
 add constraint SP_CTHD_MaSP
 foreign key(MaSP)
 references SanPham(MaSP)
-
+on delete set null 
 -- Tạo lên kết sanpham - danhmuc
 alter table SanPham
 add constraint DM_SP_MaDM
 foreign key(MaDM)
 references DanhMuc(MaDM)
-
+on delete set null 
 -- Tạo liên kết chitiethoandon - hoadon
 alter table ChiTietHD
 add constraint HD_CTHD_MaHD
 foreign key(MaHD)
 references HoaDon(MaHD)
-
+on delete set null 
 -- Tạo liên kết hoadon - khachhang
 alter table HoaDon
 add constraint KH_HD_MaKH
 foreign key(MaKH)
 references KhachHang(MaKH)
-
+on delete set null 
 -- Tạo liên kết tonkho - sanpham
 alter table TonKho
 add constraint SP_TK_MaSP
 foreign key(MaSP)
 references SanPham(MaSP)
-
+on delete CASCADE 
 -- Tạo liên kết tonkho - cuahang
 alter table TonKho
 add constraint CH_TK_MaCH
 foreign key(MaCH)
 references CuaHang(MaCH)
-
+on delete CASCADE 
 -- Thêm ràng buộc NOT NULL cho trường GioiTinh trong bảng NhanVien
 ALTER TABLE NhanVien
 ALTER COLUMN GioiTinh NVARCHAR(5) NOT NULL;

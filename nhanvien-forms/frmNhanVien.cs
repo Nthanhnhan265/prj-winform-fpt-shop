@@ -10,9 +10,10 @@ namespace winform_fpt_shop
         public frmNhanVien()
         {
             InitializeComponent();
+            
         }
 
-
+        
 
         private void mnuQuanLy_DSNhanVien_Click(object sender, EventArgs e)
         {
@@ -36,9 +37,8 @@ namespace winform_fpt_shop
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-            //frmDangNhap frm = new frmDangNhap();
-            //frm.ShowDialog();
-
+            frmDangNhap frm = new frmDangNhap(this);
+            OpenChildForm(frm);
             //Thay đổi đường dẫn DB tại đây 
             DBCuaHang.sqlString= "Data Source=B202A-PC26\\SQLEXPRESS;Initial Catalog=QuanLyCuaHang;Integrated Security=True"; 
 
@@ -64,8 +64,10 @@ namespace winform_fpt_shop
             DialogResult rs = MessageBox.Show("Bạn có muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                new frmDangNhap().Show();
-                this.Close();
+                frmDangNhap.DangXuat();
+                frmDangNhap frm = new frmDangNhap(this);
+                OpenChildForm(frm); 
+
             }
 
         }
@@ -119,12 +121,36 @@ namespace winform_fpt_shop
             frmQuanLy_DSNhanVien frmTao = new frmQuanLy_DSNhanVien();
             OpenChildForm(frmTao);
         }
+        /// <summary>
+        /// Phương thức hiện menu 
+        /// </summary>
+        public void HienMenu()
+        {
+            mnuNhanVien.Enabled = true; 
 
-        public void HideQuanLy()
+        }
+        /// <summary>
+        /// Phương thức hiển thị chức năng quản lý 
+        /// </summary>
+        public void HienQuanLy()
+        {
+            mnuQuanLy.Enabled = true;
+
+        }
+        /// <summary>
+        /// Phương thức ẩn chức năng quan lý 
+        /// </summary>
+        public void AnQuanLy()
         {
             mnuQuanLy.Enabled = false;
         }
-
+        /// <summary>
+        /// Phương thức ẩn menu khi chưa đăng nhập 
+        /// </summary>
+        public void AnMenu()
+        {
+            mnuNhanVien.Enabled = false; 
+        }
         private void mnuChucNang_HoaDon_Tao_Click(object sender, EventArgs e)
         {
             //mo form hoa don 
@@ -200,6 +226,33 @@ namespace winform_fpt_shop
             childForm.Show();
         }
 
+        private void mnuQuanLy_CuaHang_Click(object sender, EventArgs e)
+        {
+            //mo form im
+        }
+
+        private void mnuQuanLy_NhanVien_TraCuu_Click(object sender, EventArgs e)
+        {
+            //mo form tra cuu 
+            frmQuanLy_TraCuuNhanVien frm=new frmQuanLy_TraCuuNhanVien();
+            OpenChildForm(frm); 
+        }
+
+        private void mnuQuanLy_NhanVien_DieuChuyen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuTaiKhoanTTCuaHang_Click(object sender, EventArgs e)
+        {
+            frmTaiKhoanThongTinCH frm =new  frmTaiKhoanThongTinCH();
+            OpenChildForm(frm);
+        }
+
+        private void mnuNhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
