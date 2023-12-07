@@ -40,7 +40,7 @@ namespace winform_fpt_shop
             frmDangNhap frm = new frmDangNhap(this);
             OpenChildForm(frm);
             //Thay đổi đường dẫn DB tại đây 
-            DBCuaHang.sqlString="Data Source=local;Initial Catalog=QuanLyCuaHang;Integrated Security=True;"; 
+            DBCuaHang.sqlString= "Data Source=B202A-PC26\\SQLEXPRESS;Initial Catalog=QuanLyCuaHang;Integrated Security=True"; 
 
         }
         /// <summary>

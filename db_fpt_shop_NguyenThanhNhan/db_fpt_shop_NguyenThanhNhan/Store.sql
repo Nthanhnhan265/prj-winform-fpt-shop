@@ -1,3 +1,4 @@
+
 ﻿use QuanLyCuaHang
 Go 
 Create proc sp_DangNhap 
@@ -341,6 +342,28 @@ END
 
 GO
 
+-- Tra cuu khach hang theo ma
+CREATE PROCEDURE sp_TraCuuKhachHangTheoMa
+@MaKH char(10)
+AS
+BEGIN
+	SELECT * FROM KhachHang
+	WHERE MaKH = @MaKH;
+END
+
+GO
+
+-- Tra cuu khach hang theo ten
+CREATE PROCEDURE sp_TraCuuKhachHangTheoTen
+@HoTenKH NVARCHAR(50)
+AS
+BEGIN
+	SELECT * FROM KhachHang
+	WHERE HoTenKH LIKE @HoTenKH;
+END
+
+GO
+
 -- STORE NHA SAN XUAT
 -- Hien thi nha san xuat
 CREATE PROCEDURE sp_HienThiNhaSX
@@ -519,6 +542,7 @@ BEGIN
 END
 
 GO
+
 CREATE PROCEDURE sp_ThemNhanVien
     @MaNV CHAR(10),
     @HoTen NVARCHAR(50),
@@ -571,5 +595,15 @@ CREATE PROCEDURE sp_HienThiNhanVien
 AS 
 BEGIN
     SELECT * FROM NhanVien;
+END
+
+GO
+
+CREATE PROCEDURE sp_TraCuuNhanVienTheoMa
+@MaNV char(10)
+AS
+BEGIN
+	SELECT * FROM NhanVien
+	WHERE MaNV = @MaNV
 END
 Go 
