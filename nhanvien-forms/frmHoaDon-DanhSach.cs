@@ -18,10 +18,22 @@ namespace winform_fpt_shop
             InitializeComponent();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void txtTimKiemHoaDon_TextChanged(object sender, EventArgs e)
         {
-            frmHoaDon_ChiTiet  frm = new frmHoaDon_ChiTiet();
-            frm.ShowDialog(); 
+            if(txtTimKiemHoaDon.Text.Length  > 0)
+            {
+                btnTimKiem.Enabled = true;
+            }
+            else
+            {
+                btnTimKiem.Enabled = false;
+            }
+        }
+
+        private void frmHoaDon_DanhSach_Load(object sender, EventArgs e)
+        {
+            dgvHoaDon.DataSource = DBCuaHang.GetDataTable("sp_HienThiHoaDon");
         }
     }
 }
