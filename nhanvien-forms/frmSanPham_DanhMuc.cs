@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using winform_fpt_shop.classes;
+using System.Text.RegularExpressions; 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace winform_fpt_shop.nhanvien_forms
@@ -20,6 +21,8 @@ namespace winform_fpt_shop.nhanvien_forms
         }
         //Khai báo 
         DataGridViewRow hangDuocChon=null;
+        string patternThuocTinh = "^[a-zA-Z0-9ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s,]+$";
+        string patternTen = "^[a-zA-Z0-9ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
 
         private string RandomMa()
         {
@@ -116,8 +119,6 @@ namespace winform_fpt_shop.nhanvien_forms
         {
             try
             {
-                if (hangDuocChon != null)
-                {
                     DialogResult = MessageBox.Show($"Bạn có muốn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     //Trường hợp xác nhận rõ muốn xóa 
                     if (DialogResult == DialogResult.Yes)
@@ -138,7 +139,7 @@ namespace winform_fpt_shop.nhanvien_forms
 
                     }
 
-                }
+                
                 //Trường hợp chưa chọn 
                 else
                 {
@@ -181,13 +182,59 @@ namespace winform_fpt_shop.nhanvien_forms
 
         private void txtTenDM_TextChanged(object sender, EventArgs e)
         {
-           
+            try
+            {
+               if(!Regex.IsMatch(txtTenDM.Text,patternTen))
+                {
+                    errorProvider1.SetError(txtTenDM,"Vui lòng nhập kí tự hợp lệ\nKí tự hợp lệ chỉ chứa kí tự trong bảng chữ cái tiếng Việt và dấu phẩy(,)"); 
+                } else
+                {
+                    errorProvider1.Clear();   
+                }
+            }
+            catch (Exception ex)
+            {
+            }
            
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
             txtMaDanhMuc.Text = RandomMa(); 
+        }
+
+        private void dgvDanhMuc_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtMaDanhMuc.Text = dgvDanhMuc.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtTenDM.Text = dgvDanhMuc.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtThuocTinh.Text = dgvDanhMuc.Rows[e.RowIndex].Cells[2].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtThuocTinh_TextChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (!Regex.IsMatch(txtThuocTinh.Text, patternThuocTinh))
+                {
+                    errorProvider1.SetError(txtThuocTinh, "Vui lòng nhập kí tự hợp lệ\nKí tự hợp lệ chỉ chứa kí tự trong bảng chữ cái tiếng Việt và dấu phẩy(,)" );
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+
         }
     }
 }

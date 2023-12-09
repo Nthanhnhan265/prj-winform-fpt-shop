@@ -19,15 +19,17 @@ namespace winform_fpt_shop.nhanvien_forms
         string patternString = "^[a-zA-Z0-9ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ.,\\s-]+$";
         string patternNumber = "^[0-9]+$";
         string anhDuocChon = "";
+        DataTable dataTable = DBCuaHang.GetDataTable("sp_HienThiDanhMuc");
+        string[] thongTinSPDuocChon=null; 
         public frmSanPham_DanhSach()
         {
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        /// <summary>
+        /// Phương thức random mã 
+        /// </summary>
+        /// <returns></returns>
         private string RandomMa()
         {
             const string template = "SPFPTXXX";
@@ -38,7 +40,7 @@ namespace winform_fpt_shop.nhanvien_forms
                 .Replace("XXX", random.Next(100, 999).ToString());
             return result;
         }
-        private void frmSanPham_DanhSach_Load(object sender, EventArgs e)
+        public void Tailaidulieu()
         {
             //lấy các datasoure 
             dgvSanPham.DataSource = DBCuaHang.GetDataTable("sp_HienThiSanPham");
@@ -53,23 +55,97 @@ namespace winform_fpt_shop.nhanvien_forms
             cbbDanhMuc.DisplayMember = "TenDM";
             cbbDanhMuc.ValueMember = "MaDM";
 
+            dgvThongTinSP.Rows.Clear();
+            int dong = cbbDanhMuc.SelectedIndex;
+            string thuocTinhDM = dataTable.Rows[dong][2].ToString();
+            string[] thuocTinhs = thuocTinhDM.Split(',');
+            for (int i = 0; i < thuocTinhs.Length; i++)
+            {
+                dgvThongTinSP.Rows.Add();
+                dgvThongTinSP.Rows[i].Cells[0].Value = thuocTinhs[i].Trim();
+            }
+
         }
 
+        private void frmSanPham_DanhSach_Load(object sender, EventArgs e)
+        {
+            //lấy các datasoure 
+            dgvSanPham.DataSource = DBCuaHang.GetDataTable("sp_HienThiSanPham");
+            DataTable tbDanhMuc = DBCuaHang.GetDataTable("sp_HienThiDanhMuc");
+            DataTable tbNhaSX = DBCuaHang.GetDataTable("sp_HienThiNhaSX");
+            //hiển thị lên combobox 
+            cbbDanhMuc.DataSource = tbDanhMuc;
+            cbbNhaSX.DataSource = tbNhaSX;
+            //hiển thị tên 
+            cbbNhaSX.DisplayMember = "TenNSX";
+            cbbNhaSX.ValueMember = "MaNSX";
+            cbbDanhMuc.DisplayMember = "TenDM";
+            cbbDanhMuc.ValueMember = "MaDM";
+            dgvThongTinSP.Rows.Clear(); 
+            int dong = cbbDanhMuc.SelectedIndex;
+            string thuocTinhDM = dataTable.Rows[dong][2].ToString();
+            string[] thuocTinhs = thuocTinhDM.Split(',');
+            for (int i = 0; i < thuocTinhs.Length; i++)
+            {
+                dgvThongTinSP.Rows.Add();
+                dgvThongTinSP.Rows[i].Cells[0].Value = thuocTinhs[i].Trim();
+            }
+
+        }
+        /// <summary>
+        /// Kiem Tra cac o trong dgv thong tin san pham
+        /// </summary>
+        /// <returns></returns>
+        private bool KiemTraCacOTrongThongTinSP()
+        {
+            for(int i=0;i<dgvThongTinSP.Rows.Count;i++)
+            {
+                if (dgvThongTinSP.Rows[i].Cells[1].Value==null)
+                {
+                    errorProvider1.SetError(dgvThongTinSP,"Vui lòng nhập đầy đủ thông tin sản phẩm!"); 
+                    return false;
+                    
+                }
+            }
+            errorProvider1.Clear(); 
+            return true; 
+        }
+        /// <summary>
+        /// Lấy thông tin sản phẩm từ datagridview 
+        /// </summary>
+        /// <returns></returns>
+        private string LayThongTinSPTuDGV()
+        {
+            string str = ""; 
+            for(int i=0;i<dgvThongTinSP.Rows.Count;i++)
+            {
+                string key = dgvThongTinSP.Rows[i].Cells[0].Value.ToString(); 
+                string value = dgvThongTinSP.Rows[i].Cells[1].Value.ToString(); 
+                str+=$"{key}:{value}|";  
+            }
+            str = str.Substring(0,str.Length-1);
+            return str; 
+        }
+        /// <summary>
+        /// Phương thức chỉnh sửa 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSua_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtMa.Text != "" && txtTenSanPham.Text != "" && cbbDanhMuc.Text != "" && cbbNhaSX.Text != "" && txtGiaBan.Text != "")
+                if (KiemTraCacOTrongThongTinSP()&&txtMa.Text != "" && txtTenSanPham.Text != "" && cbbDanhMuc.Text != "" && cbbNhaSX.Text != "" && txtGiaBan.Text != "")
                 {
                     SanPham sanPham =
                         new SanPham(txtMa.Text,
                         txtTenSanPham.Text,
-                        "null",
+                        DBCuaHang.GetNvarcharText(LayThongTinSPTuDGV()),
                         cbbDanhMuc.SelectedValue.ToString(),
                          cbbNhaSX.SelectedValue.ToString(),
                         int.Parse(txtGiaBan.Text),
                         anhDuocChon);
-
+                    MessageBox.Show("Thong tin sP "+LayThongTinSPTuDGV  ()); 
                     int dong = DBCuaHang.UpdateRowData("sp_SuaSanPham", sanPham);
                     if (dong != 0)
                     {
@@ -88,8 +164,13 @@ namespace winform_fpt_shop.nhanvien_forms
 
                 MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+   
         }
-
+        /// <summary>
+        /// PHương thức xóa 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -126,18 +207,22 @@ namespace winform_fpt_shop.nhanvien_forms
                 MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        /// <summary>
+        /// Phương thức thêm 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtMa.Text != "" && txtTenSanPham.Text != "" && cbbDanhMuc.Text != "" && cbbNhaSX.Text != "" && txtGiaBan.Text != "")
+                if (KiemTraCacOTrongThongTinSP() && txtMa.Text != "" && txtTenSanPham.Text != "" && cbbDanhMuc.Text != "" && cbbNhaSX.Text != "" && txtGiaBan.Text != "")
                 {
                    
                     SanPham sanPham =
                         new SanPham(txtMa.Text,
                         txtTenSanPham.Text,
-                        "null",
+                        DBCuaHang.GetNvarcharText(LayThongTinSPTuDGV()),
                         cbbDanhMuc.SelectedValue.ToString(),
                          cbbNhaSX.SelectedValue.ToString(),
                         int.Parse(txtGiaBan.Text),
@@ -198,21 +283,6 @@ namespace winform_fpt_shop.nhanvien_forms
             txtMa.Text = RandomMa();
         }
 
-        private void Tailaidulieu()
-        {
-            //lấy các datasoure 
-            dgvSanPham.DataSource = DBCuaHang.GetDataTable("sp_HienThiSanPham");
-            DataTable tbDanhMuc = DBCuaHang.GetDataTable("sp_HienThiDanhMuc");
-            DataTable tbNhaSX = DBCuaHang.GetDataTable("sp_HienThiNhaSX");
-            //hiển thị lên combobox 
-            cbbDanhMuc.DataSource = tbDanhMuc;
-            cbbNhaSX.DataSource = tbNhaSX;
-            //hiển thị tên 
-            cbbNhaSX.DisplayMember = "TenNSX";
-            cbbNhaSX.ValueMember = "MaNSX";
-            cbbDanhMuc.DisplayMember = "TenDM";
-            cbbDanhMuc.ValueMember = "MaDM";
-        }
         private void LamMoi()
         {
             txtMa.Text = "";
@@ -232,28 +302,47 @@ namespace winform_fpt_shop.nhanvien_forms
         {
 
         }
-
+        /// <summary>
+        /// Click vào 1 ô để hiên thị thông tin của sản phầm đó
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtMa.Text = dgvSanPham.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtTenSanPham.Text = dgvSanPham.Rows[e.RowIndex].Cells[1].Value.ToString();
-            //thoong tin tam cho qua 
-
-            cbbDanhMuc.SelectedValue = dgvSanPham.Rows[e.RowIndex].Cells[3].Value.ToString();
-
-            cbbNhaSX.SelectedValue = dgvSanPham.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtGiaBan.Text = dgvSanPham.Rows[e.RowIndex].Cells[5].Value.ToString();
-            //xử lý khi ấn vào hình ảnh 
-            string path = Application.StartupPath + "/images/" + dgvSanPham.Rows[e.RowIndex].Cells[6].Value.ToString();
-            if (File.Exists(path))
+            try
             {
-                pictureBox1.Image = Image.FromFile(path);
-            }
-            else
-            {
-                MessageBox.Show("hình ảnh không tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                txtMa.Text = dgvSanPham.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtGiaBan.Text = dgvSanPham.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtTenSanPham.Text = dgvSanPham.Rows[e.RowIndex].Cells[1].Value.ToString();
+                thongTinSPDuocChon = dgvSanPham.Rows[e.RowIndex].Cells[2].Value.ToString().Split('|');
+                dgvThongTinSP.Rows.Clear();
+                for (int i = 0; i < thongTinSPDuocChon.Length; i++)
+                {
+                    dgvThongTinSP.Rows.Add();
+                    dgvThongTinSP.Rows[i].Cells[0].Value = thongTinSPDuocChon[i].Split(':')[0].Trim();
+                    if (thongTinSPDuocChon != null)
+                    {
+                        string[] keysValues = thongTinSPDuocChon[i].Split(':');
+                        dgvThongTinSP.Rows[i].Cells[1].Value = keysValues[1];
+                    }
+                }
+                cbbDanhMuc.SelectedValue = dgvSanPham.Rows[e.RowIndex].Cells[3].Value.ToString();
 
+                cbbNhaSX.SelectedValue = dgvSanPham.Rows[e.RowIndex].Cells[4].Value.ToString();
+                //xử lý khi ấn vào hình ảnh 
+                string path = Application.StartupPath + "/images/" + dgvSanPham.Rows[e.RowIndex].Cells[6].Value.ToString();
+                if (File.Exists(path))
+                {
+                    pictureBox1.Image = Image.FromFile(path);
+                }
+                else
+                {
+                    MessageBox.Show("hình ảnh không tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }catch(Exception ex)
+            {
+
+            }
 
         }
         /// <summary>
@@ -320,6 +409,34 @@ namespace winform_fpt_shop.nhanvien_forms
 
 
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvThongTinSP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Sửa combobox và hiển thị thông tin sản phẩm vào datagrid 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbbDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvThongTinSP.Rows.Clear(); 
+            int dong = cbbDanhMuc.SelectedIndex;
+            string thuocTinhDM = dataTable.Rows[dong][2].ToString(); 
+            string[] thuocTinhs = thuocTinhDM.Split(',');
+            for (int i = 0; i < thuocTinhs.Length; i++)
+            {
+                dgvThongTinSP.Rows.Add();
+                dgvThongTinSP.Rows[i].Cells[0].Value = thuocTinhs[i].Trim();
+            }
+            thongTinSPDuocChon = null; 
         }
     }
 }

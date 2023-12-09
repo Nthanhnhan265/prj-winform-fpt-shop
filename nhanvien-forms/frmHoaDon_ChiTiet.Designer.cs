@@ -168,20 +168,26 @@
             // 
             // btnDong
             // 
+            this.btnDong.Image = global::winform_fpt_shop.Properties.Resources.icons8_quit_24;
             this.btnDong.Location = new System.Drawing.Point(764, 3);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(126, 46);
             this.btnDong.TabIndex = 0;
             this.btnDong.Text = "Đóng";
+            this.btnDong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDong.UseVisualStyleBackColor = true;
             // 
             // btnInHoaDon
             // 
+            this.btnInHoaDon.Image = global::winform_fpt_shop.Properties.Resources.icons8_bill_24;
             this.btnInHoaDon.Location = new System.Drawing.Point(615, 3);
             this.btnInHoaDon.Name = "btnInHoaDon";
             this.btnInHoaDon.Size = new System.Drawing.Size(126, 46);
             this.btnInHoaDon.TabIndex = 0;
             this.btnInHoaDon.Text = "In hóa đơn";
+            this.btnInHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInHoaDon.UseVisualStyleBackColor = true;
             // 
             // label16

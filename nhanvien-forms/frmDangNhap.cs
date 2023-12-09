@@ -29,15 +29,25 @@ namespace winform_fpt_shop
         static bool Thoat = false;
         bool hoatDong = false;
         frmNhanVien frmChinh;
-    
-        
+        string maNV;
+        string matKhau;
+        string quyenHan;
+
+
+        internal static NhanVien TaiKhoan { get => taiKhoan; set => taiKhoan = value; }
+
+        public static void TaiLaiTaiKhoan()
+        {
+            taiKhoan = DBCuaHang.DangNhap(taiKhoan.MaNV,taiKhoan.MatKhau,taiKhoan.QuyenHan); 
+        }
+
         //ấn để đăng nhập 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             //lấy thông tin  
-            string maNV = txtUser.Text; 
-            string matKhau=txtMatKhau.Text;
-            string quyenHan = ""; 
+            maNV = txtUser.Text; 
+            matKhau=txtMatKhau.Text;
+            quyenHan = ""; 
             if (rdQuanLy.Checked == true) // quản lý
             {
                 quyenHan = rdQuanLy.Text; 
@@ -47,11 +57,11 @@ namespace winform_fpt_shop
                 quyenHan = rdNhanVien.Text; 
             }
             //kiểm tra dữ liệu truyền vào 
-            taiKhoan = DBCuaHang.DangNhap(maNV,matKhau,quyenHan);
-            if(taiKhoan!=null)
+            TaiKhoan = DBCuaHang.DangNhap(maNV,matKhau,quyenHan);
+            if(TaiKhoan!=null)
             {
                 frmChinh.HienMenu(); 
-                if(taiKhoan.QuyenHan=="Quản lý")
+                if(TaiKhoan.QuyenHan=="Quản lý")
                 {
                     frmChinh.HienQuanLy();
                 }
@@ -90,7 +100,7 @@ namespace winform_fpt_shop
         /// </summary>
         public static void DangXuat()
         {
-            taiKhoan = null; 
+            TaiKhoan = null; 
         }
 
 
@@ -100,12 +110,22 @@ namespace winform_fpt_shop
         /// <returns></returns>
         public static bool QuyenQuanLy()
         {
-            if(taiKhoan!=null && taiKhoan.QuyenHan=="Quản lý")
+            if(TaiKhoan!=null && TaiKhoan.QuyenHan=="Quản lý")
             {
             return true; 
 
             }
             return false ; 
+        }
+
+        public static string LayDiaChi()
+        {
+            if (TaiKhoan != null)
+            {
+                return TaiKhoan.DiaChi;
+
+            }
+            return null;
         }
 
         /// <summary>
@@ -114,13 +134,15 @@ namespace winform_fpt_shop
         /// <returns></returns>
         public static string LayMaCH()
         {
-            if (taiKhoan != null)
+            if (TaiKhoan != null && taiKhoan.MaCH.Trim()!="")
             {
-                return taiKhoan.MaCH;
+                return TaiKhoan.MaCH;
 
             }
             return "";
         }
+
+       
 
         private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {

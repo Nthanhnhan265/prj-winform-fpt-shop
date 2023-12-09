@@ -38,19 +38,22 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="e"></param>
         private void frmheThongChinhSuaCH_Load(object sender, EventArgs e)
         {
-            //hiển thị dữ liệu 
-            dgvCuaHang.DataSource = DBCuaHang.GetDataTable("sp_HienThiCuaHang");
-            cboQuanLy.DataSource = DBCuaHang.GetDataTableFromQuery("SELECT * FROM NHANVIEN WHERE QuyenHan=N'Quản Lý'");
-            cboQuanLy.DisplayMember = "HoTen";
-            cboQuanLy.ValueMember = "MaNV";
-            //hiển thị dữ liệu từ màn hình chỉnh sửa 
-            txtMaCH.Text = thongTinCh.LbMaCh.Text;
-            txtDiaChi.Text = thongTinCh.LbDiaChi.Text;
-            txtTenCH.Text = thongTinCh.LbTenCH.Text;
-            txtSDT.Text = thongTinCh.LbSDTQuanLy.Text;
-            cboQuanLy.Text = thongTinCh.LbTenQL.Text;
-            dtpNgayKhaiTruong.Text = thongTinCh.LbNgayKhaiTruong.Text;
-        }
+                //hiển thị dữ liệu khi thuộc cửa hàng nào đó 
+                dgvCuaHang.DataSource = DBCuaHang.GetDataTable("sp_HienThiCuaHang");
+                cboQuanLy.DataSource = DBCuaHang.GetDataTableFromQuery("SELECT * FROM NHANVIEN WHERE QuyenHan=N'Quản Lý'");
+                cboQuanLy.DisplayMember = "HoTen";
+                cboQuanLy.ValueMember = "MaNV";
+            if(frmDangNhap.LayMaCH()!="")
+            {
+                //hiển thị dữ liệu từ màn hình chỉnh sửa 
+                txtMaCH.Text = thongTinCh.LbMaCh.Text;
+                txtDiaChi.Text = thongTinCh.LbDiaChi.Text;
+                txtTenCH.Text = thongTinCh.LbTenCH.Text;
+                txtSDT.Text = thongTinCh.LbSDTQuanLy.Text;
+                cboQuanLy.Text = thongTinCh.LbTenQL.Text;
+                dtpNgayKhaiTruong.Text = thongTinCh.LbNgayKhaiTruong.Text;
+            }
+            }
         /// <summary>
         /// Hàm random mã theo cấu trúc 
         /// </summary>
@@ -80,6 +83,7 @@ namespace winform_fpt_shop.nhanvien_forms
             txtDiaChi.Text = "";
             txtTenCH.Focus(); 
             errorProvider1.Clear();
+            frmDangNhap.TaiLaiTaiKhoan(); 
             thongTinCh.TaiLaiForm(); 
         }
 

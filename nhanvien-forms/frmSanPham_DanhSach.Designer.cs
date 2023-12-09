@@ -44,14 +44,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvThongTinSP = new System.Windows.Forms.DataGridView();
+            this.clthuocTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clGiaTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTaoMoi = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnDuyet = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -60,7 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -92,7 +95,7 @@
             this.cbbDanhMuc.Name = "cbbDanhMuc";
             this.cbbDanhMuc.Size = new System.Drawing.Size(133, 28);
             this.cbbDanhMuc.TabIndex = 9;
-            this.cbbDanhMuc.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbbDanhMuc.SelectedIndexChanged += new System.EventHandler(this.cbbDanhMuc_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -161,7 +164,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 396);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1496, 654);
+            this.panel4.Size = new System.Drawing.Size(1301, 654);
             this.panel4.TabIndex = 10;
             // 
             // dgvSanPham
@@ -174,9 +177,10 @@
             this.dgvSanPham.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvSanPham.Location = new System.Drawing.Point(0, 0);
             this.dgvSanPham.Name = "dgvSanPham";
+            this.dgvSanPham.ReadOnly = true;
             this.dgvSanPham.RowHeadersWidth = 62;
             this.dgvSanPham.RowTemplate.Height = 28;
-            this.dgvSanPham.Size = new System.Drawing.Size(1496, 654);
+            this.dgvSanPham.Size = new System.Drawing.Size(1301, 654);
             this.dgvSanPham.TabIndex = 0;
             this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
             this.dgvSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellContentClick);
@@ -197,13 +201,13 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1496, 396);
+            this.panel3.Size = new System.Drawing.Size(1301, 396);
             this.panel3.TabIndex = 9;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.btnTaoMoi);
-            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnDuyet);
@@ -215,7 +219,6 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtGiaBan);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtTenSanPham);
             this.panel1.Controls.Add(this.label5);
@@ -224,88 +227,126 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1496, 329);
+            this.panel1.Size = new System.Drawing.Size(1301, 329);
             this.panel1.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvThongTinSP);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox1.Location = new System.Drawing.Point(973, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(328, 329);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin sản phẩm";
+            // 
+            // dgvThongTinSP
+            // 
+            this.dgvThongTinSP.AllowUserToAddRows = false;
+            this.dgvThongTinSP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThongTinSP.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvThongTinSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongTinSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clthuocTinh,
+            this.clGiaTri});
+            this.dgvThongTinSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvThongTinSP.Location = new System.Drawing.Point(3, 22);
+            this.dgvThongTinSP.Name = "dgvThongTinSP";
+            this.dgvThongTinSP.RowHeadersVisible = false;
+            this.dgvThongTinSP.RowHeadersWidth = 62;
+            this.dgvThongTinSP.RowTemplate.Height = 28;
+            this.dgvThongTinSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvThongTinSP.Size = new System.Drawing.Size(322, 304);
+            this.dgvThongTinSP.TabIndex = 0;
+            this.dgvThongTinSP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinSP_CellContentClick);
+            // 
+            // clthuocTinh
+            // 
+            this.clthuocTinh.HeaderText = "Thuộc tính";
+            this.clthuocTinh.MinimumWidth = 8;
+            this.clthuocTinh.Name = "clthuocTinh";
+            this.clthuocTinh.ReadOnly = true;
+            // 
+            // clGiaTri
+            // 
+            this.clGiaTri.HeaderText = "Giá trị";
+            this.clGiaTri.MinimumWidth = 8;
+            this.clGiaTri.Name = "clGiaTri";
             // 
             // btnTaoMoi
             // 
-            this.btnTaoMoi.Location = new System.Drawing.Point(352, 21);
+            this.btnTaoMoi.Image = global::winform_fpt_shop.Properties.Resources.icons8_synchronize_24;
+            this.btnTaoMoi.Location = new System.Drawing.Point(352, 17);
             this.btnTaoMoi.Name = "btnTaoMoi";
-            this.btnTaoMoi.Size = new System.Drawing.Size(74, 30);
+            this.btnTaoMoi.Size = new System.Drawing.Size(74, 39);
             this.btnTaoMoi.TabIndex = 19;
-            this.btnTaoMoi.Text = "Tạo mới ";
             this.btnTaoMoi.UseVisualStyleBackColor = true;
             this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1017, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(467, 262);
-            this.dataGridView1.TabIndex = 18;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(740, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(740, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 285);
+            this.pictureBox1.Size = new System.Drawing.Size(227, 285);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // btnXoa
             // 
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnXoa.Image = global::winform_fpt_shop.Properties.Resources.icons8_delete_24;
             this.btnXoa.Location = new System.Drawing.Point(331, 175);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(124, 51);
+            this.btnXoa.Size = new System.Drawing.Size(124, 53);
             this.btnXoa.TabIndex = 17;
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnDuyet
             // 
+            this.btnDuyet.Image = global::winform_fpt_shop.Properties.Resources.icons8_folder_24;
             this.btnDuyet.Location = new System.Drawing.Point(580, 105);
             this.btnDuyet.Name = "btnDuyet";
-            this.btnDuyet.Size = new System.Drawing.Size(154, 33);
+            this.btnDuyet.Size = new System.Drawing.Size(154, 44);
             this.btnDuyet.TabIndex = 12;
             this.btnDuyet.Text = "Duyệt";
+            this.btnDuyet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDuyet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDuyet.UseVisualStyleBackColor = true;
             this.btnDuyet.Click += new System.EventHandler(this.btnDuyet_Click);
             // 
             // btnThem
             // 
+            this.btnThem.Image = global::winform_fpt_shop.Properties.Resources.icons8_add_24;
             this.btnThem.Location = new System.Drawing.Point(46, 175);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(120, 51);
+            this.btnThem.Size = new System.Drawing.Size(120, 53);
             this.btnThem.TabIndex = 15;
             this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
+            this.btnSua.Image = global::winform_fpt_shop.Properties.Resources.icons8_edit_24;
             this.btnSua.Location = new System.Drawing.Point(187, 175);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(120, 51);
+            this.btnSua.Size = new System.Drawing.Size(120, 53);
             this.btnSua.TabIndex = 16;
             this.btnSua.Text = "Sửa\r\n";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1013, 3);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(149, 20);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Thông tin sản phẩm";
             // 
             // panel2
             // 
@@ -313,7 +354,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1496, 55);
+            this.panel2.Size = new System.Drawing.Size(1301, 55);
             this.panel2.TabIndex = 1;
             // 
             // label7
@@ -334,20 +375,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1496, 1050);
+            this.ClientSize = new System.Drawing.Size(1301, 1050);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Name = "frmSanPham_DanhSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Sách Sẩn Phẩm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSanPham_DanhSach_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -371,7 +412,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -381,8 +421,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDuyet;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnTaoMoi;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvThongTinSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clthuocTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clGiaTri;
     }
 }

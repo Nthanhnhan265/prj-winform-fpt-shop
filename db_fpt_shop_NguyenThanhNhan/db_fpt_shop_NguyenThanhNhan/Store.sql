@@ -139,6 +139,7 @@ END
 GO
 
 -- STORE DANH MUC
+
 -- Hien thi danh muc
 CREATE PROCEDURE sp_HienThiDanhMuc
 AS

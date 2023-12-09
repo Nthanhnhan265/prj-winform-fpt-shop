@@ -42,7 +42,6 @@
             this.rdNu = new System.Windows.Forms.RadioButton();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtHoTenQL = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtMaNQL = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -68,6 +67,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cboHoTenQL = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,6 +78,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cboHoTenQL);
             this.panel1.Controls.Add(this.btnTaoMoiMK);
             this.panel1.Controls.Add(this.btnTaoMoi);
             this.panel1.Controls.Add(this.btnXoa);
@@ -88,7 +89,6 @@
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.dtpNgaySinh);
             this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.txtHoTenQL);
             this.panel1.Controls.Add(this.txtMatKhau);
             this.panel1.Controls.Add(this.txtMaNQL);
             this.panel1.Controls.Add(this.txtDiaChi);
@@ -120,55 +120,66 @@
             // btnTaoMoiMK
             // 
             this.btnTaoMoiMK.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTaoMoiMK.Image = global::winform_fpt_shop.Properties.Resources.icons8_synchronize_24;
             this.btnTaoMoiMK.Location = new System.Drawing.Point(969, 226);
             this.btnTaoMoiMK.Name = "btnTaoMoiMK";
-            this.btnTaoMoiMK.Size = new System.Drawing.Size(75, 32);
+            this.btnTaoMoiMK.Size = new System.Drawing.Size(46, 32);
             this.btnTaoMoiMK.TabIndex = 111;
-            this.btnTaoMoiMK.Text = "Tạo mới";
+            this.btnTaoMoiMK.Text = "\r\n";
             this.btnTaoMoiMK.UseVisualStyleBackColor = true;
             this.btnTaoMoiMK.Click += new System.EventHandler(this.btnTaoMoiMK_Click);
             // 
             // btnTaoMoi
             // 
             this.btnTaoMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTaoMoi.Image = global::winform_fpt_shop.Properties.Resources.icons8_synchronize_24;
             this.btnTaoMoi.Location = new System.Drawing.Point(333, 103);
             this.btnTaoMoi.Name = "btnTaoMoi";
-            this.btnTaoMoi.Size = new System.Drawing.Size(75, 32);
+            this.btnTaoMoi.Size = new System.Drawing.Size(51, 39);
             this.btnTaoMoi.TabIndex = 111;
-            this.btnTaoMoi.Text = "Tạo mới";
             this.btnTaoMoi.UseVisualStyleBackColor = true;
             this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnXoa.Image = global::winform_fpt_shop.Properties.Resources.icons8_delete_24;
             this.btnXoa.Location = new System.Drawing.Point(502, 317);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(132, 41);
             this.btnXoa.TabIndex = 90;
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThem.Image = global::winform_fpt_shop.Properties.Resources.icons8_add_24;
             this.btnThem.Location = new System.Drawing.Point(179, 317);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(132, 41);
             this.btnThem.TabIndex = 86;
             this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
             this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSua.Image = global::winform_fpt_shop.Properties.Resources.icons8_edit_24;
             this.btnSua.Location = new System.Drawing.Point(333, 317);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(132, 41);
             this.btnSua.TabIndex = 88;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -192,6 +203,7 @@
             this.cboNoiLamViec.Name = "cboNoiLamViec";
             this.cboNoiLamViec.Size = new System.Drawing.Size(138, 28);
             this.cboNoiLamViec.TabIndex = 110;
+            this.cboNoiLamViec.SelectedIndexChanged += new System.EventHandler(this.cboNoiLamViec_SelectedIndexChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -243,15 +255,6 @@
             this.txtEmail.Size = new System.Drawing.Size(147, 26);
             this.txtEmail.TabIndex = 104;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
-            // 
-            // txtHoTenQL
-            // 
-            this.txtHoTenQL.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtHoTenQL.Enabled = false;
-            this.txtHoTenQL.Location = new System.Drawing.Point(811, 194);
-            this.txtHoTenQL.Name = "txtHoTenQL";
-            this.txtHoTenQL.Size = new System.Drawing.Size(141, 26);
-            this.txtHoTenQL.TabIndex = 107;
             // 
             // txtMatKhau
             // 
@@ -497,6 +500,17 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // cboHoTenQL
+            // 
+            this.cboHoTenQL.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboHoTenQL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboHoTenQL.Enabled = false;
+            this.cboHoTenQL.FormattingEnabled = true;
+            this.cboHoTenQL.Location = new System.Drawing.Point(811, 191);
+            this.cboHoTenQL.Name = "cboHoTenQL";
+            this.cboHoTenQL.Size = new System.Drawing.Size(138, 28);
+            this.cboHoTenQL.TabIndex = 112;
+            // 
             // frmQuanLy_DSNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -556,10 +570,10 @@
         private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.ComboBox cboQuyenHan;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtHoTenQL;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnTaoMoi;
         private System.Windows.Forms.Button btnTaoMoiMK;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox cboHoTenQL;
     }
 }

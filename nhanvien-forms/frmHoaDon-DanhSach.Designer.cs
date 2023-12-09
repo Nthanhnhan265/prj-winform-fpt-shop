@@ -43,19 +43,19 @@
             // 
             this.cboTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboTimKiem.FormattingEnabled = true;
-            this.cboTimKiem.Location = new System.Drawing.Point(97, 69);
+            this.cboTimKiem.Location = new System.Drawing.Point(109, 86);
             this.cboTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboTimKiem.Name = "cboTimKiem";
-            this.cboTimKiem.Size = new System.Drawing.Size(108, 24);
+            this.cboTimKiem.Size = new System.Drawing.Size(121, 28);
             this.cboTimKiem.TabIndex = 11;
             // 
             // txtTimKiemHoaDon
             // 
             this.txtTimKiemHoaDon.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTimKiemHoaDon.Location = new System.Drawing.Point(243, 70);
+            this.txtTimKiemHoaDon.Location = new System.Drawing.Point(273, 88);
             this.txtTimKiemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiemHoaDon.Name = "txtTimKiemHoaDon";
-            this.txtTimKiemHoaDon.Size = new System.Drawing.Size(274, 22);
+            this.txtTimKiemHoaDon.Size = new System.Drawing.Size(308, 26);
             this.txtTimKiemHoaDon.TabIndex = 10;
             this.txtTimKiemHoaDon.TextChanged += new System.EventHandler(this.txtTimKiemHoaDon_TextChanged);
             // 
@@ -63,21 +63,24 @@
             // 
             this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTimKiem.Enabled = false;
-            this.btnTimKiem.Location = new System.Drawing.Point(542, 65);
+            this.btnTimKiem.Image = global::winform_fpt_shop.Properties.Resources.icons8_find_24;
+            this.btnTimKiem.Location = new System.Drawing.Point(610, 81);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(148, 33);
+            this.btnTimKiem.Size = new System.Drawing.Size(166, 41);
             this.btnTimKiem.TabIndex = 9;
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 50);
+            this.label1.Location = new System.Drawing.Point(105, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 16);
+            this.label1.Size = new System.Drawing.Size(107, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Tìm kiếm theo\r\n";
             // 
@@ -85,9 +88,9 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 134);
+            this.label2.Location = new System.Drawing.Point(11, 168);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 16);
+            this.label2.Size = new System.Drawing.Size(148, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Danh sách hóa đơn";
             // 
@@ -96,9 +99,9 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.IndianRed;
-            this.label17.Location = new System.Drawing.Point(657, 134);
+            this.label17.Location = new System.Drawing.Point(739, 168);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(123, 17);
+            this.label17.Size = new System.Drawing.Size(138, 20);
             this.label17.TabIndex = 13;
             this.label17.Text = "Ấn để xem chi tiết ";
             // 
@@ -107,9 +110,9 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(269, 19);
+            this.label12.Location = new System.Drawing.Point(303, 24);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(245, 25);
+            this.label12.Size = new System.Drawing.Size(285, 29);
             this.label12.TabIndex = 24;
             this.label12.Text = "DANH SÁCH HÓA ĐƠN";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -119,18 +122,19 @@
             this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvHoaDon.Location = new System.Drawing.Point(0, 154);
+            this.dgvHoaDon.Location = new System.Drawing.Point(0, 192);
+            this.dgvHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
-            this.dgvHoaDon.Size = new System.Drawing.Size(791, 246);
+            this.dgvHoaDon.Size = new System.Drawing.Size(890, 308);
             this.dgvHoaDon.TabIndex = 25;
             // 
             // frmHoaDon_DanhSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 400);
+            this.ClientSize = new System.Drawing.Size(890, 500);
             this.Controls.Add(this.dgvHoaDon);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label17);

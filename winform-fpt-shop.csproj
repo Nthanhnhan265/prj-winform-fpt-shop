@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,12 +76,6 @@
     </Compile>
     <Compile Include="nhanvien-forms\frmTaiKhoanThongTinCH.Designer.cs">
       <DependentUpon>frmTaiKhoanThongTinCH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="nhanvien-forms\frmXemTonKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nhanvien-forms\frmXemTonKho.Designer.cs">
-      <DependentUpon>frmXemTonKho.cs</DependentUpon>
     </Compile>
     <Compile Include="nhanvien-forms\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -188,6 +185,18 @@
     <Compile Include="nhanvien-forms\frmQuanLy_TraCuuNhanVien.Designer.cs">
       <DependentUpon>frmQuanLy_TraCuuNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="nhanvien-forms\rptDSNhanVien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSNhanVien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\rptDSSanPham.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSSanPham.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="nhanvien-forms\frmheThongChinhSuaCH.resx">
@@ -198,9 +207,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmTaiKhoanThongTinCH.resx">
       <DependentUpon>frmTaiKhoanThongTinCH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="nhanvien-forms\frmXemTonKho.resx">
-      <DependentUpon>frmXemTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
@@ -256,6 +262,14 @@
     <EmbeddedResource Include="nhanvien-forms\frmSanPham_TonKho.resx">
       <DependentUpon>frmSanPham_TonKho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\rptDSNhanVien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSNhanVien.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\rptDSSanPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSSanPham.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -302,6 +316,81 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-reset-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-synchronize-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-product-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-factory-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bill-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-find-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-list-of-thumbnails-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-staff-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-log-out-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-quit-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-password-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-information-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-setting-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-information-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-new-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-report-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-combo-chart-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-chart-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lock-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-product-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tag-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-folder-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

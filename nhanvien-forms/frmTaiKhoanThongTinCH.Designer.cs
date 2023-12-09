@@ -35,11 +35,12 @@ namespace winform_fpt_shop.nhanvien_forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnChinhSua = new System.Windows.Forms.Button();
+            this.cboTenQL = new System.Windows.Forms.ComboBox();
             this.lbTenQL = new System.Windows.Forms.Label();
             this.lbSDTQuanLy = new System.Windows.Forms.Label();
             this.lbNgayKhaiTruong = new System.Windows.Forms.Label();
             this.lbDiaChi = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbTenCH = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
             this.lbMaCh = new System.Windows.Forms.Label();
@@ -48,14 +49,10 @@ namespace winform_fpt_shop.nhanvien_forms
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.cboTenQL = new System.Windows.Forms.ComboBox();
+            this.btnChinhSua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -107,15 +104,15 @@ namespace winform_fpt_shop.nhanvien_forms
             this.panel3.TabIndex = 44;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // btnChinhSua
+            // cboTenQL
             // 
-            this.btnChinhSua.Location = new System.Drawing.Point(943, 23);
-            this.btnChinhSua.Name = "btnChinhSua";
-            this.btnChinhSua.Size = new System.Drawing.Size(120, 48);
-            this.btnChinhSua.TabIndex = 2;
-            this.btnChinhSua.Text = "Chỉnh sửa";
-            this.btnChinhSua.UseVisualStyleBackColor = true;
-            this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
+            this.cboTenQL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTenQL.Enabled = false;
+            this.cboTenQL.FormattingEnabled = true;
+            this.cboTenQL.Location = new System.Drawing.Point(701, 68);
+            this.cboTenQL.Name = "cboTenQL";
+            this.cboTenQL.Size = new System.Drawing.Size(172, 28);
+            this.cboTenQL.TabIndex = 3;
             // 
             // lbTenQL
             // 
@@ -156,6 +153,16 @@ namespace winform_fpt_shop.nhanvien_forms
             this.lbDiaChi.TabIndex = 0;
             this.lbDiaChi.Text = "label1";
             this.lbDiaChi.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(518, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tên Quản Lý";
             // 
             // lbTenCH
             // 
@@ -237,25 +244,20 @@ namespace winform_fpt_shop.nhanvien_forms
             this.label.TabIndex = 0;
             this.label.Text = "Mã cửa hàng";
             // 
-            // label1
+            // btnChinhSua
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(518, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên Quản Lý";
-            // 
-            // cboTenQL
-            // 
-            this.cboTenQL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTenQL.Enabled = false;
-            this.cboTenQL.FormattingEnabled = true;
-            this.cboTenQL.Location = new System.Drawing.Point(701, 68);
-            this.cboTenQL.Name = "cboTenQL";
-            this.cboTenQL.Size = new System.Drawing.Size(172, 28);
-            this.cboTenQL.TabIndex = 3;
+            this.btnChinhSua.BackColor = System.Drawing.SystemColors.Control;
+            this.btnChinhSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChinhSua.Image = global::winform_fpt_shop.Properties.Resources.icons8_edit_24;
+            this.btnChinhSua.Location = new System.Drawing.Point(915, 388);
+            this.btnChinhSua.Name = "btnChinhSua";
+            this.btnChinhSua.Size = new System.Drawing.Size(157, 63);
+            this.btnChinhSua.TabIndex = 2;
+            this.btnChinhSua.Text = "Chỉnh sửa";
+            this.btnChinhSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChinhSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChinhSua.UseVisualStyleBackColor = false;
+            this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
             // 
             // frmTaiKhoanThongTinCH
             // 
@@ -273,7 +275,6 @@ namespace winform_fpt_shop.nhanvien_forms
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,10 +297,8 @@ namespace winform_fpt_shop.nhanvien_forms
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private Label label1;
         private ComboBox cboTenQL;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
 
         public Label LbTenQL { get => lbTenQL; set => lbTenQL = value; }
         public Label LbSDTQuanLy { get => lbSDTQuanLy; set => lbSDTQuanLy = value; }

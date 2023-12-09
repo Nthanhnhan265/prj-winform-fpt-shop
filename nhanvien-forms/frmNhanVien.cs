@@ -40,8 +40,7 @@ namespace winform_fpt_shop
             frmDangNhap frm = new frmDangNhap(this);
             OpenChildForm(frm);
             //Thay đổi đường dẫn DB tại đây 
-            DBCuaHang.sqlString= "Data Source=B202A-PC26\\SQLEXPRESS;Initial Catalog=QuanLyCuaHang;Integrated Security=True"; 
-
+            DBCuaHang.sqlString= "Data Source=local;Initial Catalog=QuanLyCuaHang;Integrated Security=True";
         }
         /// <summary>
         /// Dong ung dung khi click vao thoat 
@@ -57,7 +56,11 @@ namespace winform_fpt_shop
             }
         }
 
-      
+        public void MoFormChinhSuaCH()
+        {
+            frmheThongChinhSuaCH frm = new frmheThongChinhSuaCH();
+            OpenChildForm(frm);
+        }
 
         private void mnuTK_DangXuat_Click(object sender, EventArgs e)
         {
@@ -246,6 +249,7 @@ namespace winform_fpt_shop
         private void mnuTaiKhoanTTCuaHang_Click(object sender, EventArgs e)
         {
             frmTaiKhoanThongTinCH frm =new  frmTaiKhoanThongTinCH();
+            frm.FrmNhanVien = this;
             OpenChildForm(frm);
         }
 

@@ -31,25 +31,33 @@ namespace winform_fpt_shop
 
         private void frmSanPham_TonKho_Load(object sender, EventArgs e)
         {
-            //lấy các bản để hiển thị ra danh sách và cbb 
-            DataTable tbDanhSachTonKho = DBCuaHang.GetDataTable("sp_CuaHangJoinSanPham");
-            DataTable tbCuaHang = DBCuaHang.GetDataTable("sp_HienThiCuaHang");
-            DataTable tbSanPham = DBCuaHang.GetDataTable("sp_HienThiSanPham");
-            //gán các datasource cho bảng 
-            dgvDanhSachTonKho.DataSource = tbDanhSachTonKho;
-            cbbTenCH.DataSource = tbCuaHang;
-            cbbTenSP.DataSource = tbSanPham;
-            //hiển thị tên nhưng chọn mã
-            cbbTenCH.DisplayMember = "TenCH";
-            cbbTenCH.ValueMember = "MaCH";
-            cbbTenSP.DisplayMember = "TenSP";
-            cbbTenSP.ValueMember = "MaSP";
-            //Hiển thị lên combobox 
-            txtMaCh.Text = dgvDanhSachTonKho.Rows[0].Cells[0].Value.ToString();
-            txtDiaChi.Text = dgvDanhSachTonKho.Rows[cbbTenCH.SelectedIndex].Cells[2].Value.ToString();
-            txtMaSP.Text = cbbTenSP.SelectedValue.ToString();
-            txtSoLuong.Text = dgvDanhSachTonKho.Rows[0].Cells[5].Value.ToString();
+            try
+            {
 
+                //lấy các bản để hiển thị ra danh sách và cbb 
+                DataTable tbDanhSachTonKho = DBCuaHang.GetDataTable("sp_CuaHangJoinSanPham");
+                DataTable tbCuaHang = DBCuaHang.GetDataTable("sp_HienThiCuaHang");
+                DataTable tbSanPham = DBCuaHang.GetDataTable("sp_HienThiSanPham");
+                //gán các datasource cho bảng 
+                dgvDanhSachTonKho.DataSource = tbDanhSachTonKho;
+                cbbTenCH.DataSource = tbCuaHang;
+                cbbTenSP.DataSource = tbSanPham;
+                //hiển thị tên nhưng chọn mã
+                cbbTenCH.DisplayMember = "TenCH";
+                cbbTenCH.ValueMember = "MaCH";
+                cbbTenSP.DisplayMember = "TenSP";
+                cbbTenSP.ValueMember = "MaSP";
+                //Hiển thị lên combobox 
+                txtMaCh.Text = dgvDanhSachTonKho.Rows[0].Cells[0].Value.ToString();
+                txtDiaChi.Text = dgvDanhSachTonKho.Rows[cbbTenCH.SelectedIndex].Cells[2].Value.ToString();
+                txtMaSP.Text = cbbTenSP.SelectedValue.ToString();
+                txtSoLuong.Text = dgvDanhSachTonKho.Rows[0].Cells[5].Value.ToString();
+
+            }
+            catch
+            {
+
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

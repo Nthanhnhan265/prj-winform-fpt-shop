@@ -21,11 +21,16 @@ namespace winform_fpt_shop.nhanvien_forms
         string patternDiaChi = "^[a-zA-Z0-9ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ,\\s-]+$";
         string patternEmail = "^[a-zA-Z0-9@]+@gmail.com$";
         string patternNumber = "^[0-9]+$";
-
+        DataTable noiLamViec; 
         private void frmDSNhanVien_Load(object sender, EventArgs e)
         {
             //hien thi du lieu khi load form 
-            dgvNhanVien.DataSource = DBCuaHang.GetDataTable("sp_HienThiNhanVien");
+            DataTable dt = DBCuaHang.GetDataTableFromQuery($"SELECT * FROM NhanVien Where QuyenHan=N'Quản Lý'");
+            noiLamViec= DBCuaHang.GetDataTable("sp_HienThiCuaHang");
+            
+            dgvNhanVien.DataSource = DBCuaHang.GetDataTable("sp_HienThiNhanVien"); 
+            
+
             //hien thi len cbb 
             cboNoiLamViec.DataSource = DBCuaHang.GetDataTable("sp_HienThiCuaHangJoinQuanLy");
             cboNoiLamViec.DisplayMember = "TenCH";
@@ -34,6 +39,12 @@ namespace winform_fpt_shop.nhanvien_forms
             cboQuyenHan.Items.Add ("Nhân viên"); 
             cboQuyenHan.Items.Add ("Quản lý");
             cboQuyenHan.SelectedIndex = 0;
+
+            cboHoTenQL.DataSource = dt;
+            cboHoTenQL.DisplayMember = "HoTen";
+            cboHoTenQL.ValueMember = "MaNV";
+            cboHoTenQL.SelectedIndex = 0;
+
             //chọn nam 
             rdNam.Checked = true; 
         }
@@ -57,37 +68,44 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="e"></param>
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string maNQL = dgvNhanVien.Rows[e.RowIndex].Cells[9].Value.ToString().Trim();
-            if (maNQL!="")
+            try
             {
-            DataTable dt = DBCuaHang.GetDataTableFromQuery($"SELECT * FROM NhanVien Where MaNV='{maNQL}'");
-                if (dt.Rows.Count > 0)
-                {
-                    txtHoTenQL.Text = dt.Rows[0]["HoTen"].ToString();
-                }
-            }
-            txtMaNV.Text = dgvNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtHoTen.Text = dgvNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
-            dtpNgaySinh.Text = dgvNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtDiaChi.Text = dgvNhanVien.Rows[e.RowIndex].Cells[3].Value.ToString();
-            if (dgvNhanVien.Rows[e.RowIndex].Cells[4].Value.ToString() == "Nam")
-            {
-                rdNam.Checked = true;
-            }
-            else
-            {
-                rdNu.Checked = true;
-            }
-            txtCCCD.Text = dgvNhanVien.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtSDT.Text = dgvNhanVien.Rows[e.RowIndex].Cells[6].Value.ToString();
-            txtEmail.Text = dgvNhanVien.Rows[e.RowIndex].Cells[7].Value.ToString();
-            cboNoiLamViec.SelectedValue = dgvNhanVien.Rows[e.RowIndex].Cells[8].Value.ToString();
-            txtMaNQL.Text = dgvNhanVien.Rows[e.RowIndex].Cells[9].Value.ToString();
-            txtMatKhau.Text = dgvNhanVien.Rows[e.RowIndex].Cells[10].Value.ToString();
-            cboQuyenHan.Text = dgvNhanVien.Rows[e.RowIndex].Cells[11].Value.ToString();
-            errorProvider1.Clear(); 
-        }
 
+                string maNQL = dgvNhanVien.Rows[e.RowIndex].Cells[9].Value.ToString().Trim();
+                if (maNQL != "")
+                {
+                    DataTable dt = DBCuaHang.GetDataTableFromQuery($"SELECT * FROM NhanVien Where MaNV='{maNQL}'");
+                    if (dt.Rows.Count > 0)
+                    {
+                        cboHoTenQL.Text = dt.Rows[0]["HoTen"].ToString();
+                    }
+                }
+                txtMaNV.Text = dgvNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtHoTen.Text = dgvNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
+                dtpNgaySinh.Text = dgvNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtDiaChi.Text = dgvNhanVien.Rows[e.RowIndex].Cells[3].Value.ToString();
+                if (dgvNhanVien.Rows[e.RowIndex].Cells[4].Value.ToString() == "Nam")
+                {
+                    rdNam.Checked = true;
+                }
+                else
+                {
+                    rdNu.Checked = true;
+                }
+                txtCCCD.Text = dgvNhanVien.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtSDT.Text = dgvNhanVien.Rows[e.RowIndex].Cells[6].Value.ToString();
+                txtEmail.Text = dgvNhanVien.Rows[e.RowIndex].Cells[7].Value.ToString();
+                cboNoiLamViec.SelectedValue = dgvNhanVien.Rows[e.RowIndex].Cells[8].Value.ToString();
+                txtMaNQL.Text = dgvNhanVien.Rows[e.RowIndex].Cells[9].Value.ToString();
+                txtMatKhau.Text = dgvNhanVien.Rows[e.RowIndex].Cells[10].Value.ToString();
+                cboQuyenHan.Text = dgvNhanVien.Rows[e.RowIndex].Cells[11].Value.ToString();
+                errorProvider1.Clear();
+            }
+            catch
+            {
+
+            }
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -114,7 +132,7 @@ namespace winform_fpt_shop.nhanvien_forms
                         txtSDT.Text,
                         txtEmail.Text,
                         cboNoiLamViec.SelectedValue.ToString(),
-                        txtHoTenQL.Text,
+                        txtMaNQL.Text,
                         txtMatKhau.Text,
                         DBCuaHang.GetNvarcharText(cboQuyenHan.Text)
                         )
@@ -246,7 +264,7 @@ namespace winform_fpt_shop.nhanvien_forms
             txtEmail.Text = "";
             cboNoiLamViec.SelectedIndex=0 ;
             txtMaNQL.Text = "";
-            txtHoTenQL.Text = "";
+            cboHoTenQL.SelectedIndex = 0; 
             txtMatKhau.Text = "";
             cboQuyenHan.Text = "";
             errorProvider1.Clear(); 
@@ -333,6 +351,12 @@ namespace winform_fpt_shop.nhanvien_forms
             {
                 errorProvider1.Clear();
             }
+        }
+
+        private void cboNoiLamViec_SelectedIndexChanged(object sender, EventArgs e)
+        { 
+            txtMaNQL.Text = noiLamViec.Rows[cboNoiLamViec.SelectedIndex][4].ToString();
+            cboHoTenQL.SelectedValue=txtMaNQL.Text;
         }
     }
 }
