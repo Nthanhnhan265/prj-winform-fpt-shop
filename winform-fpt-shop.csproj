@@ -37,6 +37,11 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -62,6 +67,18 @@
     <Compile Include="classes\SanPham.cs" />
     <Compile Include="classes\TonKho.cs" />
     <Compile Include="DBCuaHang.cs" />
+    <Compile Include="nhanvien-forms\frmBaoCao_DSNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmBaoCao_DSNhanVien.Designer.cs">
+      <DependentUpon>frmBaoCao_DSNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmBaoCao_DSSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmBaoCao_DSSanPham.Designer.cs">
+      <DependentUpon>frmBaoCao_DSSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="nhanvien-forms\frmheThongChinhSuaCH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,23 +97,17 @@
     <Compile Include="nhanvien-forms\frmTaiKhoanThongTinCH.Designer.cs">
       <DependentUpon>frmTaiKhoanThongTinCH.cs</DependentUpon>
     </Compile>
-    <Compile Include="nhanvien-forms\frmXemTonKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nhanvien-forms\frmXemTonKho.Designer.cs">
-      <DependentUpon>frmXemTonKho.cs</DependentUpon>
-    </Compile>
     <Compile Include="nhanvien-forms\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="nhanvien-forms\frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="nhanvien-forms\frmThongTinCaNhan.cs">
+    <Compile Include="nhanvien-forms\frmTaiKhoanThongTinCaNhan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nhanvien-forms\frmThongTinCaNhan.Designer.cs">
-      <DependentUpon>frmThongTinCaNhan.cs</DependentUpon>
+    <Compile Include="nhanvien-forms\frmTaiKhoanThongTinCaNhan.Designer.cs">
+      <DependentUpon>frmTaiKhoanThongTinCaNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="nhanvien-forms\frmQuanLy_DSNhanVien.cs">
       <SubType>Form</SubType>
@@ -146,12 +157,6 @@
     <Compile Include="nhanvien-forms\frmSanPham_DanhSach.Designer.cs">
       <DependentUpon>frmSanPham_DanhSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="nhanvien-forms\frmSanPham_Them.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nhanvien-forms\frmSanPham_Them.Designer.cs">
-      <DependentUpon>frmSanPham_Them.cs</DependentUpon>
-    </Compile>
     <Compile Include="nhanvien-forms\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,14 +199,20 @@
     <Compile Include="nhanvien-forms\frmQuanLy_TraCuuNhanVien.Designer.cs">
       <DependentUpon>frmQuanLy_TraCuuNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rptHoaDon.cs">
+    <Compile Include="nhanvien-forms\rptDSNhanVien.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptHoaDon.rpt</DependentUpon>
+      <DependentUpon>rptDSNhanVien.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="nhanvien-forms\rptDSSanPham.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSSanPham.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="nhanvien-forms\frmheThongChinhSuaCH.resx">
       <DependentUpon>frmheThongChinhSuaCH.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,14 +222,11 @@
     <EmbeddedResource Include="nhanvien-forms\frmTaiKhoanThongTinCH.resx">
       <DependentUpon>frmTaiKhoanThongTinCH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nhanvien-forms\frmXemTonKho.resx">
-      <DependentUpon>frmXemTonKho.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nhanvien-forms\frmThongTinCaNhan.resx">
-      <DependentUpon>frmThongTinCaNhan.cs</DependentUpon>
+    <EmbeddedResource Include="nhanvien-forms\frmTaiKhoanThongTinCaNhan.resx">
+      <DependentUpon>frmTaiKhoanThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmQuanLy_DSNhanVien.resx">
       <DependentUpon>frmQuanLy_DSNhanVien.cs</DependentUpon>
@@ -247,9 +255,6 @@
     <EmbeddedResource Include="nhanvien-forms\frmSanPham_DanhSach.resx">
       <DependentUpon>frmSanPham_DanhSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nhanvien-forms\frmSanPham_Them.resx">
-      <DependentUpon>frmSanPham_Them.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmHoaDon-Tao.resx">
       <DependentUpon>frmHoaDon-Tao.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +272,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmSanPham_TonKho.resx">
       <DependentUpon>frmSanPham_TonKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\rptDSNhanVien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSNhanVien.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\rptDSSanPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSSanPham.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -296,7 +309,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="images\" />
+    <COMReference Include="AxCrystalPrintControlLib">
+      <Guid>{62862E3F-F35B-455E-9459-49EAADE80A25}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="CrystalPrintControlLib">
+      <Guid>{62862E3F-F35B-455E-9459-49EAADE80A25}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg-fpt.png" />
@@ -318,9 +347,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-reset-24.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

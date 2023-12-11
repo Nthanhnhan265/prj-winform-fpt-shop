@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhaSanXuat));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dgvNhaSX = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTaoMoi = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -41,12 +42,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtMa = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.dgvNhaSX = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhaSX)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -59,9 +60,20 @@
             this.panel2.Size = new System.Drawing.Size(899, 551);
             this.panel2.TabIndex = 4;
             // 
-            // errorProvider1
+            // dgvNhaSX
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.dgvNhaSX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNhaSX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhaSX.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNhaSX.GridColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dgvNhaSX.Location = new System.Drawing.Point(0, 256);
+            this.dgvNhaSX.Name = "dgvNhaSX";
+            this.dgvNhaSX.RowHeadersWidth = 62;
+            this.dgvNhaSX.RowTemplate.Height = 28;
+            this.dgvNhaSX.Size = new System.Drawing.Size(899, 295);
+            this.dgvNhaSX.TabIndex = 3;
+            this.dgvNhaSX.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhaSX_CellClick);
+            this.dgvNhaSX.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhaSX_CellContentClick_1);
             // 
             // panel1
             // 
@@ -82,11 +94,12 @@
             // 
             // btnTaoMoi
             // 
+            this.btnTaoMoi.Image = global::winform_fpt_shop.Properties.Resources.icons8_synchronize_24;
             this.btnTaoMoi.Location = new System.Drawing.Point(553, 65);
             this.btnTaoMoi.Name = "btnTaoMoi";
-            this.btnTaoMoi.Size = new System.Drawing.Size(106, 43);
+            this.btnTaoMoi.Size = new System.Drawing.Size(41, 43);
             this.btnTaoMoi.TabIndex = 32;
-            this.btnTaoMoi.Text = "Tạo mới ";
+            this.btnTaoMoi.Tag = "";
             this.btnTaoMoi.UseVisualStyleBackColor = true;
             this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click_1);
             // 
@@ -104,31 +117,41 @@
             // 
             // btnXoa
             // 
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnXoa.Image = global::winform_fpt_shop.Properties.Resources.icons8_delete_24;
             this.btnXoa.Location = new System.Drawing.Point(553, 173);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(142, 45);
+            this.btnXoa.Size = new System.Drawing.Size(142, 48);
             this.btnXoa.TabIndex = 28;
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // btnSua
             // 
+            this.btnSua.Image = global::winform_fpt_shop.Properties.Resources.icons8_edit_24;
             this.btnSua.Location = new System.Drawing.Point(366, 173);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(142, 45);
+            this.btnSua.Size = new System.Drawing.Size(142, 48);
             this.btnSua.TabIndex = 29;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click_1);
             // 
             // btnThem
             // 
+            this.btnThem.Image = global::winform_fpt_shop.Properties.Resources.icons8_add_24;
             this.btnThem.Location = new System.Drawing.Point(183, 173);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(142, 45);
+            this.btnThem.Size = new System.Drawing.Size(142, 48);
             this.btnThem.TabIndex = 30;
             this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
@@ -168,20 +191,9 @@
             this.txtMa.Size = new System.Drawing.Size(165, 26);
             this.txtMa.TabIndex = 25;
             // 
-            // dgvNhaSX
+            // errorProvider1
             // 
-            this.dgvNhaSX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvNhaSX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhaSX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvNhaSX.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dgvNhaSX.Location = new System.Drawing.Point(0, 256);
-            this.dgvNhaSX.Name = "dgvNhaSX";
-            this.dgvNhaSX.RowHeadersWidth = 62;
-            this.dgvNhaSX.RowTemplate.Height = 28;
-            this.dgvNhaSX.Size = new System.Drawing.Size(899, 295);
-            this.dgvNhaSX.TabIndex = 3;
-            this.dgvNhaSX.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhaSX_CellClick);
-            this.dgvNhaSX.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhaSX_CellContentClick_1);
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmNhaSanXuat
             // 
@@ -189,15 +201,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 551);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNhaSanXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhà Sản Xuất";
             this.Load += new System.EventHandler(this.frmNhaSanXuat_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhaSX)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNhaSX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
