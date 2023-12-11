@@ -30,17 +30,17 @@ namespace winform_fpt_shop
         {
             // Tạo object Khách hàng
             KhachHang khachHang = new KhachHang(txtMaKH.Text, DBCuaHang.GetNvarcharText(txtHoTen.Text), txtCCCD.Text, txtSDT.Text, DBCuaHang.GetNvarcharText(txtDiaChi.Text), txtEmail.Text);
-            int dong = DBCuaHang.AddRowData("sp_ThemKhachHang", khachHang); // Số dòng thêm vào
+            int dong = DBCuaHang.AddRowData("sp_ThemKhachHang", khachHang);
 
             // Kiểm tra
             if (dong > 0)
             {
                 // Hiện thông báo sau khi thêm thành công
-                MessageBox.Show("Đã thêm thành công!!!");
+                MessageBox.Show("Đã thêm thành công!!!", "Thông báo");
             }
             else
             {
-                dgvKhachHang.DataSource = null;
+                MessageBox.Show("Thêm không thành công", "Thông báo");
             }
 
             // Tải lại danh sách khách hàng
@@ -69,7 +69,7 @@ namespace winform_fpt_shop
             txtEmail.Text = dgvKhachHang.Rows[dong].Cells[5].Value.ToString();
 
             // Ngăn chặn sửa mã
-            txtMaKH.ReadOnly = true;
+            txtMaKH.Enabled = false;
 
             // Ngăn chặn nút thêm;
             btnThem.Enabled = false;
@@ -91,7 +91,7 @@ namespace winform_fpt_shop
             if (txtMaKH.Text != "")
             {
                 // Ngăn chặn sửa mã
-                txtMaKH.ReadOnly = true;
+                txtMaKH.Enabled = false;
 
                 // Ngăn chặn nút thêm;
                 btnThem.Enabled = false;
@@ -105,7 +105,7 @@ namespace winform_fpt_shop
             else
             {
                 // Bỏ chặn sửa mã
-                txtMaKH.ReadOnly = false;
+                txtMaKH.Enabled = true;
 
                 // Ngăn chặn nút xóa
                 btnXoa.Enabled = false;
@@ -127,11 +127,11 @@ namespace winform_fpt_shop
             if (dong > 0)
             {
                 // Hiện thông báo sau khi thêm thành công
-                MessageBox.Show("Đã sửa thành công!!!");
+                MessageBox.Show("Đã sửa thành công!!!", "Thông báo");
             }
             else
             {
-                dgvKhachHang.DataSource = null;
+                MessageBox.Show("Sửa không thành công", "Thông báo");
             }
 
             // Tải lại danh sách khách hàng
@@ -145,41 +145,51 @@ namespace winform_fpt_shop
             txtDiaChi.Clear();
             txtEmail.Clear();
 
+            // Chặn nút sửa và xóa
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+
             // Bỏ chặn
-            txtMaKH.ReadOnly = false;
-            btnThem.Enabled = true;
+            txtMaKH.Enabled = true;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            // Xóa
-            bool del = DBCuaHang.DelRowData("sp_XoaKhachHang", txtMaKH.Text);
-
-            // Kiểm tra
-            if (del == true)
+            DialogResult dl = MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dl == DialogResult.Yes)
             {
-                MessageBox.Show("Đã xóa thành công!!!");
+                // Xóa
+                bool del = DBCuaHang.DelRowData("sp_XoaKhachHang", txtMaKH.Text);
+
+                // Kiểm tra
+                if (del == true)
+                {
+                    MessageBox.Show("Đã xóa thành công!!!", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công!!!", "Thông báo");
+                    dgvKhachHang.DataSource = null;
+                }
+
+                // Tải lại danh sách khách hàng
+                dgvKhachHang.DataSource = DBCuaHang.GetDataTable("sp_HienThiKhachHang");
+
+                // Clear các textbox
+                txtMaKH.Clear();
+                txtHoTen.Clear();
+                txtCCCD.Clear();
+                txtSDT.Clear();
+                txtDiaChi.Clear();
+                txtEmail.Clear();
+
+                // Chặn nút sửa và xóa
+                btnSua.Enabled = false; 
+                btnXoa.Enabled = false;
+
+                // Bỏ chặn
+                txtMaKH.Enabled = true;
             }
-            else
-            {
-                MessageBox.Show("Xóa không thành công!!!");
-                dgvKhachHang.DataSource = null;
-            }
-
-            // Tải lại danh sách khách hàng
-            dgvKhachHang.DataSource = DBCuaHang.GetDataTable("sp_HienThiKhachHang");
-
-            // Clear các textbox
-            txtMaKH.Clear();
-            txtHoTen.Clear();
-            txtCCCD.Clear();
-            txtSDT.Clear();
-            txtDiaChi.Clear();
-            txtEmail.Clear();
-
-            // Bỏ chặn
-            txtMaKH.ReadOnly = false;
-            btnThem.Enabled = true;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -190,51 +200,129 @@ namespace winform_fpt_shop
 
         private void frmKhachHang_DS_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dl = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dl == DialogResult.Cancel)
+            DialogResult dl = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dl == DialogResult.No)
             {
                 e.Cancel = true;
             }
+        }
+
+        // Kiểm tra ký tự nhập
+        public bool KiemTraKyTuNhap()
+        {
+            bool isValid = true;
+            // Kiểm tra ký tự nhập textbox số lượng
+            string maKH = txtMaKH.Text;
+            Char[] arrMaKH = maKH.ToLower().ToCharArray();
+            for (int i = 0; i < txtMaKH.Text.Length; i++)
+            {
+                if(arrMaKH[i] < 'a' || arrMaKH[i] > 'z')
+                {
+                    if (arrMaKH[i] < '0' || arrMaKH[i] > '9')
+                    {
+                        isValid = false;
+                        break;
+                    }
+                }
+            }
+
+            string hoTen= txtHoTen.Text;
+            Char[] arrHoTen = hoTen.ToLower().ToCharArray();
+            for (int i = 0; i < txtHoTen.Text.Length; i++)
+            {
+                if (arrHoTen[i] < 'a' || arrHoTen[i] > 'z')
+                {
+                    if (arrHoTen[i] < '0' || arrHoTen[i] > '9')
+                    {
+                        isValid = false;
+                        break;
+                    }
+                }
+            }
+
+            string cCCD = txtCCCD.Text;
+            Char[] arrCCCD = cCCD.ToLower().ToCharArray();
+            for (int i = 0; i < txtCCCD.Text.Length; i++)
+            {
+                if (arrCCCD[i] < '0' || arrCCCD[i] > '9')
+                {
+                    isValid = false;
+                    break;
+                }
+            }
+
+            string sdt = txtSDT.Text;
+            Char[] arrSDT = sdt.ToLower().ToCharArray();
+            for(int i = 0; i < txtSDT.Text.Length; i++)
+            {
+                if (arrSDT[i] < '0' || arrSDT[i] > '9')
+                {
+                    isValid = false;
+                    break;
+                }
+            }
+
+            return isValid;
         }
 
         // Kiểm tra số ký tự nhập
         public bool KiemTraSoKyTuNhap()
         {
             bool isValid = true;
-            if (txtMaKH.Text.Length == 0 || txtMaKH.Text.Length > 10)
+            // Kiểm tra textbox mã
+            if (txtMaKH.Enabled == false)
             {
                 isValid = false;
             }
-            else
+
+            // Kiểm tra số ký tự nhập mã khách hàng
+            if (txtMaKH.Text.Length == 0 || txtMaKH.Text.Length > 10)
             {
-                if (txtHoTen.Text.Length == 0 || txtHoTen.Text.Length > 50)
-                {
-                    isValid = false;
-                }
-                if (txtCCCD.Text.Length != 10)
-                {
-                    isValid = false;
-                }
-                if (txtSDT.Text.Length != 10)
-                {
-                    isValid = false;
-                }
-                if (txtDiaChi.Text.Length > 255)
-                {
-                    isValid = false;
-                }
-                if (txtEmail.Text.Length > 50)
-                {
-                    isValid = false;
-                }
+                isValid = false;
+                this.errorProvider.SetError(txtMaKH, "Mã khách hàng không được rỗng và phải dưới 10 ký tự");
             }
-           
+
+            // Kiểm tra số ký tự nhập họ tên
+            if (txtHoTen.Text.Length == 0 || txtHoTen.Text.Length > 50)
+            {
+                isValid = false;
+                this.errorProvider.SetError(txtHoTen, "Họ tên không được rỗng và phải dưới 50 ký tự");
+            }
+
+            // Kiểm tra số ký tự nhập CCCD
+            if (txtCCCD.Text.Length != 10)
+            {
+                isValid = false;
+                this.errorProvider.SetError(txtCCCD, "CCCD phải có 10 ký tự");
+            }
+
+            // Kiểm tra số ký tự nhập SDT
+            if (txtSDT.Text.Length != 10)
+            {
+                isValid = false;
+                this.errorProvider.SetError(txtSDT, "SDT phải có 10 ký tự");
+            }
+
+            // KIểm tra số ký tự nhập địa chỉ
+            if (txtDiaChi.Text.Length > 255)
+            {
+                isValid = false;
+                this.errorProvider.SetError(txtDiaChi, "Địa chỉ không quá 255 ký tự");
+            }
+
+            // Kiểm tra số ký tự nhập Email
+            if (txtEmail.Text.Length > 50)
+            {
+                isValid = false;
+                this.errorProvider.SetError(txtEmail, "Email không quá 50 ký tự");
+            }
+
             return isValid;
         }
 
         private void txtMaKH_TextChanged(object sender, EventArgs e)
         {
-            if (KiemTraSoKyTuNhap() == true)
+            if (KiemTraSoKyTuNhap() == true && txtMaKH.Enabled == true)
             {
                 btnThem.Enabled = true;
             }
@@ -246,7 +334,7 @@ namespace winform_fpt_shop
 
         private void txtHoTen_TextChanged(object sender, EventArgs e)
         {
-            if (KiemTraSoKyTuNhap() == true)
+            if (KiemTraSoKyTuNhap() == true && KiemTraKyTuNhap() == true)
             {
                 btnThem.Enabled = true;
             }
@@ -258,7 +346,7 @@ namespace winform_fpt_shop
 
         private void txtCCCD_TextChanged(object sender, EventArgs e)
         {
-            if (KiemTraSoKyTuNhap() == true)
+            if (KiemTraSoKyTuNhap() == true && KiemTraKyTuNhap() == true)
             {
                 btnThem.Enabled = true;
             }
@@ -270,7 +358,7 @@ namespace winform_fpt_shop
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-            if (KiemTraSoKyTuNhap() == true)
+            if (KiemTraSoKyTuNhap() == true && KiemTraKyTuNhap() == true)
             {
                 btnThem.Enabled = true;
             }

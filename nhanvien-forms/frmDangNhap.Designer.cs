@@ -47,9 +47,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(281, 214);
+            this.label1.Location = new System.Drawing.Point(250, 171);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 20);
+            this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Username";
             // 
@@ -59,9 +59,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(281, 284);
+            this.label2.Location = new System.Drawing.Point(250, 227);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Mật khẩu";
             // 
@@ -69,20 +69,20 @@
             // 
             this.txtUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtUser.BackColor = System.Drawing.Color.White;
-            this.txtUser.Location = new System.Drawing.Point(405, 211);
+            this.txtUser.Location = new System.Drawing.Point(360, 169);
             this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(268, 26);
+            this.txtUser.Size = new System.Drawing.Size(239, 22);
             this.txtUser.TabIndex = 3;
             // 
             // txtMatKhau
             // 
             this.txtMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMatKhau.BackColor = System.Drawing.Color.White;
-            this.txtMatKhau.Location = new System.Drawing.Point(405, 284);
+            this.txtMatKhau.Location = new System.Drawing.Point(360, 227);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(268, 26);
+            this.txtMatKhau.Size = new System.Drawing.Size(239, 22);
             this.txtMatKhau.TabIndex = 5;
             // 
             // label12
@@ -91,9 +91,9 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(400, 85);
+            this.label12.Location = new System.Drawing.Point(356, 68);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(162, 29);
+            this.label12.Size = new System.Drawing.Size(138, 25);
             this.label12.TabIndex = 0;
             this.label12.Text = "ĐĂNG NHẬP";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -104,17 +104,19 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.rdNhanVien);
             this.panel1.Controls.Add(this.rdQuanLy);
-            this.panel1.Location = new System.Drawing.Point(367, 155);
+            this.panel1.Location = new System.Drawing.Point(326, 124);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 31);
+            this.panel1.Size = new System.Drawing.Size(205, 25);
             this.panel1.TabIndex = 1;
             // 
             // rdNhanVien
             // 
             this.rdNhanVien.AutoSize = true;
-            this.rdNhanVien.Location = new System.Drawing.Point(10, 3);
+            this.rdNhanVien.Location = new System.Drawing.Point(9, 2);
+            this.rdNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdNhanVien.Name = "rdNhanVien";
-            this.rdNhanVien.Size = new System.Drawing.Size(104, 24);
+            this.rdNhanVien.Size = new System.Drawing.Size(88, 20);
             this.rdNhanVien.TabIndex = 0;
             this.rdNhanVien.TabStop = true;
             this.rdNhanVien.Text = "Nhân viên";
@@ -124,9 +126,10 @@
             // rdQuanLy
             // 
             this.rdQuanLy.AutoSize = true;
-            this.rdQuanLy.Location = new System.Drawing.Point(138, 3);
+            this.rdQuanLy.Location = new System.Drawing.Point(123, 2);
+            this.rdQuanLy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdQuanLy.Name = "rdQuanLy";
-            this.rdQuanLy.Size = new System.Drawing.Size(87, 24);
+            this.rdQuanLy.Size = new System.Drawing.Size(73, 20);
             this.rdQuanLy.TabIndex = 1;
             this.rdQuanLy.TabStop = true;
             this.rdQuanLy.Text = "Quản lý";
@@ -139,10 +142,10 @@
             this.btnQuenMK.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnQuenMK.ForeColor = System.Drawing.Color.White;
             this.btnQuenMK.Image = global::winform_fpt_shop.Properties.Resources.icons8_reset_24;
-            this.btnQuenMK.Location = new System.Drawing.Point(483, 355);
+            this.btnQuenMK.Location = new System.Drawing.Point(430, 284);
             this.btnQuenMK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQuenMK.Name = "btnQuenMK";
-            this.btnQuenMK.Size = new System.Drawing.Size(190, 58);
+            this.btnQuenMK.Size = new System.Drawing.Size(169, 46);
             this.btnQuenMK.TabIndex = 7;
             this.btnQuenMK.Text = "Quên mật khẩu?";
             this.btnQuenMK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -156,10 +159,10 @@
             this.btnDangNhap.BackColor = System.Drawing.Color.Black;
             this.btnDangNhap.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDangNhap.Image = global::winform_fpt_shop.Properties.Resources.icons8_avatar_24;
-            this.btnDangNhap.Location = new System.Drawing.Point(269, 355);
+            this.btnDangNhap.Location = new System.Drawing.Point(253, 284);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(152, 58);
+            this.btnDangNhap.Size = new System.Drawing.Size(135, 46);
             this.btnDangNhap.TabIndex = 6;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -170,11 +173,11 @@
             // frmDangNhap
             // 
             this.AcceptButton = this.btnDangNhap;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(948, 571);
+            this.ClientSize = new System.Drawing.Size(843, 457);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnQuenMK);

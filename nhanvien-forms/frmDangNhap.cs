@@ -6,7 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.SessionState;
 using System.Windows.Forms;
+using winform_fpt_shop.classes;
 using winform_fpt_shop.manhinhchung_forms;
 
 namespace winform_fpt_shop
@@ -30,7 +32,46 @@ namespace winform_fpt_shop
         bool hoatDong = false;
         frmNhanVien frmChinh;
     
-        
+        // Lấy mã nhân viên
+        public static string LayMaNhanVien()
+        {
+            if (taiKhoan != null)
+            {
+                return taiKhoan.MaNV;
+            }
+            return "";
+        }
+
+        // Lấy tên nhân viên
+        public static string LayTenNhanVien()
+        {
+            if (taiKhoan != null)
+            {
+                return taiKhoan.HoTen;
+            }
+            return "";
+        }
+
+        // Lấy số điện thoại
+        public static string LaySoDienThoai()
+        {
+            if (taiKhoan != null)
+            {
+                return taiKhoan.SDT;
+            }
+            return "";
+        }
+
+        // Lấy mật khẩu
+        public static string LayMatkhau()
+        {
+            if(taiKhoan != null)
+            {
+                return taiKhoan.MatKhau.Trim();
+            }
+            return "";
+        }
+
         //ấn để đăng nhập 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
@@ -50,7 +91,15 @@ namespace winform_fpt_shop
             taiKhoan = DBCuaHang.DangNhap(maNV,matKhau,quyenHan);
             if(taiKhoan!=null)
             {
-                frmChinh.HienMenu(); 
+                try
+                {
+                    frmChinh.HienMenu();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
                 if(taiKhoan.QuyenHan=="Quản lý")
                 {
                     frmChinh.HienQuanLy();
@@ -73,7 +122,8 @@ namespace winform_fpt_shop
 
         private void btnQuenMK_Click(object sender, EventArgs e)
         {
-
+            frmQuenMatKhau quenMatKhau = new frmQuenMatKhau();
+            quenMatKhau.Show();
         }
 
         private void rdQuanLy_CheckedChanged(object sender, EventArgs e)
@@ -140,6 +190,11 @@ namespace winform_fpt_shop
         }
 
         private void rdNhanVien_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDoiMK_Click(object sender, EventArgs e)
         {
 
         }

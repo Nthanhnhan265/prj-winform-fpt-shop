@@ -51,7 +51,6 @@
             // btnTimKiem
             // 
             this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTimKiem.Enabled = false;
             this.btnTimKiem.Location = new System.Drawing.Point(616, 61);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
@@ -69,7 +68,6 @@
             this.txtTraCuuKH.Name = "txtTraCuuKH";
             this.txtTraCuuKH.Size = new System.Drawing.Size(274, 22);
             this.txtTraCuuKH.TabIndex = 6;
-            this.txtTraCuuKH.TextChanged += new System.EventHandler(this.txtTraCuuKH_TextChanged);
             // 
             // cboTimKiem
             // 
@@ -79,10 +77,10 @@
             this.cboTimKiem.Items.AddRange(new object[] {
             "Mã khách hàng",
             "Tên khách hàng"});
-            this.cboTimKiem.Location = new System.Drawing.Point(171, 65);
+            this.cboTimKiem.Location = new System.Drawing.Point(137, 66);
             this.cboTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboTimKiem.Name = "cboTimKiem";
-            this.cboTimKiem.Size = new System.Drawing.Size(108, 24);
+            this.cboTimKiem.Size = new System.Drawing.Size(143, 24);
             this.cboTimKiem.TabIndex = 7;
             // 
             // label2
@@ -121,6 +119,7 @@
             // 
             // frmKhachhang_TraCuu
             // 
+            this.AcceptButton = this.btnTimKiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 408);
@@ -133,6 +132,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmKhachhang_TraCuu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tra Cứu Hàng Khách ";
