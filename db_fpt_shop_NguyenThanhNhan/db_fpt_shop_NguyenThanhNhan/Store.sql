@@ -1,4 +1,46 @@
 ﻿use QuanLyCuaHang
+Go
+Create proc sp_DangNhap 
+@MaNV char(10), @Password char(10), @QuyenHan nvarchar(50) 
+as 
+	select * from NhanVien 
+	where MaNV=@MaNV And MatKhau=@Password And QuyenHan=@QuyenHan
+
+Go 
+--Tìm kiếm nhân viên 
+Create proc sp_TimKiemNhanVienTheoMaNV 
+@ChuoiCanTim char(10) 
+AS 
+	SELECT * FROM NhanVien Where MaNV=@ChuoiCanTim
+Go 
+Create proc sp_TimKiemNhanVienTheoTenNV
+@ChuoiCanTim nvarchar(50) 
+AS 
+	SELECT * FROM NhanVien Where HoTen like '%'+@ChuoiCanTim+'%'
+Go 
+Create proc sp_TimKiemNhanVienTheoCCCD
+@ChuoiCanTim char(10) 
+AS 
+	SELECT * FROM NhanVien Where CCCD = @ChuoiCanTim
+Go 
+Create proc sp_TimKiemNvhanVienTheoSDT
+@ChuoiCanTim char(10)
+AS 
+	SELECT * FROM NhanVien Where SDT = @ChuoiCanTim
+Go 
+
+Create proc sp_TimKiemNhanVienTheoEmail
+@ChuoiCanTim char(10) 
+AS 
+	SELECT * FROM NhanVien Where Email like'%'+ @ChuoiCanTim+'%'
+
+Go 
+Create proc sp_TimKiemNhanVienTheoDiaChi
+@ChuoiCanTim nvarchar(10) 
+AS 
+	SELECT * FROM NhanVien Where DiaChi like'%'+ @ChuoiCanTim+'%'
+
+
 GO
 --Tim kiếm sản phẩm
 Create procedure sp_TimKiemSanPhamTheoMa
@@ -51,7 +93,7 @@ CREATE PROCEDURE sp_XoaChiTietHD
 AS
 BEGIN
     DELETE FROM ChiTietHD
-    WHERE MaChiTiet = @MaCanXoa;
+    WHERE MaHD = @MaCanXoa;
 END
 
 GO
@@ -511,3 +553,137 @@ BEGIN
 		SoLuong = @SoLuong
     WHERE MaCH = @MaCH_Cu AND MaSP = @MaSP_Cu
 END
+
+GO
+
+CREATE PROCEDURE sp_ThemNhanVien
+    @MaNV CHAR(10),
+    @HoTen NVARCHAR(50),
+    @NgaySinh DATE,
+    @DiaChi NVARCHAR(255),
+    @GioiTinh NVARCHAR(5),
+    @CCCD CHAR(10),
+    @SDT CHAR(10),
+    @Email NVARCHAR(50),
+    @MaCH CHAR(10),
+    @QuanLy CHAR(10),
+    @MatKhau CHAR(10),
+    @QuyenHan NVARCHAR(50)
+	AS
+BEGIN
+    INSERT INTO NhanVien (MaNV, HoTen, NgaySinh, DiaChi, GioiTinh, CCCD, SDT, Email, MaCH, QuanLy, MatKhau, QuyenHan)
+    VALUES (@MaNV, @HoTen, @NgaySinh, @DiaChi, @GioiTinh, @CCCD, @SDT, @Email, @MaCH, @QuanLy, @MatKhau, @QuyenHan);
+END
+
+GO
+
+CREATE PROCEDURE sp_XoaNhanVIen 
+	@MaCanXoa char(10)
+	AS
+BEGIN
+    DELETE FROM NhanVien WHERE MaNV = @MaCanXoa;
+END
+
+GO
+
+CREATE PROCEDURE sp_CapNhatNhanVien 
+     @MaNV CHAR(10),
+     @HoTen NVARCHAR(50),
+     @NgaySinh DATE,
+     @DiaChi NVARCHAR(255),
+     @GioiTinh NVARCHAR(5),
+     @CCCD CHAR(10),
+     @SDT CHAR(10),
+     @Email NVARCHAR(50),
+     @MaCH CHAR(10),
+     @QuanLy CHAR(10),
+     @MatKhau CHAR(10),
+     @QuyenHan NVARCHAR(50)
+AS
+BEGIN
+    UPDATE NhanVien
+    SET HoTen = @HoTen, NgaySinh = @NgaySinh, DiaChi = @DiaChi, GioiTinh = @GioiTinh, CCCD = @CCCD, 
+        SDT = @SDT, Email = @Email, MaCH = @MaCH, QuanLy = @QuanLy, MatKhau = @MatKhau, QuyenHan = @QuyenHan
+    WHERE MaNV = @MaNV;
+END
+GO 
+CREATE PROCEDURE sp_HienThiNhanVien 
+AS 
+BEGIN
+    SELECT * FROM NhanVien;
+END
+
+GO
+
+-- TRA CUU HOA DON
+CREATE PROCEDURE sp_TraCuuHoaDonTheoMaHD
+@MaHD char(10)
+AS
+SELECT * FROM HoaDon WHERE MaHD = @MaHD
+
+GO
+
+CREATE PROCEDURE sp_TraCuuChiTietHDTheoMaHD
+@MaHD char(10)
+AS
+SELECT * FROM ChiTietHD WHERE MaHD = @MaHD
+GO
+
+CREATE PROCEDURE sp_TraCuuHoaDonTheoPTThanhToan
+@PTThanhToan nvarchar(50)
+AS
+SELECT * FROM HoaDon WHERE PTThanhToan LIKE @PTThanhToan
+
+GO
+
+CREATE PROCEDURE sp_TraCuuHoaDonTheoMaKH
+@MaKH char(10)
+AS
+SELECT * FROM HoaDon WHERE MaKH = @MaKH
+
+GO
+
+CREATE PROCEDURE sp_TraCuuHoaDonTheoMaNV
+@MaNV char(10)
+AS
+SELECT * FROM HoaDon WHERE MaNV = @MaNV
+
+GO
+
+CREATE PROCEDURE sp_TraCuuHoaDonTheoMaCH
+@MaCH char(10)
+AS
+SELECT * FROM HoaDon WHERE MaCH = @MaCH
+
+GO
+
+CREATE PROCEDURE sp_TraCuuHoaDonTheoSoTienTT
+@SoTienTT int
+AS
+SELECT * FROM HoaDon WHERE SoTienTT <= @SoTienTT
+
+GO
+
+-- ĐỔI MẬT KHẨU
+CREATE PROCEDURE sp_DoiMatKhau
+@MatKhauCu char(30),
+@MatKhauMoi char(30)
+AS
+UPDATE NhanVien
+SET MatKhau = @MatKhauMoi
+WHERE MatKhau = @MatKhauCu
+
+GO
+
+-- Lấy sản phẩm từ cửa hàng
+CREATE PROCEDURE sp_TimMaSPTuMaCH
+@MaCH char(10)
+AS
+SELECT MaSP FROM CuaHang JOIN TonKho ON CuaHang.MaCH = TonKho.MaCH WHERE CuaHang.MaCH = @MaCH
+
+GO
+
+CREATE PROCEDURE sp_LaySoLuongSanPham
+@MaSP char(10)
+AS
+SELECT SoLuong FROM TonKho WHERE MaSP = @MaSP

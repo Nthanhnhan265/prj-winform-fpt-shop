@@ -73,7 +73,6 @@
             this.txtTraCuuKH.Name = "txtTraCuuKH";
             this.txtTraCuuKH.Size = new System.Drawing.Size(308, 26);
             this.txtTraCuuKH.TabIndex = 6;
-            this.txtTraCuuKH.TextChanged += new System.EventHandler(this.txtTraCuuKH_TextChanged);
             // 
             // cboTimKiem
             // 
@@ -126,6 +125,7 @@
             // 
             // frmKhachhang_TraCuu
             // 
+            this.AcceptButton = this.btnTimKiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 510);
@@ -139,6 +139,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmKhachhang_TraCuu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tra Cứu Hàng Khách ";

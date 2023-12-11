@@ -34,7 +34,7 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblXemChiTiet = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -43,11 +43,24 @@
             // cboTimKiem
             // 
             this.cboTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboTimKiem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTimKiem.FormattingEnabled = true;
+      
             this.cboTimKiem.Location = new System.Drawing.Point(109, 86);
             this.cboTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboTimKiem.Name = "cboTimKiem";
             this.cboTimKiem.Size = new System.Drawing.Size(121, 28);
+            this.cboTimKiem.Items.AddRange(new object[] {
+            "Mã hóa đơn",
+            "Mã khách hàng",
+            "Mã nhân viên",
+            "Mã cửa hàng",
+            "PT Thanh toán",
+            "Số tiền TT"});
+            this.cboTimKiem.Location = new System.Drawing.Point(67, 70);
+            this.cboTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboTimKiem.Name = "cboTimKiem";
+            this.cboTimKiem.Size = new System.Drawing.Size(142, 24);
             this.cboTimKiem.TabIndex = 11;
             // 
             // txtTimKiemHoaDon
@@ -58,7 +71,6 @@
             this.txtTimKiemHoaDon.Name = "txtTimKiemHoaDon";
             this.txtTimKiemHoaDon.Size = new System.Drawing.Size(308, 26);
             this.txtTimKiemHoaDon.TabIndex = 10;
-            this.txtTimKiemHoaDon.TextChanged += new System.EventHandler(this.txtTimKiemHoaDon_TextChanged);
             // 
             // btnTimKiem
             // 
@@ -66,6 +78,7 @@
             this.btnTimKiem.Enabled = false;
             this.btnTimKiem.Image = global::winform_fpt_shop.Properties.Resources.icons8_find_24;
             this.btnTimKiem.Location = new System.Drawing.Point(610, 81);
+            this.btnTimKiem.Location = new System.Drawing.Point(542, 65);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(166, 41);
@@ -74,6 +87,7 @@
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // label1
             // 
@@ -95,16 +109,16 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Danh sách hóa đơn";
             // 
-            // label17
+            // lblXemChiTiet
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.IndianRed;
-            this.label17.Location = new System.Drawing.Point(739, 168);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(138, 20);
-            this.label17.TabIndex = 13;
-            this.label17.Text = "Ấn để xem chi tiết ";
+            this.lblXemChiTiet.AutoSize = true;
+            this.lblXemChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXemChiTiet.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblXemChiTiet.Location = new System.Drawing.Point(739, 168);
+            this.lblXemChiTiet.Name = "lblXemChiTiet";
+            this.lblXemChiTiet.Size = new System.Drawing.Size(138, 20);
+            this.lblXemChiTiet.TabIndex = 13;
+            this.lblXemChiTiet.Text = "Ấn để xem chi tiết ";
             // 
             // label12
             // 
@@ -130,15 +144,18 @@
             this.dgvHoaDon.RowTemplate.Height = 24;
             this.dgvHoaDon.Size = new System.Drawing.Size(890, 308);
             this.dgvHoaDon.TabIndex = 25;
+            this.dgvHoaDon.Click += new System.EventHandler(this.dgvHoaDon_Click);
             // 
             // frmHoaDon_DanhSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AcceptButton = this.btnTimKiem;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 500);
             this.Controls.Add(this.dgvHoaDon);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label17);
+            this.Controls.Add(this.lblXemChiTiet);
             this.Controls.Add(this.cboTimKiem);
             this.Controls.Add(this.txtTimKiemHoaDon);
             this.Controls.Add(this.btnTimKiem);
@@ -147,6 +164,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmHoaDon_DanhSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Sách Hóa Đơn";
@@ -164,7 +183,7 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblXemChiTiet;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dgvHoaDon;
     }
