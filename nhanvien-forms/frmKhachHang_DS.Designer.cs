@@ -115,71 +115,74 @@
             // txtMaKH
             // 
             this.txtMaKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtMaKH.Location = new System.Drawing.Point(171, 71);
+            this.txtMaKH.Location = new System.Drawing.Point(192, 89);
             this.txtMaKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(111, 22);
+            this.txtMaKH.Size = new System.Drawing.Size(124, 26);
             this.txtMaKH.TabIndex = 0;
             this.txtMaKH.TextChanged += new System.EventHandler(this.txtMaKH_TextChanged);
             // 
             // txtHoTen
             // 
             this.txtHoTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtHoTen.Location = new System.Drawing.Point(171, 106);
+            this.txtHoTen.Location = new System.Drawing.Point(192, 132);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(111, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(124, 26);
             this.txtHoTen.TabIndex = 1;
             this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             // 
             // txtCCCD
             // 
             this.txtCCCD.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCCCD.Location = new System.Drawing.Point(171, 144);
+            this.txtCCCD.Location = new System.Drawing.Point(192, 180);
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(111, 22);
+            this.txtCCCD.Size = new System.Drawing.Size(124, 26);
             this.txtCCCD.TabIndex = 2;
             this.txtCCCD.TextChanged += new System.EventHandler(this.txtCCCD_TextChanged);
             // 
             // txtSDT
             // 
             this.txtSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSDT.Location = new System.Drawing.Point(383, 74);
+            this.txtSDT.Location = new System.Drawing.Point(431, 92);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(111, 22);
+            this.txtSDT.Size = new System.Drawing.Size(124, 26);
             this.txtSDT.TabIndex = 3;
             this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDiaChi.Location = new System.Drawing.Point(383, 108);
+            this.txtDiaChi.Location = new System.Drawing.Point(431, 135);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(111, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(124, 26);
             this.txtDiaChi.TabIndex = 4;
             // 
             // txtEmail
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtEmail.Location = new System.Drawing.Point(383, 146);
+            this.txtEmail.Location = new System.Drawing.Point(431, 182);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(111, 22);
+            this.txtEmail.Size = new System.Drawing.Size(124, 26);
             this.txtEmail.TabIndex = 5;
             // 
             // btnThem
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThem.Enabled = false;
-            this.btnThem.Location = new System.Drawing.Point(580, 55);
+            this.btnThem.Image = global::winform_fpt_shop.Properties.Resources.icons8_add_24;
+            this.btnThem.Location = new System.Drawing.Point(652, 69);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(117, 33);
+            this.btnThem.Size = new System.Drawing.Size(132, 49);
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -187,12 +190,15 @@
             // 
             this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSua.Enabled = false;
-            this.btnSua.Location = new System.Drawing.Point(580, 101);
+            this.btnSua.Image = global::winform_fpt_shop.Properties.Resources.icons8_edit_24;
+            this.btnSua.Location = new System.Drawing.Point(651, 128);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(117, 33);
+            this.btnSua.Size = new System.Drawing.Size(132, 49);
             this.btnSua.TabIndex = 7;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -200,24 +206,30 @@
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXoa.Enabled = false;
-            this.btnXoa.Location = new System.Drawing.Point(580, 145);
+            this.btnXoa.Image = global::winform_fpt_shop.Properties.Resources.icons8_delete_24;
+            this.btnXoa.Location = new System.Drawing.Point(652, 183);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(117, 33);
+            this.btnXoa.Size = new System.Drawing.Size(132, 50);
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTimKiem.Location = new System.Drawing.Point(719, 55);
+            this.btnTimKiem.Image = global::winform_fpt_shop.Properties.Resources.icons8_find_24;
+            this.btnTimKiem.Location = new System.Drawing.Point(809, 69);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(113, 33);
+            this.btnTimKiem.Size = new System.Drawing.Size(127, 49);
             this.btnTimKiem.TabIndex = 9;
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
@@ -238,11 +250,11 @@
             this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachHang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvKhachHang.Location = new System.Drawing.Point(0, 210);
-            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvKhachHang.Location = new System.Drawing.Point(0, 292);
+            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
-            this.dgvKhachHang.Size = new System.Drawing.Size(863, 254);
+            this.dgvKhachHang.Size = new System.Drawing.Size(971, 288);
             this.dgvKhachHang.TabIndex = 10;
             this.dgvKhachHang.Click += new System.EventHandler(this.dgvKhachHang_Click);
             // 
@@ -255,7 +267,7 @@
             this.AcceptButton = this.btnThem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 464);
+            this.ClientSize = new System.Drawing.Size(971, 580);
             this.Controls.Add(this.dgvKhachHang);
             this.Controls.Add(this.lblTItle);
             this.Controls.Add(this.btnTimKiem);
