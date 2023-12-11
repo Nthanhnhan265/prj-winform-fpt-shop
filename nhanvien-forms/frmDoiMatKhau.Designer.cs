@@ -45,60 +45,60 @@
             // lblMatkhauCu
             // 
             this.lblMatkhauCu.AutoSize = true;
-            this.lblMatkhauCu.Location = new System.Drawing.Point(182, 65);
+            this.lblMatkhauCu.Location = new System.Drawing.Point(239, 102);
             this.lblMatkhauCu.Name = "lblMatkhauCu";
-            this.lblMatkhauCu.Size = new System.Drawing.Size(78, 16);
+            this.lblMatkhauCu.Size = new System.Drawing.Size(96, 20);
             this.lblMatkhauCu.TabIndex = 0;
             this.lblMatkhauCu.Text = "Mật khẩu cũ";
             // 
             // lblMatKhauMoi
             // 
             this.lblMatKhauMoi.AutoSize = true;
-            this.lblMatKhauMoi.Location = new System.Drawing.Point(175, 114);
+            this.lblMatKhauMoi.Location = new System.Drawing.Point(232, 151);
             this.lblMatKhauMoi.Name = "lblMatKhauMoi";
-            this.lblMatKhauMoi.Size = new System.Drawing.Size(86, 16);
+            this.lblMatKhauMoi.Size = new System.Drawing.Size(104, 20);
             this.lblMatKhauMoi.TabIndex = 0;
             this.lblMatKhauMoi.Text = "Mật khẩu mới";
             // 
             // txtMatKhauCu
             // 
-            this.txtMatKhauCu.Location = new System.Drawing.Point(284, 60);
+            this.txtMatKhauCu.Location = new System.Drawing.Point(341, 97);
             this.txtMatKhauCu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMatKhauCu.Name = "txtMatKhauCu";
-            this.txtMatKhauCu.Size = new System.Drawing.Size(175, 22);
+            this.txtMatKhauCu.Size = new System.Drawing.Size(207, 26);
             this.txtMatKhauCu.TabIndex = 0;
             this.txtMatKhauCu.TextChanged += new System.EventHandler(this.txtMatKhauCu_TextChanged);
             // 
             // txtMatKhauMoi
             // 
-            this.txtMatKhauMoi.Location = new System.Drawing.Point(284, 110);
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(341, 147);
             this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(175, 22);
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(207, 26);
             this.txtMatKhauMoi.TabIndex = 1;
             this.txtMatKhauMoi.TextChanged += new System.EventHandler(this.txtMatKhauMoi_TextChanged);
             // 
             // txtNhapLai
             // 
-            this.txtNhapLai.Location = new System.Drawing.Point(284, 157);
+            this.txtNhapLai.Location = new System.Drawing.Point(341, 194);
             this.txtNhapLai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNhapLai.Name = "txtNhapLai";
-            this.txtNhapLai.Size = new System.Drawing.Size(175, 22);
+            this.txtNhapLai.Size = new System.Drawing.Size(207, 26);
             this.txtNhapLai.TabIndex = 2;
             this.txtNhapLai.TextChanged += new System.EventHandler(this.txtNhapLai_TextChanged);
             // 
             // lblNhapLai
             // 
             this.lblNhapLai.AutoSize = true;
-            this.lblNhapLai.Location = new System.Drawing.Point(123, 162);
+            this.lblNhapLai.Location = new System.Drawing.Point(168, 199);
             this.lblNhapLai.Name = "lblNhapLai";
-            this.lblNhapLai.Size = new System.Drawing.Size(139, 16);
+            this.lblNhapLai.Size = new System.Drawing.Size(165, 20);
             this.lblNhapLai.TabIndex = 0;
             this.lblNhapLai.Text = "Nhập lại mật khẩu mới";
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(201, 292);
+            this.btnThoat.Location = new System.Drawing.Point(222, 248);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(111, 31);
@@ -110,7 +110,7 @@
             // btnXacNhan
             // 
             this.btnXacNhan.Enabled = false;
-            this.btnXacNhan.Location = new System.Drawing.Point(392, 234);
+            this.btnXacNhan.Location = new System.Drawing.Point(449, 248);
             this.btnXacNhan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(99, 31);
@@ -124,24 +124,15 @@
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(269, 15);
+            this.lblTitle.Location = new System.Drawing.Point(336, 43);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(169, 25);
+            this.lblTitle.Size = new System.Drawing.Size(195, 29);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "ĐỔI MẬT KHẨU";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // errorProvider
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(303, 19);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(195, 29);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "ĐỔI MẬT KHẨU";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.errorProvider.ContainerControl = this;
             // 
             // frmDoiMatKhau
@@ -160,7 +151,6 @@
             this.Controls.Add(this.lblMatKhauMoi);
             this.Controls.Add(this.lblMatkhauCu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

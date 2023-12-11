@@ -135,10 +135,10 @@
             // 
             // errorProvider
             // 
-            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(307, 225);
-            this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
-            this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(343, 37);
-            this.txtNhapLaiMatKhau.TabIndex = 5;
+            //this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(307, 225);
+            //this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
+            //this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(343, 37);
+            //this.txtNhapLaiMatKhau.TabIndex = 5;
             this.errorProvider.ContainerControl = this;
             // 
             // frmQuenMatKhau

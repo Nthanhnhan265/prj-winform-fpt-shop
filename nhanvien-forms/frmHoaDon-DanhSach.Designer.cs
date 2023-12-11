@@ -151,7 +151,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AcceptButton = this.btnTimKiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
->>>>>>> 60ed86a06c43ede47326dccf35b0cbcfe67cd1f4
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 500);
             this.Controls.Add(this.dgvHoaDon);

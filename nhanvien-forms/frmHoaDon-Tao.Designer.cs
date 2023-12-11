@@ -34,7 +34,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMaCH = new System.Windows.Forms.TextBox();
             this.cboTenKH = new System.Windows.Forms.ComboBox();
-            this.cboTenNV = new System.Windows.Forms.ComboBox();
+            //this.cboTenNV = new System.Windows.Forms.ComboBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.txtMaCH = new System.Windows.Forms.TextBox();
             this.cboTenKH = new System.Windows.Forms.ComboBox();
@@ -173,14 +173,14 @@
             // 
             // cboTenNV
             // 
-            this.cboTenNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTenNV.FormattingEnabled = true;
-            this.cboTenNV.Location = new System.Drawing.Point(412, 60);
-            this.cboTenNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboTenNV.Name = "cboTenNV";
-            this.cboTenNV.Size = new System.Drawing.Size(140, 28);
-            this.cboTenNV.TabIndex = 19;
-            this.cboTenNV.SelectedIndexChanged += new System.EventHandler(this.cboTenNV_SelectedIndexChanged);
+            //this.cboTenNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            //this.cboTenNV.FormattingEnabled = true;
+            //this.cboTenNV.Location = new System.Drawing.Point(412, 60);
+            //this.cboTenNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            //this.cboTenNV.Name = "cboTenNV";
+            //this.cboTenNV.Size = new System.Drawing.Size(140, 28);
+            //this.cboTenNV.TabIndex = 19;
+            //this.cboTenNV.SelectedIndexChanged += new System.EventHandler(this.cboTenNV_SelectedIndexChanged);
             // 
             // txtMaKH
             // 
@@ -350,15 +350,15 @@
             // 
             // dgvChiTietHoaDon
             // 
-            this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHoaDon.Location = new System.Drawing.Point(3, 150);
-            this.dgvHoaDon.RowHeadersWidth = 51;
-            this.dgvHoaDon.RowTemplate.Height = 24;
-            this.dgvHoaDon.Size = new System.Drawing.Size(915, 192);
-            this.dgvHoaDon.TabIndex = 1;
-            this.dgvHoaDon.Click += new System.EventHandler(this.dgvHoaDon_Click);
+            this.dgvChiTietHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChiTietHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvChiTietHoaDon.Location = new System.Drawing.Point(3, 150);
+            this.dgvChiTietHoaDon.RowHeadersWidth = 51;
+            this.dgvChiTietHoaDon.RowTemplate.Height = 24;
+            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(915, 192);
+            this.dgvChiTietHoaDon.TabIndex = 1;
+            this.dgvChiTietHoaDon.Click += new System.EventHandler(this.dgvHoaDon_Click);
             this.dgvChiTietHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             // 
@@ -463,22 +463,22 @@
             // 
             // cboTenSP
             // 
-            this.cboMaSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMaSP.FormattingEnabled = true;
-            this.cboMaSP.Location = new System.Drawing.Point(165, 17);
-            this.cboMaSP.Name = "cboMaSP";
-            this.cboMaSP.Size = new System.Drawing.Size(121, 28);
-            this.cboMaSP.TabIndex = 0;
+            this.cboTenSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTenSP.FormattingEnabled = true;
+            this.cboTenSP.Location = new System.Drawing.Point(165, 17);
+            this.cboTenSP.Name = "cboMaSP";
+            this.cboTenSP.Size = new System.Drawing.Size(121, 28);
+            this.cboTenSP.TabIndex = 0;
             this.cboTenSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboTenSP.SelectedIndexChanged += new System.EventHandler(this.cboTenSP_SelectedIndexChanged);
             // 
             // txtMaSP
             // 
-            this.txtTenSP.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTenSP.Location = new System.Drawing.Point(418, 20);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(122, 26);
-            this.txtTenSP.TabIndex = 1;
+            this.txtMaSP.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtMaSP.Location = new System.Drawing.Point(418, 20);
+            this.txtMaSP.Name = "txtTenSP";
+            this.txtMaSP.Size = new System.Drawing.Size(122, 26);
+            this.txtMaSP.TabIndex = 1;
 
             this.txtMaSP.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMaSP.Enabled = false;
@@ -590,7 +590,6 @@
             // btnThem
             // 
             this.btnThem.Enabled = false;
-<<<<<<< HEAD
             this.btnThem.Image = global::winform_fpt_shop.Properties.Resources.icons8_add_24;
             this.btnThem.Location = new System.Drawing.Point(75, 3);
             this.btnThem.Name = "btnThem";
