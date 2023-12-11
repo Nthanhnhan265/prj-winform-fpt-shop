@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using winform_fpt_shop.manhinhchung_forms;
 using winform_fpt_shop.nhanvien_forms;
@@ -12,8 +14,17 @@ namespace winform_fpt_shop
             InitializeComponent();
             
         }
-
-        
+        /// <summary>
+        /// Đường dẫn đến foulder dự án có dạng C://...//prj-winform-fpt-shop
+        /// </summary>
+        public static string path = 
+            System.IO.Path.GetDirectoryName(
+            System.IO.Path.GetDirectoryName(
+                System.IO.Path.GetDirectoryName(
+                     AppDomain.CurrentDomain.BaseDirectory
+                 )
+                )
+               );
 
         private void mnuQuanLy_DSNhanVien_Click(object sender, EventArgs e)
         {
@@ -107,7 +118,7 @@ namespace winform_fpt_shop
         private void mnuTK_ThongTIn_Click(object sender, EventArgs e)
         {
             //mo form
-            frmThongTinCaNhan frmTao = new frmThongTinCaNhan();
+            frmTaiKhoanThongTinCaNhan frmTao = new frmTaiKhoanThongTinCaNhan();
             OpenChildForm(frmTao);
         }
 
@@ -172,13 +183,6 @@ namespace winform_fpt_shop
         {
             //mo form 
             frmNhaSanXuat frmTao = new frmNhaSanXuat();
-            OpenChildForm(frmTao);
-        }
-
-        private void mnuChucNang_NhaSX_Them_Click(object sender, EventArgs e)
-        {
-            //mo form
-            frmSanPham_Them frmTao = new frmSanPham_Them();
             OpenChildForm(frmTao);
         }
 
@@ -256,6 +260,18 @@ namespace winform_fpt_shop
         private void mnuNhanVien_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mnuBaoCao_DSNhanVien_Click(object sender, EventArgs e)
+        {
+            frmBaoCao_DSNhanVien frm = new frmBaoCao_DSNhanVien();
+            OpenChildForm(frm); 
+        }
+
+        private void mnuBaoCao_DSSanPham_Click(object sender, EventArgs e)
+        {
+            frmBaoCao_DSSanPham frm = new frmBaoCao_DSSanPham();
+            OpenChildForm(frm); 
         }
     }
 

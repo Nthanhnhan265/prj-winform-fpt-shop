@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHoaDon_Tao));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -465,9 +466,9 @@
             // btnDong
             // 
             this.btnDong.Image = global::winform_fpt_shop.Properties.Resources.icons8_quit_24;
-            this.btnDong.Location = new System.Drawing.Point(675, 3);
+            this.btnDong.Location = new System.Drawing.Point(674, 3);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(126, 46);
+            this.btnDong.Size = new System.Drawing.Size(165, 46);
             this.btnDong.TabIndex = 0;
             this.btnDong.Text = "Đóng";
             this.btnDong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -477,9 +478,9 @@
             // btnHuy
             // 
             this.btnHuy.Image = global::winform_fpt_shop.Properties.Resources.icons8_delete_24;
-            this.btnHuy.Location = new System.Drawing.Point(336, 3);
+            this.btnHuy.Location = new System.Drawing.Point(279, 3);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(141, 46);
+            this.btnHuy.Size = new System.Drawing.Size(192, 46);
             this.btnHuy.TabIndex = 0;
             this.btnHuy.Text = "Hủy hóa đơn";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -490,9 +491,9 @@
             // 
             this.btnThem.Enabled = false;
             this.btnThem.Image = global::winform_fpt_shop.Properties.Resources.icons8_add_24;
-            this.btnThem.Location = new System.Drawing.Point(148, 3);
+            this.btnThem.Location = new System.Drawing.Point(75, 3);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(162, 46);
+            this.btnThem.Size = new System.Drawing.Size(181, 46);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm hóa đơn";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -502,9 +503,9 @@
             // btnInHoaDon
             // 
             this.btnInHoaDon.Image = global::winform_fpt_shop.Properties.Resources.icons8_bill_24;
-            this.btnInHoaDon.Location = new System.Drawing.Point(507, 3);
+            this.btnInHoaDon.Location = new System.Drawing.Point(494, 3);
             this.btnInHoaDon.Name = "btnInHoaDon";
-            this.btnInHoaDon.Size = new System.Drawing.Size(126, 46);
+            this.btnInHoaDon.Size = new System.Drawing.Size(159, 46);
             this.btnInHoaDon.TabIndex = 0;
             this.btnInHoaDon.Text = "In hóa đơn";
             this.btnInHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -546,6 +547,7 @@
             this.ClientSize = new System.Drawing.Size(932, 703);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHoaDon_Tao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo Hóa Đơn";

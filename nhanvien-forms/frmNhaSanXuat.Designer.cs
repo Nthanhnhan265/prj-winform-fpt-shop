@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhaSanXuat));
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvNhaSX = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -120,7 +121,7 @@
             this.btnXoa.Image = global::winform_fpt_shop.Properties.Resources.icons8_delete_24;
             this.btnXoa.Location = new System.Drawing.Point(553, 173);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(142, 45);
+            this.btnXoa.Size = new System.Drawing.Size(142, 48);
             this.btnXoa.TabIndex = 28;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -133,7 +134,7 @@
             this.btnSua.Image = global::winform_fpt_shop.Properties.Resources.icons8_edit_24;
             this.btnSua.Location = new System.Drawing.Point(366, 173);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(142, 45);
+            this.btnSua.Size = new System.Drawing.Size(142, 48);
             this.btnSua.TabIndex = 29;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -146,7 +147,7 @@
             this.btnThem.Image = global::winform_fpt_shop.Properties.Resources.icons8_add_24;
             this.btnThem.Location = new System.Drawing.Point(183, 173);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(142, 45);
+            this.btnThem.Size = new System.Drawing.Size(142, 48);
             this.btnThem.TabIndex = 30;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -200,6 +201,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 551);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNhaSanXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhà Sản Xuất";

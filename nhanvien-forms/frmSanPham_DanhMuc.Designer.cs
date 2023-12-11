@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSanPham_DanhMucSP));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtThuocTinh = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -225,6 +226,7 @@
             this.ClientSize = new System.Drawing.Size(833, 647);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSanPham_DanhMucSP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Mục";

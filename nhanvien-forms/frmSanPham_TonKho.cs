@@ -48,11 +48,13 @@ namespace winform_fpt_shop
                 cbbTenSP.DisplayMember = "TenSP";
                 cbbTenSP.ValueMember = "MaSP";
                 //Hiển thị lên combobox 
-                txtMaCh.Text = dgvDanhSachTonKho.Rows[0].Cells[0].Value.ToString();
-                txtDiaChi.Text = dgvDanhSachTonKho.Rows[cbbTenCH.SelectedIndex].Cells[2].Value.ToString();
-                txtMaSP.Text = cbbTenSP.SelectedValue.ToString();
-                txtSoLuong.Text = dgvDanhSachTonKho.Rows[0].Cells[5].Value.ToString();
 
+                cbbTenCH.SelectedIndex = 0; 
+                cbbTenSP.SelectedIndex = 0;
+
+                txtMaCh.Text = cbbTenCH.SelectedValue.ToString();
+                txtDiaChi.Text= tbCuaHang.Rows[cbbTenCH.SelectedIndex][2].ToString();
+                txtMaSP.Text = cbbTenSP.SelectedValue.ToString(); 
             }
             catch
             {
@@ -198,11 +200,19 @@ namespace winform_fpt_shop
         /// <param name="e"></param>
         private void cbbTenCH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbbTenCH.SelectedValue.ToString() != "")
+            try
             {
-                txtMaCh.Text = cbbTenCH.SelectedValue.ToString();
-                txtDiaChi.Text = dgvDanhSachTonKho.Rows[cbbTenCH.SelectedIndex].Cells[2].Value.ToString();
+                if (cbbTenCH.SelectedValue.ToString() != "")
+                {
+                    DataTable tbCuaHang = DBCuaHang.GetDataTable("sp_HienThiCuaHang");
+                    txtMaCh.Text = cbbTenCH.SelectedValue.ToString();
+                    txtDiaChi.Text = tbCuaHang.Rows[cbbTenCH.SelectedIndex][2].ToString();
 
+                }
+
+            }catch
+            {
+                MessageBox.Show("Lỗi: frmSanPham_TonKho/cbbTenCH_SelectedIndexChanged"); 
             }
         }
         /// <summary>
@@ -224,23 +234,32 @@ namespace winform_fpt_shop
         /// </summary>
         private void taiLaiDuLieu()
         {
-            //lấy các bản để hiển thị ra danh sách và cbb 
-            DataTable tbDanhSachTonKho = DBCuaHang.GetDataTable("sp_CuaHangJoinSanPham");
-            DataTable tbCuaHang = DBCuaHang.GetDataTable("sp_HienThiCuaHang");
-            DataTable tbSanPham = DBCuaHang.GetDataTable("sp_HienThiSanPham");
-            //gán các datasource cho bảng 
-            dgvDanhSachTonKho.DataSource = tbDanhSachTonKho;
-            cbbTenCH.DataSource = tbCuaHang;
-            cbbTenSP.DataSource = tbSanPham;
-            //hiển thị tên nhưng chọn mã
-            cbbTenCH.DisplayMember = "TenCH";
-            cbbTenCH.ValueMember = "MaCH";
-            cbbTenSP.DisplayMember = "TenSP";
-            cbbTenSP.ValueMember = "MaSP";
-            //
-            txtMaCh.Text = dgvDanhSachTonKho.Rows[0].Cells[0].Value.ToString();
-            txtDiaChi.Text = dgvDanhSachTonKho.Rows[cbbTenCH.SelectedIndex].Cells[2].Value.ToString();
-            txtMaSP.Text = cbbTenSP.SelectedValue.ToString();
+            try
+            {
+
+                //lấy các bản để hiển thị ra danh sách và cbb 
+                DataTable tbDanhSachTonKho = DBCuaHang.GetDataTable("sp_CuaHangJoinSanPham");
+                DataTable tbCuaHang = DBCuaHang.GetDataTable("sp_HienThiCuaHang");
+                DataTable tbSanPham = DBCuaHang.GetDataTable("sp_HienThiSanPham");
+                //gán các datasource cho bảng 
+                dgvDanhSachTonKho.DataSource = tbDanhSachTonKho;
+                cbbTenCH.DataSource = tbCuaHang;
+                cbbTenSP.DataSource = tbSanPham;
+                //hiển thị tên nhưng chọn mã
+                cbbTenCH.DisplayMember = "TenCH";
+                cbbTenCH.ValueMember = "MaCH";
+                cbbTenSP.DisplayMember = "TenSP";
+                cbbTenSP.ValueMember = "MaSP";
+                //
+                txtMaCh.Text = dgvDanhSachTonKho.Rows[0].Cells[0].Value.ToString();
+                txtDiaChi.Text = dgvDanhSachTonKho.Rows[cbbTenCH.SelectedIndex].Cells[2].Value.ToString();
+                txtMaSP.Text = cbbTenSP.SelectedValue.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi: frmSanPham_TonKho/TaiLaiDuLieu");
+
+            }
         }
 
         private void txtSoLuong_TextChanged(object sender, EventArgs e)
@@ -254,6 +273,11 @@ namespace winform_fpt_shop
             {
                 errorProvider1.SetError(txtSoLuong, "Vui lòng nhập số!");
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

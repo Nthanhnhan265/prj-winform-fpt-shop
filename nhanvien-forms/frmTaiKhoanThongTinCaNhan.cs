@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace winform_fpt_shop.manhinhchung_forms
 {
-    public partial class frmThongTinCaNhan : Form
+    public partial class frmTaiKhoanThongTinCaNhan : Form
     {
-        public frmThongTinCaNhan()
+        public frmTaiKhoanThongTinCaNhan()
         {
             InitializeComponent();
         }

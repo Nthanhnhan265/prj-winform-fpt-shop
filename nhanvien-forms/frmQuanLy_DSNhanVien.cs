@@ -21,33 +21,44 @@ namespace winform_fpt_shop.nhanvien_forms
         string patternDiaChi = "^[a-zA-Z0-9ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ,\\s-]+$";
         string patternEmail = "^[a-zA-Z0-9@]+@gmail.com$";
         string patternNumber = "^[0-9]+$";
-        DataTable noiLamViec; 
+        DataTable noiLamViec;
         private void frmDSNhanVien_Load(object sender, EventArgs e)
         {
-            //hien thi du lieu khi load form 
-            DataTable dt = DBCuaHang.GetDataTableFromQuery($"SELECT * FROM NhanVien Where QuyenHan=N'Quản Lý'");
-            noiLamViec= DBCuaHang.GetDataTable("sp_HienThiCuaHang");
-            
-            dgvNhanVien.DataSource = DBCuaHang.GetDataTable("sp_HienThiNhanVien"); 
-            
 
-            //hien thi len cbb 
-            cboNoiLamViec.DataSource = DBCuaHang.GetDataTable("sp_HienThiCuaHangJoinQuanLy");
-            cboNoiLamViec.DisplayMember = "TenCH";
-            cboNoiLamViec.ValueMember = "MaCH";
-            //hien thi quyen han 
-            cboQuyenHan.Items.Add ("Nhân viên"); 
-            cboQuyenHan.Items.Add ("Quản lý");
-            cboQuyenHan.SelectedIndex = 0;
+            try
+            {
+                //hien thi du lieu khi load form 
+                DataTable dt = DBCuaHang.GetDataTableFromQuery($"SELECT * FROM NhanVien Where QuyenHan=N'Quản Lý'");
+                noiLamViec = DBCuaHang.GetDataTable("sp_HienThiCuaHang");
 
-            cboHoTenQL.DataSource = dt;
-            cboHoTenQL.DisplayMember = "HoTen";
-            cboHoTenQL.ValueMember = "MaNV";
-            cboHoTenQL.SelectedIndex = 0;
+                dgvNhanVien.DataSource = DBCuaHang.GetDataTable("sp_HienThiNhanVien");
 
-            //chọn nam 
-            rdNam.Checked = true; 
-        }
+
+                //hien thi len cbb 
+                cboNoiLamViec.DataSource = DBCuaHang.GetDataTable("sp_HienThiCuaHangJoinQuanLy");
+                cboNoiLamViec.DisplayMember = "TenCH";
+                cboNoiLamViec.ValueMember = "MaCH";
+                //hien thi quyen han 
+                cboQuyenHan.Items.Add("Nhân viên");
+                cboQuyenHan.Items.Add("Quản lý");
+                cboQuyenHan.SelectedIndex = 0;
+
+                cboHoTenQL.DataSource = dt;
+                cboHoTenQL.DisplayMember = "HoTen";
+                cboHoTenQL.ValueMember = "MaNV";
+                cboHoTenQL.SelectedIndex = 0;
+
+                //chọn nam 
+                rdNam.Checked = true;
+
+                txtMaNQL.Text = cboHoTenQL.SelectedValue.ToString();
+            }
+            catch
+            {
+
+            }
+           }
+
 
         private void cboQuyenHan_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -123,9 +134,9 @@ namespace winform_fpt_shop.nhanvien_forms
                 {
                     if (DBCuaHang.AddRowData("sp_ThemNhanVien",
                         new NhanVien(
-                        txtMaNV.Text, 
+                        txtMaNV.Text,
                         DBCuaHang.GetNvarcharText(txtHoTen.Text),
-                        DBCuaHang.ChangeToDate(dtpNgaySinh.Text), 
+                        DBCuaHang.ChangeToDate(dtpNgaySinh.Text),
                         DBCuaHang.GetNvarcharText(txtDiaChi.Text),
                         (rdNam.Checked == true) ? "Nam" : "N|Nữ",
                         txtCCCD.Text,
@@ -254,48 +265,54 @@ namespace winform_fpt_shop.nhanvien_forms
 
         private void TaiLaiDuLieu()
         {
-            txtMaNV.Text = "";
-            txtHoTen.Text = "";
-            dtpNgaySinh.Text = "1/1/1999";
-            txtDiaChi.Text = "";
-            rdNam.Checked = true;
-            txtCCCD.Text = "";
-            txtSDT.Text = "";
-            txtEmail.Text = "";
-            cboNoiLamViec.SelectedIndex=0 ;
-            txtMaNQL.Text = "";
-            cboHoTenQL.SelectedIndex = 0; 
-            txtMatKhau.Text = "";
-            cboQuyenHan.Text = "";
-            errorProvider1.Clear(); 
-            dgvNhanVien.DataSource = DBCuaHang.GetDataTable("sp_HienThiNhanVien"); 
+            try
+            {
+                txtMaNV.Text = "";
+                txtHoTen.Text = "";
+                dtpNgaySinh.Text = "1/1/1999";
+                txtDiaChi.Text = "";
+                rdNam.Checked = true;
+                txtCCCD.Text = "";
+                txtSDT.Text = "";
+                txtEmail.Text = "";
+                cboNoiLamViec.SelectedIndex = 0;
+                txtMaNQL.Text = "";
+                cboHoTenQL.SelectedIndex = 0;
+                txtMatKhau.Text = "";
+                cboQuyenHan.Text = "";
+                errorProvider1.Clear();
+                dgvNhanVien.DataSource = DBCuaHang.GetDataTable("sp_HienThiNhanVien");
+            }
+            catch
+            {
 
+            }
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
-            txtMaNV.Text = RandomMa(); 
+            txtMaNV.Text = RandomMa();
         }
         private void btnTaoMoiMK_Click(object sender, EventArgs e)
         {
-            txtMatKhau.Text = "MK"+RandomMa(); 
+            txtMatKhau.Text = "MK" + RandomMa();
         }
 
         private void txtHoTen_TextChanged(object sender, EventArgs e)
         {
-            if(!Regex.IsMatch(txtHoTen.Text,patternString))
+            if (!Regex.IsMatch(txtHoTen.Text, patternString))
             {
-                errorProvider1.SetError(txtHoTen,"Vui lòng nhập tên hợp lệ!"); 
-            }else
+                errorProvider1.SetError(txtHoTen, "Vui lòng nhập tên hợp lệ!");
+            } else
             {
-                errorProvider1.Clear(); 
+                errorProvider1.Clear();
             }
         }
 
         private void txtCCCD_TextChanged(object sender, EventArgs e)
         {
 
-            if (!Regex.IsMatch(txtCCCD.Text, patternNumber))
+            if (!Regex.IsMatch(txtCCCD.Text, patternNumber) || txtCCCD.Text.Length>10)
             {
                 errorProvider1.SetError(txtCCCD, "Vui lòng chỉ nhập số và đủ 10 chữ số");
             }
@@ -307,7 +324,7 @@ namespace winform_fpt_shop.nhanvien_forms
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(txtSDT.Text, patternNumber))
+            if (!Regex.IsMatch(txtSDT.Text, patternNumber) || txtSDT.Text.Length>10 )
             {
                 errorProvider1.SetError(txtSDT, "Vui lòng chỉ nhập số và đủ 10 chữ số");
             }
@@ -357,6 +374,39 @@ namespace winform_fpt_shop.nhanvien_forms
         { 
             txtMaNQL.Text = noiLamViec.Rows[cboNoiLamViec.SelectedIndex][4].ToString();
             cboHoTenQL.SelectedValue=txtMaNQL.Text;
+        }
+
+        private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime ngaySinh = DateTime.Parse(dtpNgaySinh.Text);
+                // Lấy ngày hiện tại
+                DateTime ngayHienTai = DateTime.Now;
+
+                // Tính toán tuổi
+                int tuoi = ngayHienTai.Year - ngaySinh.Year;
+                if (ngaySinh.Date > ngayHienTai.AddYears(-tuoi))
+                {
+                    tuoi--;
+                }
+
+                // Kiểm tra xem tuổi có lớn hơn hoặc bằng 18 không
+                bool coDu18Tuoi = tuoi >= 18;
+
+                if (coDu18Tuoi)
+                {
+                    errorProvider1.Clear();
+                }
+                else
+                {
+                    errorProvider1.SetError(dtpNgaySinh, "Tuổi của nhân viên phải đủ 18 tuổi!");
+                }
+            }
+            catch
+            {
+
+            }
         }
     }
 }

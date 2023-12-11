@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmheThongChinhSuaCH));
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label12 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
@@ -46,10 +47,10 @@
             this.dtpNgayKhaiTruong = new System.Windows.Forms.DateTimePicker();
             this.cboQuanLy = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvCuaHang = new System.Windows.Forms.DataGridView();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -142,9 +143,9 @@
             // 
             this.btnChinhSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnChinhSua.Image = global::winform_fpt_shop.Properties.Resources.icons8_edit_24;
-            this.btnChinhSua.Location = new System.Drawing.Point(799, 198);
+            this.btnChinhSua.Location = new System.Drawing.Point(795, 198);
             this.btnChinhSua.Name = "btnChinhSua";
-            this.btnChinhSua.Size = new System.Drawing.Size(120, 48);
+            this.btnChinhSua.Size = new System.Drawing.Size(156, 48);
             this.btnChinhSua.TabIndex = 15;
             this.btnChinhSua.Text = "Chỉnh sửa";
             this.btnChinhSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -157,7 +158,7 @@
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnXoa.Image = global::winform_fpt_shop.Properties.Resources.icons8_delete_24;
-            this.btnXoa.Location = new System.Drawing.Point(944, 198);
+            this.btnXoa.Location = new System.Drawing.Point(982, 198);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(120, 48);
             this.btnXoa.TabIndex = 16;
@@ -250,6 +251,33 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button1.Image = global::winform_fpt_shop.Properties.Resources.icons8_synchronize_24;
+            this.button1.Location = new System.Drawing.Point(534, 80);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(46, 42);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThem.BackColor = System.Drawing.SystemColors.Window;
+            this.btnThem.Image = global::winform_fpt_shop.Properties.Resources.icons8_add_24;
+            this.btnThem.Location = new System.Drawing.Point(652, 198);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(120, 48);
+            this.btnThem.TabIndex = 14;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvCuaHang);
@@ -272,33 +300,6 @@
             this.dgvCuaHang.TabIndex = 0;
             this.dgvCuaHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuaHang_CellClick);
             // 
-            // btnThem
-            // 
-            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThem.BackColor = System.Drawing.SystemColors.Window;
-            this.btnThem.Image = global::winform_fpt_shop.Properties.Resources.icons8_add_24;
-            this.btnThem.Location = new System.Drawing.Point(652, 198);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(120, 48);
-            this.btnThem.TabIndex = 14;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.Image = global::winform_fpt_shop.Properties.Resources.icons8_synchronize_24;
-            this.button1.Location = new System.Drawing.Point(534, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 42);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmheThongChinhSuaCH
             // 
             this.AcceptButton = this.btnThem;
@@ -307,6 +308,7 @@
             this.ClientSize = new System.Drawing.Size(1181, 605);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmheThongChinhSuaCH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa thông tin cửa hàng";

@@ -5,7 +5,6 @@ C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.cspro
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.SuggestedBindingRedirects.cache
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.manhinhchung_forms.frmQuenMatKhau.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.manhinhchung_forms.frmDoiMatKhau.resources
-C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.manhinhchung_forms.frmThongTinCaNhan.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmSanPham_DanhMucSP.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmHoaDon_DanhSach.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDangNhap.resources
@@ -13,7 +12,6 @@ C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanv
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmKhachHang_DS.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmNhaSanXuat.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmSanPham_DanhSach.resources
-C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmSanPham_Them.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmHoaDon_Tao.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmNhanVien.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmSanPham_TraCuu.resources
@@ -108,3 +106,12 @@ C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.Repor
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\stdole.dll
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.CopyComplete
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\Interop.CrystalPrintControlLib.dll
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\AxInterop.CrystalPrintControlLib.dll
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\Interop.CrystalPrintControlLib.dll
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\AxInterop.CrystalPrintControlLib.dll
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.ResolveComReference.cache
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmBaoCao_DSSanPham.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.manhinhchung_forms.frmTaiKhoanThongTinCaNhan.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmBaoCao_DSNhanVien.resources

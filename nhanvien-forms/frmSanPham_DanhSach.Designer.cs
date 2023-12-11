@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSanPham_DanhSach));
             this.cbbNhaSX = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbbDanhMuc = new System.Windows.Forms.ComboBox();
@@ -378,6 +379,7 @@
             this.ClientSize = new System.Drawing.Size(1301, 1050);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSanPham_DanhSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Sách Sẩn Phẩm";

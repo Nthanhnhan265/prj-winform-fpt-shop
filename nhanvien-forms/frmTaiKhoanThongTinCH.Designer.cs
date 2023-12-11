@@ -31,11 +31,13 @@ namespace winform_fpt_shop.nhanvien_forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaiKhoanThongTinCH));
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cboTenQL = new System.Windows.Forms.ComboBox();
+            this.btnChinhSua = new System.Windows.Forms.Button();
             this.lbTenQL = new System.Windows.Forms.Label();
             this.lbSDTQuanLy = new System.Windows.Forms.Label();
             this.lbNgayKhaiTruong = new System.Windows.Forms.Label();
@@ -49,7 +51,6 @@ namespace winform_fpt_shop.nhanvien_forms
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.btnChinhSua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -113,6 +114,21 @@ namespace winform_fpt_shop.nhanvien_forms
             this.cboTenQL.Name = "cboTenQL";
             this.cboTenQL.Size = new System.Drawing.Size(172, 28);
             this.cboTenQL.TabIndex = 3;
+            // 
+            // btnChinhSua
+            // 
+            this.btnChinhSua.BackColor = System.Drawing.SystemColors.Control;
+            this.btnChinhSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChinhSua.Image = global::winform_fpt_shop.Properties.Resources.icons8_edit_24;
+            this.btnChinhSua.Location = new System.Drawing.Point(915, 388);
+            this.btnChinhSua.Name = "btnChinhSua";
+            this.btnChinhSua.Size = new System.Drawing.Size(157, 63);
+            this.btnChinhSua.TabIndex = 2;
+            this.btnChinhSua.Text = "Chỉnh sửa";
+            this.btnChinhSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChinhSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChinhSua.UseVisualStyleBackColor = false;
+            this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
             // 
             // lbTenQL
             // 
@@ -244,21 +260,6 @@ namespace winform_fpt_shop.nhanvien_forms
             this.label.TabIndex = 0;
             this.label.Text = "Mã cửa hàng";
             // 
-            // btnChinhSua
-            // 
-            this.btnChinhSua.BackColor = System.Drawing.SystemColors.Control;
-            this.btnChinhSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChinhSua.Image = global::winform_fpt_shop.Properties.Resources.icons8_edit_24;
-            this.btnChinhSua.Location = new System.Drawing.Point(915, 388);
-            this.btnChinhSua.Name = "btnChinhSua";
-            this.btnChinhSua.Size = new System.Drawing.Size(157, 63);
-            this.btnChinhSua.TabIndex = 2;
-            this.btnChinhSua.Text = "Chỉnh sửa";
-            this.btnChinhSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChinhSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChinhSua.UseVisualStyleBackColor = false;
-            this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
-            // 
             // frmTaiKhoanThongTinCH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -266,6 +267,7 @@ namespace winform_fpt_shop.nhanvien_forms
             this.ClientSize = new System.Drawing.Size(1113, 555);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTaiKhoanThongTinCH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin cửa hàng";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuenMatKhau));
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblMatKhauMoi = new System.Windows.Forms.Label();
             this.lblNhapLaiMatKhau = new System.Windows.Forms.Label();
@@ -53,7 +54,7 @@
             this.lblMatKhauMoi.AutoSize = true;
             this.lblMatKhauMoi.Location = new System.Drawing.Point(81, 145);
             this.lblMatKhauMoi.Name = "lblMatKhauMoi";
-            this.lblMatKhauMoi.Size = new System.Drawing.Size(225, 29);
+            this.lblMatKhauMoi.Size = new System.Drawing.Size(255, 31);
             this.lblMatKhauMoi.TabIndex = 1;
             this.lblMatKhauMoi.Text = "Nhập mật khẩu mới:";
             // 
@@ -62,7 +63,7 @@
             this.lblNhapLaiMatKhau.AutoSize = true;
             this.lblNhapLaiMatKhau.Location = new System.Drawing.Point(96, 228);
             this.lblNhapLaiMatKhau.Name = "lblNhapLaiMatKhau";
-            this.lblNhapLaiMatKhau.Size = new System.Drawing.Size(210, 29);
+            this.lblNhapLaiMatKhau.Size = new System.Drawing.Size(239, 31);
             this.lblNhapLaiMatKhau.TabIndex = 2;
             this.lblNhapLaiMatKhau.Text = "Nhập lại mật khẩu:";
             // 
@@ -89,19 +90,19 @@
             // 
             this.txtMatKhauMoi.Location = new System.Drawing.Point(307, 141);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(343, 32);
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(343, 37);
             this.txtMatKhauMoi.TabIndex = 4;
             // 
             // txtNhapLaiMatKhau
             // 
             this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(307, 225);
             this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
-            this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(343, 32);
+            this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(343, 37);
             this.txtNhapLaiMatKhau.TabIndex = 5;
             // 
             // frmQuenMatKhau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 473);
             this.Controls.Add(this.txtNhapLaiMatKhau);
@@ -112,6 +113,7 @@
             this.Controls.Add(this.lblMatKhauMoi);
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmQuenMatKhau";
             this.Text = "Quên mật khẩu";

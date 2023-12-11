@@ -26,6 +26,9 @@ insert into SanPham(MaSP,  TenSP, ThongTinSP, MaDM, MaNSX, GiaBan, Image)
 values('014' ,'iPhone 14',N'Điện Thoại', 'DM01','01',27090000, 'iphone14.jpg')
 
 insert into SanPham(MaSP,  TenSP, ThongTinSP, MaDM, MaNSX, GiaBan, Image)
+values('014' ,'iPhone 14',N'Điện Thoại', 'DM01','01',27090000, 'iphone14.jpg')
+
+insert into SanPham(MaSP,  TenSP, ThongTinSP, MaDM, MaNSX, GiaBan, Image)
 values('015' ,'iPhone 15',N'Điện Thoại', 'DM01','01',34490000, 'iphone15.jpg')
 
 -- Chèn dữ liệu vào bảng SanPham

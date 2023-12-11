@@ -370,6 +370,19 @@ END
 GO
 
 -- STORE SAN PHAM
+--Hiển thị sản phẩm cùng khóa ngoại 
+go 
+Create proc sp_HienThiThongTinSanPham 
+as  
+	select 
+	SanPham.MaSP,SanPham.TenSP,ThongTinSP,DanhMuc.TenDM,NhaSX.TenNSX
+	,SanPham.GiaBan,SanPham.Image
+	from SanPham, NhaSX, DanhMuc
+	Where SanPham.MaNSX=NhaSX.MaNSX And SanPham.MaDM=DanhMuc.MaDM
+
+
+
+Go 
 -- Hien thi san pham
 CREATE PROCEDURE sp_HienThiSanPham 
 AS 
