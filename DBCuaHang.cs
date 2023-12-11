@@ -41,7 +41,7 @@ namespace winform_fpt_shop
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Có Lỗi xảy ra: \n{ex.Message}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return dt;
         }   

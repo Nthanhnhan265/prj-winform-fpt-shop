@@ -20,7 +20,9 @@ namespace winform_fpt_shop.nhanvien_forms
 
         private void frmKhachhang_TraCuu_Load(object sender, EventArgs e)
         {
+            txtTraCuuKH.Focus();
             dgvKhachHang.DataSource = DBCuaHang.GetDataTable("sp_HienThiKhachHang");
+            cboTimKiem.SelectedIndex = 0;
         }
 
         private void frmKhachhang_TraCuu_FormClosing(object sender, FormClosingEventArgs e)
@@ -33,6 +35,20 @@ namespace winform_fpt_shop.nhanvien_forms
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (txtTraCuuKH.Text != "")
+            {
+                TimKiemKhachHang();
+            }
+            else
+            {
+                // Tải lại danh sách khách hàng
+                dgvKhachHang.DataSource = DBCuaHang.GetDataTable("sp_HienThiKhachHang");
+            }
+        }
+
+        // Tìm kiếm khách hàng
+        public void TimKiemKhachHang()
         {
             try
             {
@@ -65,18 +81,6 @@ namespace winform_fpt_shop.nhanvien_forms
             {
                 MessageBox.Show($"Có lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dgvKhachHang.DataSource = null;
-            }
-        }
-
-        private void txtTraCuuKH_TextChanged(object sender, EventArgs e)
-        {
-            if (txtTraCuuKH.Text.Length > 0)
-            {
-                btnTimKiem.Enabled = true;
-            }
-            else
-            { 
-                btnTimKiem.Enabled = false;
             }
         }
     }
