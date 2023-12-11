@@ -52,6 +52,8 @@ namespace winform_fpt_shop
             OpenChildForm(frm);
             //Thay đổi đường dẫn DB tại đây 
             DBCuaHang.sqlString= "Data Source=local;Initial Catalog=QuanLyCuaHang;Integrated Security=True";
+            DBCuaHang.sqlString= "Data Source=(local);Initial Catalog=QuanLyCuaHang;Integrated Security=True"; 
+
         }
         /// <summary>
         /// Dong ung dung khi click vao thoat 

@@ -29,8 +29,6 @@ D:\LTUD\prj-winform-fpt-shop\bin\Debug\winform-fpt-shop.pdb
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.AssemblyReference.cache
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.manhinhchung_forms.frmQuenMatKhau.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.manhinhchung_forms.frmXemTonKho.resources
-D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDanhSachNhanVien.resources
-D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmDanhSachSanPham.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.manhinhchung_forms.frmDoiMatKhau.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.manhinhchung_forms.frmThongTinCaNhan.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmSanPham_DanhMucSP.resources
@@ -41,8 +39,6 @@ D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmKhachHang_DS.resource
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmNhaSanXuat.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmSanPham_DanhSach.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmSanPham_Them.resources
-D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmQuanLy.resources
-D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThongTinCuaHang.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmHoaDon_Tao.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmNhanVien.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmSanPham_TraCuu.resources
@@ -50,7 +46,6 @@ D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmThongK
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmKhachhang_TraCuu.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmSanPham_TonKho.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.Properties.Resources.resources
-D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmThem.resources
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.GenerateResource.cache
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.CoreCompileInputs.cache
 D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.exe
@@ -89,6 +84,7 @@ D:\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.exe
 D:\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.pdb
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmTaiKhoanThongTinCH.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmheThongChinhSuaCH.resources
+<<<<<<< HEAD
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.Shared.dll
@@ -115,3 +111,27 @@ C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.cspro
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmBaoCao_DSSanPham.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.manhinhchung_forms.frmTaiKhoanThongTinCaNhan.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmBaoCao_DSNhanVien.resources
+=======
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.Shared.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\LTUD\prj-winform-fpt-shop\bin\Debug\stdole.dll
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmheThongChinhSuaCH.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmTaiKhoanThongTinCH.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmQuanLy_DSNhanVien.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmQuanLy_TraCuuNhanVien.resources
+D:\LTUD\prj-winform-fpt-shop\obj\Debug\winform-fpt-shop.csproj.CopyComplete
+>>>>>>> 60ed86a06c43ede47326dccf35b0cbcfe67cd1f4
