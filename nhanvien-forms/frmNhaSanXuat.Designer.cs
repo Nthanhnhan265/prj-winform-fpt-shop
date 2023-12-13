@@ -197,6 +197,7 @@
             // 
             // frmNhaSanXuat
             // 
+            this.AcceptButton = this.btnThem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 551);
@@ -205,6 +206,7 @@
             this.Name = "frmNhaSanXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhà Sản Xuất";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNhaSanXuat_FormClosing);
             this.Load += new System.EventHandler(this.frmNhaSanXuat_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhaSX)).EndInit();

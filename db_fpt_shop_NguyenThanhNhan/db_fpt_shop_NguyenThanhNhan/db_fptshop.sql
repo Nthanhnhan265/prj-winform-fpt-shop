@@ -89,9 +89,12 @@ CREATE TABLE KhachHang (
 create table TonKho(
 MaCH char(10),
 MaSP char(10),
-SoLuong int,
-primary key(MaCH,MaSP))
+NgayNhap date, --Bổ sung ngày cho tồn kho 
+SoLuong int, --số lượng ban đầu 
+SoLuongConLai int, --thêm số lượng còn lại 
+primary key(MaCH,MaSP,NgayNhap))
 go
+
 --Tạo liên kết của hàng - nhân viên
 alter table CuaHang 
 add constraint NV_CH_QuanLy
@@ -196,3 +199,14 @@ CHECK (LEN(CCCD) = 10);
 ALTER TABLE KhachHang
 ADD CONSTRAINT CK_CCCD_KH
 CHECK (LEN(CCCD) = 10);
+
+--Thêm ràng buộc UNIQUE cho trường CCCD 
+alter table NhanVien 
+Add constraint UN_NhanVien_CCCD UNIQUE (CCCD) 
+--Thêm ràng buộc UNIQUE cho trường SDT 
+alter table NhanVien 
+Add constraint UN_NhanVien_SDT UNIQUE (SDT) 
+--Thêm ràng buộc UNIQUE cho trường Email  
+alter table NhanVien 
+Add constraint UN_NhanVien_Email UNIQUE (Email) 
+

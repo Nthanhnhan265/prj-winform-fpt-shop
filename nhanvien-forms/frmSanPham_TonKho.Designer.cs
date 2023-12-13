@@ -51,6 +51,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachTonKho = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dtpNgayNhap = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -60,6 +62,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.dtpNgayNhap);
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnThem);
@@ -94,6 +98,7 @@
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -107,6 +112,7 @@
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -120,6 +126,7 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtSoLuong
             // 
@@ -127,6 +134,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(253, 26);
             this.txtSoLuong.TabIndex = 26;
+            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             // 
             // txtMaSP
             // 
@@ -279,6 +287,24 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // dtpNgayNhap
+            // 
+            this.dtpNgayNhap.Enabled = false;
+            this.dtpNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayNhap.Location = new System.Drawing.Point(635, 173);
+            this.dtpNgayNhap.Name = "dtpNgayNhap";
+            this.dtpNgayNhap.Size = new System.Drawing.Size(200, 26);
+            this.dtpNgayNhap.TabIndex = 30;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(535, 175);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 20);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Ngày nhập";
+            // 
             // frmSanPham_TonKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -325,5 +351,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvDanhSachTonKho;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dtpNgayNhap;
     }
 }

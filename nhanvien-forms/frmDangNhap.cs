@@ -87,45 +87,50 @@ namespace winform_fpt_shop
         //ấn để đăng nhập 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            //lấy thông tin  
-            maNV = txtUser.Text; 
-            matKhau=txtMatKhau.Text;
-            quyenHan = ""; 
-            if (rdQuanLy.Checked == true) // quản lý
+            try
             {
-                quyenHan = rdQuanLy.Text; 
-            }
-            else if (rdNhanVien.Checked == true) // nhân viên
-            {
-                quyenHan = rdNhanVien.Text; 
-            }
-            //kiểm tra dữ liệu truyền vào 
-            TaiKhoan = DBCuaHang.DangNhap(maNV,matKhau,quyenHan);
-            if(TaiKhoan!=null)
-            {
-                frmChinh.HienMenu(); 
-                if(TaiKhoan.QuyenHan=="Quản lý")
-                try
+                //lấy thông tin  
+                maNV = txtUser.Text;
+                matKhau = txtMatKhau.Text;
+                quyenHan = "";
+                if (rdQuanLy.Checked == true) // quản lý
+                {
+                    quyenHan = rdQuanLy.Text;
+                }
+                else if (rdNhanVien.Checked == true) // nhân viên
+                {
+                    quyenHan = rdNhanVien.Text;
+                }
+                //kiểm tra dữ liệu truyền vào 
+                TaiKhoan = DBCuaHang.DangNhap(maNV, matKhau, quyenHan);
+                if (TaiKhoan != null)
                 {
                     frmChinh.HienMenu();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                    if (TaiKhoan.QuyenHan == "Quản lý")
+                        try
+                        {
+                            frmChinh.HienMenu();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
 
-                if(taiKhoan.QuyenHan=="Quản lý")
-                {
-                    frmChinh.HienQuanLy();
+                    if (taiKhoan.QuyenHan == "Quản lý")
+                    {
+                        frmChinh.HienQuanLy();
+                    }
+                    hoatDong = true;
+                    this.Hide();
+                    MessageBox.Show($"Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                hoatDong = true;
-                this.Hide(); 
-                MessageBox.Show($"Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }else
-            {
-                MessageBox.Show($"Đăng nhập không thành công!\nSai tài khoản hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    MessageBox.Show($"Đăng nhập không thành công!\nSai tài khoản hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                }
             }
+            catch { }
         }
 
         private void frmDangNhap_Load(object sender, EventArgs e)
@@ -200,19 +205,23 @@ namespace winform_fpt_shop
 
         private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-           if(!hoatDong)
+            try
             {
-                DialogResult rs = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (rs == DialogResult.No)
+                if (!hoatDong)
                 {
-                    e.Cancel = true;
-                }
-                else
-                {
-                    Environment.Exit(0);  
-                    Thoat = true;
+                    DialogResult rs = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (rs == DialogResult.No)
+                    {
+                        e.Cancel = true;
+                    }
+                    else
+                    {
+                        Environment.Exit(0);
+                        Thoat = true;
+                    }
                 }
             }
+            catch { }
         }
 
         private void rdNhanVien_CheckedChanged(object sender, EventArgs e)

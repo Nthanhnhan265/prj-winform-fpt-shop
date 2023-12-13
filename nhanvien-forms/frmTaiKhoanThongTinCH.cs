@@ -12,6 +12,19 @@ namespace winform_fpt_shop.nhanvien_forms
 {
     public partial class frmTaiKhoanThongTinCH : Form
     {
+
+        //khai bao 
+        ThongBaoCapNhat thongBao; 
+        public void KhoiTaoThongBaoCapNhat(ThongBaoCapNhat thongBao)
+        {
+            this.thongBao=thongBao;
+            this.thongBao.tenSuKien += CapNhat;
+        }
+        private void CapNhat(object sender,EventArgs e)
+        {
+            TaiLaiForm(); 
+        }
+
         public frmTaiKhoanThongTinCH()
         {
             InitializeComponent();
@@ -77,31 +90,38 @@ namespace winform_fpt_shop.nhanvien_forms
 
         public void TaiLaiForm()
         {
-            //Hiển thị nút sửa thông tin cửa hàng
-            if (frmDangNhap.QuyenQuanLy())
+            try
             {
-                btnChinhSua.Enabled = true;
-            }
-            else
-            {
-                btnChinhSua.Enabled = false;
-            }
-            //Hiển thị thông tin cửa hàng của nhân viên 
-            DataTable table = DBCuaHang.FindBy("sp_TimCuaHangQuaMaCH", frmDangNhap.LayMaCH());
+                //Hiển thị nút sửa thông tin cửa hàng
+                if (frmDangNhap.QuyenQuanLy())
+                {
+                    btnChinhSua.Enabled = true;
+                }
+                else
+                {
+                    btnChinhSua.Enabled = false;
+                }
+                //Hiển thị thông tin cửa hàng của nhân viên 
+                DataTable table = DBCuaHang.FindBy("sp_TimCuaHangQuaMaCH", frmDangNhap.LayMaCH());
 
-            cboTenQL.DataSource = DBCuaHang.GetDataTable("sp_HienThiNhanVien");
-            cboTenQL.DisplayMember = "HoTen";
-            cboTenQL.ValueMember = "MaNV";
+                cboTenQL.DataSource = DBCuaHang.GetDataTable("sp_HienThiNhanVien");
+                cboTenQL.DisplayMember = "HoTen";
+                cboTenQL.ValueMember = "MaNV";
 
-            if (table != null)
+                if (table != null)
+                {
+                    LbMaCh.Text = table.Rows[0]["MaCH"].ToString();
+                    LbTenCH.Text = table.Rows[0]["TenCH"].ToString();
+                    LbDiaChi.Text = table.Rows[0]["DiaChi"].ToString();
+                    LbNgayKhaiTruong.Text = table.Rows[0]["NgayKhaiTruong"].ToString();
+                    LbTenQL.Text = table.Rows[0]["QuanLy"].ToString();
+                    cboTenQL.SelectedValue = LbTenQL.Text;
+                    LbSDTQuanLy.Text = table.Rows[0]["SoDienThoai"].ToString();
+                }
+            }
+            catch
             {
-                LbMaCh.Text = table.Rows[0]["MaCH"].ToString();
-                LbTenCH.Text = table.Rows[0]["TenCH"].ToString();
-                LbDiaChi.Text = table.Rows[0]["DiaChi"].ToString();
-                LbNgayKhaiTruong.Text = table.Rows[0]["NgayKhaiTruong"].ToString();
-                LbTenQL.Text = table.Rows[0]["QuanLy"].ToString();
-                cboTenQL.SelectedValue = LbTenQL.Text;
-                LbSDTQuanLy.Text = table.Rows[0]["SoDienThoai"].ToString();
+
             }
         }
 
@@ -123,10 +143,17 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="e"></param>
         private void btnChinhSua_Click(object sender, EventArgs e)
         {
-            frmheThongChinhSuaCH frm = new frmheThongChinhSuaCH(this);
-            frm.MdiParent = frmNhanVien;
-            frm.Show(); 
+            try
+            {
+                frmheThongChinhSuaCH frm = new frmheThongChinhSuaCH(this);
+                frm.MdiParent = frmNhanVien;
+                frm.Show();
 
+            }
+            catch
+            {
+
+            }
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

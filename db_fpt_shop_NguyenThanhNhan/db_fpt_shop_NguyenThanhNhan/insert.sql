@@ -94,21 +94,42 @@ values('004', N'Nguyễn Thị Anh Thư', '07/03/1999', N'TP Hồ Chí Minh', N'
 insert into NhanVien(MaNV, HoTen, NgaySinh, DiaChi, GioiTinh, CCCD, SDT, Email, MaCH, QuanLy,MatKhau, QuyenHan)
 values('005', N'Lê Thị Kim Anh', '11/10/1999', N'TP Hồ Chí Minh', N'Nữ', '0722040011','0852471234','Anh11@gmail.com', '3', '005', 'Anh011199',N'Nhân Viên')
 go 
--- Chèn dữ liệu vào bảng HoaDon
-insert into HoaDon(MaHD, MaKH, MaNV, NgayTao, MaCH, PTThanhToan, SoTienTT)
-values('2345','10','001','11/01/2023','1',N'Chuyển Khoản', 27090000);
+--select * from TonKho
+--select * , Month(NgayTao) from HoaDon 
+--select HoaDon.MaHD, HoaDon.MaCH,ChiTietHD.MaSP,ChiTietHD.SoLuong,HoaDon.NgayTao from HoaDon,ChiTietHD where HoaDon.MaHD=ChiTietHD.MaHD
+--Chèn dữ liệu vào bảng hóa đơn 
 
 insert into HoaDon(MaHD, MaKH, MaNV, NgayTao, MaCH, PTThanhToan, SoTienTT)
-values('0507','11','004','10/05/2023','4',N'Tiền Mặt', 7580000);
+values ('HDFPT001','10','NVFPT634','13/12/2023','CHFPT910',N'Tiền mặt',36000000);
+
+insert into ChiTietHD(MaChiTiet,MaHD,MaSP,SoLuong) 
+values ('CTFPT001','HDFPT001','SPFPT323',2); 
+
+insert into ChiTietHD(MaChiTiet,MaHD,MaSP,SoLuong) 
+values ('CTFPT011','HDFPT001','SPFPT838',2); 
 
 insert into HoaDon(MaHD, MaKH, MaNV, NgayTao, MaCH, PTThanhToan, SoTienTT)
-values('1234','12','003','01/05/2023','2',N'Tiền Mặt', 2990000);
+values ('HDFPT002','10','NVFPT634','11/12/2023','CHFPT910',N'Tiền mặt',36000000);
+
+insert into ChiTietHD(MaChiTiet,MaHD,MaSP,SoLuong) 
+values ('CTFPT002','HDFPT002','SPFPT838',2); 
 
 insert into HoaDon(MaHD, MaKH, MaNV, NgayTao, MaCH, PTThanhToan, SoTienTT)
-values('6789','13','001','01/06/2023','5',N'Tiền Mặt', 3690000);
+values ('HDFPT003','10','NVFPT634','11/12/2023','CHFPT779',N'Tiền mặt',36000000);
+
+
+insert into ChiTietHD(MaChiTiet,MaHD,MaSP,SoLuong) 
+values ('CTFPT003','HDFPT003','SPFPT838',2); 
+
+
 
 insert into HoaDon(MaHD, MaKH, MaNV, NgayTao, MaCH, PTThanhToan, SoTienTT)
-values('3456','14','002','01/01/2023','2',N'Chuyển Khoản', 103470000);
+values ('HDFPT004','10','NVFPT634','11/10/2023','CHFPT779',N'Tiền mặt',36000000);
+
+
+insert into ChiTietHD(MaChiTiet,MaHD,MaSP,SoLuong) 
+values ('CTFPT004','HDFPT004','SPFPT838',2); 
+
 
 
 Go 

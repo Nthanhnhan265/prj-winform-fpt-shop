@@ -43,14 +43,14 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(930, 611);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // frmBaoCaoDSNhanVien
+            // frmBaoCao_DSNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 611);
             this.Controls.Add(this.crystalReportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmBaoCaoDSNhanVien";
+            this.Name = "frmBaoCao_DSNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo cáo danh sách nhân viên";
             this.Load += new System.EventHandler(this.frmBaoCaoDSNhanVien_Load);
