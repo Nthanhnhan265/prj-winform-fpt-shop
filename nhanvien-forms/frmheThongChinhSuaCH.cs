@@ -38,21 +38,25 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="e"></param>
         private void frmheThongChinhSuaCH_Load(object sender, EventArgs e)
         {
+            try
+            {
                 //hiển thị dữ liệu khi thuộc cửa hàng nào đó 
                 dgvCuaHang.DataSource = DBCuaHang.GetDataTable("sp_HienThiCuaHang");
                 cboQuanLy.DataSource = DBCuaHang.GetDataTableFromQuery("SELECT * FROM NHANVIEN WHERE QuyenHan=N'Quản Lý'");
                 cboQuanLy.DisplayMember = "HoTen";
                 cboQuanLy.ValueMember = "MaNV";
-            if(frmDangNhap.LayMaCH()!="")
-            {
-                //hiển thị dữ liệu từ màn hình chỉnh sửa 
-                txtMaCH.Text = thongTinCh.LbMaCh.Text;
-                txtDiaChi.Text = thongTinCh.LbDiaChi.Text;
-                txtTenCH.Text = thongTinCh.LbTenCH.Text;
-                txtSDT.Text = thongTinCh.LbSDTQuanLy.Text;
-                cboQuanLy.Text = thongTinCh.LbTenQL.Text;
-                dtpNgayKhaiTruong.Text = thongTinCh.LbNgayKhaiTruong.Text;
+                if (frmDangNhap.LayMaCH() != "" && thongTinCh != null)
+                {
+                    //hiển thị dữ liệu từ màn hình chỉnh sửa 
+                    txtMaCH.Text = thongTinCh.LbMaCh.Text;
+                    txtDiaChi.Text = thongTinCh.LbDiaChi.Text;
+                    txtTenCH.Text = thongTinCh.LbTenCH.Text;
+                    txtSDT.Text = thongTinCh.LbSDTQuanLy.Text;
+                    cboQuanLy.Text = thongTinCh.LbTenQL.Text;
+                    dtpNgayKhaiTruong.Text = thongTinCh.LbNgayKhaiTruong.Text;
+                }
             }
+            catch { }
             }
         /// <summary>
         /// Hàm random mã theo cấu trúc 
@@ -83,8 +87,10 @@ namespace winform_fpt_shop.nhanvien_forms
             txtDiaChi.Text = "";
             txtTenCH.Focus(); 
             errorProvider1.Clear();
-            frmDangNhap.TaiLaiTaiKhoan(); 
-            thongTinCh.TaiLaiForm(); 
+            frmDangNhap.TaiLaiTaiKhoan();
+            //thongTinCh.TaiLaiForm();
+            frmNhanVien.thongBao.ThongBaoCapNhatDuLieu(); 
+
         }
 
         private void cboQuanLy_SelectedIndexChanged(object sender, EventArgs e)
@@ -259,13 +265,17 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="e"></param>
         private void dgvCuaHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow dgvCuaHangrow = dgvCuaHang.Rows[e.RowIndex];
-            txtMaCH.Text = dgvCuaHangrow.Cells[0].Value.ToString(); 
-            txtTenCH.Text = dgvCuaHangrow.Cells[1].Value.ToString(); 
-            txtDiaChi.Text = dgvCuaHangrow.Cells[2].Value.ToString(); 
-            txtSDT.Text = dgvCuaHangrow.Cells[3].Value.ToString(); 
-            cboQuanLy.SelectedValue = dgvCuaHangrow.Cells[4].Value.ToString();
-            dtpNgayKhaiTruong.Text = dgvCuaHangrow.Cells[5].Value.ToString(); 
+            try
+            {
+                DataGridViewRow dgvCuaHangrow = dgvCuaHang.Rows[e.RowIndex];
+                txtMaCH.Text = dgvCuaHangrow.Cells[0].Value.ToString();
+                txtTenCH.Text = dgvCuaHangrow.Cells[1].Value.ToString();
+                txtDiaChi.Text = dgvCuaHangrow.Cells[2].Value.ToString();
+                txtSDT.Text = dgvCuaHangrow.Cells[3].Value.ToString();
+                cboQuanLy.SelectedValue = dgvCuaHangrow.Cells[4].Value.ToString();
+                dtpNgayKhaiTruong.Text = dgvCuaHangrow.Cells[5].Value.ToString();
+            }
+            catch { }
         
         }
         /// <summary>
@@ -275,15 +285,18 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="e"></param>
         private void txtTenCH_TextChanged(object sender, EventArgs e)
         {
-
-            if (!Regex.IsMatch(txtTenCH.Text, patternString))
+            try
             {
-                errorProvider1.SetError(txtTenCH, "Vui lòng nhập tên hợp lệ!\n Tên hợp lệ chỉ chứa kí tự A-Z,0-9 hoặc kí tự trong bảng chữ cái tiếng Việt");
+                if (!Regex.IsMatch(txtTenCH.Text, patternString))
+                {
+                    errorProvider1.SetError(txtTenCH, "Vui lòng nhập tên hợp lệ!\n Tên hợp lệ chỉ chứa kí tự A-Z,0-9 hoặc kí tự trong bảng chữ cái tiếng Việt");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            catch { }
         }
         /// <summary>
         /// Ràng buộc cho trường địa chỉ bằng regex
@@ -292,14 +305,18 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="e"></param>
         private void txtDiaChi_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(txtDiaChi.Text, patternDiaChi))
+            try
             {
-                errorProvider1.SetError(txtDiaChi, "Vui lòng nhập địa chỉ hợp lệ!\n Tên hợp lệ chỉ chứa kí tự A-Z hoặc kí tự trong bảng chữ cái tiếng Việt và kí tự phẩy (,) gạch ngang(-), dấu cách( )");
+                if (!Regex.IsMatch(txtDiaChi.Text, patternDiaChi))
+                {
+                    errorProvider1.SetError(txtDiaChi, "Vui lòng nhập địa chỉ hợp lệ!\n Tên hợp lệ chỉ chứa kí tự A-Z hoặc kí tự trong bảng chữ cái tiếng Việt và kí tự phẩy (,) gạch ngang(-), dấu cách( )");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            catch { }
         }
         /// <summary>
         /// Ràng buộc cho trường số điện thoại bằng regex
@@ -308,14 +325,18 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="e"></param>
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(txtSDT.Text, patternNumber) &&txtSDT.Text.Length>10)
+            try
             {
-                errorProvider1.SetError(txtSDT, "Vui lòng chỉ nhập số và chỉ tối đa 10 kí tự!");
+                if (!Regex.IsMatch(txtSDT.Text, patternNumber) && txtSDT.Text.Length > 10)
+                {
+                    errorProvider1.SetError(txtSDT, "Vui lòng chỉ nhập số và chỉ tối đa 10 kí tự!");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            catch { }
         }
         /// <summary>
         /// Ràng buộc cho trường ngày khai trương 
@@ -324,14 +345,18 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="e"></param>
         private void dtpNgayKhaiTruong_ValueChanged(object sender, EventArgs e)
         {
-            if (homNay.CompareTo(DateTime.Parse(dtpNgayKhaiTruong.Text.ToString())) < 0)
+            try
             {
-                errorProvider1.SetError(dtpNgayKhaiTruong, "Ngày không hợp lệ!\nngày được chọn phải nhỏ hơn hôm nay");
+                if (homNay.CompareTo(DateTime.Parse(dtpNgayKhaiTruong.Text.ToString())) < 0)
+                {
+                    errorProvider1.SetError(dtpNgayKhaiTruong, "Ngày không hợp lệ!\nngày được chọn phải nhỏ hơn hôm nay");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            catch { }
         }
         /// <summary>
         /// xu ly chuoi truyen vao 

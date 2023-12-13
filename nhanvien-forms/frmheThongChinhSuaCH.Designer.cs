@@ -200,7 +200,7 @@
             this.txtSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSDT.Location = new System.Drawing.Point(783, 133);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(198, 26);
+            this.txtSDT.Size = new System.Drawing.Size(252, 26);
             this.txtSDT.TabIndex = 13;
             this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
@@ -221,7 +221,7 @@
             this.cboQuanLy.FormattingEnabled = true;
             this.cboQuanLy.Location = new System.Drawing.Point(785, 91);
             this.cboQuanLy.Name = "cboQuanLy";
-            this.cboQuanLy.Size = new System.Drawing.Size(196, 28);
+            this.cboQuanLy.Size = new System.Drawing.Size(250, 28);
             this.cboQuanLy.TabIndex = 11;
             this.cboQuanLy.SelectedIndexChanged += new System.EventHandler(this.cboQuanLy_SelectedIndexChanged);
             // 

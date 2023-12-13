@@ -55,8 +55,8 @@
             // 
             this.panel1.Controls.Add(this.txtThuocTinh);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnTaoMoi);
+            this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.btnThem);
             this.panel1.Controls.Add(this.label2);
@@ -98,7 +98,7 @@
             this.btnXoa.Location = new System.Drawing.Point(399, 218);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(144, 49);
-            this.btnXoa.TabIndex = 8;
+            this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -111,7 +111,7 @@
             this.btnTaoMoi.Location = new System.Drawing.Point(365, 50);
             this.btnTaoMoi.Name = "btnTaoMoi";
             this.btnTaoMoi.Size = new System.Drawing.Size(74, 44);
-            this.btnTaoMoi.TabIndex = 9;
+            this.btnTaoMoi.TabIndex = 2;
             this.btnTaoMoi.UseVisualStyleBackColor = true;
             this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
             // 
@@ -122,7 +122,7 @@
             this.btnSua.Location = new System.Drawing.Point(216, 218);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(148, 49);
-            this.btnSua.TabIndex = 9;
+            this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -157,7 +157,7 @@
             this.label3.Location = new System.Drawing.Point(41, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 20);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Mã danh mục\r\n";
             // 
             // label1
@@ -175,7 +175,7 @@
             this.txtMaDanhMuc.Location = new System.Drawing.Point(194, 62);
             this.txtMaDanhMuc.Name = "txtMaDanhMuc";
             this.txtMaDanhMuc.Size = new System.Drawing.Size(165, 26);
-            this.txtMaDanhMuc.TabIndex = 2;
+            this.txtMaDanhMuc.TabIndex = 1;
             // 
             // txtTenDM
             // 
@@ -230,6 +230,7 @@
             this.Name = "frmSanPham_DanhMucSP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Mục";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSanPham_DanhMucSP_FormClosing);
             this.Load += new System.EventHandler(this.frmSanPham_DanhMucSP_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
