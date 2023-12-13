@@ -312,6 +312,7 @@
             this.Name = "frmheThongChinhSuaCH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa thông tin cửa hàng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmheThongChinhSuaCH_FormClosing);
             this.Load += new System.EventHandler(this.frmheThongChinhSuaCH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);

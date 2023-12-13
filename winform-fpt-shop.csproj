@@ -78,11 +78,23 @@
     <Compile Include="classes\ThongBaoCapNhat.cs" />
     <Compile Include="classes\TonKho.cs" />
     <Compile Include="DBCuaHang.cs" />
+    <Compile Include="nhanvien-forms\frmBaoCaoDSHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmBaoCaoDSHoaDon.Designer.cs">
+      <DependentUpon>frmBaoCaoDSHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="nhanvien-forms\frmBaoCaoTonKho.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="nhanvien-forms\frmBaoCaoTonKho.Designer.cs">
       <DependentUpon>frmBaoCaoTonKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmBaoCao_DSChiTietHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvien-forms\frmBaoCao_DSChiTietHD.Designer.cs">
+      <DependentUpon>frmBaoCao_DSChiTietHD.cs</DependentUpon>
     </Compile>
     <Compile Include="nhanvien-forms\frmBaoCao_DSNhanVien.cs">
       <SubType>Form</SubType>
@@ -254,14 +266,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rptDSChiTietHoaDon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDSChiTietHoaDon1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSChiTietHoaDon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDSHoaDonDaTao.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDSHoaDonDaTao1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSHoaDonDaTao.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="rptHoaDon.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="nhanvien-forms\frmBaoCaoDSHoaDon.resx">
+      <DependentUpon>frmBaoCaoDSHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmBaoCaoTonKho.resx">
       <DependentUpon>frmBaoCaoTonKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvien-forms\frmBaoCao_DSChiTietHD.resx">
+      <DependentUpon>frmBaoCao_DSChiTietHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nhanvien-forms\frmBaoCao_DSNhanVien.resx">
       <DependentUpon>frmBaoCao_DSNhanVien.cs</DependentUpon>
@@ -363,6 +399,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="rptDSChiTietHoaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSChiTietHoaDon1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDSHoaDonDaTao.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSHoaDonDaTao1.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

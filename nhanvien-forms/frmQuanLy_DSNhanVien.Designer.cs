@@ -32,6 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLy_DSNhanVien));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboHoTenQL = new System.Windows.Forms.ComboBox();
+            this.btnTaoMoiMK = new System.Windows.Forms.Button();
+            this.btnTaoMoi = new System.Windows.Forms.Button();
+            this.btnXuat = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.cboQuyenHan = new System.Windows.Forms.ComboBox();
             this.cboNoiLamViec = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -64,12 +70,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnTaoMoiMK = new System.Windows.Forms.Button();
-            this.btnTaoMoi = new System.Windows.Forms.Button();
-            this.btnXuat = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -130,6 +130,87 @@
             this.cboHoTenQL.Name = "cboHoTenQL";
             this.cboHoTenQL.Size = new System.Drawing.Size(138, 28);
             this.cboHoTenQL.TabIndex = 24;
+            // 
+            // btnTaoMoiMK
+            // 
+            this.btnTaoMoiMK.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTaoMoiMK.Image = global::winform_fpt_shop.Properties.Resources.icons8_synchronize_24;
+            this.btnTaoMoiMK.Location = new System.Drawing.Point(943, 226);
+            this.btnTaoMoiMK.Name = "btnTaoMoiMK";
+            this.btnTaoMoiMK.Size = new System.Drawing.Size(46, 32);
+            this.btnTaoMoiMK.TabIndex = 27;
+            this.btnTaoMoiMK.Text = "\r\n";
+            this.btnTaoMoiMK.UseVisualStyleBackColor = true;
+            this.btnTaoMoiMK.Click += new System.EventHandler(this.btnTaoMoiMK_Click);
+            // 
+            // btnTaoMoi
+            // 
+            this.btnTaoMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTaoMoi.Image = global::winform_fpt_shop.Properties.Resources.icons8_synchronize_24;
+            this.btnTaoMoi.Location = new System.Drawing.Point(307, 103);
+            this.btnTaoMoi.Name = "btnTaoMoi";
+            this.btnTaoMoi.Size = new System.Drawing.Size(51, 39);
+            this.btnTaoMoi.TabIndex = 3;
+            this.btnTaoMoi.UseVisualStyleBackColor = true;
+            this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
+            // 
+            // btnXuat
+            // 
+            this.btnXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXuat.BackColor = System.Drawing.Color.White;
+            this.btnXuat.Image = global::winform_fpt_shop.Properties.Resources.icons8_export_24;
+            this.btnXuat.Location = new System.Drawing.Point(1088, 309);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(132, 50);
+            this.btnXuat.TabIndex = 31;
+            this.btnXuat.Text = "Xuất";
+            this.btnXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnXuat.Click += new System.EventHandler(this.btnMoBaoCao);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnXoa.Image = global::winform_fpt_shop.Properties.Resources.icons8_delete_24;
+            this.btnXoa.Location = new System.Drawing.Point(483, 307);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(132, 50);
+            this.btnXoa.TabIndex = 31;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThem.Image = global::winform_fpt_shop.Properties.Resources.icons8_add_24;
+            this.btnThem.Location = new System.Drawing.Point(160, 308);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(132, 50);
+            this.btnThem.TabIndex = 30;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSua.Image = global::winform_fpt_shop.Properties.Resources.icons8_edit_24;
+            this.btnSua.Location = new System.Drawing.Point(314, 308);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(132, 50);
+            this.btnSua.TabIndex = 31;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // cboQuyenHan
             // 
@@ -449,87 +530,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnTaoMoiMK
-            // 
-            this.btnTaoMoiMK.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTaoMoiMK.Image = global::winform_fpt_shop.Properties.Resources.icons8_synchronize_24;
-            this.btnTaoMoiMK.Location = new System.Drawing.Point(943, 226);
-            this.btnTaoMoiMK.Name = "btnTaoMoiMK";
-            this.btnTaoMoiMK.Size = new System.Drawing.Size(46, 32);
-            this.btnTaoMoiMK.TabIndex = 27;
-            this.btnTaoMoiMK.Text = "\r\n";
-            this.btnTaoMoiMK.UseVisualStyleBackColor = true;
-            this.btnTaoMoiMK.Click += new System.EventHandler(this.btnTaoMoiMK_Click);
-            // 
-            // btnTaoMoi
-            // 
-            this.btnTaoMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTaoMoi.Image = global::winform_fpt_shop.Properties.Resources.icons8_synchronize_24;
-            this.btnTaoMoi.Location = new System.Drawing.Point(307, 103);
-            this.btnTaoMoi.Name = "btnTaoMoi";
-            this.btnTaoMoi.Size = new System.Drawing.Size(51, 39);
-            this.btnTaoMoi.TabIndex = 3;
-            this.btnTaoMoi.UseVisualStyleBackColor = true;
-            this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
-            // 
-            // btnXuat
-            // 
-            this.btnXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXuat.BackColor = System.Drawing.Color.White;
-            this.btnXuat.Image = global::winform_fpt_shop.Properties.Resources.icons8_export_24;
-            this.btnXuat.Location = new System.Drawing.Point(1088, 309);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(132, 50);
-            this.btnXuat.TabIndex = 31;
-            this.btnXuat.Text = "Xuất";
-            this.btnXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXuat.UseVisualStyleBackColor = false;
-            this.btnXuat.Click += new System.EventHandler(this.btnMoBaoCao);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnXoa.Image = global::winform_fpt_shop.Properties.Resources.icons8_delete_24;
-            this.btnXoa.Location = new System.Drawing.Point(483, 307);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(132, 50);
-            this.btnXoa.TabIndex = 31;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThem.Image = global::winform_fpt_shop.Properties.Resources.icons8_add_24;
-            this.btnThem.Location = new System.Drawing.Point(160, 308);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(132, 50);
-            this.btnThem.TabIndex = 30;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSua.Image = global::winform_fpt_shop.Properties.Resources.icons8_edit_24;
-            this.btnSua.Location = new System.Drawing.Point(314, 308);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(132, 50);
-            this.btnSua.TabIndex = 31;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
             // frmQuanLy_DSNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -542,6 +542,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Sách Nhân Viên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmQuanLy_DSNhanVien_FormClosing);
             this.Load += new System.EventHandler(this.frmDSNhanVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -211,7 +211,7 @@ namespace winform_fpt_shop
         public bool KiemTraKyTuNhap()
         {
             bool isValid = true;
-            // Kiểm tra ký tự nhập textbox số lượng
+            // Kiểm tra ký tự nhập textbox maKH
             string maKH = txtMaKH.Text;
             Char[] arrMaKH = maKH.ToLower().ToCharArray();
             for (int i = 0; i < txtMaKH.Text.Length; i++)
@@ -226,22 +226,20 @@ namespace winform_fpt_shop
                 }
             }
 
+            // liểm tra ký tự nhập họ tên
             string hoTen= txtHoTen.Text;
-            Char[] arrHoTen = hoTen.ToLower().ToCharArray();
+            Char[] arrHoTen = hoTen.ToCharArray();
             for (int i = 0; i < txtHoTen.Text.Length; i++)
             {
-                if (arrHoTen[i] < 'a' || arrHoTen[i] > 'z')
+                if (arrHoTen[i] > '0' && arrHoTen[i] < '9')
                 {
-                    if (arrHoTen[i] < '0' || arrHoTen[i] > '9')
-                    {
-                        isValid = false;
-                        break;
-                    }
+                    isValid = false;
+                    break;
                 }
             }
 
             string cCCD = txtCCCD.Text;
-            Char[] arrCCCD = cCCD.ToLower().ToCharArray();
+            Char[] arrCCCD = cCCD.ToCharArray();
             for (int i = 0; i < txtCCCD.Text.Length; i++)
             {
                 if (arrCCCD[i] < '0' || arrCCCD[i] > '9')
@@ -252,7 +250,7 @@ namespace winform_fpt_shop
             }
 
             string sdt = txtSDT.Text;
-            Char[] arrSDT = sdt.ToLower().ToCharArray();
+            Char[] arrSDT = sdt.ToCharArray();
             for(int i = 0; i < txtSDT.Text.Length; i++)
             {
                 if (arrSDT[i] < '0' || arrSDT[i] > '9')

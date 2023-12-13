@@ -87,6 +87,12 @@ namespace winform_fpt_shop
             OpenChildForm(frm);
         }
 
+        public void MoFormInHoaDon()
+        {
+            frmBaoCao_DSChiTietHD frmBaoCao_ChiTiet = new frmBaoCao_DSChiTietHD();
+            OpenChildForm(frmBaoCao_ChiTiet); 
+        }
+
         private void mnuTK_DangXuat_Click(object sender, EventArgs e)
         {
             DialogResult rs = MessageBox.Show("Bạn có muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -180,9 +186,19 @@ namespace winform_fpt_shop
         {
             //mo form hoa don 
             frmHoaDon_DanhSach frmTao = new frmHoaDon_DanhSach();
+            frmTao.FrmNhanVien = this; 
             OpenChildForm(frmTao);
         }
 
+        public void MoFormChiTietHoaDon()
+        {
+
+            // Sang form chi tiết hóa đơn
+            frmHoaDon_ChiTiet chiTiet = new frmHoaDon_ChiTiet();
+            chiTiet.FrmNhanVien = this;
+            chiTiet.Show();
+
+        }
         private void mnuChucNang_NhaSX_Click(object sender, EventArgs e)
         {
             //mo form 
@@ -287,6 +303,12 @@ namespace winform_fpt_shop
         private void mnuBaoCao_SanPham_TonKho_Click(object sender, EventArgs e)
         {
             frmBaoCaoTonKho frm = new frmBaoCaoTonKho();
+            OpenChildForm(frm); 
+        }
+
+        private void mnuBaoCao_HoaDon_DS_Click(object sender, EventArgs e)
+        {
+            frmBaoCaoDSHoaDon frm = new frmBaoCaoDSHoaDon();
             OpenChildForm(frm); 
         }
     }

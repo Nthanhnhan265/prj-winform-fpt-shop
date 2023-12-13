@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuenMatKhau));
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblMatKhauMoi = new System.Windows.Forms.Label();
             this.lblNhapLaiMatKhau = new System.Windows.Forms.Label();
@@ -38,8 +37,6 @@
             this.txtNhapLai = new System.Windows.Forms.TextBox();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -59,7 +56,7 @@
             this.lblMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMatKhauMoi.Location = new System.Drawing.Point(145, 118);
             this.lblMatKhauMoi.Name = "lblMatKhauMoi";
-            this.lblMatKhauMoi.Size = new System.Drawing.Size(255, 31);
+            this.lblMatKhauMoi.Size = new System.Drawing.Size(98, 18);
             this.lblMatKhauMoi.TabIndex = 1;
             this.lblMatKhauMoi.Text = "Mật khẩu mới";
             // 
@@ -69,7 +66,7 @@
             this.lblNhapLaiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNhapLaiMatKhau.Location = new System.Drawing.Point(96, 170);
             this.lblNhapLaiMatKhau.Name = "lblNhapLaiMatKhau";
-            this.lblNhapLaiMatKhau.Size = new System.Drawing.Size(239, 31);
+            this.lblNhapLaiMatKhau.Size = new System.Drawing.Size(155, 18);
             this.lblNhapLaiMatKhau.TabIndex = 2;
             this.lblNhapLaiMatKhau.Text = "Nhập lại mật khẩu mới";
             // 
@@ -101,7 +98,7 @@
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauMoi.Location = new System.Drawing.Point(237, 115);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(343, 37);
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(343, 24);
             this.txtMatKhauMoi.TabIndex = 4;
             this.txtMatKhauMoi.TextChanged += new System.EventHandler(this.txtMatKhauMoi_TextChanged);
             // 
@@ -110,7 +107,7 @@
             this.txtNhapLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNhapLai.Location = new System.Drawing.Point(237, 170);
             this.txtNhapLai.Name = "txtNhapLai";
-            this.txtNhapLai.Size = new System.Drawing.Size(212, 21);
+            this.txtNhapLai.Size = new System.Drawing.Size(212, 24);
             this.txtNhapLai.TabIndex = 5;
             this.txtNhapLai.TextChanged += new System.EventHandler(this.txtNhapLai_TextChanged);
             // 
@@ -120,7 +117,7 @@
             this.lblTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaiKhoan.Location = new System.Drawing.Point(160, 70);
             this.lblTaiKhoan.Name = "lblTaiKhoan";
-            this.lblTaiKhoan.Size = new System.Drawing.Size(67, 16);
+            this.lblTaiKhoan.Size = new System.Drawing.Size(73, 18);
             this.lblTaiKhoan.TabIndex = 6;
             this.lblTaiKhoan.Text = "Tài khoản";
             // 
@@ -129,17 +126,9 @@
             this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTaiKhoan.Location = new System.Drawing.Point(237, 70);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(212, 21);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(212, 24);
             this.txtTaiKhoan.TabIndex = 7;
             this.txtTaiKhoan.TextChanged += new System.EventHandler(this.txtTaiKhoan_TextChanged);
-            // 
-            // errorProvider
-            // 
-            //this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(307, 225);
-            //this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
-            //this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(343, 37);
-            //this.txtNhapLaiMatKhau.TabIndex = 5;
-            this.errorProvider.ContainerControl = this;
             // 
             // frmQuenMatKhau
             // 
@@ -162,7 +151,7 @@
             this.Name = "frmQuenMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quên mật khẩu";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.Load += new System.EventHandler(this.frmQuenMatKhau_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

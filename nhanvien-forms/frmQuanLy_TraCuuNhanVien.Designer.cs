@@ -167,6 +167,7 @@
             this.Name = "frmQuanLy_TraCuuNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tra cứu thông tin nhân viên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmQuanLy_TraCuuNhanVien_FormClosing);
             this.Load += new System.EventHandler(this.frmQuanLy_TraCuuNhanVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

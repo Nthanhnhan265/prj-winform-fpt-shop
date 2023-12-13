@@ -45,11 +45,6 @@
             this.cboTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboTimKiem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTimKiem.FormattingEnabled = true;
-      
-            this.cboTimKiem.Location = new System.Drawing.Point(109, 86);
-            this.cboTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboTimKiem.Name = "cboTimKiem";
-            this.cboTimKiem.Size = new System.Drawing.Size(121, 28);
             this.cboTimKiem.Items.AddRange(new object[] {
             "Mã hóa đơn",
             "Mã khách hàng",
@@ -57,7 +52,7 @@
             "Mã cửa hàng",
             "PT Thanh toán",
             "Số tiền TT"});
-            this.cboTimKiem.Location = new System.Drawing.Point(67, 70);
+            this.cboTimKiem.Location = new System.Drawing.Point(79, 88);
             this.cboTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboTimKiem.Name = "cboTimKiem";
             this.cboTimKiem.Size = new System.Drawing.Size(142, 24);
@@ -69,7 +64,7 @@
             this.txtTimKiemHoaDon.Location = new System.Drawing.Point(273, 88);
             this.txtTimKiemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiemHoaDon.Name = "txtTimKiemHoaDon";
-            this.txtTimKiemHoaDon.Size = new System.Drawing.Size(308, 26);
+            this.txtTimKiemHoaDon.Size = new System.Drawing.Size(308, 22);
             this.txtTimKiemHoaDon.TabIndex = 10;
             // 
             // btnTimKiem
@@ -78,7 +73,6 @@
             this.btnTimKiem.Enabled = false;
             this.btnTimKiem.Image = global::winform_fpt_shop.Properties.Resources.icons8_find_24;
             this.btnTimKiem.Location = new System.Drawing.Point(610, 81);
-            this.btnTimKiem.Location = new System.Drawing.Point(542, 65);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(166, 41);
@@ -95,7 +89,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(105, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 20);
+            this.label1.Size = new System.Drawing.Size(91, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "Tìm kiếm theo\r\n";
             // 
@@ -105,7 +99,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 168);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 20);
+            this.label2.Size = new System.Drawing.Size(123, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Danh sách hóa đơn";
             // 
@@ -114,9 +108,9 @@
             this.lblXemChiTiet.AutoSize = true;
             this.lblXemChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblXemChiTiet.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblXemChiTiet.Location = new System.Drawing.Point(739, 168);
+            this.lblXemChiTiet.Location = new System.Drawing.Point(755, 167);
             this.lblXemChiTiet.Name = "lblXemChiTiet";
-            this.lblXemChiTiet.Size = new System.Drawing.Size(138, 20);
+            this.lblXemChiTiet.Size = new System.Drawing.Size(123, 17);
             this.lblXemChiTiet.TabIndex = 13;
             this.lblXemChiTiet.Text = "Ấn để xem chi tiết ";
             // 
@@ -127,7 +121,7 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(303, 24);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(285, 29);
+            this.label12.Size = new System.Drawing.Size(245, 25);
             this.label12.TabIndex = 24;
             this.label12.Text = "DANH SÁCH HÓA ĐƠN";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -148,7 +142,6 @@
             // 
             // frmHoaDon_DanhSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AcceptButton = this.btnTimKiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

@@ -20,7 +20,6 @@ C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanv
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmHoaDon_Tao.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmNhanVien.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmSanPham_TraCuu.resources
-C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmThongKe_HD.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmKhachhang_TraCuu.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.frmSanPham_TonKho.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.Properties.Resources.resources
@@ -56,3 +55,5 @@ C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanv
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmBaoCao_DSNhanVienCH.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmBaoCao_SanPhamNSX.resources
 C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmBaoCaoTonKho.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmBaoCao_DSChiTietHD.resources
+C:\Users\ACER\source\repos\prj-winform-fpt-shop\obj\Debug\winform_fpt_shop.nhanvien_forms.frmBaoCaoDSHoaDon.resources

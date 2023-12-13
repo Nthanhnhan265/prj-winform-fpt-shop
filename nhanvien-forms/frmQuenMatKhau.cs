@@ -115,5 +115,10 @@ namespace winform_fpt_shop.manhinhchung_forms
         {
 
         }
+
+        private void frmQuenMatKhau_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

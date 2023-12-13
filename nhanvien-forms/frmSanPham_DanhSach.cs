@@ -126,8 +126,7 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <returns></returns>
         private string LayThongTinSPTuDGV()
         {
-            try
-            {
+           
                 string str = "";
                 for (int i = 0; i < dgvThongTinSP.Rows.Count; i++)
                 {
@@ -136,8 +135,7 @@ namespace winform_fpt_shop.nhanvien_forms
                     str += $"{key}:{value}|";
                 }
                 str = str.Substring(0, str.Length - 1);
-            }
-            catch { }
+     
             return str; 
         }
         /// <summary>
@@ -474,6 +472,17 @@ namespace winform_fpt_shop.nhanvien_forms
                 thongTinSPDuocChon = null;
             }
             catch { }
+        }
+
+        private void frmSanPham_DanhSach_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            DialogResult rd = MessageBox.Show("Bạn có muốn thoát không?", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rd == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+
         }
     }
 }

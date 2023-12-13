@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSanPham_TonKho));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtpNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -51,8 +53,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachTonKho = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dtpNgayNhap = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -86,6 +86,24 @@
             this.panel1.Size = new System.Drawing.Size(1000, 304);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(535, 175);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 20);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Ngày nhập";
+            // 
+            // dtpNgayNhap
+            // 
+            this.dtpNgayNhap.Enabled = false;
+            this.dtpNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayNhap.Location = new System.Drawing.Point(635, 173);
+            this.dtpNgayNhap.Name = "dtpNgayNhap";
+            this.dtpNgayNhap.Size = new System.Drawing.Size(200, 26);
+            this.dtpNgayNhap.TabIndex = 30;
             // 
             // btnSua
             // 
@@ -287,24 +305,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // dtpNgayNhap
-            // 
-            this.dtpNgayNhap.Enabled = false;
-            this.dtpNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayNhap.Location = new System.Drawing.Point(635, 173);
-            this.dtpNgayNhap.Name = "dtpNgayNhap";
-            this.dtpNgayNhap.Size = new System.Drawing.Size(200, 26);
-            this.dtpNgayNhap.TabIndex = 30;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(535, 175);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 20);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Ngày nhập";
-            // 
             // frmSanPham_TonKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -317,6 +317,7 @@
             this.Name = "frmSanPham_TonKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sản phẩm tồn kho";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSanPham_TonKho_FormClosing);
             this.Load += new System.EventHandler(this.frmSanPham_TonKho_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

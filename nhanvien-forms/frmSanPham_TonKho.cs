@@ -310,5 +310,16 @@ namespace winform_fpt_shop
         {
 
         }
+
+        private void frmSanPham_TonKho_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            DialogResult rd = MessageBox.Show("Bạn có muốn thoát không?", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rd == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+
+        }
     }
 }

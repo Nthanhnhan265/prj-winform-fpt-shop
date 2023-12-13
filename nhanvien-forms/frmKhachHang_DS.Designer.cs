@@ -56,7 +56,7 @@
             // 
             this.lblMaKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMaKH.AutoSize = true;
-            this.lblMaKH.Location = new System.Drawing.Point(45, 74);
+            this.lblMaKH.Location = new System.Drawing.Point(45, 88);
             this.lblMaKH.Name = "lblMaKH";
             this.lblMaKH.Size = new System.Drawing.Size(98, 16);
             this.lblMaKH.TabIndex = 0;
@@ -66,7 +66,7 @@
             // 
             this.lblHoTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHoTen.AutoSize = true;
-            this.lblHoTen.Location = new System.Drawing.Point(100, 108);
+            this.lblHoTen.Location = new System.Drawing.Point(97, 144);
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(46, 16);
             this.lblHoTen.TabIndex = 0;
@@ -76,7 +76,7 @@
             // 
             this.lblCCCD.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCCCD.AutoSize = true;
-            this.lblCCCD.Location = new System.Drawing.Point(100, 146);
+            this.lblCCCD.Location = new System.Drawing.Point(99, 200);
             this.lblCCCD.Name = "lblCCCD";
             this.lblCCCD.Size = new System.Drawing.Size(44, 16);
             this.lblCCCD.TabIndex = 0;
@@ -86,7 +86,7 @@
             // 
             this.lblSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSDT.AutoSize = true;
-            this.lblSDT.Location = new System.Drawing.Point(324, 74);
+            this.lblSDT.Location = new System.Drawing.Point(361, 88);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(35, 16);
             this.lblSDT.TabIndex = 0;
@@ -96,7 +96,7 @@
             // 
             this.lblDIaChi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDIaChi.AutoSize = true;
-            this.lblDIaChi.Location = new System.Drawing.Point(309, 108);
+            this.lblDIaChi.Location = new System.Drawing.Point(349, 144);
             this.lblDIaChi.Name = "lblDIaChi";
             this.lblDIaChi.Size = new System.Drawing.Size(47, 16);
             this.lblDIaChi.TabIndex = 0;
@@ -106,7 +106,7 @@
             // 
             this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(317, 146);
+            this.lblEmail.Location = new System.Drawing.Point(355, 200);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(41, 16);
             this.lblEmail.TabIndex = 0;
@@ -115,59 +115,59 @@
             // txtMaKH
             // 
             this.txtMaKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtMaKH.Location = new System.Drawing.Point(192, 89);
+            this.txtMaKH.Location = new System.Drawing.Point(161, 85);
             this.txtMaKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(124, 26);
+            this.txtMaKH.Size = new System.Drawing.Size(155, 22);
             this.txtMaKH.TabIndex = 0;
             this.txtMaKH.TextChanged += new System.EventHandler(this.txtMaKH_TextChanged);
             // 
             // txtHoTen
             // 
             this.txtHoTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtHoTen.Location = new System.Drawing.Point(192, 132);
+            this.txtHoTen.Location = new System.Drawing.Point(161, 141);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(124, 26);
+            this.txtHoTen.Size = new System.Drawing.Size(155, 22);
             this.txtHoTen.TabIndex = 1;
             this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             // 
             // txtCCCD
             // 
             this.txtCCCD.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCCCD.Location = new System.Drawing.Point(192, 180);
+            this.txtCCCD.Location = new System.Drawing.Point(161, 197);
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(124, 26);
+            this.txtCCCD.Size = new System.Drawing.Size(155, 22);
             this.txtCCCD.TabIndex = 2;
             this.txtCCCD.TextChanged += new System.EventHandler(this.txtCCCD_TextChanged);
             // 
             // txtSDT
             // 
             this.txtSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSDT.Location = new System.Drawing.Point(431, 92);
+            this.txtSDT.Location = new System.Drawing.Point(418, 82);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(124, 26);
+            this.txtSDT.Size = new System.Drawing.Size(155, 22);
             this.txtSDT.TabIndex = 3;
             this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDiaChi.Location = new System.Drawing.Point(431, 135);
+            this.txtDiaChi.Location = new System.Drawing.Point(418, 141);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(124, 26);
+            this.txtDiaChi.Size = new System.Drawing.Size(155, 22);
             this.txtDiaChi.TabIndex = 4;
             // 
             // txtEmail
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtEmail.Location = new System.Drawing.Point(431, 182);
+            this.txtEmail.Location = new System.Drawing.Point(418, 197);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(124, 26);
+            this.txtEmail.Size = new System.Drawing.Size(155, 22);
             this.txtEmail.TabIndex = 5;
             // 
             // btnThem
@@ -264,7 +264,6 @@
             // 
             // frmKhachHang_DS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AcceptButton = this.btnThem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -281,7 +280,6 @@
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.txtMaKH);
-
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblDIaChi);
             this.Controls.Add(this.lblSDT);

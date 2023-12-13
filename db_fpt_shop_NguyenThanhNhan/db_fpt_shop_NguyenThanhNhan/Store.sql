@@ -521,14 +521,15 @@ JOIN (
 Go 
 --Hiển thị thông tin tồn kho  
 Create proc sp_HienThiThongTinTonKhoCH
-@MaCH char(10) 
+@MaCH char(10), 
+@Thang date 
 AS 
 	select * 
 	from CuaHang,SanPham,TonKho
 	where TonKho.MaCH=CuaHang.MaCH 
 	and TonKho.MaSP=SanPham.MaSP
 	and CuaHang.MaCH=@MaCH
-
+	and month(TonKho.NgayNhap)=month(@thang)
 
 
 GO 

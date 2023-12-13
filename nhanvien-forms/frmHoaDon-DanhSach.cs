@@ -20,7 +20,10 @@ namespace winform_fpt_shop
             InitializeComponent();
         }
         // Khai báo
+        frmNhanVien frmNhanVien; 
         public static string maHD;
+
+        public frmNhanVien FrmNhanVien { get => frmNhanVien; set => frmNhanVien = value; }
 
         private void frmHoaDon_DanhSach_Load(object sender, EventArgs e)
         {
@@ -131,8 +134,9 @@ namespace winform_fpt_shop
             maHD = dgvHoaDon.Rows[dong].Cells[0].Value.ToString();
 
             // Sang form chi tiết hóa đơn
-            frmHoaDon_ChiTiet chiTiet = new frmHoaDon_ChiTiet();
-            chiTiet.Show();
+            frmNhanVien.MoFormChiTietHoaDon(); 
+
+                
         }
     }
 }

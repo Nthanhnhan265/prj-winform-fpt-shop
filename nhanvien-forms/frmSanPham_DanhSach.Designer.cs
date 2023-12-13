@@ -383,6 +383,7 @@
             this.Name = "frmSanPham_DanhSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Sách Sẩn Phẩm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSanPham_DanhSach_FormClosing);
             this.Load += new System.EventHandler(this.frmSanPham_DanhSach_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
