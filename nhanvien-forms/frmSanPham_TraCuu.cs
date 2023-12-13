@@ -24,32 +24,39 @@ namespace winform_fpt_shop.nhanvien_forms
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if(txtTimKiem.Text!="")
+            try
             {
-                if (cboTimKiem.Text == cbo[0])
+                if (txtTimKiem.Text != "")
                 {
-                    dgvTraCuu.DataSource = DBCuaHang.FindBy("sp_TimKiemSanPhamTheoMa",txtTimKiem.Text); 
+                    if (cboTimKiem.Text == cbo[0])
+                    {
+                        dgvTraCuu.DataSource = DBCuaHang.FindBy("sp_TimKiemSanPhamTheoMa", txtTimKiem.Text);
 
-                }else if (cboTimKiem.Text == cbo[1])
-                {  
-                    dgvTraCuu.DataSource = DBCuaHang.FindBy(
-                        "sp_TimKiemSanPhamTheoTen",
-                        DBCuaHang.GetNvarcharText(txtTimKiem.Text)
-                        ); 
+                    }
+                    else if (cboTimKiem.Text == cbo[1])
+                    {
+                        dgvTraCuu.DataSource = DBCuaHang.FindBy(
+                            "sp_TimKiemSanPhamTheoTen",
+                            DBCuaHang.GetNvarcharText(txtTimKiem.Text)
+                            );
 
-                } else if (cboTimKiem.Text == cbo[2])
-                {
+                    }
+                    else if (cboTimKiem.Text == cbo[2])
+                    {
 
-                    dgvTraCuu.DataSource = DBCuaHang.FindBy(
-                        "sp_TimKiemSanPhamTheoThongTin",
-                        DBCuaHang.GetNvarcharText(txtTimKiem.Text)
-                        );
+                        dgvTraCuu.DataSource = DBCuaHang.FindBy(
+                            "sp_TimKiemSanPhamTheoThongTin",
+                            DBCuaHang.GetNvarcharText(txtTimKiem.Text)
+                            );
+                    }
+
                 }
-
-            }else
-            {
-                errorProvider1.SetError(txtTimKiem,"Vui lòng nhập trường này"); 
+                else
+                {
+                    errorProvider1.SetError(txtTimKiem, "Vui lòng nhập trường này");
+                }
             }
+            catch { }
         }
 
         private void frmSanPham_TraCuu_Load(object sender, EventArgs e)
@@ -61,6 +68,15 @@ namespace winform_fpt_shop.nhanvien_forms
         private void dgvTraCuu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void frmSanPham_TraCuu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dl = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dl == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

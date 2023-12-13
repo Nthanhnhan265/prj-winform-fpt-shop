@@ -52,7 +52,9 @@
             // btnTimKiem
             // 
             this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTimKiem.Location = new System.Drawing.Point(616, 61);
+            this.btnTimKiem.Enabled = false;
+            this.btnTimKiem.Image = global::winform_fpt_shop.Properties.Resources.icons8_find_24;
+            this.btnTimKiem.Location = new System.Drawing.Point(693, 76);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(166, 41);
@@ -80,10 +82,10 @@
             this.cboTimKiem.Items.AddRange(new object[] {
             "Mã khách hàng",
             "Tên khách hàng"});
-            this.cboTimKiem.Location = new System.Drawing.Point(137, 66);
+            this.cboTimKiem.Location = new System.Drawing.Point(192, 81);
             this.cboTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboTimKiem.Name = "cboTimKiem";
-            this.cboTimKiem.Size = new System.Drawing.Size(143, 24);
+            this.cboTimKiem.Size = new System.Drawing.Size(121, 28);
             this.cboTimKiem.TabIndex = 7;
             // 
             // label2
@@ -124,7 +126,7 @@
             // frmKhachhang_TraCuu
             // 
             this.AcceptButton = this.btnTimKiem;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 510);
             this.Controls.Add(this.dgvKhachHang);

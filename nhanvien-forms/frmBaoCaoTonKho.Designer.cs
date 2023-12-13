@@ -1,6 +1,6 @@
 ﻿namespace winform_fpt_shop.nhanvien_forms
 {
-    partial class frmThongKe_HD
+    partial class frmBaoCaoTonKho
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKe_HD));
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // frmThongKe_HD
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1022, 571);
+            this.crystalReportViewer1.TabIndex = 0;
+            // 
+            // frmBaoCaoTonKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmThongKe_HD";
+            this.ClientSize = new System.Drawing.Size(1022, 571);
+            this.Controls.Add(this.crystalReportViewer1);
+            this.Name = "frmBaoCaoTonKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thống Kê Hóa Đơn";
+            this.Text = "Danh sách sản phẩm tồn kho trong tháng";
+            this.Load += new System.EventHandler(this.frmBaoCaoTonKho_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }

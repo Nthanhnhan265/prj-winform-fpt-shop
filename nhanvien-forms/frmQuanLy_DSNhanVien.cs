@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions; 
+using System.Text.RegularExpressions;
 
 namespace winform_fpt_shop.nhanvien_forms
 {
@@ -22,6 +22,10 @@ namespace winform_fpt_shop.nhanvien_forms
         string patternEmail = "^[a-zA-Z0-9@]+@gmail.com$";
         string patternNumber = "^[0-9]+$";
         DataTable noiLamViec;
+        frmNhanVien frmChinh;
+
+        public frmNhanVien FrmChinh { get => frmChinh; set => frmChinh = value; }
+
         private void frmDSNhanVien_Load(object sender, EventArgs e)
         {
 
@@ -52,12 +56,13 @@ namespace winform_fpt_shop.nhanvien_forms
                 rdNam.Checked = true;
 
                 txtMaNQL.Text = cboHoTenQL.SelectedValue.ToString();
+                dtpNgaySinh.Text = "01/01/2001"; 
             }
             catch
             {
 
             }
-           }
+        }
 
 
         private void cboQuyenHan_SelectedIndexChanged(object sender, EventArgs e)
@@ -154,7 +159,7 @@ namespace winform_fpt_shop.nhanvien_forms
                     }
                     else
                     {
-                        MessageBox.Show($"Có Lỗi xảy ra: \n Hoặc dữ liệu đã tồn tại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show($"Có Lỗi xảy ra: \n Hoặc dữ liệu đã tồn tại. Vui kiểm tra lại Mã nhân viên, số CCCD, số điện thoại và Email sau đó thử lại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 catch (Exception ex)
@@ -210,6 +215,74 @@ namespace winform_fpt_shop.nhanvien_forms
             {
                 MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnTao25_Click(object sender, EventArgs e)
+        {
+
+            string[] Ho = new string[] { "Nguyễn ", "Võ ", "Trần ", "Huỳnh ", "Trương " };
+            string[] TenLot = new string[] { " Văn ", " Thành " };
+            string[] Ten = new string[] { " Tí", " Tèo", " Tủn", " Nam" };
+            Random rd = new Random();
+            for (int i = 0; i < 25; i++)
+            {
+                try
+                {
+                    try
+                    {
+                        if (DBCuaHang.AddRowData("sp_ThemNhanVien",
+                            new NhanVien(
+                            RandomMa(),
+                            DBCuaHang.GetNvarcharText(Ho[rd.Next(0, 4)] + TenLot[rd.Next(0, 1)] + Ten[rd.Next(0, 3)]),
+                            DBCuaHang.ChangeToDate(rd.Next(1, 30) + "/" + rd.Next(3, 12) + "/" + rd.Next(2000, 2004)),
+                            DBCuaHang.GetNvarcharText(txtDiaChi.Text),
+                            "N|Nữ",
+                            "072204" + rd.Next(1000, 9999) + "",
+                            "085653" + rd.Next(1000, 9999) + "",
+                            "nhanvienfpt" + rd.Next(1000, 9999) + "@gmail.com",
+                            cboNoiLamViec.SelectedValue.ToString(),
+                            txtMaNQL.Text,
+                            "MKNVFPT" + rd.Next(1000, 9999) + "",
+                            DBCuaHang.GetNvarcharText("Nhân Viên")
+                            )
+                            ) > 0)
+                        {
+                            TaiLaiDuLieu();
+                            //MessageBox.Show($"Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Có Lỗi xảy ra: \n Hoặc dữ liệu đã tồn tại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Có Lỗi xảy ra: dữ liệu nhập vào không hợp lệ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+
+
+
+
+            }
+
+        }
+
+
+
+
+
+
+
+
+        private void btnMoBaoCao(object sender, EventArgs e)
+        {
+            frmChinh.MoFomBaoCaoNhanVien();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -300,81 +373,110 @@ namespace winform_fpt_shop.nhanvien_forms
 
         private void txtHoTen_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(txtHoTen.Text, patternString))
+            try
             {
-                errorProvider1.SetError(txtHoTen, "Vui lòng nhập tên hợp lệ!");
-            } else
-            {
-                errorProvider1.Clear();
+                if (!Regex.IsMatch(txtHoTen.Text, patternString))
+                {
+                    errorProvider1.SetError(txtHoTen, "Vui lòng nhập tên hợp lệ!");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
+            catch { }
         }
 
         private void txtCCCD_TextChanged(object sender, EventArgs e)
         {
-
-            if (!Regex.IsMatch(txtCCCD.Text, patternNumber) || txtCCCD.Text.Length>10)
+            try
             {
-                errorProvider1.SetError(txtCCCD, "Vui lòng chỉ nhập số và đủ 10 chữ số");
+                if (!Regex.IsMatch(txtCCCD.Text, patternNumber) || txtCCCD.Text.Length > 10)
+                {
+                    errorProvider1.SetError(txtCCCD, "Vui lòng chỉ nhập số và đủ 10 chữ số");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            catch { }
         }
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(txtSDT.Text, patternNumber) || txtSDT.Text.Length>10 )
+            try
             {
-                errorProvider1.SetError(txtSDT, "Vui lòng chỉ nhập số và đủ 10 chữ số");
+                if (!Regex.IsMatch(txtSDT.Text, patternNumber) || txtSDT.Text.Length > 10)
+                {
+                    errorProvider1.SetError(txtSDT, "Vui lòng chỉ nhập số và đủ 10 chữ số");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            catch { }
         }
 
         private void txtDiaChi_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(txtDiaChi.Text, patternDiaChi))
+            try
             {
-                errorProvider1.SetError(txtDiaChi, "Vui lòng chỉ chữ,số và kí tự , - ");
+                if (!Regex.IsMatch(txtDiaChi.Text, patternDiaChi))
+                {
+                    errorProvider1.SetError(txtDiaChi, "Vui lòng chỉ chữ,số và kí tự , - ");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            catch { }
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(txtEmail.Text, patternEmail))
+            try
             {
-                errorProvider1.SetError(txtEmail, "Vui lòng chỉ chữ,số và kí tự , - ");
+                if (!Regex.IsMatch(txtEmail.Text, patternEmail))
+                {
+                    errorProvider1.SetError(txtEmail, "Vui lòng chỉ chữ,số và kí tự , - ");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            catch { }
         }
 
         private void txtMatKhau_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(txtMatKhau.Text, "^[A-Z0-9a-z]+$"))
+            try
             {
-                errorProvider1.SetError(txtEmail, "Vui lòng nhập trường này");
+                if (!Regex.IsMatch(txtMatKhau.Text, "^[A-Z0-9a-z]+$"))
+                {
+                    errorProvider1.SetError(txtEmail, "Vui lòng nhập trường này");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            catch {  }
         }
 
         private void cboNoiLamViec_SelectedIndexChanged(object sender, EventArgs e)
-        { 
-            txtMaNQL.Text = noiLamViec.Rows[cboNoiLamViec.SelectedIndex][4].ToString();
-            cboHoTenQL.SelectedValue=txtMaNQL.Text;
+        {
+            try
+            {
+                txtMaNQL.Text = noiLamViec.Rows[cboNoiLamViec.SelectedIndex][4].ToString();
+                cboHoTenQL.SelectedValue = txtMaNQL.Text;
+            }
+            catch { }
         }
+
 
         private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
         {

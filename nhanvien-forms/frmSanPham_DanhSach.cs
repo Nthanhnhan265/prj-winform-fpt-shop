@@ -42,54 +42,60 @@ namespace winform_fpt_shop.nhanvien_forms
         }
         public void Tailaidulieu()
         {
-            //lấy các datasoure 
-            dgvSanPham.DataSource = DBCuaHang.GetDataTable("sp_HienThiSanPham");
-            DataTable tbDanhMuc = DBCuaHang.GetDataTable("sp_HienThiDanhMuc");
-            DataTable tbNhaSX = DBCuaHang.GetDataTable("sp_HienThiNhaSX");
-            //hiển thị lên combobox 
-            cbbDanhMuc.DataSource = tbDanhMuc;
-            cbbNhaSX.DataSource = tbNhaSX;
-            //hiển thị tên 
-            cbbNhaSX.DisplayMember = "TenNSX";
-            cbbNhaSX.ValueMember = "MaNSX";
-            cbbDanhMuc.DisplayMember = "TenDM";
-            cbbDanhMuc.ValueMember = "MaDM";
-
-            dgvThongTinSP.Rows.Clear();
-            int dong = cbbDanhMuc.SelectedIndex;
-            string thuocTinhDM = dataTable.Rows[dong][2].ToString();
-            string[] thuocTinhs = thuocTinhDM.Split(',');
-            for (int i = 0; i < thuocTinhs.Length; i++)
+            try
             {
-                dgvThongTinSP.Rows.Add();
-                dgvThongTinSP.Rows[i].Cells[0].Value = thuocTinhs[i].Trim();
-            }
+                //lấy các datasoure 
+                dgvSanPham.DataSource = DBCuaHang.GetDataTable("sp_HienThiSanPham");
+                DataTable tbDanhMuc = DBCuaHang.GetDataTable("sp_HienThiDanhMuc");
+                DataTable tbNhaSX = DBCuaHang.GetDataTable("sp_HienThiNhaSX");
+                //hiển thị lên combobox 
+                cbbDanhMuc.DataSource = tbDanhMuc;
+                cbbNhaSX.DataSource = tbNhaSX;
+                //hiển thị tên 
+                cbbNhaSX.DisplayMember = "TenNSX";
+                cbbNhaSX.ValueMember = "MaNSX";
+                cbbDanhMuc.DisplayMember = "TenDM";
+                cbbDanhMuc.ValueMember = "MaDM";
 
+                dgvThongTinSP.Rows.Clear();
+                int dong = cbbDanhMuc.SelectedIndex;
+                string thuocTinhDM = dataTable.Rows[dong][2].ToString();
+                string[] thuocTinhs = thuocTinhDM.Split(',');
+                for (int i = 0; i < thuocTinhs.Length; i++)
+                {
+                    dgvThongTinSP.Rows.Add();
+                    dgvThongTinSP.Rows[i].Cells[0].Value = thuocTinhs[i].Trim();
+                }
+            }catch {  }
         }
 
         private void frmSanPham_DanhSach_Load(object sender, EventArgs e)
         {
-            //lấy các datasoure 
-            dgvSanPham.DataSource = DBCuaHang.GetDataTable("sp_HienThiSanPham");
-            DataTable tbDanhMuc = DBCuaHang.GetDataTable("sp_HienThiDanhMuc");
-            DataTable tbNhaSX = DBCuaHang.GetDataTable("sp_HienThiNhaSX");
-            //hiển thị lên combobox 
-            cbbDanhMuc.DataSource = tbDanhMuc;
-            cbbNhaSX.DataSource = tbNhaSX;
-            //hiển thị tên 
-            cbbNhaSX.DisplayMember = "TenNSX";
-            cbbNhaSX.ValueMember = "MaNSX";
-            cbbDanhMuc.DisplayMember = "TenDM";
-            cbbDanhMuc.ValueMember = "MaDM";
-            dgvThongTinSP.Rows.Clear(); 
-            int dong = cbbDanhMuc.SelectedIndex;
-            string thuocTinhDM = dataTable.Rows[dong][2].ToString();
-            string[] thuocTinhs = thuocTinhDM.Split(',');
-            for (int i = 0; i < thuocTinhs.Length; i++)
+            try
             {
-                dgvThongTinSP.Rows.Add();
-                dgvThongTinSP.Rows[i].Cells[0].Value = thuocTinhs[i].Trim();
+                //lấy các datasoure 
+                dgvSanPham.DataSource = DBCuaHang.GetDataTable("sp_HienThiSanPham");
+                DataTable tbDanhMuc = DBCuaHang.GetDataTable("sp_HienThiDanhMuc");
+                DataTable tbNhaSX = DBCuaHang.GetDataTable("sp_HienThiNhaSX");
+                //hiển thị lên combobox 
+                cbbDanhMuc.DataSource = tbDanhMuc;
+                cbbNhaSX.DataSource = tbNhaSX;
+                //hiển thị tên 
+                cbbNhaSX.DisplayMember = "TenNSX";
+                cbbNhaSX.ValueMember = "MaNSX";
+                cbbDanhMuc.DisplayMember = "TenDM";
+                cbbDanhMuc.ValueMember = "MaDM";
+                dgvThongTinSP.Rows.Clear();
+                int dong = cbbDanhMuc.SelectedIndex;
+                string thuocTinhDM = dataTable.Rows[dong][2].ToString();
+                string[] thuocTinhs = thuocTinhDM.Split(',');
+                for (int i = 0; i < thuocTinhs.Length; i++)
+                {
+                    dgvThongTinSP.Rows.Add();
+                    dgvThongTinSP.Rows[i].Cells[0].Value = thuocTinhs[i].Trim();
+                }
             }
+            catch { }
 
         }
         /// <summary>
@@ -98,16 +104,20 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <returns></returns>
         private bool KiemTraCacOTrongThongTinSP()
         {
-            for(int i=0;i<dgvThongTinSP.Rows.Count;i++)
+            try
             {
-                if (dgvThongTinSP.Rows[i].Cells[1].Value==null)
+                for (int i = 0; i < dgvThongTinSP.Rows.Count; i++)
                 {
-                    errorProvider1.SetError(dgvThongTinSP,"Vui lòng nhập đầy đủ thông tin sản phẩm!"); 
-                    return false;
-                    
+                    if (dgvThongTinSP.Rows[i].Cells[1].Value == null)
+                    {
+                        errorProvider1.SetError(dgvThongTinSP, "Vui lòng nhập đầy đủ thông tin sản phẩm!");
+                        return false;
+
+                    }
                 }
+                errorProvider1.Clear();
             }
-            errorProvider1.Clear(); 
+            catch { }
             return true; 
         }
         /// <summary>
@@ -116,14 +126,18 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <returns></returns>
         private string LayThongTinSPTuDGV()
         {
-            string str = ""; 
-            for(int i=0;i<dgvThongTinSP.Rows.Count;i++)
+            try
             {
-                string key = dgvThongTinSP.Rows[i].Cells[0].Value.ToString(); 
-                string value = dgvThongTinSP.Rows[i].Cells[1].Value.ToString(); 
-                str+=$"{key}:{value}|";  
+                string str = "";
+                for (int i = 0; i < dgvThongTinSP.Rows.Count; i++)
+                {
+                    string key = dgvThongTinSP.Rows[i].Cells[0].Value.ToString();
+                    string value = dgvThongTinSP.Rows[i].Cells[1].Value.ToString();
+                    str += $"{key}:{value}|";
+                }
+                str = str.Substring(0, str.Length - 1);
             }
-            str = str.Substring(0,str.Length-1);
+            catch { }
             return str; 
         }
         /// <summary>
@@ -255,27 +269,35 @@ namespace winform_fpt_shop.nhanvien_forms
 
         private void txtTenSanPham_TextChanged(object sender, EventArgs e)
         {
-            string str = txtTenSanPham.Text;
-            if (Regex.IsMatch(str, patternString) == false)
+            try
             {
-                errorProvider1.SetError(txtTenSanPham, "Vui lòng nhập chuỗi chỉ chứa kí tự a-z,A-Z,0-9! hoặc kí tự . , / -");
+                string str = txtTenSanPham.Text;
+                if (Regex.IsMatch(str, patternString) == false)
+                {
+                    errorProvider1.SetError(txtTenSanPham, "Vui lòng nhập chuỗi chỉ chứa kí tự a-z,A-Z,0-9! hoặc kí tự . , / -");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            catch { }
         }
         private void txtGiaBan_TextChanged(object sender, EventArgs e)
         {
-            string str = txtGiaBan.Text;
-            if (Regex.IsMatch(str, patternNumber) == false)
+            try
             {
-                errorProvider1.SetError(txtGiaBan, "Vui lòng nhập chuỗi chỉ chứa kí tự 0-9");
+                string str = txtGiaBan.Text;
+                if (Regex.IsMatch(str, patternNumber) == false)
+                {
+                    errorProvider1.SetError(txtGiaBan, "Vui lòng nhập chuỗi chỉ chứa kí tự 0-9");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
             }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            catch { }
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
@@ -285,17 +307,21 @@ namespace winform_fpt_shop.nhanvien_forms
 
         private void LamMoi()
         {
-            txtMa.Text = "";
-            txtTenSanPham.Text = "";
-            //thoong tin tam cho qua 
+            try
+            {
+                txtMa.Text = "";
+                txtTenSanPham.Text = "";
+                //thoong tin tam cho qua 
 
-            cbbDanhMuc.SelectedIndex = 0;
+                cbbDanhMuc.SelectedIndex = 0;
 
-            cbbNhaSX.SelectedIndex = 0;
-            txtGiaBan.Text = "";
-            //hinh anh tam cho qua 
+                cbbNhaSX.SelectedIndex = 0;
+                txtGiaBan.Text = "";
+                //hinh anh tam cho qua 
 
-            errorProvider1.Clear();
+                errorProvider1.Clear();
+            }
+            catch { }
         }
 
         private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -352,45 +378,49 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="e"></param>
         private void btnDuyet_Click(object sender, EventArgs e)
         {
-            //khai báo 
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif";
-            dialog.Title = "Chọn hình ảnh";
-
-            //mở hộp thoại file 
-            DialogResult rs = dialog.ShowDialog();
-            if (rs == DialogResult.OK)
+            try
             {
-                string selectedFilePath = dialog.FileName;
+                //khai báo 
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif";
+                dialog.Title = "Chọn hình ảnh";
 
-                // Kiểm tra xem có thư mục để lưu trữ hình ảnh hay không
-                if (Directory.Exists(Application.StartupPath + "/images"))
+                //mở hộp thoại file 
+                DialogResult rs = dialog.ShowDialog();
+                if (rs == DialogResult.OK)
                 {
-                    // Lưu tên tệp hình ảnh
-                    anhDuocChon = Path.GetFileName(selectedFilePath); ;
-                    string fileName = Path.GetFileName(selectedFilePath);
-                    string destinationPath = Path.Combine(Application.StartupPath + "/images/", fileName);  // Thay "YourFolderPath" bằng đường dẫn thư mục bạn muốn sử dụng
+                    string selectedFilePath = dialog.FileName;
 
-                    // Kiểm tra xem tệp đã tồn tại hay chưa
-                    if (!File.Exists(destinationPath))
+                    // Kiểm tra xem có thư mục để lưu trữ hình ảnh hay không
+                    if (Directory.Exists(Application.StartupPath + "/images"))
                     {
-                        // Sao chép hình ảnh vào thư mục đích
-                        File.Copy(selectedFilePath, destinationPath);
+                        // Lưu tên tệp hình ảnh
+                        anhDuocChon = Path.GetFileName(selectedFilePath); ;
+                        string fileName = Path.GetFileName(selectedFilePath);
+                        string destinationPath = Path.Combine(Application.StartupPath + "/images/", fileName);  // Thay "YourFolderPath" bằng đường dẫn thư mục bạn muốn sử dụng
 
-                        //hiển lên hình ảnh 
-                        pictureBox1.Image = Image.FromFile(destinationPath);
+                        // Kiểm tra xem tệp đã tồn tại hay chưa
+                        if (!File.Exists(destinationPath))
+                        {
+                            // Sao chép hình ảnh vào thư mục đích
+                            File.Copy(selectedFilePath, destinationPath);
+
+                            //hiển lên hình ảnh 
+                            pictureBox1.Image = Image.FromFile(destinationPath);
+                        }
+                        else
+                        {
+                            //hiển lên hình ảnh có tromg thư mục
+                            pictureBox1.Image = Image.FromFile(destinationPath);
+                        }
                     }
                     else
                     {
-                        //hiển lên hình ảnh có tromg thư mục
-                        pictureBox1.Image = Image.FromFile(destinationPath);
+                        MessageBox.Show("Thư mục đích không tồn tại!");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Thư mục đích không tồn tại!");
-                }
             }
+            catch { }
         }
         /// <summary>
         /// lưu ảnh vào folder
@@ -399,15 +429,18 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="folder"></param>
         private void LuuHinhAnh(string tenFile, string pathFileCu)
         {
-            // Lưu tên tệp hình ảnh
+            try
+            {
+                // Lưu tên tệp hình ảnh
 
-            string pathFileMoi = Path.Combine(Application.StartupPath + "/images/", tenFile);
-            // Kiểm tra xem tệp đã tồn tại hay chưa
+                string pathFileMoi = Path.Combine(Application.StartupPath + "/images/", tenFile);
+                // Kiểm tra xem tệp đã tồn tại hay chưa
 
-            // Sao chép hình ảnh vào file mới
-            File.Copy(pathFileCu, pathFileMoi);
+                // Sao chép hình ảnh vào file mới
+                File.Copy(pathFileCu, pathFileMoi);
 
-
+            }
+            catch { }
 
         }
 
@@ -427,16 +460,20 @@ namespace winform_fpt_shop.nhanvien_forms
         /// <param name="e"></param>
         private void cbbDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvThongTinSP.Rows.Clear(); 
-            int dong = cbbDanhMuc.SelectedIndex;
-            string thuocTinhDM = dataTable.Rows[dong][2].ToString(); 
-            string[] thuocTinhs = thuocTinhDM.Split(',');
-            for (int i = 0; i < thuocTinhs.Length; i++)
+            try
             {
-                dgvThongTinSP.Rows.Add();
-                dgvThongTinSP.Rows[i].Cells[0].Value = thuocTinhs[i].Trim();
+                dgvThongTinSP.Rows.Clear();
+                int dong = cbbDanhMuc.SelectedIndex;
+                string thuocTinhDM = dataTable.Rows[dong][2].ToString();
+                string[] thuocTinhs = thuocTinhDM.Split(',');
+                for (int i = 0; i < thuocTinhs.Length; i++)
+                {
+                    dgvThongTinSP.Rows.Add();
+                    dgvThongTinSP.Rows[i].Cells[0].Value = thuocTinhs[i].Trim();
+                }
+                thongTinSPDuocChon = null;
             }
-            thongTinSPDuocChon = null; 
+            catch { }
         }
     }
 }

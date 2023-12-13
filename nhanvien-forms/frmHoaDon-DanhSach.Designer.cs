@@ -45,6 +45,11 @@
             this.cboTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboTimKiem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTimKiem.FormattingEnabled = true;
+      
+            this.cboTimKiem.Location = new System.Drawing.Point(109, 86);
+            this.cboTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboTimKiem.Name = "cboTimKiem";
+            this.cboTimKiem.Size = new System.Drawing.Size(121, 28);
             this.cboTimKiem.Items.AddRange(new object[] {
             "Mã hóa đơn",
             "Mã khách hàng",
@@ -70,10 +75,10 @@
             // btnTimKiem
             // 
             this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTimKiem.Location = new System.Drawing.Point(542, 65);
             this.btnTimKiem.Enabled = false;
             this.btnTimKiem.Image = global::winform_fpt_shop.Properties.Resources.icons8_find_24;
             this.btnTimKiem.Location = new System.Drawing.Point(610, 81);
+            this.btnTimKiem.Location = new System.Drawing.Point(542, 65);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(166, 41);
@@ -109,9 +114,9 @@
             this.lblXemChiTiet.AutoSize = true;
             this.lblXemChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblXemChiTiet.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblXemChiTiet.Location = new System.Drawing.Point(657, 134);
+            this.lblXemChiTiet.Location = new System.Drawing.Point(739, 168);
             this.lblXemChiTiet.Name = "lblXemChiTiet";
-            this.lblXemChiTiet.Size = new System.Drawing.Size(123, 17);
+            this.lblXemChiTiet.Size = new System.Drawing.Size(138, 20);
             this.lblXemChiTiet.TabIndex = 13;
             this.lblXemChiTiet.Text = "Ấn để xem chi tiết ";
             // 
@@ -143,6 +148,7 @@
             // 
             // frmHoaDon_DanhSach
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AcceptButton = this.btnTimKiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

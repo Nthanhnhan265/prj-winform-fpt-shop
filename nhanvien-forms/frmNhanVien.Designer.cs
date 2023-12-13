@@ -56,12 +56,14 @@ namespace winform_fpt_shop
             this.mnuChucNang_KhachHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNang_KhachHang_DS = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChucNang_KhachHang_TraCuu = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuThongKe = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuThongKe_DaBan = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuThongKe_HDDaTao = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBaoCao = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBaoCao_DSNhanVien = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuBaoCao_DSSanPham = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBaoCao_NhanVien_DS = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBaoCao_NhanVien_CH = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBaoCao_SanPham = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBaoCao_SanPham_DS = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBaoCao_SanPham_NSX = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBaoCao_SanPham_TonKho = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNhanVien.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,14 +75,12 @@ namespace winform_fpt_shop
             this.mnuTaiKhoan,
             this.mnuQuanLy,
             this.mnuChucNang,
-            this.mnuThongKe,
             this.mnuBaoCao});
             this.mnuNhanVien.Location = new System.Drawing.Point(0, 0);
             this.mnuNhanVien.Name = "mnuNhanVien";
             this.mnuNhanVien.Size = new System.Drawing.Size(1042, 33);
             this.mnuNhanVien.TabIndex = 2;
             this.mnuNhanVien.Text = "menuStrip1";
-            this.mnuNhanVien.Click += new System.EventHandler(this.mnuNhanVien_Click);
             // 
             // mnuTaiKhoan
             // 
@@ -152,7 +152,7 @@ namespace winform_fpt_shop
             this.mnuQuanLy_NhanVien_TraCuu});
             this.mnuQuanLy_DSNhanVien.Image = global::winform_fpt_shop.Properties.Resources.icons8_staff_24;
             this.mnuQuanLy_DSNhanVien.Name = "mnuQuanLy_DSNhanVien";
-            this.mnuQuanLy_DSNhanVien.Size = new System.Drawing.Size(268, 34);
+            this.mnuQuanLy_DSNhanVien.Size = new System.Drawing.Size(336, 34);
             this.mnuQuanLy_DSNhanVien.Text = "Nhân viên";
             this.mnuQuanLy_DSNhanVien.Click += new System.EventHandler(this.mnuQuanLy_DSNhanVien_Click);
             // 
@@ -176,8 +176,9 @@ namespace winform_fpt_shop
             // 
             this.mnuQuanLy_CuaHang.Image = global::winform_fpt_shop.Properties.Resources.icons8_information_24__1_;
             this.mnuQuanLy_CuaHang.Name = "mnuQuanLy_CuaHang";
-            this.mnuQuanLy_CuaHang.Size = new System.Drawing.Size(268, 34);
-            this.mnuQuanLy_CuaHang.Text = "Thông tin cửa hàng";
+            this.mnuQuanLy_CuaHang.ShowShortcutKeys = false;
+            this.mnuQuanLy_CuaHang.Size = new System.Drawing.Size(336, 34);
+            this.mnuQuanLy_CuaHang.Text = "Chỉnh sửa thông tin cửa hàng";
             this.mnuQuanLy_CuaHang.Click += new System.EventHandler(this.mnuQuanLy_CuaHang_Click);
             // 
             // mnuChucNang
@@ -199,7 +200,7 @@ namespace winform_fpt_shop
             this.mnuChucNang_HoaDon_DS});
             this.mnuChucNang_HoaDon.Image = global::winform_fpt_shop.Properties.Resources.icons8_bill_24;
             this.mnuChucNang_HoaDon.Name = "mnuChucNang_HoaDon";
-            this.mnuChucNang_HoaDon.Size = new System.Drawing.Size(270, 34);
+            this.mnuChucNang_HoaDon.Size = new System.Drawing.Size(216, 34);
             this.mnuChucNang_HoaDon.Text = "Hóa đơn";
             // 
             // mnuChucNang_HoaDon_Tao
@@ -222,7 +223,7 @@ namespace winform_fpt_shop
             // 
             this.mnuChucNang_NhaSX.Image = global::winform_fpt_shop.Properties.Resources.icons8_factory_24;
             this.mnuChucNang_NhaSX.Name = "mnuChucNang_NhaSX";
-            this.mnuChucNang_NhaSX.Size = new System.Drawing.Size(270, 34);
+            this.mnuChucNang_NhaSX.Size = new System.Drawing.Size(216, 34);
             this.mnuChucNang_NhaSX.Text = "Nhà sản xuất";
             this.mnuChucNang_NhaSX.Click += new System.EventHandler(this.mnuChucNang_NhaSX_Click);
             // 
@@ -235,7 +236,7 @@ namespace winform_fpt_shop
             this.mnuChucNang_SanPham_DanhMuc});
             this.mnuChucNang_SanPham.Image = global::winform_fpt_shop.Properties.Resources.icons8_product_26;
             this.mnuChucNang_SanPham.Name = "mnuChucNang_SanPham";
-            this.mnuChucNang_SanPham.Size = new System.Drawing.Size(270, 34);
+            this.mnuChucNang_SanPham.Size = new System.Drawing.Size(216, 34);
             this.mnuChucNang_SanPham.Text = "Sản phẩm";
             // 
             // mnuChucNang_SanPham_DS
@@ -277,7 +278,7 @@ namespace winform_fpt_shop
             this.mnuChucNang_KhachHang_TraCuu});
             this.mnuChucNang_KhachHang.Image = global::winform_fpt_shop.Properties.Resources.icons8_staff_24;
             this.mnuChucNang_KhachHang.Name = "mnuChucNang_KhachHang";
-            this.mnuChucNang_KhachHang.Size = new System.Drawing.Size(270, 34);
+            this.mnuChucNang_KhachHang.Size = new System.Drawing.Size(216, 34);
             this.mnuChucNang_KhachHang.Text = "Khách hàng";
             // 
             // mnuChucNang_KhachHang_DS
@@ -296,35 +297,11 @@ namespace winform_fpt_shop
             this.mnuChucNang_KhachHang_TraCuu.Text = "Tra cứu ";
             this.mnuChucNang_KhachHang_TraCuu.Click += new System.EventHandler(this.mnuChucNang_KhachHang_TraCuu_Click);
             // 
-            // mnuThongKe
-            // 
-            this.mnuThongKe.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuThongKe_DaBan,
-            this.mnuThongKe_HDDaTao});
-            this.mnuThongKe.Image = global::winform_fpt_shop.Properties.Resources.icons8_chart_24;
-            this.mnuThongKe.Name = "mnuThongKe";
-            this.mnuThongKe.Size = new System.Drawing.Size(126, 29);
-            this.mnuThongKe.Text = "Thống kê";
-            // 
-            // mnuThongKe_DaBan
-            // 
-            this.mnuThongKe_DaBan.Name = "mnuThongKe_DaBan";
-            this.mnuThongKe_DaBan.Size = new System.Drawing.Size(278, 34);
-            this.mnuThongKe_DaBan.Text = "Số sản phẩm đã bán";
-            this.mnuThongKe_DaBan.Click += new System.EventHandler(this.mnuThongKe_DaBan_Click);
-            // 
-            // mnuThongKe_HDDaTao
-            // 
-            this.mnuThongKe_HDDaTao.Name = "mnuThongKe_HDDaTao";
-            this.mnuThongKe_HDDaTao.Size = new System.Drawing.Size(278, 34);
-            this.mnuThongKe_HDDaTao.Text = "Hóa đơn đã tạo";
-            this.mnuThongKe_HDDaTao.Click += new System.EventHandler(this.mnuThongKe_HDDaTao_Click);
-            // 
             // mnuBaoCao
             // 
             this.mnuBaoCao.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuBaoCao_DSNhanVien,
-            this.mnuBaoCao_DSSanPham});
+            this.mnuBaoCao_SanPham});
             this.mnuBaoCao.Image = global::winform_fpt_shop.Properties.Resources.icons8_report_24;
             this.mnuBaoCao.Name = "mnuBaoCao";
             this.mnuBaoCao.Size = new System.Drawing.Size(115, 29);
@@ -332,25 +309,72 @@ namespace winform_fpt_shop
             // 
             // mnuBaoCao_DSNhanVien
             // 
+            this.mnuBaoCao_DSNhanVien.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuBaoCao_NhanVien_DS,
+            this.mnuBaoCao_NhanVien_CH});
             this.mnuBaoCao_DSNhanVien.Image = global::winform_fpt_shop.Properties.Resources.icons8_staff_24;
             this.mnuBaoCao_DSNhanVien.Name = "mnuBaoCao_DSNhanVien";
-            this.mnuBaoCao_DSNhanVien.Size = new System.Drawing.Size(345, 34);
-            this.mnuBaoCao_DSNhanVien.Text = "Báo cáo danh sách nhân viên";
-            this.mnuBaoCao_DSNhanVien.Click += new System.EventHandler(this.mnuBaoCao_DSNhanVien_Click);
+            this.mnuBaoCao_DSNhanVien.Size = new System.Drawing.Size(270, 34);
+            this.mnuBaoCao_DSNhanVien.Text = "Báo cáo nhân viên";
             // 
-            // mnuBaoCao_DSSanPham
+            // mnuBaoCao_NhanVien_DS
             // 
-            this.mnuBaoCao_DSSanPham.Image = global::winform_fpt_shop.Properties.Resources.icons8_product_26;
-            this.mnuBaoCao_DSSanPham.Name = "mnuBaoCao_DSSanPham";
-            this.mnuBaoCao_DSSanPham.Size = new System.Drawing.Size(345, 34);
-            this.mnuBaoCao_DSSanPham.Text = "Báo cáo danh sách sản phẩm";
-            this.mnuBaoCao_DSSanPham.Click += new System.EventHandler(this.mnuBaoCao_DSSanPham_Click);
+            this.mnuBaoCao_NhanVien_DS.Image = global::winform_fpt_shop.Properties.Resources.icons8_list_of_thumbnails_24;
+            this.mnuBaoCao_NhanVien_DS.Name = "mnuBaoCao_NhanVien_DS";
+            this.mnuBaoCao_NhanVien_DS.Size = new System.Drawing.Size(398, 34);
+            this.mnuBaoCao_NhanVien_DS.Text = "Danh sách nhân viên";
+            this.mnuBaoCao_NhanVien_DS.Click += new System.EventHandler(this.mnuBaoCao_NhanVien_DS_Click);
+            // 
+            // mnuBaoCao_NhanVien_CH
+            // 
+            this.mnuBaoCao_NhanVien_CH.Image = global::winform_fpt_shop.Properties.Resources.icons8_staff_24;
+            this.mnuBaoCao_NhanVien_CH.Name = "mnuBaoCao_NhanVien_CH";
+            this.mnuBaoCao_NhanVien_CH.Size = new System.Drawing.Size(398, 34);
+            this.mnuBaoCao_NhanVien_CH.Text = "Danh sách nhân viên từng cửa hàng";
+            this.mnuBaoCao_NhanVien_CH.Click += new System.EventHandler(this.mnuBaoCao_NhanVien_CH_Click);
+            // 
+            // mnuBaoCao_SanPham
+            // 
+            this.mnuBaoCao_SanPham.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuBaoCao_SanPham_DS,
+            this.mnuBaoCao_SanPham_NSX,
+            this.mnuBaoCao_SanPham_TonKho});
+            this.mnuBaoCao_SanPham.Image = global::winform_fpt_shop.Properties.Resources.icons8_product_26;
+            this.mnuBaoCao_SanPham.Name = "mnuBaoCao_SanPham";
+            this.mnuBaoCao_SanPham.Size = new System.Drawing.Size(270, 34);
+            this.mnuBaoCao_SanPham.Text = "Báo cáo sản phẩm";
+            // 
+            // mnuBaoCao_SanPham_DS
+            // 
+            this.mnuBaoCao_SanPham_DS.Image = global::winform_fpt_shop.Properties.Resources.icons8_product_24;
+            this.mnuBaoCao_SanPham_DS.Name = "mnuBaoCao_SanPham_DS";
+            this.mnuBaoCao_SanPham_DS.Size = new System.Drawing.Size(446, 34);
+            this.mnuBaoCao_SanPham_DS.Text = "Danh sách sản phẩm";
+            this.mnuBaoCao_SanPham_DS.Click += new System.EventHandler(this.mnuBaoCao_SanPham_DS_Click);
+            // 
+            // mnuBaoCao_SanPham_NSX
+            // 
+            this.mnuBaoCao_SanPham_NSX.Image = global::winform_fpt_shop.Properties.Resources.icons8_factory_24;
+            this.mnuBaoCao_SanPham_NSX.Name = "mnuBaoCao_SanPham_NSX";
+            this.mnuBaoCao_SanPham_NSX.Size = new System.Drawing.Size(446, 34);
+            this.mnuBaoCao_SanPham_NSX.Text = "Danh sách sản phẩm theo thương hiệu";
+            this.mnuBaoCao_SanPham_NSX.Click += new System.EventHandler(this.mnuBaoCao_SanPham_NSX_Click);
+            // 
+            // mnuBaoCao_SanPham_TonKho
+            // 
+            this.mnuBaoCao_SanPham_TonKho.Image = global::winform_fpt_shop.Properties.Resources.icons8_chart_24;
+            this.mnuBaoCao_SanPham_TonKho.Name = "mnuBaoCao_SanPham_TonKho";
+            this.mnuBaoCao_SanPham_TonKho.Size = new System.Drawing.Size(446, 34);
+            this.mnuBaoCao_SanPham_TonKho.Text = "Danh sách sản phẩm tồn kho trong tháng";
+            this.mnuBaoCao_SanPham_TonKho.Click += new System.EventHandler(this.mnuBaoCao_SanPham_TonKho_Click);
             // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackgroundImage = global::winform_fpt_shop.Properties.Resources.logo_fpt_inkythuatso_1_01_01_14_33_35;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1042, 562);
             this.Controls.Add(this.mnuNhanVien);
@@ -361,7 +385,7 @@ namespace winform_fpt_shop
             this.MainMenuStrip = this.mnuNhanVien;
             this.Name = "frmNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhân Viên";
+            this.Text = "Chức năng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNhanVien_FormClosing);
             this.Load += new System.EventHandler(this.frmNhanVien_Load);
@@ -398,9 +422,6 @@ namespace winform_fpt_shop
         private System.Windows.Forms.ToolStripMenuItem mnuChucNang_KhachHang;
         private System.Windows.Forms.ToolStripMenuItem mnuChucNang_KhachHang_DS;
         private System.Windows.Forms.ToolStripMenuItem mnuChucNang_KhachHang_TraCuu;
-        private System.Windows.Forms.ToolStripMenuItem mnuThongKe;
-        private System.Windows.Forms.ToolStripMenuItem mnuThongKe_DaBan;
-        private System.Windows.Forms.ToolStripMenuItem mnuThongKe_HDDaTao;
         private System.Windows.Forms.ToolStripMenuItem mnuBaoCao;
         private System.Windows.Forms.MenuStrip mnuNhanVien;
         private System.Windows.Forms.ToolStripMenuItem mnuTaiKhoanTTCuaHang;
@@ -411,7 +432,12 @@ namespace winform_fpt_shop
         }
 
         private System.Windows.Forms.ToolStripMenuItem mnuBaoCao_DSNhanVien;
-        private System.Windows.Forms.ToolStripMenuItem mnuBaoCao_DSSanPham;
+        private System.Windows.Forms.ToolStripMenuItem mnuBaoCao_SanPham;
+        private System.Windows.Forms.ToolStripMenuItem mnuBaoCao_NhanVien_DS;
+        private System.Windows.Forms.ToolStripMenuItem mnuBaoCao_NhanVien_CH;
+        private System.Windows.Forms.ToolStripMenuItem mnuBaoCao_SanPham_DS;
+        private System.Windows.Forms.ToolStripMenuItem mnuBaoCao_SanPham_NSX;
+        private System.Windows.Forms.ToolStripMenuItem mnuBaoCao_SanPham_TonKho;
     }
 }
 

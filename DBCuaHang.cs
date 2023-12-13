@@ -123,7 +123,7 @@ namespace winform_fpt_shop
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return dong;
             }
@@ -220,6 +220,46 @@ namespace winform_fpt_shop
             return soDong;
         }
         
+        public static void UpdateTonKho(string maCH,string maSP,string thang)
+        {
+            try
+            {
+                using (SqlConnection sql=new SqlConnection(sqlString))
+                {
+                    using (SqlCommand command=new SqlCommand("sp_SuaTonKhoSoLuongConLai",sql))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        SqlParameter pMaCH = new SqlParameter("@MaCH",maCH);
+                        command.Parameters.Add(pMaCH);
+
+                        SqlParameter pMaSP = new SqlParameter("@MaSP",maSP);
+                        command.Parameters.Add(pMaSP);
+
+                        SqlParameter pThang = new SqlParameter("@Thang", SqlDbType.Date);
+                        pThang.Value = thang;
+                        command.Parameters.Add(pThang);
+
+                        sql.Open();
+                        int dong=command.ExecuteNonQuery(); 
+                        if(dong==0)
+                        {
+                            MessageBox.Show($"Thêm thất bại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
+                       
+                    }
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có Lỗi xảy ra: \n{ex}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+        }
+
         /// <summary>
         /// Tìm kiếm sản phẩm 
         /// </summary>

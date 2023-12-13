@@ -25,6 +25,7 @@ namespace winform_fpt_shop
                  )
                 )
                );
+        public static ThongBaoCapNhat thongBao = new ThongBaoCapNhat(); 
 
         private void mnuQuanLy_DSNhanVien_Click(object sender, EventArgs e)
         {
@@ -46,14 +47,25 @@ namespace winform_fpt_shop
 
         }
 
+        /// <summary>
+        /// Mở form báo cáo danh sách nhân viên 
+        /// </summary>
+        public void MoFomBaoCaoNhanVien()
+        {
+            frmBaoCao_DSNhanVien frm = new frmBaoCao_DSNhanVien();
+            OpenChildForm(frm);
+        }
+
+     
+
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             frmDangNhap frm = new frmDangNhap(this);
             OpenChildForm(frm);
             //Thay đổi đường dẫn DB tại đây 
+            DBCuaHang.sqlString= "Data Source=local;Initial Catalog=QuanLyCuaHang;Integrated Security=True";
             DBCuaHang.sqlString= "Data Source=(local);Initial Catalog=QuanLyCuaHang;Integrated Security=True"; 
 
-            DBCuaHang.sqlString= "Data Source=local;Initial Catalog=QuanLyCuaHang;Integrated Security=True";
         }
         /// <summary>
         /// Dong ung dung khi click vao thoat 
@@ -96,19 +108,6 @@ namespace winform_fpt_shop
             //}
         }
 
-        private void mnuThongKe_DaBan_Click(object sender, EventArgs e)
-        {
-            //mo form
-            frmThongKe_HD frmTao = new frmThongKe_HD();
-            OpenChildForm(frmTao);
-        }
-
-        private void mnuThongKe_HDDaTao_Click(object sender, EventArgs e)
-        {
-            //mo form 
-            frmThongKe_HD frmTao = new frmThongKe_HD();
-            OpenChildForm(frmTao);
-        }
 
         private void mnuTK_DoiMK_Click(object sender, EventArgs e)
         {
@@ -135,6 +134,7 @@ namespace winform_fpt_shop
         {
             //mo form  
             frmQuanLy_DSNhanVien frmTao = new frmQuanLy_DSNhanVien();
+            frmTao.FrmChinh = this; 
             OpenChildForm(frmTao);
         }
         /// <summary>
@@ -144,6 +144,7 @@ namespace winform_fpt_shop
         {
             mnuNhanVien.Enabled = true; 
 
+
         }
         /// <summary>
         /// Phương thức hiển thị chức năng quản lý 
@@ -151,7 +152,7 @@ namespace winform_fpt_shop
         public void HienQuanLy()
         {
             mnuQuanLy.Enabled = true;
-
+            mnuBaoCao_DSNhanVien.Enabled=true; 
         }
         /// <summary>
         /// Phương thức ẩn chức năng quan lý 
@@ -159,6 +160,7 @@ namespace winform_fpt_shop
         public void AnQuanLy()
         {
             mnuQuanLy.Enabled = false;
+            mnuBaoCao_DSNhanVien.Enabled = false; 
         }
         /// <summary>
         /// Phương thức ẩn menu khi chưa đăng nhập 
@@ -237,7 +239,7 @@ namespace winform_fpt_shop
 
         private void mnuQuanLy_CuaHang_Click(object sender, EventArgs e)
         {
-            //mo form im
+            MoFormChinhSuaCH(); 
         }
 
         private void mnuQuanLy_NhanVien_TraCuu_Click(object sender, EventArgs e)
@@ -247,32 +249,44 @@ namespace winform_fpt_shop
             OpenChildForm(frm); 
         }
 
-        private void mnuQuanLy_NhanVien_DieuChuyen_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void mnuTaiKhoanTTCuaHang_Click(object sender, EventArgs e)
         {
             frmTaiKhoanThongTinCH frm =new  frmTaiKhoanThongTinCH();
+            frm.KhoiTaoThongBaoCapNhat(thongBao);
             frm.FrmNhanVien = this;
             OpenChildForm(frm);
         }
 
-        private void mnuNhanVien_Click(object sender, EventArgs e)
-        {
+    
 
-        }
-
-        private void mnuBaoCao_DSNhanVien_Click(object sender, EventArgs e)
+        private void mnuBaoCao_NhanVien_DS_Click(object sender, EventArgs e)
         {
             frmBaoCao_DSNhanVien frm = new frmBaoCao_DSNhanVien();
+            OpenChildForm(frm);
+        }
+
+        private void mnuBaoCao_NhanVien_CH_Click(object sender, EventArgs e)
+        {
+            frmBaoCao_DSNhanVienCH frm = new frmBaoCao_DSNhanVienCH();
             OpenChildForm(frm); 
         }
 
-        private void mnuBaoCao_DSSanPham_Click(object sender, EventArgs e)
+        private void mnuBaoCao_SanPham_DS_Click(object sender, EventArgs e)
         {
             frmBaoCao_DSSanPham frm = new frmBaoCao_DSSanPham();
+            OpenChildForm(frm);
+        }
+
+        private void mnuBaoCao_SanPham_NSX_Click(object sender, EventArgs e)
+        {
+            frmBaoCao_SanPhamNSX frm = new frmBaoCao_SanPhamNSX();
+            OpenChildForm(frm); 
+        }
+
+        private void mnuBaoCao_SanPham_TonKho_Click(object sender, EventArgs e)
+        {
+            frmBaoCaoTonKho frm = new frmBaoCaoTonKho();
             OpenChildForm(frm); 
         }
     }

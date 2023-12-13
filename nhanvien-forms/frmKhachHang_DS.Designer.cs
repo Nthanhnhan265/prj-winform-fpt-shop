@@ -264,6 +264,7 @@
             // 
             // frmKhachHang_DS
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AcceptButton = this.btnThem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -280,6 +281,7 @@
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.txtMaKH);
+
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblDIaChi);
             this.Controls.Add(this.lblSDT);

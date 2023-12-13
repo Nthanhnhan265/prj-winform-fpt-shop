@@ -493,7 +493,14 @@ Create procedure sp_CuaHangJoinSanPham
 AS 
 SELECT 
  
-   SanPhamTonKho.MaCH, CuaHang.TenCH, CuaHang.DiaChi,SanPhamTonKho.MaSP,SanPhamTonKho.TenSP,SanPhamTonKho.SoLuong
+   SanPhamTonKho.MaCH,
+   CuaHang.TenCH,
+   CuaHang.DiaChi,
+   SanPhamTonKho.MaSP,
+   SanPhamTonKho.TenSP
+   ,SanPhamTonKho.SoLuong
+   ,SanPhamTonKho.SoLuongConLai
+   ,SanPhamTonKho.NgayNhap
 FROM 
     CuaHang 
 JOIN (
@@ -501,7 +508,9 @@ JOIN (
         TonKho.MaCH,
         SanPham.MaSP,
 		SanPham.TenSP,
-		TonKho.SoLuong
+		TonKho.SoLuong,
+		TonKho.SoLuongConLai,
+		TonKho.NgayNhap
     FROM 
         TonKho 
     JOIN 
@@ -510,18 +519,38 @@ JOIN (
 
  
 Go 
+--Hiển thị thông tin tồn kho  
+Create proc sp_HienThiThongTinTonKhoCH
+@MaCH char(10) 
+AS 
+	select * 
+	from CuaHang,SanPham,TonKho
+	where TonKho.MaCH=CuaHang.MaCH 
+	and TonKho.MaSP=SanPham.MaSP
+	and CuaHang.MaCH=@MaCH
+
+
+
+GO 
+
 -- Them ton kho
 CREATE PROCEDURE sp_ThemTonKho
     @MaCH CHAR(10),
     @MaSP CHAR(10),
 	@MaSP_Cu char(10), 
 	@MaCH_Cu char(10),
+	@NgayNhap date, 
     @SoLuong INT
 AS
 BEGIN
-    INSERT INTO TonKho (MaCH, MaSP, SoLuong)
-    VALUES (@MaCH, @MaSP, @SoLuong);
+    INSERT INTO TonKho (MaCH, MaSP,NgayNhap, SoLuong)
+    VALUES (@MaCH, @MaSP,@NgayNhap, @SoLuong);
+
+	UPDATE TonKho 
+	SET SoLuongConLai=@SoLuong
+	WHERE MaCH=@MaCH; 
 END
+
 
 GO
 
@@ -536,11 +565,31 @@ BEGIN
 END
 
 GO
+--Cập nhật số lượng sản phẩm còn lại 
+Create proc sp_SuaTonKhoSoLuongConLai 
+	@MaCH char(10), 
+	@MaSP char(10),
+	@Thang date
+As 
+	Update TonKho 
+	set SoLuongConLai=SoLuong-(
+		SELECT COALESCE(SUM(SoLuong), 0) AS SoLuongBan
+		FROM HoaDon
+		JOIN ChiTietHD ON HoaDon.MaHD = ChiTietHD.MaHD
+		WHERE HoaDon.MaCH = @MaCH AND ChiTietHD.MaSP = @MaSP
+			  And MONTH(HoaDon.NgayTao)=MONTH(@Thang) And YEAR(HoaDon.NgayTao)=Year(@Thang)
+	)
+	Where MaCH=@MaCH And MaSP=@MaSP 
+	And MONTH(TonKho.NgayNhap)=MONTH(@Thang) 
+	And YEAR(TonKho.NgayNhap)=Year(@Thang)
+Go 
+
 
 -- Sua ton kho
 CREATE PROCEDURE sp_SuaTonKho
     @MaCH CHAR(10),
     @MaSP CHAR(10),
+	@NgayNhap date,
     @SoLuong INT, 
 	@MaCH_Cu CHAR(10),
 	@MaSP_Cu Char(10)
@@ -555,6 +604,15 @@ BEGIN
 END
 
 GO
+--Nhân viên 
+Create proc sp_HienThiNhanVienKhoaNgoai 
+as 
+	select NhanVien.*,CuaHang.TenCH,CuaHang.QuanLy,NguoiQL.HoTen as HoTenQL
+	from NhanVien, CuaHang, NhanVien as NguoiQL
+	where NhanVien.MaCH=CuaHang.MaCH and CuaHang.QuanLy=NguoiQL.MaNV
+	
+Go 
+
 
 CREATE PROCEDURE sp_ThemNhanVien
     @MaNV CHAR(10),

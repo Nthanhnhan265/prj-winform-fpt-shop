@@ -152,6 +152,7 @@
             this.Name = "frmSanPham_TraCuu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tra cứu sản phẩm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSanPham_TraCuu_FormClosing);
             this.Load += new System.EventHandler(this.frmSanPham_TraCuu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

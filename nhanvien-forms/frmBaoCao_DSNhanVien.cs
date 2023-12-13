@@ -22,10 +22,17 @@ namespace winform_fpt_shop.nhanvien_forms
 
         private void frmBaoCaoDSNhanVien_Load(object sender, EventArgs e)
         {
-            ReportDocument report = new ReportDocument();
-            report.Load(frmNhanVien.path + "\\nhanvien-forms\\rptDSNhanVien.rpt");
-            crystalReportViewer1.ReportSource = report;
-            
+            try
+            {
+                ReportDocument report = new ReportDocument();
+                report.Load(frmNhanVien.path + "\\nhanvien-forms\\rptDSNhanVien.rpt");
+                report.SetParameterValue("nguoiTao", frmDangNhap.TaiKhoan.HoTen);
+                crystalReportViewer1.ReportSource = report;
+            }
+            catch
+            {
+                MessageBox.Show("Mở thát bại!","Thông báo"); 
+            }
         }
     }
 }

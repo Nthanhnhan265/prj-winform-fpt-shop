@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuenMatKhau));
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblMatKhauMoi = new System.Windows.Forms.Label();
             this.lblNhapLaiMatKhau = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.lblMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMatKhauMoi.Location = new System.Drawing.Point(145, 118);
             this.lblMatKhauMoi.Name = "lblMatKhauMoi";
-            this.lblMatKhauMoi.Size = new System.Drawing.Size(82, 15);
+            this.lblMatKhauMoi.Size = new System.Drawing.Size(255, 31);
             this.lblMatKhauMoi.TabIndex = 1;
             this.lblMatKhauMoi.Text = "Mật khẩu mới";
             // 
@@ -69,7 +69,7 @@
             this.lblNhapLaiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNhapLaiMatKhau.Location = new System.Drawing.Point(96, 170);
             this.lblNhapLaiMatKhau.Name = "lblNhapLaiMatKhau";
-            this.lblNhapLaiMatKhau.Size = new System.Drawing.Size(131, 15);
+            this.lblNhapLaiMatKhau.Size = new System.Drawing.Size(239, 31);
             this.lblNhapLaiMatKhau.TabIndex = 2;
             this.lblNhapLaiMatKhau.Text = "Nhập lại mật khẩu mới";
             // 
@@ -101,7 +101,7 @@
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauMoi.Location = new System.Drawing.Point(237, 115);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(212, 21);
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(343, 37);
             this.txtMatKhauMoi.TabIndex = 4;
             this.txtMatKhauMoi.TextChanged += new System.EventHandler(this.txtMatKhauMoi_TextChanged);
             // 
@@ -135,6 +135,10 @@
             // 
             // errorProvider
             // 
+            //this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(307, 225);
+            //this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
+            //this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(343, 37);
+            //this.txtNhapLaiMatKhau.TabIndex = 5;
             this.errorProvider.ContainerControl = this;
             // 
             // frmQuenMatKhau

@@ -16,6 +16,7 @@ namespace winform_fpt_shop
         private string maSP_Cu ;
         private string maCH_Cu;
         private int hangDuocChon = -1;
+        private int soLuongToiThieu = 0; 
 
         public frmSanPham_TonKho()
         {
@@ -26,7 +27,6 @@ namespace winform_fpt_shop
         {
 
         }
-
 
 
         private void frmSanPham_TonKho_Load(object sender, EventArgs e)
@@ -55,6 +55,15 @@ namespace winform_fpt_shop
                 txtMaCh.Text = cbbTenCH.SelectedValue.ToString();
                 txtDiaChi.Text= tbCuaHang.Rows[cbbTenCH.SelectedIndex][2].ToString();
                 txtMaSP.Text = cbbTenSP.SelectedValue.ToString(); 
+
+
+                for(int i =0;i<tbDanhSachTonKho.Rows.Count;i++)
+                {
+                    string maCH=tbDanhSachTonKho.Rows[i][0].ToString();
+                    string maSP = tbDanhSachTonKho.Rows[i][3].ToString();
+                    string thang = tbDanhSachTonKho.Rows[i][7].ToString();
+                    DBCuaHang.UpdateTonKho(maCH,maSP,thang); 
+                }
             }
             catch
             {
@@ -69,17 +78,25 @@ namespace winform_fpt_shop
 
         private void dgvDanhSachTonKho_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            txtMaCh.Text = dgvDanhSachTonKho.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtMaSP.Text = dgvDanhSachTonKho.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtSoLuong.Text = dgvDanhSachTonKho.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtDiaChi.Text = dgvDanhSachTonKho.Rows[e.RowIndex].Cells[2].Value.ToString();
-            cbbTenCH.Text= dgvDanhSachTonKho.Rows[e.RowIndex].Cells[1].Value.ToString();
-            cbbTenSP.Text= dgvDanhSachTonKho.Rows[e.RowIndex].Cells[4].Value.ToString();
-            hangDuocChon = e.RowIndex;
-            maCH_Cu = txtMaCh.Text; 
-            maSP_Cu = txtMaSP.Text; 
-        
+            try
+            {
+                txtMaCh.Text = dgvDanhSachTonKho.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtMaSP.Text = dgvDanhSachTonKho.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtSoLuong.Text = dgvDanhSachTonKho.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtDiaChi.Text = dgvDanhSachTonKho.Rows[e.RowIndex].Cells[2].Value.ToString();
+                cbbTenCH.Text = dgvDanhSachTonKho.Rows[e.RowIndex].Cells[1].Value.ToString();
+                cbbTenSP.Text = dgvDanhSachTonKho.Rows[e.RowIndex].Cells[4].Value.ToString();
+                hangDuocChon = e.RowIndex;
+                maCH_Cu = txtMaCh.Text;
+                maSP_Cu = txtMaSP.Text;
+                dtpNgayNhap.Text = dgvDanhSachTonKho.Rows[e.RowIndex].Cells[7].Value.ToString();
+                soLuongToiThieu = int.Parse(dgvDanhSachTonKho.Rows[e.RowIndex].Cells[5].Value.ToString()) - int.Parse(dgvDanhSachTonKho.Rows[e.RowIndex].Cells[6].Value.ToString());
+
+            }
+            catch
+            {
+
+            }
         }
         /// <summary>
         /// Nút xóa 
@@ -136,7 +153,9 @@ namespace winform_fpt_shop
                 try
                 {
                     soLuong = int.Parse(txtSoLuong.Text.ToString());
-                    if (DBCuaHang.AddRowData("sp_ThemTonKho", new TonKho(txtMaCh.Text, txtMaSP.Text, soLuong,"","")) > 0)
+                    if (DBCuaHang.AddRowData("sp_ThemTonKho", new TonKho(txtMaCh.Text,
+                        txtMaSP.Text,
+                        DBCuaHang.ChangeToDate(dtpNgayNhap.Text), soLuong,"","")) > 0)
                     {
                         taiLaiDuLieu();
                         MessageBox.Show($"Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -169,7 +188,10 @@ namespace winform_fpt_shop
                 try
                 {
                     soLuong = int.Parse(txtSoLuong.Text.ToString());
-                    if (DBCuaHang.UpdateRowData("sp_SuaTonKho", new TonKho(txtMaCh.Text, txtMaSP.Text, soLuong,maCH_Cu,maSP_Cu)) > 0)
+                    if (DBCuaHang.UpdateRowData("sp_SuaTonKho", new TonKho(txtMaCh.Text, 
+                        txtMaSP.Text,
+                         DBCuaHang.ChangeToDate(dtpNgayNhap.Text), 
+                         soLuong,maCH_Cu,maSP_Cu)) > 0)
                     {
                         taiLaiDuLieu();
                         MessageBox.Show($"Sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -254,6 +276,15 @@ namespace winform_fpt_shop
                 txtMaCh.Text = dgvDanhSachTonKho.Rows[0].Cells[0].Value.ToString();
                 txtDiaChi.Text = dgvDanhSachTonKho.Rows[cbbTenCH.SelectedIndex].Cells[2].Value.ToString();
                 txtMaSP.Text = cbbTenSP.SelectedValue.ToString();
+
+                for (int i = 0; i < tbDanhSachTonKho.Rows.Count; i++)
+                {
+                    string maCH = tbDanhSachTonKho.Rows[i][0].ToString();
+                    string maSP = tbDanhSachTonKho.Rows[i][3].ToString();
+                    string thang = tbDanhSachTonKho.Rows[i][7].ToString();
+                    DBCuaHang.UpdateTonKho(maCH, maSP, thang);
+                }
+
             }
             catch
             {
@@ -265,13 +296,13 @@ namespace winform_fpt_shop
         private void txtSoLuong_TextChanged(object sender, EventArgs e)
         {
             string str = txtSoLuong.Text;
-            if(int.TryParse(str,out _))
+            if(int.TryParse(str,out _) && int.Parse(str)>=soLuongToiThieu && int.Parse(str)>=0)
             {
                 errorProvider1.Clear();
             }
             else
             {
-                errorProvider1.SetError(txtSoLuong, "Vui lòng nhập số!");
+                errorProvider1.SetError(txtSoLuong, "Vui lòng nhập số!\nSố lượng mới phải lớn hơn hoặc bằng số lượng đã bán");
             }
         }
 

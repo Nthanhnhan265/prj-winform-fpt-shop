@@ -73,16 +73,19 @@ namespace winform_fpt_shop.nhanvien_forms
 
         private void txtTen_TextChanged(object sender, EventArgs e)
         {
-
-            if (!Regex.IsMatch(txtTen.Text, patternString))
+            try
             {
-                errorProvider1.SetError(txtTen, "Vui lòng chỉ nhập chữ cái và số");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
 
+                if (!Regex.IsMatch(txtTen.Text, patternString))
+                {
+                    errorProvider1.SetError(txtTen, "Vui lòng chỉ nhập chữ cái và số");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
+            }
+            catch { }
         }
 
         private void btnThem_Click_1(object sender, EventArgs e)
@@ -183,6 +186,19 @@ namespace winform_fpt_shop.nhanvien_forms
             catch (Exception ex)
             {
                 MessageBox.Show("Xóa Không thành công" + ex.Message);
+            }
+        }
+        /// <summary>
+        /// Bat su kien khi roi form 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void frmNhaSanXuat_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult rd = MessageBox.Show("Bạn có muốn thoát không?", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rd == DialogResult.No)
+            {
+                e.Cancel = true;
             }
         }
     }
